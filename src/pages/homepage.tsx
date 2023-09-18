@@ -1,13 +1,23 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React, { useState, useEffect } from "react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import Navbar from "../components/ts/navbar";
 import '../components/images/OxfordLogo.png';
 import '../components/scss/home.scss';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import Navbar from "../components/ts/navbar";
+
+import ClassHelmet from "../components/ts/title";
+
 
 const HomePage = () => {
     const [backgroundPositionY, setBackgroundPositionY] = useState(-34);
     const [titlePositionY, setTitlePositionY] = useState(0);
+
+    const carouselImages = [
+        "https://www.oxfordprepschools.org/wp-content/uploads/2020/08/oxford-academy-1.jpg",
+        "https://www.oxfordprepschools.org/wp-content/uploads/2020/08/oxford-academy-2.jpg",
+    ];
 
     useEffect(() => {
         const handleScroll = () => {
@@ -40,10 +50,8 @@ const HomePage = () => {
 
     return (
         <HelmetProvider>
-            <Helmet>
-                <title>Oxford Academy - Home</title>
-            </Helmet>
-            <Navbar props={100}/>
+            <ClassHelmet title="Home" />
+            <Navbar props={740} />
             <div id="HomePage">
                 {/* Title Tab */}
                 <div id="Title" style={{ backgroundPositionY: `${backgroundPositionY}vh` }}>
@@ -67,6 +75,18 @@ const HomePage = () => {
                         <h1 id="NatRankings">#9 in National Rankings</h1>
                     </div>
                     <h1 id="USNewsLabel">- US News Rankings</h1>
+                </div>
+
+                {/* Admissions */}
+                <div id="Admissions">
+                    <div id="AdmissionsMain">
+                        <h1 id="AdmissionsLabel">Admissions</h1>
+                        <div id="AdmissionsText">
+                            <h1 id="AdmissionsMainLabel">Oxford Academy is a admissions-only campus</h1>
+                            <h1 id="AdmissionsOpening">Admissions are open in November for 7th, 8th, and 9th graders</h1>
+                            <button id="Apply">More information available here!</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </HelmetProvider>

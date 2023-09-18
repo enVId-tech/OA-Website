@@ -5,29 +5,21 @@ interface NavbarProps {
     props?: number;
 }
 
-const Navbar = ({props = Infinity}: NavbarProps) => {
+const Navbar = ({props = -Infinity}: NavbarProps) => {
     const [backgroundTransparent, setBackgroundTransparent] = useState(true);
 
     useEffect(() => {
-        const handleScroll = () => {
             const scrollY = window.scrollY;
-            // If scrollY vh exceeds the one in props, set backgroundTransparent to false
-            if (scrollY / 10 > props) {
+
+            if (scrollY > props) {
                 setBackgroundTransparent(false);
             } else {
                 setBackgroundTransparent(true);
             }
-        };
-
-        window.addEventListener("scroll", handleScroll);
-
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, []);
+    }, [window.scrollY]);
 
     return (
-        <nav id="NavbarMain" style={{ backgroundColor: `${backgroundTransparent ? "transparent" : "white"}` }}>
+        <nav id="NavbarMain" className={backgroundTransparent ? "transparent" : "opaque"}>
             <span id="Topbar">
                 <div id="MainImage"></div>
                 <button id="School" className="navbutton">Our School</button>

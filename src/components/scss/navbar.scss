@@ -3,12 +3,34 @@
     justify-content: center;
     align-items: center;
     height: 10vh;
-    background-color: #ffffff;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
+
+    &.transparent {
+      background-color: transparent;
+      color: white;
+      transition: all 0.15s ease-in-out;
+      & .navbutton {
+        color: white;
+        &:hover {
+          color: #8b8b8b;
+        }
+      }
+    }
+
+    &.opaque {
+      background-color: #ffffff;
+      transition: all 0.15s ease-in-out;
+      & .navbutton {
+        color: black;
+        &:hover {
+          color: #666666;
+        }
+      }
+    }
 
     #Topbar {
       display: flex;
@@ -29,15 +51,10 @@
         font-family: "Raleway", sans-serif;
         font-size: 1.5rem;
         font-weight: bold;
-        color: #000000;
         background-color: transparent;
         border: none;
         cursor: pointer;
         transition: all 0.2s ease-in-out;
-  
-        &:hover {
-          color: rgb(100, 100, 100)
-        }
       }
   
       #School {

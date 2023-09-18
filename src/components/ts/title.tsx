@@ -1,6 +1,18 @@
 import React from 'react';
-import { Helmet } from "react-helmet-async";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
-const ClassHelmet = () => {
-    
+interface ClassHelmetProps {
+    title: string;
 }
+
+const ClassHelmet = (props: ClassHelmetProps) => {
+    return (
+        <HelmetProvider>
+            <Helmet>
+                <title>Oxford Academy - {props.title}</title>
+            </Helmet>
+        </HelmetProvider>
+    )
+}
+
+export default ClassHelmet;
