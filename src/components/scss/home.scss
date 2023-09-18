@@ -120,7 +120,7 @@ html {
     }
 
     #Ratings {
-        display: flex;
+        display: grid;
 
         #USNewsRanking {
             font-family: 'Raleway', sans-serif;
@@ -147,7 +147,7 @@ html {
         }
 
         #USNewsLabel {
-            font-size: 2vw;
+            font-size: 5vw;
             font-family: 'Monsterrat', sans-serif;
             font-weight: 200;
         }

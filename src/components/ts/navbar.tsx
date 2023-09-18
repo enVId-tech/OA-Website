@@ -1,35 +1,87 @@
-import React, { useState, useEffect } from "react";
+/* eslint-disable jsx-a11y/alt-text */
+import React, { useState, useEffect, useRef } from "react";
 import '../scss/navbar.scss';
 
 interface NavbarProps {
-    props?: number;
+  props?: number;
 }
 
-const Navbar = ({props = -Infinity}: NavbarProps) => {
-    const [backgroundTransparent, setBackgroundTransparent] = useState(true);
+const Navbar = ({ props = -Infinity }: NavbarProps) => {
+  const [backgroundTransparent, setBackgroundTransparent] = useState(true);
 
-    useEffect(() => {
-            const scrollY = window.scrollY;
+  useEffect(() => {
+    const scrollY = window.scrollY;
 
-            if (scrollY > props) {
-                setBackgroundTransparent(false);
-            } else {
-                setBackgroundTransparent(true);
-            }
-    }, [window.scrollY]);
+    if (scrollY > props) {
+      setBackgroundTransparent(false);
+    } else {
+      setBackgroundTransparent(true);
+    }
+  }, [window.scrollY]);
 
-    return (
-        <nav id="NavbarMain" className={backgroundTransparent ? "transparent" : "opaque"}>
-            <span id="Topbar">
-                <div id="MainImage"></div>
-                <button id="School" className="navbutton">Our School</button>
-                <button id="Student" className="navbutton">Student</button>
-                <button id="Parent" className="navbutton">Parents</button>
-                <button id="Staff" className="navbutton">Staff</button>
-                <button id="Contact" className="navbutton">Contact Us</button>
-            </span>
-        </nav>
-    )
+  // Make school table appear when hovering over "Our School" button
+  const schoolTable = useRef<HTMLDivElement>(null);
+
+  const handleSchoolTable = () => {
+    if (schoolTable.current) {
+      schoolTable.current.style.display = "block";
+    }
+  };
+
+  const handleSchoolTableLeave = () => {
+    if (schoolTable.current) {
+      schoolTable.current.style.display = "none";
+    }
+  };
+
+  return (
+    <nav id="NavbarMain" className={backgroundTransparent ? "transparent" : "opaque"}>
+      <div id="Topbar">
+        <div id="MainButtons">
+          {/* Logo */}
+          <img id="MainImage" src="OxfordLogo.png"></img>
+          
+          {/* Buttons Navigator */}
+          <button id="School" className="navbutton" onMouseEnter={handleSchoolTable} onMouseLeave={handleSchoolTableLeave}>Our School</button>
+          <button id="Student" className="navbutton">Student</button>
+          <button id="Parent" className="navbutton">Parents</button>
+          <button id="Staff" className="navbutton">Staff</button>
+          <button id="Contact" className="navbutton">Contact Us</button>
+        </div>
+
+        {/* Tables */}
+        <div id="Tables">
+          <div id="SchoolTable" className="table" ref={schoolTable}>
+            <label>BETA: Labels will be optimized per section later on.</label>
+            <br />
+            <button className="navtable navsubbutton">Administration</button>
+            <button className="navtable navsubbutton">Admissions</button>
+            <button className="navtable navsubbutton">Alumni</button>
+            <button className="navtable navsubbutton">Athletics</button>
+            <button className="navtable navsubbutton">Bell Schedule</button>
+            <button className="navtable navsubbutton">Calendar</button>
+            <button className="navtable navsubbutton">Clubs & Organizations</button>
+            <button className="navtable navsubbutton">Counseling</button>
+            <button className="navtable navsubbutton">Cypress College Dual Enrollment</button>
+            <button className="navtable navsubbutton">Dress Regulations</button>
+            <button className="navtable navsubbutton">General Information</button>
+            <button className="navtable navsubbutton">Health Office</button>
+            <button className="navtable navsubbutton">News Section</button>
+            <button className="navtable navsubbutton">OA Profile</button>
+            <button className="navtable navsubbutton">OA Site Map</button>
+            <button className="navtable navsubbutton">Policies</button>
+            <button className="navtable navsubbutton">Principal's Message</button>
+            <button className="navtable navsubbutton">Programs 4 Patriots</button>
+            <button className="navtable navsubbutton">School Accountability Report Card</button>
+            <button className="navtable navsubbutton">Staff Directory/Email</button>
+            <button className="navtable navsubbutton">Transcripts</button>
+            <button className="navtable navsubbutton">Transportation</button>
+            <button className="navtable navsubbutton">Vision & SLCs</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  )
 }
 
 export default Navbar;

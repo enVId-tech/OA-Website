@@ -1,52 +1,62 @@
 #NavbarMain {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 10vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 12vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1000;
 
-    &.transparent {
-      background-color: transparent;
+  &.transparent {
+    background-color: transparent;
+    color: white;
+    transition: all 0.15s ease-in-out;
+
+    .navbutton {
       color: white;
-      transition: all 0.15s ease-in-out;
-      & .navbutton {
-        color: white;
-        &:hover {
-          color: #8b8b8b;
-        }
+
+      &:hover {
+        color: #8b8b8b;
       }
     }
+  }
 
-    &.opaque {
-      background-color: #ffffff;
-      transition: all 0.15s ease-in-out;
-      & .navbutton {
-        color: black;
-        &:hover {
-          color: #666666;
-        }
+  &.opaque {
+    background-color: #ffffff;
+    transition: all 0.15s ease-in-out;
+
+    .navbutton {
+      color: black;
+
+      &:hover {
+        color: #666666;
       }
     }
+  }
 
-    #Topbar {
+  #Topbar {
+    width: 100vw;
+    height: 10vh;
+    display: grid;
+    justify-content: space-between;
+    align-items: center;
+
+    #MainButtons {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      width: 80%;
-      height: 100%;
-  
+      width: 100vw;
+      height: 10vh;
+      justify-content: space-around;
+
       #MainImage {
         background-image: url(../images/OxfordLogo.png);
         background-repeat: no-repeat;
         background-size: contain;
-        width: 10%;
-        height: 100%;
+        width: 5vw;
       }
-  
+
       .navbutton {
         font-family: "Raleway", sans-serif;
         font-size: 1.5rem;
@@ -54,15 +64,47 @@
         background-color: transparent;
         border: none;
         cursor: pointer;
-        transition: all 0.2s ease-in-out;
+        transition: all 0.15s ease-in-out;
+
+        &:hover {
+          color: #666666;
+        }
       }
-  
-      #School {
-        margin-left: 2rem;
-      }
-  
-      #Contact {
-        margin-right: 2rem;
+    }
+
+    #Tables {
+      display: flex;
+      align-items: center;
+      width: 100vw;
+      height: fit-content;
+      .table {
+        display: grid;
+        align-items: center;
+        justify-content: space-around;
+        width: 100vw;
+        height: 10vh;
+        transition: all 0.15s ease-in-out;
+        padding-left: 1vw;
+        padding-right: 1vw;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 5vw 5vw;
+        align-content: space-between;
+
+        .navtable.navsubbutton {
+          font-family: "Raleway", sans-serif;
+          font-size: 1.5rem;
+          font-weight: bold;
+          background-color: transparent;
+          border: none;
+          cursor: pointer;
+          transition: all 0.15s ease-in-out;
+
+          &:hover {
+            color: #666666;
+          }
+        }
       }
     }
   }
+}
