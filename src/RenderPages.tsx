@@ -6,6 +6,9 @@ const RenderPages = () => {
   return (
     <BrowserRouter>
       <Routes>
+        {/* Redirects */}
+        <Route path="/*" element={<Navigate to="/" />} />
+        
         {/* Pages */}
         <Route path="/" element={<HomePage/>} />
       </Routes>

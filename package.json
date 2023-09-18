@@ -1,6 +1,6 @@
 {
   "name": "frontpage",
-  "version": "2",
+  "version": "3",
   "private": true,
   "dependencies": {
     "cra-template-typescript": "1.2.0",
