@@ -19,13 +19,6 @@ html {
 
 #HomePage {
     display: flex;
-
-    #Scroll {
-        width: 10vw;
-        height: 5vh;
-        background-color: lightblue;
-    }
-
     #Title {
         font-family: 'Raleway', sans-serif;
         position:fixed;
@@ -37,6 +30,8 @@ html {
         background-color: #747474;
         flex-direction: row;
         align-items: center;
+        background-image: url(../images/OxfFrontImage.jpg);
+        background-position: -1vw -34vh;
 
         #MainImage {
             background-repeat: no-repeat;
@@ -46,7 +41,7 @@ html {
             margin-left: 40vw;
             width: 15vw;
             height: auto;
-            animation: fadeIn 1s 0.75s ease-in-out forwards;
+            animation: fadeIn 1s 0.4s ease-in-out forwards;
 
             @keyframes fadeIn {
                 0% {
@@ -68,7 +63,7 @@ html {
                 color: #ffffff;
                 letter-spacing: 0.2vw;
                 opacity: 0;
-                animation: unfadeUp 0.75s 1.6s ease-in-out forwards;
+                animation: unfadeUp 0.75s 1.25s ease-in-out forwards;
             }
 
             #OxfAcaSub {

@@ -1,20 +1,24 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React, { useState, useEffect } from "react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import Navbar from "../components/ts/navbar";
 import '../components/images/OxfordLogo.png';
-import '../components/scss/index.scss';
+import '../components/scss/home.scss';
 
 const HomePage = () => {
-    const [showScrollButton, setShowScrollButton] = useState(false);
+    const [backgroundPositionY, setBackgroundPositionY] = useState(-34);
+    const [titlePositionY, setTitlePositionY] = useState(0);
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > 100) {
-                setShowScrollButton(true);
-            } else {
-                setShowScrollButton(false);
-            }
+            const scrollY = window.scrollY;
+            const newBackgroundPositionY = -34 - scrollY / 64;
+            setBackgroundPositionY(newBackgroundPositionY);
+
+            const newTitlePositionY = -scrollY / 32;
+            setTitlePositionY(newTitlePositionY);
         };
+
 
         window.addEventListener("scroll", handleScroll);
 
@@ -39,18 +43,24 @@ const HomePage = () => {
             <Helmet>
                 <title>Oxford Academy - Home</title>
             </Helmet>
+            <Navbar props={100}/>
             <div id="HomePage">
-                <div id="Title">
-                    <img id="MainImage" src="OxfordLogo.png" />
+                {/* Title Tab */}
+                <div id="Title" style={{ backgroundPositionY: `${backgroundPositionY}vh` }}>
+                    <img id="MainImage" src="OxfordLogo.png" style={{ transform: `translateY(${titlePositionY}vh)` }} />
                     <div id="MainText">
-                        <h1 id="OxfAca">Oxford Academy</h1>
+                        <h1 id="OxfAca" style={{ transform: `translateY(${titlePositionY}vh)` }}>Oxford Academy</h1>
                         {/*<h5 id="OxfAcaSub">Conceiving the next wave of innovation.</h5>*/}
                     </div>
                 </div>
+
+                {/* About Tab */}
                 <div id="About">
                     <img id="AboutImage" src="OxfordAcademyFullLogo.webp" />
                     <h1 id="AboutLabel">Oxford Academy is a community of innovators dedicated to nurturing the holistic growth of life-long learners who will lead and serve an evolving local and global society.</h1>
                 </div>
+
+                {/* Ratings Tab */}
                 <div id="Ratings">
                     <div id="USNewsRanking">
                         <h1 id="HSRankings">#1 in California High Schools</h1>
@@ -58,9 +68,6 @@ const HomePage = () => {
                     </div>
                     <h1 id="USNewsLabel">- US News Rankings</h1>
                 </div>
-                {showScrollButton && (
-                    <button onClick={scrollToTop} id="Scroll">Scroll to top</button>
-                )}
             </div>
         </HelmetProvider>
     )
