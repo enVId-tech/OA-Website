@@ -71,6 +71,8 @@ html {
             #OxfAcaSub {
                 font-size: 2vw;
                 color: #ffffff;
+                opacity: 0;
+                animation: unfadeUp 0.75s 1.25s ease-in-out forwards;
             }
 
             @keyframes unfadeUp {

@@ -73,23 +73,64 @@
     }
 
     #Tables {
-      display: flex;
       align-items: center;
       width: 100vw;
-      height: fit-content;
+
       .table {
-        display: grid;
-        align-items: center;
-        justify-content: space-around;
-        width: 100vw;
-        height: 10vh;
-        transition: all 0.15s ease-in-out;
-        padding-left: 1vw;
-        padding-right: 1vw;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-        gap: 5vw 5vw;
-        align-content: space-between;
+        display: none;
+        &.transparent {
+          background-color: transparent;
+          transition: all 0.15s ease-in-out;
+          color: white;
+
+          .navsubbutton {
+            color: white;
+
+            &:hover {
+              color: #8b8b8b;
+            }
+          }
+        }
+
+        &.opaque {
+          background-color: #ffffff;
+          transition: all 0.15s ease-in-out;
+
+          .navsubbutton {
+            color: black;
+
+            &:hover {
+              color: #666666;
+            }
+          }
+        }
+
+        #BETALabel {
+          font-size: 2vw;
+          font-family: "Monsterrat", sans-serif;
+          font-weight: 200;
+          width: 100%;
+          align-items: center;
+          text-align: center;
+        }
+
+        #SchoolButtonsTable {
+          display: grid;
+          align-items: center;
+          justify-content: space-around;
+          width: 100vw;
+          height: auto;
+          transition: all 0.15s ease-in-out;
+          padding-left: 1vw;
+          padding-right: 1vw;
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+          grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+          grid-gap: 20px 50px;
+          align-content: space-between;
+          color: white;
+          padding-top: 3vh;
+          padding-bottom: 3vh;
+        }
 
         .navtable.navsubbutton {
           font-family: "Raleway", sans-serif;

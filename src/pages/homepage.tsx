@@ -51,14 +51,14 @@ const HomePage = () => {
     return (
         <HelmetProvider>
             <ClassHelmet title="Home" />
-            <Navbar props={740} />
+            <Navbar props={790} />
             <div id="HomePage">
                 {/* Title Tab */}
                 <div id="Title" style={{ backgroundPositionY: `${backgroundPositionY}vh` }}>
                     <img id="MainImage" src="OxfordLogo.png" style={{ transform: `translateY(${titlePositionY}vh)` }} />
                     <div id="MainText">
                         <h1 id="OxfAca" style={{ transform: `translateY(${titlePositionY}vh)` }}>Oxford Academy</h1>
-                        {/*<h5 id="OxfAcaSub">Conceiving the next wave of innovation.</h5>*/}
+                        <h5 id="OxfAcaSub" style={{ transform: `translateY(${titlePositionY}vh)` }}>Conceiving the next wave of innovation.</h5>
                     </div>
                 </div>
 
@@ -82,7 +82,7 @@ const HomePage = () => {
                     <div id="AdmissionsMain">
                         <h1 id="AdmissionsLabel">Admissions</h1>
                         <div id="AdmissionsText">
-                            <h1 id="AdmissionsMainLabel">Oxford Academy is a admissions-only campus</h1>
+                            <h1 id="AdmissionsMainLabel">Oxford Academy is an admissions-only campus</h1>
                             <h1 id="AdmissionsOpening">Admissions are open in November for 7th, 8th, and 9th graders</h1>
                             <button id="Apply">More information available here!</button>
                         </div>
