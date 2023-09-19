@@ -5,14 +5,14 @@ interface ClassHelmetProps {
     title: string;
 }
 
-const ClassHelmet = (props: ClassHelmetProps) => {
+const ClassHelmet: React.FC<ClassHelmetProps> = (props: ClassHelmetProps) => {
     return (
         <HelmetProvider>
             <Helmet>
                 <title>Oxford Academy - {props.title}</title>
             </Helmet>
         </HelmetProvider>
-    )
+    );
 }
 
 export default ClassHelmet;

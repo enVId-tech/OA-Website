@@ -1,82 +1,138 @@
 /* eslint-disable jsx-a11y/alt-text */
+// Disabling a specific eslint rule for this file
+
 import React, { useState, useEffect, useRef } from "react";
 import '../scss/navbar.scss';
+import getNavBarElements from './navbarelements';
+
 
 interface NavbarProps {
   props?: number;
 }
+// Defining the props interface for the Navbar component
 
-const Navbar = ({ props = -Infinity }: NavbarProps) => {
-  const [backgroundTransparent, setBackgroundTransparent] = useState(true);
+const Navbar: React.FC<NavbarProps> = ({ props = -Infinity }: NavbarProps) => {
+  // Defining the Navbar functional component with props as an argument
+
+  const [backgroundTransparent, setBackgroundTransparent] = useState<boolean>(true);
+  // Creating a state variable backgroundTransparent with initial value true
+
+  // All the elements found here: https://oxford.auhsd.us/ada/sitemap.cfm?s=9
+  const SchoolButtonsElements: string[] = getNavBarElements("School");
+
+  const StudentButtonsElements: string[] = getNavBarElements("Student");
+
+  const ParentButtonsElements: string[] = getNavBarElements("Parent");
+
+  const FacultyButtonsTable: string[] = getNavBarElements("Faculty");
+
+  const ContactButtonsElements: string[] = getNavBarElements("Contact");
 
   useEffect(() => {
-    const scrollY = window.scrollY;
+    // Using the useEffect hook to handle scrolling behavior
+
+    const scrollY: number = window.scrollY;
 
     if (scrollY > props) {
+      // Checking if the current scroll position is greater than the value of props
       setBackgroundTransparent(false);
+      // Setting backgroundTransparent to false if the condition is met
     } else {
       setBackgroundTransparent(true);
+      // Setting backgroundTransparent to true if the condition is not met
     }
   }, [window.scrollY]);
+  // Running this effect whenever the window.scrollY value changes
 
-  // Make school table appear when hovering over "Our School" button
   const schoolTable = useRef<HTMLDivElement>(null);
+  const schoolButton = useRef<HTMLButtonElement>(null);
 
-  const handleSchoolTable = (tableID: string) => {
-    if (schoolTable.current) {
-      schoolTable.current.style.display = "grid";
-    }
-  };
+  const [schoolTableDisplay, setSchoolTableDisplay] = useState<string>("none");
 
-  const handleSchoolTableLeave = () => {
-    if (schoolTable.current) {
-      schoolTable.current.style.display = "none";
-    }
-  };
+  const studentTable = useRef<HTMLDivElement>(null);
+  const studentButton = useRef<HTMLButtonElement>(null);
+
+  const [studentTableDisplay, setStudentTableDisplay] = useState<string>("none");
+
+  const parentTable = useRef<HTMLDivElement>(null);
+  const parentButton = useRef<HTMLButtonElement>(null);
+
+  const [parentTableDisplay, setParentTableDisplay] = useState<string>("none");
+
+  const facultyTable = useRef<HTMLDivElement>(null);
+  const facultyButton = useRef<HTMLButtonElement>(null);
+
+  const [facultyTableDisplay, setFacultyTableDisplay] = useState<string>("none");
+
+  const contactTable = useRef<HTMLDivElement>(null);
+  const contactButton = useRef<HTMLButtonElement>(null);
+
+  const [contactTableDisplay, setContactTableDisplay] = useState<string>("none");
 
   return (
     <nav id="NavbarMain" className={backgroundTransparent ? "transparent" : "opaque"}>
+      {/* Navbar container */}
       <div id="Topbar">
+        {/* Topbar container */}
         <div id="MainButtons">
+          {/* Main buttons container */}
           {/* Logo */}
           <img id="MainImage" src="OxfordLogo.png"></img>
-
+          {/* Logo image */}
           {/* Buttons Navigator */}
-          <button id="School" className="navbutton" onMouseEnter={() => handleSchoolTable("main")} onMouseLeave={handleSchoolTableLeave}>Our School</button>
+          <button id="School" className="navbutton" ref={schoolButton}>Our School</button>
+          {/* School button */}
           <button id="Student" className="navbutton">Student</button>
+          {/* Student button */}
           <button id="Parent" className="navbutton">Parents</button>
-          <button id="Staff" className="navbutton">Staff</button>
+          {/* Parents button */}
+          <button id="Faculty" className="navbutton">Faculty</button>
+          {/* Faculty button */}
           <button id="Contact" className="navbutton">Contact Us</button>
+          {/* Contact button */}
         </div>
 
         {/* Tables */}
         <div id="Tables">
+          {/* Tables container */}
           <div id="SchoolTable" className={`table ${backgroundTransparent ? "transparent" : "opaque"}`} ref={schoolTable}>
+            {/* School table */}
             <label id="BETALabel">BETA: Labels will be optimized per section later on.</label>
-            <div id="SchoolButtonsTable">
-              <button className="navtable navsubbutton">Administration</button>
-              <button className="navtable navsubbutton">Admissions</button>
-              <button className="navtable navsubbutton">Alumni</button>
-              <button className="navtable navsubbutton">Athletics</button>
-              <button className="navtable navsubbutton">Bell Schedule</button>
-              <button className="navtable navsubbutton">Calendar</button>
-              <button className="navtable navsubbutton">Clubs & Organizations</button>
-              <button className="navtable navsubbutton">Counseling</button>
-              <button className="navtable navsubbutton">Cypress College Dual Enrollment</button>
-              <button className="navtable navsubbutton">Dress Regulations</button>
-              <button className="navtable navsubbutton">General Information</button>
-              <button className="navtable navsubbutton">Health Office</button>
-              <button className="navtable navsubbutton">News Section</button>
-              <button className="navtable navsubbutton">OA Profile</button>
-              <button className="navtable navsubbutton">OA Site Map</button>
-              <button className="navtable navsubbutton">Policies</button>
-              <button className="navtable navsubbutton">Principal's Message</button>
-              <button className="navtable navsubbutton">Programs 4 Patriots</button>
-              <button className="navtable navsubbutton">School Accountability Report Card</button>
-              <button className="navtable navsubbutton">Staff Directory/Email</button>
-              <button className="navtable navsubbutton">Transcripts</button>
-              <button className="navtable navsubbutton">Transportation</button>
-              <button className="navtable navsubbutton">Vision & SLCs</button>
+            {/* Beta label */}
+            <div id="SchoolButtonsTable" className={`table ${backgroundTransparent ? "transparent" : "opaque"}`}>
+              {/* School buttons table */}
+              {SchoolButtonsElements.map((element: string) => {
+                return <button className="navtable navsubbutton">{element}</button>
+                // Mapping school-related buttons to buttons in the table
+              })}
+            </div>
+            <div id="StudentButtonsTable" className={`element ${backgroundTransparent ? "transparent" : "opaque"}`}>
+              {/* Student buttons table */}
+              {StudentButtonsElements.map((element: string) => {
+                return <button className="navtable navsubbutton">{element}</button>
+                // Mapping student-related buttons to buttons in the table
+              })}
+            </div>
+            <div id="ParentButtonsTable" className={`element ${backgroundTransparent ? "transparent" : "opaque"}`}>
+              {/* Parent buttons table */}
+              {ParentButtonsElements.map((element: string) => {
+                return <button className="navtable navsubbutton">{element}</button>
+                // Mapping parent-related buttons to buttons in the table
+              })}
+            </div>
+            <div id="FacultyButtonsTable" className={`element ${backgroundTransparent ? "transparent" : "opaque"}`}>
+              {/* Faculty buttons table */}
+              {FacultyButtonsTable.map((element: string) => {
+                return <button className="navtable navsubbutton">{element}</button>
+                // Mapping faculty-related buttons to buttons in the table
+              })}
+            </div>
+            <div id="ContactButtonsTable" className={`element ${backgroundTransparent ? "transparent" : "opaque"}`}>
+              {/* Contact buttons table */}
+              {ContactButtonsElements.map((element: string) => {
+                return <button className="navtable navsubbutton">{element}</button>
+                // Mapping contact-related buttons to buttons in the table
+              })}
             </div>
           </div>
         </div>
@@ -86,3 +142,4 @@ const Navbar = ({ props = -Infinity }: NavbarProps) => {
 }
 
 export default Navbar;
+// Exporting the Navbar component as the default export
