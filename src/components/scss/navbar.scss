@@ -77,7 +77,6 @@
       width: 100vw;
 
       .table {
-        display: none;
         &.transparent {
           background-color: rgba(0, 0, 0, 0.95);
           transition: all 0.15s ease-in-out;
@@ -105,6 +104,18 @@
           }
         }
 
+        &.shown {
+          display: grid;
+          opacity: 1;
+          transition: opacity 0.15s ease-in-out;
+        }
+
+        &.hidden {
+          display: none;
+          opacity: 0;
+          transition: opacity 0.15s ease-in-out 0.15s;
+        }
+
         #BETALabel {
           font-size: 2vw;
           font-family: "Monsterrat", sans-serif;
@@ -112,10 +123,27 @@
           width: 100%;
           align-items: center;
           text-align: center;
+          &.transparent {
+            opacity: 1;
+            transition: opacity 0.15s ease-in-out;
+            display: grid;
+            &.top {
+              color: white;
+            }
+
+            &.bottom {
+              color: black;
+            }
+          }
+
+          &.opaque {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.15s ease-in-out;
+          }
         }
 
         #SchoolButtonsTable {
-          display: grid;
           align-items: center;
           justify-content: space-around;
           width: 100vw;
@@ -133,7 +161,6 @@
         }
 
         #StudentButtonsTable {
-          display: grid;
           align-items: center;
           justify-content: space-around;
           width: 100vw;
@@ -151,7 +178,6 @@
         }
 
         #ParentButtonsTable {
-          display: grid;
           align-items: center;
           justify-content: space-around;
           width: 100vw;
@@ -169,7 +195,6 @@
         }
 
         #FacultyButtonsTable {
-          display: grid;
           align-items: center;
           justify-content: space-around;
           width: 100vw;
@@ -187,7 +212,6 @@
         }
 
         #ContactButtonsTable {
-          display: grid;
           align-items: center;
           justify-content: space-around;
           width: 100vw;

@@ -5,7 +5,7 @@ import '../components/images/OxfordLogo.png';
 import '../components/scss/home.scss';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import Navbar from "../components/ts/navbar";
+import Navbar from "../components/ts/navbar/navbar";
 
 import ClassHelmet from "../components/ts/title";
 
