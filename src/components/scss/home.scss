@@ -19,12 +19,10 @@ html {
 
 #HomePage {
     display: flex;
+    flex-direction: column;
 
     #Title {
         font-family: 'Raleway', sans-serif;
-        position: fixed;
-        top: 0;
-        left: 0;
         display: flex;
         width: 100%;
         height: 90vh;
@@ -74,17 +72,17 @@ html {
                 opacity: 0;
                 animation: unfadeUp 0.75s 1.25s ease-in-out forwards;
             }
+        }
 
-            @keyframes unfadeUp {
-                0% {
-                    margin-top: 8vw;
-                    opacity: 0;
-                }
+        @keyframes unfadeUp {
+            0% {
+                margin-top: 8vw;
+                opacity: 0;
+            }
 
-                100% {
-                    margin-top: 0vw;
-                    opacity: 1;
-                }
+            100% {
+                margin-top: 0vw;
+                opacity: 1;
             }
         }
     }
@@ -92,9 +90,6 @@ html {
     #About {
         width: 100%;
         height: 50vh;
-        left: 0;
-        top: 90vh;
-        position: absolute;
         background-color: #ffffff;
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -103,69 +98,211 @@ html {
         justify-items: center;
         z-index: 10;
 
+        &.visible-class {
+            #AboutImage {
+                animation: fadeAndUp 1s 0.05s ease-in-out forwards;
+
+                @keyframes fadeAndUp {
+                    0% {
+                        opacity: 0;
+                        margin-bottom: -5vh;
+                    }
+
+                    100% {
+                        opacity: 1;
+                        margin-bottom: 0vh;
+                    }
+                    
+                }
+            }
+
+            #AboutLabel {
+                animation: fadeAndLeft 1s 0.05s ease-in-out forwards;
+
+                @keyframes fadeAndLeft {
+                    0% {
+                        opacity: 0;
+                        margin-left: 5vh;
+                    }
+
+                    100% {
+                        opacity: 1;
+                        margin-left: 0vh;
+                    }
+                    
+                }
+            }
+        }
+
         #AboutImage {
             background-repeat: no-repeat;
             background-size: contain;
             background-position: center;
             width: 30vw;
             height: auto;
+            opacity: 0;
         }
 
         #AboutLabel {
             font-size: 2vw;
             padding-right: 3vw;
             padding-left: 2vw;
-            font-family: 'Monsterrat', sans-serif;
             font-weight: 200;
             color: #000000;
+            opacity: 0;
         }
     }
 
     #Ratings {
-        display: grid;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #0B132B;
+        height: 50vh;
+        justify-content: space-around;
+
+        &.visible-class {
+            #USNewsRanking {
+                #Ranks {
+                    #HSRankings {
+                        animation: fadeAndLeft 1s 0.05s ease-in-out forwards;
+
+                        @keyframes fadeAndLeft {
+                            0% {
+                                opacity: 0;
+                                margin-left: 5vh;
+                            }
+
+                            100% {
+                                opacity: 1;
+                                margin-left: 0vh;
+                            }
+                            
+                        }
+                    }
+
+                    #NatRankings {
+                        animation: fadeAndRight 1s 0.05s ease-in-out forwards;
+
+                        @keyframes fadeAndRight {
+                            0% {
+                                opacity: 0;
+                                margin-right: 5vh;
+                            }
+
+                            100% {
+                                opacity: 1;
+                                margin-right: 0vh;
+                            }
+                            
+                        }
+                    }
+                }
+
+                #USNewsLabel {
+                    animation: fadeAndUp 1s 0.3s ease-in-out forwards;
+
+                    @keyframes fadeAndUp {
+                        0% {
+                            opacity: 0;
+                            margin-bottom: -5vh;
+                        }
+
+                        100% {
+                            opacity: 1;
+                            margin-bottom: 0vh;
+                        }
+                        
+                    }
+                }
+            }
+        }
 
         #USNewsRanking {
             font-family: 'Raleway', sans-serif;
-            position: absolute;
             display: flex;
             justify-content: space-around;
             background-color: #0B132B;
-            top: 140vh;
-            left: 0;
             width: 100%;
-            height: 50vh;
             flex-direction: row;
             align-items: center;
+            flex-direction: column;
 
-            #HSRankings {
-                color: white;
-                font-weight: bold;
-            }
+            #Ranks {
+                display: flex;
+                justify-content: space-around;
+                margin-top: 5vh;
+                margin-bottom: 10vh;
 
-            #NatRankings {
-                color: white;
-                font-weight: bold;
+                #HSRankings {
+                    color: white;
+                    font-weight: bold;
+                    opacity: 0;
+                }
+
+                #NatRankings {
+                    color: white;
+                    font-weight: bold;
+                    opacity: 0;
+                }
             }
         }
 
         #USNewsLabel {
-            font-size: 5vw;
-            font-family: 'Monsterrat', sans-serif;
-            font-weight: 200;
+            color: white;
+            font-weight: 600;
+            font-size: 1.5vw;
+            z-index: 1000;
+            opacity: 0;
         }
     }
 
     #Admissions {
         display: flex;
 
+        &.visible-class {
+            #AdmissionsMain {
+                #AdmissionsLabel {
+                    animation: fadeAndLeft 1s 0.05s ease-in-out forwards;
+
+                    @keyframes fadeAndLeft {
+                        0% {
+                            opacity: 0;
+                            margin-left: 5vh;
+                        }
+
+                        100% {
+                            opacity: 1;
+                            margin-left: 0vh;
+                        }
+                        
+                    }
+                }
+
+                #AdmissionsText {
+                    animation: fadeAndRight 1s 0.05s ease-in-out forwards;
+
+                    @keyframes fadeAndRight {
+                        0% {
+                            opacity: 0;
+                            margin-right: 5vh;
+                        }
+
+                        100% {
+                            opacity: 1;
+                            margin-right: 0vh;
+                        }
+                        
+                    }
+                }
+            }
+        }
+
         #AdmissionsMain {
             font-family: 'Raleway', sans-serif;
-            position: absolute;
             display: grid;
             justify-content: space-around;
             background-color: rgb(12, 43, 83);
-            top: 190vh;
-            left: 0;
             width: 100%;
             height: 50vh;
             flex-direction: row;
@@ -175,11 +312,14 @@ html {
             #AdmissionsLabel {
                 color: white;
                 font-weight: bold;
+                opacity: 0;
             }
 
             #AdmissionsText {
                 color: white;
                 font-weight: bold;
+                opacity: 0;
+
                 #Apply {
                     border-radius: 25px;
                     background-color: #ffffff;
@@ -189,6 +329,132 @@ html {
                     padding: 1vw;
                     border: none;
                 }
+            }
+        }
+    }
+
+    #Footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: white;
+        color: white;
+        height: 50vh;
+        justify-content: space-around;
+
+        &.visible-class {
+            #FooterMain {
+                padding-left: 5vw;
+                padding-right: 5vw;
+                display: flex;
+                justify-content: space-around;
+                #FooterLabel {
+                    animation: fadeAndLeft 1s 0.05s ease-in-out forwards;
+
+                    @keyframes fadeAndLeft {
+                        0% {
+                            opacity: 0;
+                            margin-left: 5vh;
+                        }
+
+                        100% {
+                            opacity: 1;
+                            margin-left: 0vh;
+                        }
+                        
+                    }
+                }
+
+                #FooterAddress, #FooterPhone {
+                    animation: fadeAndRight 1s 0.05s ease-in-out forwards;
+
+                    @keyframes fadeAndRight {
+                        0% {
+                            opacity: 0;
+                            margin-right: 5vh;
+                        }
+
+                        100% {
+                            opacity: 1;
+                            margin-right: 0vh;
+                        }
+                        
+                    }
+                }
+            }
+            #Alpha {
+                #alphaWarning {
+                    animation: fadeAndUp 1s 0.3s ease-in-out forwards;
+
+                    @keyframes fadeAndUp {
+                        0% {
+                            opacity: 0;
+                            margin-bottom: -2vh;
+                        }
+
+                        100% {
+                            opacity: 1;
+                            margin-bottom: 0vh;
+                        }
+                        
+                    }
+                }
+
+                #alphaLabel {
+                    animation: fadeAndUp 1s 0.3s ease-in-out forwards;
+
+                    @keyframes fadeAndUp {
+                        0% {
+                            opacity: 0;
+                            margin-bottom: -5vh;
+                        }
+
+                        100% {
+                            opacity: 1;
+                            margin-bottom: 0vh;
+                        }
+                        
+                    }
+                }
+            }
+        }
+
+        #FooterMain {
+            font-family: 'Raleway', sans-serif;
+            display: grid;
+            justify-content: space-around;
+            background-color: #0B132B;
+            width: 100%;
+            height: 50vh;
+            flex-direction: row;
+            align-items: center;
+            align-content: center;
+
+            #FooterLabel {
+                color: white;
+                font-weight: bold;
+                opacity: 0;
+            }
+
+            #FooterAddress, #FooterPhone {
+                color: white;
+                font-weight: bold;
+                opacity: 0;
+            }
+        }
+
+        #Alpha {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+
+            #alphaWarning {
+                opacity: 0;
+            }
+
+            #alphaLabel {
+                opacity: 0;
             }
         }
     }

@@ -46,6 +46,10 @@ const Navbar: React.FC<NavbarProps> = ({ props = -Infinity }: NavbarProps) => {
     }
   }, [window.scrollY]);
 
+  const handleLogoClick = () => {
+    window.location.href = "/";
+  }
+
   const schoolTable = useRef<HTMLDivElement>(null);
   const schoolButton = useRef<HTMLButtonElement>(null);
 
@@ -53,7 +57,7 @@ const Navbar: React.FC<NavbarProps> = ({ props = -Infinity }: NavbarProps) => {
     <nav id="NavbarMain" className={backgroundTransparent ? "transparent" : "opaque"}>
       <div id="Topbar">
         <div id="MainButtons">
-          <img id="MainImage" src="OxfordLogo.png" alt="Oxford Logo" />
+          <img id="MainImage" src="OxfordLogo.png" alt="Oxford Logo" onClick={handleLogoClick} style={{ cursor: "pointer" }} />
           <button
             id="School"
             className={`navbutton ${activeTable === "School" ? "active" : "hidden"}`}
@@ -102,7 +106,7 @@ const Navbar: React.FC<NavbarProps> = ({ props = -Infinity }: NavbarProps) => {
             id="SchoolTable"
             className={`table ${backgroundTransparent ? "transparent" : "opaque"}`}
             ref={schoolTable}
-            onMouseEnter={() => handleTableMouseEnter("Contact")}
+            onMouseEnter={() => handleTableMouseEnter(activeTable || "")}
             onMouseLeave={handleTableMouseLeave}
           >
             <label id="BETALabel"
