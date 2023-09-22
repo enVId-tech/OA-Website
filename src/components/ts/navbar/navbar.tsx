@@ -55,9 +55,6 @@ const Navbar: React.FC<NavbarProps> = ({ props = -Infinity }: NavbarProps) => {
     window.location.href = "/";
   }
 
-  const schoolTable = useRef<HTMLDivElement>(null);
-  const schoolButton = useRef<HTMLButtonElement>(null);
-
   return (
     <nav id="NavbarMain" className={backgroundTransparent ? "transparent" : "opaque"}>
       <div id="Topbar">
@@ -66,7 +63,7 @@ const Navbar: React.FC<NavbarProps> = ({ props = -Infinity }: NavbarProps) => {
           <button
             id="School"
             className={`navbutton ${activeTable === "School" ? "active" : "hidden"}`}
-            ref={schoolButton}
+            onClick={() => window.location.href = "/school-table"}
             onMouseEnter={() => handleButtonMouseEnter("School")}
             onMouseLeave={handleButtonMouseLeave}
           >
@@ -75,6 +72,7 @@ const Navbar: React.FC<NavbarProps> = ({ props = -Infinity }: NavbarProps) => {
           <button
             id="Student"
             className={`navbutton ${activeTable === "Student" ? "active" : "hidden"}`}
+            onClick={() => window.location.href = "/student-table"}
             onMouseEnter={() => handleButtonMouseEnter("Student")}
             onMouseLeave={handleButtonMouseLeave}
           >
@@ -83,6 +81,7 @@ const Navbar: React.FC<NavbarProps> = ({ props = -Infinity }: NavbarProps) => {
           <button
             id="Parent"
             className={`navbutton ${activeTable === "Parent" ? "active" : "hidden"}`}
+            onClick={() => window.location.href = "/parent-table"}
             onMouseEnter={() => handleButtonMouseEnter("Parent")}
             onMouseLeave={handleButtonMouseLeave}
           >
@@ -91,6 +90,7 @@ const Navbar: React.FC<NavbarProps> = ({ props = -Infinity }: NavbarProps) => {
           <button
             id="Faculty"
             className={`navbutton ${activeTable === "Faculty" ? "active" : "hidden"}`}
+            onClick={() => window.location.href = "/faculty-table"}
             onMouseEnter={() => handleButtonMouseEnter("Faculty")}
             onMouseLeave={handleButtonMouseLeave}
           >
@@ -99,6 +99,7 @@ const Navbar: React.FC<NavbarProps> = ({ props = -Infinity }: NavbarProps) => {
           <button
             id="Contact"
             className={`navbutton ${activeTable === "Contact" ? "active" : "hidden"}`}
+            onClick={() => window.location.href = "/contact-table"}
             onMouseEnter={() => handleButtonMouseEnter("Contact")}
             onMouseLeave={handleButtonMouseLeave}
           >
@@ -110,14 +111,15 @@ const Navbar: React.FC<NavbarProps> = ({ props = -Infinity }: NavbarProps) => {
           <div
             id="SchoolTable"
             className={`table ${backgroundTransparent ? "transparent" : "opaque"}`}
-            ref={schoolTable}
             onMouseEnter={() => handleTableMouseEnter(activeTable || "")}
             onMouseLeave={handleTableMouseLeave}
           >
             <label id="BETALabel"
               className={`label ${activeTable ? "transparent" : "opaque"} ${backgroundTransparent ? "top" : "ntop"}`}
             >BETA: Labels will be optimized per section later on.</label>
-            <div id="SchoolButtonsTable" className={`table ${backgroundTransparent ? "transparent" : "opaque"} ${activeTable === "School" ? "shown" : "hidden"}`}>
+            <div 
+            id="SchoolButtonsTable"
+              className={`table ${backgroundTransparent ? "transparent" : "opaque"} ${activeTable === "School" ? "shown" : "hidden"}`}>
               {/* School buttons table */}
               {SchoolButtonsElements.map((element: NavbarElementsData) => (
                 <button className="navtable navsubbutton" key={element.name} onClick={() => window.location.href = element.link}>
@@ -125,7 +127,9 @@ const Navbar: React.FC<NavbarProps> = ({ props = -Infinity }: NavbarProps) => {
                 </button>
               ))}
             </div>
-            <div id="StudentButtonsTable" className={`table ${backgroundTransparent ? "transparent" : "opaque"} ${activeTable === "Student" ? "shown" : "hidden"}`}>
+            <div 
+            id="StudentButtonsTable" 
+            className={`table ${backgroundTransparent ? "transparent" : "opaque"} ${activeTable === "Student" ? "shown" : "hidden"}`}>
               {/* Student buttons table */}
               {StudentButtonsElements.map((element: NavbarElementsData) => (
                 <button className="navtable navsubbutton" key={element.name} onClick={() => window.location.href = element.link}>
@@ -133,7 +137,9 @@ const Navbar: React.FC<NavbarProps> = ({ props = -Infinity }: NavbarProps) => {
                 </button>
               ))}
             </div>
-            <div id="ParentButtonsTable" className={`table ${backgroundTransparent ? "transparent" : "opaque"} ${activeTable === "Parent" ? "shown" : "hidden"}`}>
+            <div 
+            id="ParentButtonsTable" 
+            className={`table ${backgroundTransparent ? "transparent" : "opaque"} ${activeTable === "Parent" ? "shown" : "hidden"}`}>
               {/* Parent buttons table */}
               {ParentButtonsElements.map((element: NavbarElementsData) => (
                 <button className="navtable navsubbutton" key={element.name} onClick={() => window.location.href = element.link}>
@@ -141,7 +147,9 @@ const Navbar: React.FC<NavbarProps> = ({ props = -Infinity }: NavbarProps) => {
                 </button>
               ))}
             </div>
-            <div id="FacultyButtonsTable" className={`table ${backgroundTransparent ? "transparent" : "opaque"} ${activeTable === "Faculty" ? "shown" : "hidden"}`}>
+            <div 
+            id="FacultyButtonsTable" 
+            className={`table ${backgroundTransparent ? "transparent" : "opaque"} ${activeTable === "Faculty" ? "shown" : "hidden"}`}>
               {/* Faculty buttons table */}
               {FacultyButtonsTable.map((element: NavbarElementsData) => (
                 <button className="navtable navsubbutton" key={element.name} onClick={() => window.location.href = element.link}>
@@ -149,11 +157,12 @@ const Navbar: React.FC<NavbarProps> = ({ props = -Infinity }: NavbarProps) => {
                 </button>
               ))}
             </div>
-            <div id="ContactButtonsTable" className={`table ${backgroundTransparent ? "transparent" : "opaque"} ${activeTable === "Contact" ? "shown" : "hidden"}`}>
+            <div 
+            id="ContactButtonsTable" 
+            className={`table ${backgroundTransparent ? "transparent" : "opaque"} ${activeTable === "Contact" ? "shown" : "hidden"}`}>
               {/* Contact buttons table */}
               {ContactButtonsElements.map((element: NavbarElementsData) => (
                 <button className="navtable navsubbutton" key={element.name} onClick={() => window.location.href = element.link}>
-
                   {element.name}
                 </button>
               ))}
