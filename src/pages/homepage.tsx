@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Helmet, HelmetProvider } from "react-helmet-async";
+import { HelmetProvider } from "react-helmet-async";
 import '../components/images/OxfordLogo.png';
 import '../components/scss/home.scss';
 import "bootstrap/dist/css/bootstrap.min.css";

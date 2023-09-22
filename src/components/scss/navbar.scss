@@ -119,11 +119,11 @@
 
         #BETALabel {
           font-size: 2vw;
-          font-family: "Monsterrat", sans-serif;
-          font-weight: 200;
+          font-weight: bold;
           width: 100%;
           align-items: center;
           text-align: center;
+          letter-spacing: 2px;
           &.transparent {
             opacity: 1;
             transition: opacity 0.15s ease-in-out;

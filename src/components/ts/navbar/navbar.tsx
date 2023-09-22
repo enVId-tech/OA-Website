@@ -9,6 +9,11 @@ interface NavbarProps {
   props?: number;
 }
 
+interface NavbarElementsData {
+  name: string;
+  link: string;
+}
+
 const Navbar: React.FC<NavbarProps> = ({ props = -Infinity }: NavbarProps) => {
   const [backgroundTransparent, setBackgroundTransparent] = useState<boolean>(true);
   const [activeTable, setActiveTable] = useState<string | null>(null);
@@ -30,11 +35,11 @@ const Navbar: React.FC<NavbarProps> = ({ props = -Infinity }: NavbarProps) => {
   };
 
   // All the elements found here: https://oxford.auhsd.us/ada/sitemap.cfm?s=9
-  const SchoolButtonsElements: string[] = getNavBarElements("School");
-  const StudentButtonsElements: string[] = getNavBarElements("Student");
-  const ParentButtonsElements: string[] = getNavBarElements("Parent");
-  const FacultyButtonsTable: string[] = getNavBarElements("Faculty");
-  const ContactButtonsElements: string[] = getNavBarElements("Contact");
+  const SchoolButtonsElements: NavbarElementsData[] = getNavBarElements("School");
+  const StudentButtonsElements: NavbarElementsData[] = getNavBarElements("Student");
+  const ParentButtonsElements: NavbarElementsData[] = getNavBarElements("Parent");
+  const FacultyButtonsTable: NavbarElementsData[] = getNavBarElements("Faculty");
+  const ContactButtonsElements: NavbarElementsData[] = getNavBarElements("Contact");
 
   useEffect(() => {
     const scrollY: number = window.scrollY;
@@ -114,42 +119,42 @@ const Navbar: React.FC<NavbarProps> = ({ props = -Infinity }: NavbarProps) => {
             >BETA: Labels will be optimized per section later on.</label>
             <div id="SchoolButtonsTable" className={`table ${backgroundTransparent ? "transparent" : "opaque"} ${activeTable === "School" ? "shown" : "hidden"}`}>
               {/* School buttons table */}
-              {SchoolButtonsElements.map((element: string) => (
-                <button className="navtable navsubbutton" key={element}>
-                  {element}
-
+              {SchoolButtonsElements.map((element: NavbarElementsData) => (
+                <button className="navtable navsubbutton" key={element.name} onClick={() => window.location.href = element.link}>
+                  {element.name}
                 </button>
               ))}
             </div>
             <div id="StudentButtonsTable" className={`table ${backgroundTransparent ? "transparent" : "opaque"} ${activeTable === "Student" ? "shown" : "hidden"}`}>
               {/* Student buttons table */}
-              {StudentButtonsElements.map((element: string) => (
-                <button className="navtable navsubbutton" key={element}>
-                  {element}
+              {StudentButtonsElements.map((element: NavbarElementsData) => (
+                <button className="navtable navsubbutton" key={element.name} onClick={() => window.location.href = element.link}>
+                  {element.name}
                 </button>
               ))}
             </div>
             <div id="ParentButtonsTable" className={`table ${backgroundTransparent ? "transparent" : "opaque"} ${activeTable === "Parent" ? "shown" : "hidden"}`}>
               {/* Parent buttons table */}
-              {ParentButtonsElements.map((element: string) => (
-                <button className="navtable navsubbutton" key={element}>
-                  {element}
+              {ParentButtonsElements.map((element: NavbarElementsData) => (
+                <button className="navtable navsubbutton" key={element.name} onClick={() => window.location.href = element.link}>
+                  {element.name}
                 </button>
               ))}
             </div>
             <div id="FacultyButtonsTable" className={`table ${backgroundTransparent ? "transparent" : "opaque"} ${activeTable === "Faculty" ? "shown" : "hidden"}`}>
               {/* Faculty buttons table */}
-              {FacultyButtonsTable.map((element: string) => (
-                <button className="navtable navsubbutton" key={element}>
-                  {element}
+              {FacultyButtonsTable.map((element: NavbarElementsData) => (
+                <button className="navtable navsubbutton" key={element.name} onClick={() => window.location.href = element.link}>
+                  {element.name}
                 </button>
               ))}
             </div>
             <div id="ContactButtonsTable" className={`table ${backgroundTransparent ? "transparent" : "opaque"} ${activeTable === "Contact" ? "shown" : "hidden"}`}>
               {/* Contact buttons table */}
-              {ContactButtonsElements.map((element: string) => (
-                <button className="navtable navsubbutton" key={element}>
-                  {element}
+              {ContactButtonsElements.map((element: NavbarElementsData) => (
+                <button className="navtable navsubbutton" key={element.name} onClick={() => window.location.href = element.link}>
+
+                  {element.name}
                 </button>
               ))}
             </div>

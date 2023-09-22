@@ -20,6 +20,7 @@ html {
 #HomePage {
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 
     #Title {
         font-family: 'Raleway', sans-serif;
