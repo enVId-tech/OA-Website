@@ -1,6 +1,6 @@
 {
   "name": "frontpage",
-  "version": "11",
+  "version": "12",
   "private": true,
   "dependencies": {
     "@types/react-dom": "^18.2.7",

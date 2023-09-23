@@ -22,7 +22,7 @@ const HomePage = () => {
             const newBackgroundPositionY = -34 - scrollY / 128;
             setBackgroundPositionY(newBackgroundPositionY);
 
-            const newTitlePositionY = scrollY / 32;
+            const newTitlePositionY = scrollY / 30;
             setTitlePositionY(newTitlePositionY);
         };
 
@@ -108,7 +108,7 @@ const HomePage = () => {
                         <div id="AdmissionsText">
                             <h1 id="AdmissionsMainLabel">Oxford Academy is an admissions-only campus</h1>
                             <h1 id="AdmissionsOpening">Admissions are open in November for 7th, 8th, and 9th graders</h1>
-                            <button id="Apply">More information available here!</button>
+                            <button id="Apply" onClick={() => window.location.href = '/admissions'}>More information available here!</button>
                         </div>
                     </div>
                 </div>

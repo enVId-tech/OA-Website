@@ -1,10 +1,12 @@
 import React from "react";
-import PageTemplate from "../../components/ts/PageTemplate";
+import Footer from "../../components/ts/footer/Footer";
+import Navbar from "../../components/ts/navbar/navbar";
 
 const Clubs = () => {
     return (
         <div id="Clubs">
-            <PageTemplate title="Clubs" />
+            <Navbar />
+            <Footer title="Clubs" />
         </div>
     );
 }

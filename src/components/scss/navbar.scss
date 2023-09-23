@@ -78,6 +78,8 @@
       width: 100vw;
 
       .table {
+        display: grid;
+        transition: all 0.15s ease-in-out;
         &.transparent {
           background-color: rgba(0, 0, 0, 0.95);
           transition: all 0.15s ease-in-out;
@@ -106,15 +108,13 @@
         }
 
         &.shown {
-          display: grid;
           opacity: 1;
-          transition: opacity 0.15s ease-in-out;
+          transition: all 0.15s ease-in-out 0.15s;
         }
 
         &.hidden {
-          display: none;
           opacity: 0;
-          transition: opacity 0.15s ease-in-out 0.15s;
+          transition: all 0.15s ease-in-out 0.15s;
         }
 
         #BETALabel {
@@ -144,74 +144,10 @@
           }
         }
 
-        #SchoolButtonsTable {
-          align-items: center;
-          justify-content: space-around;
-          width: 100vw;
-          height: auto;
-          transition: all 0.15s ease-in-out;
-          padding-left: 1vw;
-          padding-right: 1vw;
-          grid-template-columns: 1fr 1fr 1fr 1fr;
-          grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-          grid-gap: 20px 50px;
-          align-content: space-between;
-          color: white;
-          padding-top: 3vh;
-          padding-bottom: 3vh;
-        }
-
-        #StudentButtonsTable {
-          align-items: center;
-          justify-content: space-around;
-          width: 100vw;
-          height: auto;
-          transition: all 0.15s ease-in-out;
-          padding-left: 1vw;
-          padding-right: 1vw;
-          grid-template-columns: 1fr 1fr 1fr 1fr;
-          grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-          grid-gap: 20px 50px;
-          align-content: space-between;
-          color: white;
-          padding-top: 3vh;
-          padding-bottom: 3vh;
-        }
-
-        #ParentButtonsTable {
-          align-items: center;
-          justify-content: space-around;
-          width: 100vw;
-          height: auto;
-          transition: all 0.15s ease-in-out;
-          padding-left: 1vw;
-          padding-right: 1vw;
-          grid-template-columns: 1fr 1fr 1fr 1fr;
-          grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-          grid-gap: 20px 50px;
-          align-content: space-between;
-          color: white;
-          padding-top: 3vh;
-          padding-bottom: 3vh;
-        }
-
-        #FacultyButtonsTable {
-          align-items: center;
-          justify-content: space-around;
-          width: 100vw;
-          height: auto;
-          transition: all 0.15s ease-in-out;
-          padding-left: 1vw;
-          padding-right: 1vw;
-          grid-template-columns: 1fr 1fr 1fr 1fr;
-          grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-          grid-gap: 20px 50px;
-          align-content: space-between;
-          color: white;
-          padding-top: 3vh;
-          padding-bottom: 3vh;
-        }
-
+        #SchoolButtonsTable, 
+        #StudentButtonsTable, 
+        #ParentButtonsTable,
+        #FacultyButtonsTable,
         #ContactButtonsTable {
           align-items: center;
           justify-content: space-around;

@@ -61,6 +61,13 @@ const Navbar: React.FC<NavbarProps> = ({ props = -Infinity }: NavbarProps) => {
         <div id="MainButtons">
           <img id="MainImage" src="OxfordLogo.png" alt="Oxford Logo" onClick={handleLogoClick} style={{ cursor: "pointer" }} />
           <button
+            id="Home"
+            className={`navbutton ${activeTable === null ? "active" : "hidden"}`}
+            onClick={() => window.location.href = "/"}
+          >
+            Home
+          </button>
+          <button
             id="School"
             className={`navbutton ${activeTable === "School" ? "active" : "hidden"}`}
             onClick={() => window.location.href = "/school-table"}
@@ -117,52 +124,67 @@ const Navbar: React.FC<NavbarProps> = ({ props = -Infinity }: NavbarProps) => {
             <label id="BETALabel"
               className={`label ${activeTable ? "transparent" : "opaque"} ${backgroundTransparent ? "top" : "ntop"}`}
             >BETA: Labels will be optimized per section later on.</label>
-            <div 
-            id="SchoolButtonsTable"
+            <div
+              id="SchoolButtonsTable"
               className={`table ${backgroundTransparent ? "transparent" : "opaque"} ${activeTable === "School" ? "shown" : "hidden"}`}>
               {/* School buttons table */}
               {SchoolButtonsElements.map((element: NavbarElementsData) => (
-                <button className="navtable navsubbutton" key={element.name} onClick={() => window.location.href = element.link}>
+                <button
+                  className="navtable navsubbutton"
+                  key={element.name}
+                  onClick={() => window.location.href = element.link}>
                   {element.name}
                 </button>
               ))}
             </div>
-            <div 
-            id="StudentButtonsTable" 
-            className={`table ${backgroundTransparent ? "transparent" : "opaque"} ${activeTable === "Student" ? "shown" : "hidden"}`}>
+            <div
+              id="StudentButtonsTable"
+              className={`table ${backgroundTransparent ? "transparent" : "opaque"} ${activeTable === "Student" ? "shown" : "hidden"}`}>
               {/* Student buttons table */}
               {StudentButtonsElements.map((element: NavbarElementsData) => (
-                <button className="navtable navsubbutton" key={element.name} onClick={() => window.location.href = element.link}>
+                <button
+                  className="navtable navsubbutton"
+                  key={element.name}
+                  onClick={() => window.location.href = element.link}>
                   {element.name}
                 </button>
               ))}
             </div>
-            <div 
-            id="ParentButtonsTable" 
-            className={`table ${backgroundTransparent ? "transparent" : "opaque"} ${activeTable === "Parent" ? "shown" : "hidden"}`}>
+            <div
+              id="ParentButtonsTable"
+              className={`table ${backgroundTransparent ? "transparent" : "opaque"} ${activeTable === "Parent" ? "shown" : "hidden"}`}>
               {/* Parent buttons table */}
               {ParentButtonsElements.map((element: NavbarElementsData) => (
-                <button className="navtable navsubbutton" key={element.name} onClick={() => window.location.href = element.link}>
+                <button
+                  className="navtable navsubbutton"
+                  key={element.name}
+                  onClick={() => window.location.href = element.link}>
                   {element.name}
                 </button>
               ))}
             </div>
-            <div 
-            id="FacultyButtonsTable" 
-            className={`table ${backgroundTransparent ? "transparent" : "opaque"} ${activeTable === "Faculty" ? "shown" : "hidden"}`}>
+            <div
+              id="FacultyButtonsTable"
+              className={`table ${backgroundTransparent ? "transparent" : "opaque"} ${activeTable === "Faculty" ? "shown" : "hidden"}`}>
               {/* Faculty buttons table */}
               {FacultyButtonsTable.map((element: NavbarElementsData) => (
-                <button className="navtable navsubbutton" key={element.name} onClick={() => window.location.href = element.link}>
+                <button
+                  className="navtable navsubbutton"
+                  key={element.name}
+                  onClick={() => window.location.href = element.link}>
                   {element.name}
                 </button>
               ))}
             </div>
-            <div 
-            id="ContactButtonsTable" 
-            className={`table ${backgroundTransparent ? "transparent" : "opaque"} ${activeTable === "Contact" ? "shown" : "hidden"}`}>
+            <div
+              id="ContactButtonsTable"
+              className={`table ${backgroundTransparent ? "transparent" : "opaque"} ${activeTable === "Contact" ? "shown" : "hidden"}`}>
               {/* Contact buttons table */}
               {ContactButtonsElements.map((element: NavbarElementsData) => (
-                <button className="navtable navsubbutton" key={element.name} onClick={() => window.location.href = element.link}>
+                <button
+                  className="navtable navsubbutton"
+                  key={element.name}
+                  onClick={() => window.location.href = element.link}>
                   {element.name}
                 </button>
               ))}
