@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
-import { HelmetProvider } from "react-helmet-async";
+/* eslint-disable jsx-a11y/alt-text */
+import React, { useRef } from "react";
 import '../components/images/OxfordLogo.png';
 import '../components/scss/pages/home.scss';
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -9,53 +9,34 @@ import ClassHelmet from "../components/ts/title";
 import PageTitle from "../components/ts/pagetitle/pagetitle";
 
 const HomePage = () => {
-    const [backgroundPositionY, setBackgroundPositionY] = useState(-34);
-    const [titlePositionY, setTitlePositionY] = useState(0);
     // Create refs for main div elements
     const aboutRef = useRef(null);
     const ratingsRef = useRef(null);
     const admissionsRef = useRef(null);
     const footerRef = useRef(null);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            const scrollY = window.scrollY;
-            const newBackgroundPositionY = -34 - scrollY / 128;
-            setBackgroundPositionY(newBackgroundPositionY);
+    const applyVisibleClass: (ref: React.RefObject<HTMLDivElement>) => void = (ref) => {
+        if (ref.current !== null) {
+            const rect = ref.current.getBoundingClientRect();
+            const topPosition = rect.top + window.scrollY;
+            const bottomPosition = rect.bottom + window.scrollY;
 
-            const newTitlePositionY = scrollY / 30;
-            setTitlePositionY(newTitlePositionY);
-        };
+            const buffer = 0.25 * window.innerHeight;
 
-        const applyVisibleClass: (ref: React.RefObject<HTMLDivElement>) => void = (ref) => {
-
-            if (ref.current !== null) {
-                const rect = ref.current.getBoundingClientRect();
-                const topPosition = rect.top + window.scrollY;
-                const bottomPosition = rect.bottom + window.scrollY;
-
-                const buffer = 0.25 * window.innerHeight;
-
-                if (topPosition < window.scrollY + window.innerHeight - buffer && bottomPosition > window.scrollY + buffer) {
-                    ref.current.classList.add("visible-class");
-                }
+            if (topPosition < window.scrollY + window.innerHeight - buffer && bottomPosition > window.scrollY + buffer) {
+                ref.current.classList.add("visible-class");
             }
-        };
+        }
+    };
 
-        const handleVisibleClass = () => {
-            applyVisibleClass(aboutRef);
-            applyVisibleClass(ratingsRef);
-            applyVisibleClass(admissionsRef);
-            applyVisibleClass(footerRef);
-        };
+    const handleVisibleClass = () => {
+        applyVisibleClass(aboutRef);
+        applyVisibleClass(ratingsRef);
+        applyVisibleClass(admissionsRef);
+        applyVisibleClass(footerRef);
+    };
 
-        window.addEventListener("scroll", handleVisibleClass);
-        window.addEventListener("scroll", handleScroll);
-
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, []);
+    window.addEventListener("scroll", handleVisibleClass);
 
     const scrollToTop = () => {
         window.scrollTo({
@@ -74,7 +55,7 @@ const HomePage = () => {
             <Navbar heightChange={790} />
             <div id="HomePage">
                 {/* Title Tab */}
-                <PageTitle height={100} mainText="Oxford Academy" subText="Conceiving the next wave of innovation." oxfLogo={true} backgroundLink="OxfFrontImage.jpg" percentageDown={32} />
+                <PageTitle height={100} mainText="Oxford Academy" subText="Conceiving the next wave of innovation." oxfLogo={true} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={1200} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
 
                 {/* About Tab */}
                 <div id="About" ref={aboutRef}>

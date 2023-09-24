@@ -1,0 +1,177 @@
+#MainClubs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: fit-content;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    background-color: #f5f5f5;
+    border: 0;
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: none;
+    transition: all 0.3s ease-in-out;
+
+    .Club {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        width: 100vw;
+        height: 65vh;
+        padding: 0 0 0 0;
+        background-color: #f5f5f5;
+        border: 0;
+        border-radius: 0;
+        overflow: hidden;
+        box-shadow: none;
+        transition: all 0.3s ease-in-out;
+        font-family: 'Raleway', sans-serif;
+        align-items: center;
+        justify-content: space-around;
+
+        .ClubTitleDiv {
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease-in-out;
+
+            .ClubTitle {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                width: 100%;
+                height: 10vh;
+                padding: 0 0 0 0;
+                margin: 0 0 0 0;
+                border: 0;
+                border-radius: 0;
+                overflow: hidden;
+                box-shadow: none;
+                transition: all 0.3s ease-in-out;
+                font-size: 3vw;
+            }
+
+            .ClubDescriptionDiv {
+                display: flex;
+                width: 40vw;
+                height: auto;
+                font-weight: bold;
+
+                .ClubDescription {
+                    font-size: 1.4vw;
+                }
+            }
+        }
+    }
+
+    .Club2 {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: flex-start;
+        width: 100vw;
+        height: 65vh;
+        padding: 0 0 0 0;
+        border: 0;
+        border-radius: 0;
+        overflow: hidden;
+        box-shadow: none;
+        transition: all 0.3s ease-in-out;
+        font-family: 'Raleway', sans-serif;
+        background-color: #0099ff;
+        align-items: center;
+        justify-content: space-around;
+
+        .ClubTitleDiv {
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease-in-out;
+
+            .ClubTitle {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-end;
+                width: 100%;
+                height: 10vh;
+                padding: 0 0 0 0;
+                margin: 0 0 0 0;
+                border: 0;
+                border-radius: 0;
+                overflow: hidden;
+                box-shadow: none;
+                transition: all 0.3s ease-in-out;
+                font-size: 3vw;
+            }
+
+            .ClubDescriptionDiv {
+                display: flex;
+                width: 40vw;
+                height: auto;
+                font-weight: bold;
+
+                .ClubDescription {
+                    font-size: 1.4vw;
+                    text-align: right;
+                }
+            }
+        }
+    }
+
+    #GeneralClubs {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        #Key {
+            font-size: 4vw;
+            font-weight: bold;
+            font-family: 'Raleway', sans-serif;
+            margin-bottom: 8vh;
+            margin-top: 5vh;
+        }
+
+        .ClubKey {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+
+            .ClubKeyTitleDiv {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: auto;
+                padding: 0 0 0 0;
+                margin: 0 0 0 0;
+                border: 0;
+                border-radius: 0;
+                overflow: hidden;
+                box-shadow: none;
+                transition: all 0.3s ease-in-out;
+                font-size: 3vw;
+                font-weight: bold;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+                .ClubKeyTitle {
+                    display: flex;
+                    text-align: center;
+                    font-size: 1.8vw;
+                }
+            }
+
+            .ClubsList {
+                .ClubTitle {
+                    display: flex;
+                    text-align: center;
+                    font-size: 1vw;
+                    justify-content: center;
+                }
+
+                margin-bottom: 8vh;
+                text-align: center;
+            }
+        }
+    }
+}

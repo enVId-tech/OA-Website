@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 // Disabling a specific eslint rule for this file
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import '../../scss/components/navbar.scss';
 import getNavBarElements from './navbarelements';
 
@@ -42,21 +42,37 @@ const Navbar: React.FC<NavbarProps> = ({ heightChange = -Infinity }: NavbarProps
   const ContactButtonsElements: NavbarElementsData[] = getNavBarElements("Contact");
 
   useEffect(() => {
-    const scrollY: number = window.scrollY;
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      if (scrollY > heightChange) {
+        setBackgroundTransparent(false);
+      } else {
+        setBackgroundTransparent(true);
+      }
+    };
 
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [heightChange]); // Only re-run the effect if heightChange changes
+
+  window.onload = () => {
+    const scrollY = window.scrollY;
     if (scrollY > heightChange) {
       setBackgroundTransparent(false);
     } else {
       setBackgroundTransparent(true);
     }
-  }, [window.scrollY]);
+  }
 
   const handleLogoClick = () => {
     window.location.href = "/";
   }
 
   return (
-    <nav id="NavbarMain" className={backgroundTransparent ? "transparent" : "opaque"}>
+    <nav id="NavbarMain" className={`${backgroundTransparent ? "transparent" : "opaque"}`}>
       <div id="Topbar">
         <div id="MainButtons">
           <img id="MainImage" src="images/OxfordLogo.png" alt="Oxford Logo" onClick={handleLogoClick} style={{ cursor: "pointer" }} />

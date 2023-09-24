@@ -28,7 +28,7 @@ const Footer = (pagetitle: PageTemplateProps) => {
                                 This website is not affiliated with Oxford Academy.
                                 <br />
                                 <br />
-                                Erick Tran, 2023
+                                <a href="https://github.com/enVId-tech">Erick Tran, 2023</a>
                             </h1>
                         </div>
                     </div>

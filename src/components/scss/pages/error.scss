@@ -1,0 +1,46 @@
+#ErrorMain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #f5f5f5;
+  #ErrorMain {
+    font-size: 10rem;
+    font-weight: 700;
+    color: #e74c3c;
+  }
+  #ErrorMessage {
+    font-size: 5rem;
+    font-weight: 700;
+    color: #e74c3c;
+    margin: 0;
+  }
+  
+  #ErrorDescription {
+    font-size: 3rem;
+    font-weight: 400;
+    color: #e74c3c;
+    margin-bottom: 10vh;
+  }
+
+  #ErrorLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 10vh;
+    transition: all 0.3s ease-in-out;
+    font-size: 3rem;
+    font-weight: 400;
+    color: #e74c3c;
+    margin: 0;
+    a {
+      text-decoration: none;
+      color: #e74c3c;
+      margin: 0;
+    }
+  }
+}
