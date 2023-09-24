@@ -1,7 +1,6 @@
 import React from "react";
 import Navbar from "../components/ts/navbar/navbar";
 import Footer from "../components/ts/footer/Footer";
-import PageTitle from '../components/ts/pagetitle/pagetitle';
 import '../components/scss/pages/error.scss';
 
 const ErrorPage = () => {
