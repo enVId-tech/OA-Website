@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import { HelmetProvider } from "react-helmet-async";
 import '../components/images/OxfordLogo.png';
-import '../components/scss/home.scss';
+import '../components/scss/pages/home.scss';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import Navbar from "../components/ts/navbar/navbar";
 import ClassHelmet from "../components/ts/title";
+import PageTitle from "../components/ts/pagetitle/pagetitle";
 
 const HomePage = () => {
     const [backgroundPositionY, setBackgroundPositionY] = useState(-34);
@@ -68,23 +69,17 @@ const HomePage = () => {
     }
 
     return (
-        <HelmetProvider>
+        <div id="HomePageMAIN">
             <ClassHelmet title="Home" />
-            <Navbar props={790} />
+            <Navbar heightChange={790} />
             <div id="HomePage">
                 {/* Title Tab */}
-                <div id="Title" style={{ backgroundPositionY: `${backgroundPositionY}vh` }}>
-                    <img id="MainImage" src="OxfordLogo.png" style={{ transform: `translateY(${titlePositionY}vh)` }} />
-                    <div id="MainText">
-                        <h1 id="OxfAca" style={{ transform: `translateY(${titlePositionY}vh)` }}>Oxford Academy</h1>
-                        <h5 id="OxfAcaSub" style={{ transform: `translateY(${titlePositionY}vh)` }}>Conceiving the next wave of innovation.</h5>
-                    </div>
-                </div>
+                <PageTitle height={100} mainText="Oxford Academy" subText="Conceiving the next wave of innovation." oxfLogo={true} backgroundLink="OxfFrontImage.jpg" percentageDown={32} />
 
                 {/* About Tab */}
                 <div id="About" ref={aboutRef}>
                     {/* Add class "visible-class" when this div is in the viewport */}
-                    <img id="AboutImage" src="OxfordAcademyFullLogo.webp" />
+                    <img id="AboutImage" src="images/OxfordAcademyFullLogo.webp" />
                     <h1 id="AboutLabel">Oxford Academy is a community of innovators dedicated to nurturing the holistic growth of life-long learners who will lead and serve an evolving local and global society.</h1>
                 </div>
 
@@ -136,7 +131,7 @@ const HomePage = () => {
                     </div>
                 </div>
             </div>
-        </HelmetProvider>
+        </div>
     )
 }
 

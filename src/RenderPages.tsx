@@ -1,6 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
+// SCSS
+import './components/scss/pages/pages.scss';
+
 // Pages
 import HomePage from './pages/homepage';
 import Clubs from './pages/subpages/clubs';

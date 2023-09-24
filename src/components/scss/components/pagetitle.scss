@@ -1,0 +1,82 @@
+#Title {
+    font-family: 'Raleway', sans-serif;
+    display: flex;
+    width: 100%;
+    height: 90vh;
+    background-color: #747474;
+    flex-direction: row;
+    align-items: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../../images/OxfFrontImage.jpg);
+    background-position: -1vw -34vh;
+    overflow: hidden;
+
+    #OxfLogo {
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        border-radius: 100px;
+        margin-left: 40vw;
+        width: 15vw;
+        height: auto;
+        animation: fadeIn 1s 0.5s ease-in-out forwards;
+
+        @keyframes fadeIn {
+            0% {
+                margin-left: 40vw;
+            }
+
+            100% {
+                margin-left: 16.5vw;
+            }
+
+        }
+    }
+
+    #MainText {
+        margin-left: 8vw;
+
+        #OxfAcaMain {
+            font-size: 5vw;
+            font-weight: bold;
+            color: #ffffff;
+            letter-spacing: 0.2vw;
+            opacity: 0;
+
+            &.oxf-aca-main {
+                animation: unfadeUp 0.75s 1.25s ease-in-out forwards;
+            }
+
+            &.n-oxf-aca-main {
+                animation: unfadeUp 0.75s 0.2s ease-in-out forwards;
+            }
+        }
+
+        #OxfAcaSub {
+            font-size: 2vw;
+            color: #ffffff;
+            font-weight: 500;
+            letter-spacing: 0.2vw;
+            opacity: 0;
+
+            &.oxf-aca-main {
+                animation: unfadeUp 0.75s 1.25s ease-in-out forwards;
+            }
+
+            &.n-oxf-aca-main {
+                animation: unfadeUp 0.75s 0.2s ease-in-out forwards;
+            }
+        }
+    }
+
+    @keyframes unfadeUp {
+        0% {
+            margin-top: 8vw;
+            opacity: 0;
+        }
+
+        100% {
+            margin-top: 0vw;
+            opacity: 1;
+        }
+    }
+}

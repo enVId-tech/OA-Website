@@ -2,11 +2,11 @@
 // Disabling a specific eslint rule for this file
 
 import React, { useState, useEffect, useRef } from "react";
-import '../../scss/navbar.scss';
+import '../../scss/components/navbar.scss';
 import getNavBarElements from './navbarelements';
 
 interface NavbarProps {
-  props?: number;
+  heightChange?: number;
 }
 
 interface NavbarElementsData {
@@ -14,7 +14,7 @@ interface NavbarElementsData {
   link: string;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ props = -Infinity }: NavbarProps) => {
+const Navbar: React.FC<NavbarProps> = ({ heightChange = -Infinity }: NavbarProps) => {
   const [backgroundTransparent, setBackgroundTransparent] = useState<boolean>(true);
   const [activeTable, setActiveTable] = useState<string | null>(null);
 
@@ -44,7 +44,7 @@ const Navbar: React.FC<NavbarProps> = ({ props = -Infinity }: NavbarProps) => {
   useEffect(() => {
     const scrollY: number = window.scrollY;
 
-    if (scrollY > props) {
+    if (scrollY > heightChange) {
       setBackgroundTransparent(false);
     } else {
       setBackgroundTransparent(true);
@@ -59,7 +59,7 @@ const Navbar: React.FC<NavbarProps> = ({ props = -Infinity }: NavbarProps) => {
     <nav id="NavbarMain" className={backgroundTransparent ? "transparent" : "opaque"}>
       <div id="Topbar">
         <div id="MainButtons">
-          <img id="MainImage" src="OxfordLogo.png" alt="Oxford Logo" onClick={handleLogoClick} style={{ cursor: "pointer" }} />
+          <img id="MainImage" src="images/OxfordLogo.png" alt="Oxford Logo" onClick={handleLogoClick} style={{ cursor: "pointer" }} />
           <button
             id="Home"
             className={`navbutton ${activeTable === null ? "active" : "hidden"}`}
@@ -128,9 +128,9 @@ const Navbar: React.FC<NavbarProps> = ({ props = -Infinity }: NavbarProps) => {
               id="SchoolButtonsTable"
               className={`table ${backgroundTransparent ? "transparent" : "opaque"} ${activeTable === "School" ? "shown" : "hidden"}`}>
               {/* School buttons table */}
-              {SchoolButtonsElements.map((element: NavbarElementsData) => (
+              {SchoolButtonsElements.map((element: NavbarElementsData, index: number) => (
                 <button
-                  className="navtable navsubbutton"
+                  className={`navtable navsubbutton ${index === 0 ? "first" : index} ${index === SchoolButtonsElements.length - 1 ? "last" : index}`}
                   key={element.name}
                   onClick={() => window.location.href = element.link}>
                   {element.name}
@@ -141,11 +141,12 @@ const Navbar: React.FC<NavbarProps> = ({ props = -Infinity }: NavbarProps) => {
               id="StudentButtonsTable"
               className={`table ${backgroundTransparent ? "transparent" : "opaque"} ${activeTable === "Student" ? "shown" : "hidden"}`}>
               {/* Student buttons table */}
-              {StudentButtonsElements.map((element: NavbarElementsData) => (
+              {StudentButtonsElements.map((element: NavbarElementsData, index: number) => (
                 <button
-                  className="navtable navsubbutton"
+                  className={`navtable navsubbutton ${index === 0 ? "first" : index} ${index === StudentButtonsElements.length - 1 ? "last" : index}`}
                   key={element.name}
-                  onClick={() => window.location.href = element.link}>
+                  onClick={() => window.location.href = element.link}
+                >
                   {element.name}
                 </button>
               ))}
@@ -154,9 +155,9 @@ const Navbar: React.FC<NavbarProps> = ({ props = -Infinity }: NavbarProps) => {
               id="ParentButtonsTable"
               className={`table ${backgroundTransparent ? "transparent" : "opaque"} ${activeTable === "Parent" ? "shown" : "hidden"}`}>
               {/* Parent buttons table */}
-              {ParentButtonsElements.map((element: NavbarElementsData) => (
+              {ParentButtonsElements.map((element: NavbarElementsData, index: number) => (
                 <button
-                  className="navtable navsubbutton"
+                  className={`navtable navsubbutton ${index === 0 ? "first" : index} ${index === ParentButtonsElements.length - 1 ? "last" : index}`}
                   key={element.name}
                   onClick={() => window.location.href = element.link}>
                   {element.name}
@@ -167,9 +168,9 @@ const Navbar: React.FC<NavbarProps> = ({ props = -Infinity }: NavbarProps) => {
               id="FacultyButtonsTable"
               className={`table ${backgroundTransparent ? "transparent" : "opaque"} ${activeTable === "Faculty" ? "shown" : "hidden"}`}>
               {/* Faculty buttons table */}
-              {FacultyButtonsTable.map((element: NavbarElementsData) => (
+              {FacultyButtonsTable.map((element: NavbarElementsData, index: number) => (
                 <button
-                  className="navtable navsubbutton"
+                  className={`navtable navsubbutton ${index === 0 ? "first" : index} ${index === FacultyButtonsTable.length - 1 ? "last" : index}`}
                   key={element.name}
                   onClick={() => window.location.href = element.link}>
                   {element.name}
@@ -180,9 +181,9 @@ const Navbar: React.FC<NavbarProps> = ({ props = -Infinity }: NavbarProps) => {
               id="ContactButtonsTable"
               className={`table ${backgroundTransparent ? "transparent" : "opaque"} ${activeTable === "Contact" ? "shown" : "hidden"}`}>
               {/* Contact buttons table */}
-              {ContactButtonsElements.map((element: NavbarElementsData) => (
+              {ContactButtonsElements.map((element: NavbarElementsData, index: number) => (
                 <button
-                  className="navtable navsubbutton"
+                  className={`navtable navsubbutton ${index === 0 ? "first" : index} ${index === ContactButtonsElements.length - 1 ? "last" : index}`}
                   key={element.name}
                   onClick={() => window.location.href = element.link}>
                   {element.name}
