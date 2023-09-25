@@ -35,10 +35,10 @@ function getNavBarElements(elements: string): NavbarElementsData[] {
         case "Student":
             return [
                 // An array containing strings representing student-related buttons
-                { name: "Aeries Student Portal", link: "/aeriesstudentportal" },
-                { name: "AP Exam", link: "/apexam" },
-                { name: "ASB Webstore", link: "/asbwebstore" },
-                { name: "AUHSD Course Catalog", link: "/auhsdcoursecatalog" },
+                { name: "Aeries Student Portal", link: "https://aeriesconnect.auhsd.us/auconnect" },
+                { name: "AP Exam", link: "https://www.auhsd.us/District/Department/14182-REGISTRATION-ASSESSMENT-AND-EVALUATION/80300-AP-Exam-2020.html" },
+                { name: "ASB Webstore", link: "https://oxfordacademy.myschoolcentral.com/" },
+                { name: "AUHSD Course Catalog", link: "https://coursecatalog.auhsd.us/" },
                 { name: "Athletics", link: "/athletics" },
                 { name: "Bell Schedule", link: "/bellschedule" },
                 { name: "Booktracks", link: "/booktracks" },
@@ -73,7 +73,7 @@ function getNavBarElements(elements: string): NavbarElementsData[] {
                 // An array containing strings representing parent-related buttons
                 { name: "Aeries Parent Portal", link: "/aeriesparentportal" },
                 { name: "Athletics", link: "/athletics" },
-                { name: "AUHSD Course Catalog", link: "/auhsdcoursecatalog" },
+                { name: "AUHSD Course Catalog", link: "https://coursecatalog.auhsd.us/" },
                 { name: "Bell Schedule", link: "/bellschedule" },
                 { name: "Booktracks", link: "/booktracks" },
                 { name: "Cafeteria Menu", link: "/cafeteriamenu" },
