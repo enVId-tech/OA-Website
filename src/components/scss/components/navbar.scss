@@ -87,7 +87,13 @@
           color: white;
 
           .navsubbutton {
-            color: white;
+            &.green {
+              color: #00ff00;
+            }
+
+            &.red {
+              color: #ff0000;
+            }
 
             &:hover {
               color: #8b8b8b;
@@ -100,7 +106,13 @@
           transition: all 0.15s ease-in-out;
 
           .navsubbutton {
-            color: black;
+            &.green {
+              color: #008f00;
+            }
+
+            &.red {
+              color: #ff0000;
+            }
 
             &:hover {
               color: #666666;

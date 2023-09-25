@@ -12,6 +12,7 @@ interface NavbarProps {
 interface NavbarElementsData {
   name: string;
   link: string;
+  hasWorkingLink: boolean;
 }
 
 const Navbar: React.FC<NavbarProps> = ({ heightChange = -Infinity }: NavbarProps) => {
@@ -146,7 +147,7 @@ const Navbar: React.FC<NavbarProps> = ({ heightChange = -Infinity }: NavbarProps
               {/* School buttons table */}
               {SchoolButtonsElements.map((element: NavbarElementsData, index: number) => (
                 <button
-                  className={`navtable navsubbutton ${index === 0 ? "first" : index} ${index === SchoolButtonsElements.length - 1 ? "last" : index}`}
+                  className={`navtable navsubbutton ${index === 0 ? "first" : index} ${index === SchoolButtonsElements.length - 1 ? "last" : index} ${element.hasWorkingLink ? "green" : "red"}`}
                   key={element.name}
                   onClick={() => window.location.href = element.link}>
                   {element.name}
@@ -159,7 +160,7 @@ const Navbar: React.FC<NavbarProps> = ({ heightChange = -Infinity }: NavbarProps
               {/* Student buttons table */}
               {StudentButtonsElements.map((element: NavbarElementsData, index: number) => (
                 <button
-                  className={`navtable navsubbutton ${index === 0 ? "first" : index} ${index === StudentButtonsElements.length - 1 ? "last" : index}`}
+                  className={`navtable navsubbutton ${index === 0 ? "first" : index} ${index === StudentButtonsElements.length - 1 ? "last" : index} ${element.hasWorkingLink ? "green" : "red"}`}
                   key={element.name}
                   onClick={() => window.location.href = element.link}
                 >
@@ -173,7 +174,7 @@ const Navbar: React.FC<NavbarProps> = ({ heightChange = -Infinity }: NavbarProps
               {/* Parent buttons table */}
               {ParentButtonsElements.map((element: NavbarElementsData, index: number) => (
                 <button
-                  className={`navtable navsubbutton ${index === 0 ? "first" : index} ${index === ParentButtonsElements.length - 1 ? "last" : index}`}
+                  className={`navtable navsubbutton ${index === 0 ? "first" : index} ${index === ParentButtonsElements.length - 1 ? "last" : index} ${element.hasWorkingLink ? "green" : "red"}`}
                   key={element.name}
                   onClick={() => window.location.href = element.link}>
                   {element.name}
@@ -186,7 +187,7 @@ const Navbar: React.FC<NavbarProps> = ({ heightChange = -Infinity }: NavbarProps
               {/* Faculty buttons table */}
               {FacultyButtonsTable.map((element: NavbarElementsData, index: number) => (
                 <button
-                  className={`navtable navsubbutton ${index === 0 ? "first" : index} ${index === FacultyButtonsTable.length - 1 ? "last" : index}`}
+                  className={`navtable navsubbutton ${index === 0 ? "first" : index} ${index === FacultyButtonsTable.length - 1 ? "last" : index} ${element.hasWorkingLink ? "green" : "red"}`}
                   key={element.name}
                   onClick={() => window.location.href = element.link}>
                   {element.name}
@@ -199,7 +200,7 @@ const Navbar: React.FC<NavbarProps> = ({ heightChange = -Infinity }: NavbarProps
               {/* Contact buttons table */}
               {ContactButtonsElements.map((element: NavbarElementsData, index: number) => (
                 <button
-                  className={`navtable navsubbutton ${index === 0 ? "first" : index} ${index === ContactButtonsElements.length - 1 ? "last" : index}`}
+                  className={`navtable navsubbutton ${index === 0 ? "first" : index} ${index === ContactButtonsElements.length - 1 ? "last" : index} ${element.hasWorkingLink ? "green" : "red"}`}
                   key={element.name}
                   onClick={() => window.location.href = element.link}>
                   {element.name}
