@@ -10,7 +10,7 @@ function getNavBarElements(elements: string): NavbarElementsData[] {
                 // An array containing strings representing school-related buttons
                 { name: "Administration", link: "/administration" },
                 { name: "Admissions", link: "/admissions" },
-                { name: "Alumni", link: "/alumni" },
+                { name: "Alumni", link: "http://oxfordalumninetwork.com/" },
                 { name: "Athletics", link: "/athletics" },
                 { name: "Bell Schedule", link: "/bellschedule" },
                 { name: "Calendar", link: "/calendar" },
@@ -134,7 +134,7 @@ function getNavBarElements(elements: string): NavbarElementsData[] {
                 // An array containing strings representing school-related buttons
                 { name: "Administration", link: "/administration" },
                 { name: "Admissions", link: "/admissions" },
-                { name: "Alumni", link: "/alumni" },
+                { name: "Alumni", link: "http://oxfordalumninetwork.com/" },
                 { name: "Athletics", link: "/athletics" },
                 { name: "Bell Schedule", link: "/bellschedule" },
                 { name: "Calendar", link: "/calendar" },

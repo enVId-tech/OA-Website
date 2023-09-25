@@ -13,6 +13,7 @@ const ErrorPage = () => {
                 <ul id="ErrorLinks">
                     <a href="/">- Home</a>
                     <a href="/clubs">- Clubs</a>
+                    <a href="/principalsmessage">- Principals Message</a>
                 </ul>
             </div>
             <Footer title="Error" />

@@ -1,0 +1,27 @@
+#PrincipalsMessage {
+    #PrincipalsMessageTitle {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+    #PrincipalsMessageMain {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 2rem;
+        margin-left: 10vw;
+        margin-right: 10vw;
+        font-size: 1.5rem;
+        #Principal {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+    }
+}
