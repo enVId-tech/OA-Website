@@ -23,6 +23,7 @@ const ErrorPage = () => {
             <div id="ErrorMain">
                 <h1 id="ErrorMessage">Error 404, this page does not exist!</h1>
                 <p id="ErrorDescription">You will be redirected to home in {time.toFixed(1)} seconds.</p>
+                <h1 id="ErrorDescription">Hint: Anything green in the top bar has a link!</h1>
             </div>
             <Footer title="Error" />
         </div>
