@@ -1,0 +1,91 @@
+#Administration {
+    #AdministrationContent {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        #MainDiv {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            #AdminTitle {
+                font-size: 5rem;
+                font-weight: 300;
+                margin-bottom: 3rem;
+                margin-top: 3rem;
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        #AdminDiv {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            width: 100%;
+            margin-bottom: 3rem;
+            align-items: center;
+            align-content: center;
+
+            $background-size: cover;
+            $background-position: center;
+            $background-repeat: no-repeat;
+            $width: 30%;
+            $height: auto;
+            $border-radius: 1rem;
+
+            .AdminDiv {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                align-content: center;
+                width: 100%;
+                margin-bottom: 3rem;
+                .AdminTitle {
+                    font-size: 2rem;
+                    font-weight: 300;
+                    margin-bottom: 3rem;
+                    margin-top: 3rem;
+                    width: 100%;
+                    text-align: center;
+                }
+
+                .AdminName {
+                    font-size: 2rem;
+                    font-weight: 300;
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+            #AP1 {
+                background-size: $background-size;
+                background-position: $background-position;
+                background-repeat: $background-repeat;
+                width: $width;
+                height: $height;
+                border-radius: $border-radius;
+            }
+
+            #AP2 {
+                background-size: $background-size;
+                background-position: $background-position;
+                background-repeat: $background-repeat;
+                width: $width;
+                height: $height;
+                border-radius: $border-radius;
+            }
+
+            #P1 {
+                background-size: $background-size;
+                background-position: $background-position;
+                background-repeat: $background-repeat;
+                width: $width;
+                height: $height;
+                border-radius: $border-radius;
+            }
+        }
+    }
+}

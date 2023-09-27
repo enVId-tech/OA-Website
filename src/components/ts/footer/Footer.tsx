@@ -13,26 +13,24 @@ const Footer = (pagetitle: PageTemplateProps) => {
         <div id='Footers'>
             <ClassHelmet title={pagetitle.title} />
             <div id="FooterPagesDefault" ref={footerRef}>
-                    <div id="FooterMain">
-                        <div id="FooterLeft">
-                            <h1 id="FooterLabel">Oxford Academy</h1>
-                            <h1 id="FooterAddress">5172 Orange Ave, Cypress, CA 90630</h1>
-                            <h1 id="FooterPhone">(714) 220-4101</h1>
-                        </div>
-                        <div id="Alpha">
-                            <h1 id="alphaWarning">
-                                This is an ALPHA build. Bugs beware!
-                            </h1>
-                            <br />
-                            <h1 id="alphaLabel">
-                                This website is not affiliated with Oxford Academy.
-                                <br />
-                                <br />
-                                <a href="https://github.com/enVId-tech">Erick Tran, 2023</a>
-                            </h1>
-                        </div>
+                <div id="FooterMain">
+                    <div id="FooterLeft">
+                        <h1 id="FooterLabel">Oxford Academy</h1>
+                        <h1 id="FooterAddress">5172 Orange Ave, Cypress, CA 90630</h1>
+                        <h1 id="FooterPhone">(714) 220-4101</h1>
+                    </div>
+                    <div id="Alpha">
+                        <h1 id="alphaWarning">
+                            This is an ALPHA build. Bugs beware!
+                        </h1>
+                        <br />
+                        <h1 id="Affiliation">This website is not affiliated with Oxford Academy.</h1>
+                        <br />
+                        <br />
+                        <a href="https://github.com/enVId-tech" id="Name">Erick Tran, 2023</a>
                     </div>
                 </div>
+            </div>
         </div>
     );
 }

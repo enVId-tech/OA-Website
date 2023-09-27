@@ -247,7 +247,6 @@
 
     #Admissions {
         display: flex;
-
         #AdmissionsMain {
             font-family: 'Raleway', sans-serif;
             display: grid;
@@ -258,6 +257,7 @@
             flex-direction: row;
             align-items: center;
             align-content: center;
+            justify-items: center;
 
             #AdmissionsLabel {
                 color: white;
@@ -269,7 +269,7 @@
                 color: white;
                 font-weight: bold;
                 opacity: 0;
-
+                width: 80%;
                 #Apply {
                     border-radius: 25px;
                     background-color: #ffffff;
@@ -436,6 +436,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: space-around;
+            align-items: flex-end;
 
             #alphaWarning {
                 opacity: 0;
@@ -443,6 +444,8 @@
 
             #alphaLabel {
                 opacity: 0;
+                display: flex;
+                text-align: right;
             }
         }
     }
