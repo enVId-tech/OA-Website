@@ -23,6 +23,7 @@ function ClubsList(directory: string): Club[] {
                 { club: "Culinary Club" },
                 { club: "Health Guardians and Nutrition Club" },
                 { club: "Nami Club" },
+                { club: "OA Esports" },
                 { club: "OA Magic Club" },
                 { club: "Run and Laugh, Play Hard (RALPH)" },
                 { club: "Solar Cup Club"},
