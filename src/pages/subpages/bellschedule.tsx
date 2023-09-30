@@ -5,41 +5,79 @@ import PageTitle from "../../components/ts/pagetitle/pagetitle";
 import '../../components/scss/pages/subpages/bellschedule.scss'
 
 const BellSchedule = () => {
-    const [inSession, setInSession] = useState(true);
+    const [inSession, setInSession] = useState<string>();
 
     useEffect(() => {
-        const date = new Date();
-        const day = date.getDay();
-        const hour = date.getHours();
-        const minute = date.getMinutes();
+        // const date = new Date();
+        // const day = date.getDay();
+        // const hour = date.getHours();
+        // const minute = date.getMinutes();
 
-        if (day === 1) {
-            if ((hour === 9 && minute >= 15) || (hour === 15 && minute <= 20)) {
-                setInSession(true);
+        const day: number = 1;
+        const hour: number = 15;
+        const minute: number = 39;
+
+        console.log(day, hour, minute);
+
+        const startStrings: string[] = [
+            "School's in session!",
+            "School's out of session!",
+            "Have a great weekend!",
+        ];
+
+        const checkWeekday = (day: number) => {
+            if (day >= 1 && day <= 5) {
+                if (day === 1) {
+                    if (hour >= 9 && hour <= 15) {
+                        if (hour === 9) {
+                            if (minute >= 15) {
+                                setInSession(startStrings[0]);
+                            } else {
+                                setInSession(startStrings[1]);
+                            }
+                        } else if (hour === 15) {
+                            if (minute <= 20) {
+                                setInSession(startStrings[0]);
+                            } else {
+                                setInSession(startStrings[1]);
+                            }
+                        } else {
+                            setInSession(startStrings[0]);
+                        }
+                    }
+                } else {
+                    if (hour >= 8 && hour <= 15) {
+                        if (hour === 8) {
+                            if (minute >= 30) {
+                                setInSession(startStrings[0]);
+                            } else {
+                                setInSession(startStrings[1]);
+                            }
+                        } else if (hour === 15) {
+                            if (minute <= 20) {
+                                setInSession(startStrings[0]);
+                            } else {
+                                setInSession(startStrings[1]);
+                            }
+                        } else {
+                            setInSession(startStrings[0]);
+                        }
+                    } else {
+                        setInSession(startStrings[1]);
+                    }
+                }
             } else {
-                setInSession(false);
+                setInSession(startStrings[2]);
             }
-        } else if (day === 2 || day === 4) {
-            if ((hour === 8 && minute >= 30) || (hour === 15 && minute <= 20)) {
-                setInSession(true);
-            } else {
-                setInSession(false);
-            }
-        } else if (day === 3 || day === 5) {
-            if ((hour === 8 && minute >= 30) || (hour === 15 && minute <= 20)) {
-                setInSession(true);
-            } else {
-                setInSession(false);
-            }
-        } else {
-            setInSession(false);
         }
+
+        checkWeekday(day);
     }, []);
 
     return (
         <div id="BellSchedule">
             <Navbar />
-            <PageTitle height={80} mainText="Bell Schedule" subText={inSession ? "School is in session!" : "Enjoy your weekend!"} oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
+            <PageTitle height={80} mainText="Bell Schedule" subText={inSession} oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
             <div id="BellScheduleMain">
                 <h1 id="BellScheduleTitle">Bell Schedule</h1>
                 <span id="BellScheduleText">
@@ -68,7 +106,7 @@ const BellSchedule = () => {
                         </p>
                     </div>
                     <div className="BellScheduleSection">
-                        <h1 className="BellScheduleSectionTitle">Block Schedule<br /><br/> Even: Tuesday & Thursday <br /><br/> Odd: Wednesday & Friday</h1>
+                        <h1 className="BellScheduleSectionTitle">Block Schedule<br /><br /> Even: Tuesday & Thursday <br /><br /> Odd: Wednesday & Friday</h1>
                         <p id="Periods">
                             Period 1/2: 8:30 - 9:55
                             <br />
