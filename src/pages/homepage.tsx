@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import '../components/images/OxfordLogo.png';
 import '../components/scss/pages/home.scss';
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -7,6 +7,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import Navbar from "../components/ts/navbar/navbar";
 import ClassHelmet from "../components/ts/title";
 import PageTitle from "../components/ts/pagetitle/pagetitle";
+import trackPageView from "../components/ts/analytics/analytics";
 
 const HomePage = () => {
     // Create refs for main div elements
@@ -14,6 +15,10 @@ const HomePage = () => {
     const ratingsRef = useRef(null);
     const admissionsRef = useRef(null);
     const footerRef = useRef(null);
+
+    useEffect(() => {
+        trackPageView();
+    }, []);
 
     const applyVisibleClass: (ref: React.RefObject<HTMLDivElement>) => void = (ref) => {
         if (ref.current !== null) {

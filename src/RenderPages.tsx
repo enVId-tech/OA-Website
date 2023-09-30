@@ -28,11 +28,11 @@ import Transcript from './pages/subpages/transcript';
 import Transportation from './pages/subpages/transportation';
 import VisionSLCS from './pages/subpages/visionslcs';
 
-
 const RenderPages = () => {
   return (
     <BrowserRouter>
       <Routes>
+        
         {/* Redirects */}
         <Route path="/*" element={<Navigate to="/error" />} />
         <Route path="/administration/*" element={<Navigate to="/administration" />} />
