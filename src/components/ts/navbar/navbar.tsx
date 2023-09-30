@@ -19,6 +19,8 @@ const Navbar: React.FC<NavbarProps> = ({ heightChange = -Infinity }: NavbarProps
   const [backgroundTransparent, setBackgroundTransparent] = useState<boolean>(true);
   const [activeTable, setActiveTable] = useState<string | null>(null);
 
+  const navBar = getNavBarElements("TopDiv");
+
   const handleButtonMouseEnter = (tableId: string) => {
     setActiveTable(tableId);
   };
@@ -80,54 +82,54 @@ const Navbar: React.FC<NavbarProps> = ({ heightChange = -Infinity }: NavbarProps
           <button
             id="Home"
             className={`navbutton ${activeTable === null ? "active" : "hidden"}`}
-            onClick={() => window.location.href = "/"}
+            onClick={() => window.location.href = navBar[0].hasWorkingLink ? navBar[0].link : "/"}
           >
-            Home
+            {navBar[0].name}
           </button>
           <button
             id="School"
             className={`navbutton ${activeTable === "School" ? "active" : "hidden"}`}
-            onClick={() => window.location.href = "/school-table"}
+            onClick={() => window.location.href = navBar[1].hasWorkingLink ? navBar[1].link : "/"}
             onMouseEnter={() => handleButtonMouseEnter("School")}
             onMouseLeave={handleButtonMouseLeave}
           >
-            Our School
+            {navBar[1].name}
           </button>
           <button
             id="Student"
             className={`navbutton ${activeTable === "Student" ? "active" : "hidden"}`}
-            onClick={() => window.location.href = "/student-table"}
+            onClick={() => window.location.href = navBar[2].hasWorkingLink ? navBar[2].link : "/"}
             onMouseEnter={() => handleButtonMouseEnter("Student")}
             onMouseLeave={handleButtonMouseLeave}
           >
-            Student
+            {navBar[2].name}
           </button>
           <button
             id="Parent"
             className={`navbutton ${activeTable === "Parent" ? "active" : "hidden"}`}
-            onClick={() => window.location.href = "/parent-table"}
+            onClick={() => window.location.href = navBar[3].hasWorkingLink ? navBar[3].link : "/"}
             onMouseEnter={() => handleButtonMouseEnter("Parent")}
             onMouseLeave={handleButtonMouseLeave}
           >
-            Parents
+            {navBar[3].name}
           </button>
           <button
             id="Faculty"
             className={`navbutton ${activeTable === "Faculty" ? "active" : "hidden"}`}
-            onClick={() => window.location.href = "/faculty-table"}
+            onClick={() => window.location.href = navBar[4].hasWorkingLink ? navBar[4].link : "/"}
             onMouseEnter={() => handleButtonMouseEnter("Faculty")}
             onMouseLeave={handleButtonMouseLeave}
           >
-            Faculty
+            {navBar[4].name}
           </button>
           <button
             id="Contact"
             className={`navbutton ${activeTable === "Contact" ? "active" : "hidden"}`}
-            onClick={() => window.location.href = "/contact-table"}
+            onClick={() => window.location.href = navBar[5].link}
             onMouseEnter={() => handleButtonMouseEnter("Contact")}
             onMouseLeave={handleButtonMouseLeave}
           >
-            Contact Us
+            {navBar[5].name}
           </button>
         </div>
 

@@ -130,6 +130,16 @@ function getNavBarElements(elements: string): NavbarElementsData[] {
                 { name: "Email Us", link: "/emailus", "hasWorkingLink": false },
                 { name: "Get Directions", link: "/getdirections", "hasWorkingLink": false },
             ]
+        case "TopDiv": 
+            return [
+                // An array containing strings representing top div buttons
+                { name: "Home", link: "/", "hasWorkingLink": true },
+                { name: "Our School", link: "/school-table", "hasWorkingLink": false },
+                { name: "Student", link: "/student-table", "hasWorkingLink": false },
+                { name: "Parents", link: "/parent-table", "hasWorkingLink": false },
+                { name: "Faculty", link: "/faculty-table", "hasWorkingLink": false },
+                { name: "Contact Us", link: "/contact-table", "hasWorkingLink": false },
+            ]
         default:
             return [
                 // An array containing strings representing school-related buttons
