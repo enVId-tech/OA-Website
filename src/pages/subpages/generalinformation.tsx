@@ -5,6 +5,22 @@ import Footer from "../../components/ts/footer/Footer";
 import '../../components/scss/pages/subpages/generalinformation.scss';
 
 const GeneralInformation = () => {
+    const Redirect = (type: string) => {
+        switch (type) {
+            case "Prof":
+                window.open("https://oxford.auhsd.us/files/public_files/OA-Profile_web_2020-2021.pdf");
+                break;
+            case "Info":
+                window.open("https://oxford.auhsd.us/files/user/3598/file/OA_InfoCard.pdf");
+                break;
+            case "Pathways":
+                window.open("https://oxford.auhsd.us/files/user/3598/file/CareerPathways_OxfordAcademy.pdf");
+                break;
+            default:
+                break;
+        }
+    }
+    
     return (
         <div id="GeneralInformation">
             <Navbar />
@@ -20,21 +36,31 @@ const GeneralInformation = () => {
                     <h1 id="BestHSLabel">Oxford Academy leads with Excellence, Honor, Creativity, Caring & Fun</h1>
                     <img id="BestHSImage" src="images/HS2023.jpeg" alt="BestHS" />
                 </div>
-                <span id="ExtraInfo">
-                
-                </span>
+                <div id="ExtraInfo">
+                    <button id="Prof" className="buttonMain" onClick={() => Redirect("Prof")}>OA Profile</button>
+                    <button id="Info" className="buttonMain" onClick={() => Redirect("Info")}>OA Info Card</button>
+                    <button id="Pathways" className="buttonMain" onClick={() => Redirect("Pathways")}>OA Pathways</button>
+                </div>
                 <span id="Awards">
-                    <div id="BHS">
-
+                    <div id="BHS" className="AwardTypes">
+                        <img id="BHSImage" className="AwardImage" src="images/USN-Gold.png" alt="BestHS" />
+                        <p className="MainText">#1 in CA, #9 in the US</p>
+                        <p className="SubText">(2023)</p>
                     </div>
-                    <div id="CDS">
-
+                    <div id="CalDistS" className="AwardTypes">
+                        <img id="CDSImage" className="AwardImage" src="images/DistingSchool-logo.png" alt="BestHS" />
+                        <p className="MainText">CA Distinguished School</p>
+                        <p className="SubText">(2011, 2019, 2021)</p>
                     </div>
-                    <div id="BRS">
-
+                    <div id="BRS" className="AwardTypes">
+                        <img id="BRSImage" className="AwardImage" src="images/NatlBlueRibbon_USDE.png" alt="BestHS" />
+                        <p className="MainText">National Blue Ribbon</p>
+                        <p className="SubText">(2013, 2019)</p>
                     </div>
-                    <div id="CDS">
-
+                    <div id="CalDemS" className="AwardTypes">
+                        <img id="CDSImage" className="AwardImage" src="images/CalDemSchool.png" alt="BestHS" />
+                        <p className="MainText">CA Democracy School</p>
+                        <p className="SubText">(2020)</p>
                     </div>
                 </span>
             </div>

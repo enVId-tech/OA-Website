@@ -27,6 +27,7 @@ import Staff from './pages/subpages/staff';
 import Transcript from './pages/subpages/transcript';
 import Transportation from './pages/subpages/transportation';
 import VisionSLCS from './pages/subpages/visionslcs';
+import HealthOffice from './pages/subpages/healthoffice';
 
 const RenderPages = () => {
   return (
@@ -45,6 +46,7 @@ const RenderPages = () => {
         <Route path="/cypresscollege/*" element={<Navigate to="/cypresscollege" />} />
         <Route path="/dressregulations/*" element={<Navigate to="/dressregulations" />} />
         <Route path="/generalinformation/*" element={<Navigate to="/generalinformation" />} />
+        <Route path="/healthoffice/*" element={<Navigate to="/healthoffice" />} />
         <Route path="/oasitemap/*" element={<Navigate to="/oasitemap" />} />
         <Route path="/policies/*" element={<Navigate to="/policies" />} />
         <Route path="/principalsmessage/*" element={<Navigate to="/principalsmessage" />} />
@@ -67,6 +69,7 @@ const RenderPages = () => {
         <Route path="/cypresscollege" element={<CCDualEnrollment />} />
         <Route path="/dressregulations" element={<DressCode />} />
         <Route path="/generalinformation" element={<GeneralInformation />} />
+        <Route path="/healthoffice" element={<HealthOffice />} />
         <Route path="/oasitemap" element={<OxfSitemap />} />
         <Route path="/policies" element={<Policies />} />
         <Route path="/principalsmessage" element={<PrincipalsMessage />} />
