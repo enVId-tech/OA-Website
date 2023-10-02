@@ -1,0 +1,47 @@
+#Policies {
+    font-family: 'Raleway', 'sans-serif';
+    #PoliciesMain {
+        padding-left: 10vw;
+        padding-right: 10vw;
+        #TitleText {
+            width: 100%;
+            height: auto;
+            font-size: 6vh;
+            font-weight: 600;
+            margin-top: 4vh;
+            margin-bottom: 4vh;
+            text-align: center;
+        }
+
+        #PoliciesSecondary {
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            counter-reset: li;
+
+            li::before {
+                content: counter(li) ".";
+                color: red;
+                display: inline-block;
+                width: 1em;
+                margin-left: -1em;
+                font-weight: bold;
+            }
+
+            li {
+                counter-increment: li;
+                font-size: 2rem;
+                margin-bottom: 1rem;
+                margin-top: 1rem;
+                padding-left: 10vw;
+                padding-right: 10vw;
+                &.health {
+                    text-underline-offset: 0.25rem;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

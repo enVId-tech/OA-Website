@@ -1,141 +1,97 @@
-#FooterPagesDefault {
+#Footers {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: white;
-    color: white;
-    position: relative;
-    bottom: 0;
-    left: 0;
-    /* Add left: 0 to stretch across the entire viewport */
-    width: 100%;
-    height: 40vh;
-    justify-content: space-around;
-
-    #FooterMain {
-        padding-left: 5vw;
-        padding-right: 5vw;
-        display: flex;
-        justify-content: space-around;
-
-        #FooterLeft {
-            #FooterLabel {
-                animation: fadeAndLeft 1s 0.05s ease-in-out forwards;
-                font-size: 2vw;
-                @keyframes fadeAndLeft {
-                    0% {
-                        opacity: 0;
-                        margin-left: 5vh;
-                    }
-
-                    100% {
-                        opacity: 1;
-                        margin-left: 0vh;
-                    }
-                }
-            }
-
-            #FooterAddress,
-            #FooterPhone {
-                animation: fadeAndRight 1s 0.05s ease-in-out forwards;
-                font-size: 2vw;
-                @keyframes fadeAndRight {
-                    0% {
-                        opacity: 0;
-                        margin-right: 5vh;
-                    }
-
-                    100% {
-                        opacity: 1;
-                        margin-right: 0vh;
-                    }
-                }
-            }
-        }
-    }
-
-    #Alpha {
-        #alphaWarning {
-            animation: fadeAndUp 1s 0.3s ease-in-out forwards;
-
-            @keyframes fadeAndUp {
-                0% {
-                    opacity: 0;
-                    margin-bottom: -2vh;
-                }
-
-                100% {
-                    opacity: 1;
-                    margin-bottom: 0vh;
-                }
-            }
-        }
-
-        #alphaLabel {
-            animation: fadeAndUp 1s 0.3s ease-in-out forwards;
-
-            @keyframes fadeAndUp {
-                0% {
-                    opacity: 0;
-                    margin-bottom: -5vh;
-                }
-
-                100% {
-                    opacity: 1;
-                    margin-bottom: 0vh;
-                }
-            }
-        }
-    }
-}
-
-#FooterMain {
-    font-family: 'Raleway', sans-serif;
-    display: grid;
-    justify-content: space-around;
     background-color: #0B132B;
-    width: 100%;
-    height: 50vh;
-    flex-direction: row;
-    align-items: center;
-    align-content: center;
+    color: #FFFFFF;
+    font-family: 'Raleway', sans-serif;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    #FooterPagesDefault {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+        width: 100%;
+        #FooterMain {
+            display: flex;
+            flex-direction: row;
+            #FooterLeft {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                float: left;
+                align-items: flex-start;
+                h1, a {
+                    color: #FFFFFF;
+                    font-weight: 400;
+                    text-decoration: none;
+                    margin-bottom: 1vh;
+                    font-size: 2.3rem;
+                    display: flex;
+                    text-align: left; 
+                    opacity: 0;
+                }
+            }
 
-    #FooterLabel {
-        color: white;
-        font-weight: bold;
-        opacity: 0;
+            #FooterRight {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                float: right;
+                align-items: flex-end;
+                h1, a {
+                    color: #FFFFFF;
+                    font-weight: 400;
+                    text-decoration: none;
+                    margin-bottom: 1vh;
+                    font-size: 2.3rem;
+                    display: flex;
+                    text-align: right;
+                    opacity: 0;
+                }
+            }
+        }
     }
 
-    #FooterAddress,
-    #FooterPhone {
-        color: white;
-        font-weight: bold;
-        opacity: 0;
-    }
-}
+    &.visible-class {
+        #FooterPagesDefault {
+            #FooterMain {
+                #FooterLeft {
+                    h1, a {
+                        animation: fadeAndLeft 0.75s 0.2s ease-in-out forwards;
+                        @keyframes fadeAndLeft {
+                            0% {
+                                opacity: 0;
+                                margin-left: -5vw;
+                            }
 
-#Alpha {
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: space-around;
-    align-items: flex-end;
+                            100% {
+                                opacity: 1;
+                                margin-left: 0vw;
+                            }
+                        }
+                    }
+                }
 
-    #alphaWarning {
-        opacity: 0;
-        font-size: 2vw;
-    }
+                #FooterRight {
+                    h1, a {
+                        animation: fadeAndRight 0.75s 0.2s ease-in-out forwards;
+                        @keyframes fadeAndRight {
+                            0% {
+                                opacity: 0;
+                                margin-right: -5vw;
+                            }
 
-    #alphaLabel {
-        opacity: 0;
-        font-size: 2.5vw;
-    }
-
-    #Affiliation {
-        font-size: 2vw;
-    }
-
-    #Name {
-        font-size: 2vw;
-        font-weight: bold;
+                            100% {
+                                opacity: 1;
+                                margin-right: 0vw;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

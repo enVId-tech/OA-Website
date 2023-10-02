@@ -16,6 +16,13 @@
       }
     ],
     "no-inline-styles": "off",
-    "axe/structure": "off"
-  }
+    "axe/structure": "off",
+    "disown-opener": "off"
+  },
+  "browserslist": [
+    "defaults",
+    "not ie 11",
+    "not and_ff <= 115",
+    "not chrome <= 79"
+  ]
 }

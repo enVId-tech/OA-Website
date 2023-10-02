@@ -1,0 +1,27 @@
+#Transportation {
+    width: 100%;
+    font-family: 'Raleway', sans-serif;
+    #TransportationMain {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        #TitleText {
+            font-size: 2.5vw;
+            font-weight: 600;
+            margin-top: 3vw;
+            margin-bottom: 3vw;
+            width: 100%;
+            text-align: center;
+        }
+
+        #BusImage {
+            width: 50%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 7.5vh;
+        }
+    }
+}

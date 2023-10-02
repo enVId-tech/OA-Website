@@ -1,0 +1,58 @@
+#Transcript {
+    width: 100%;
+    font-family: 'Raleway', sans-serif;
+
+    #TranscriptMain {
+        padding-left: 5vw;
+        padding-right: 5vw;
+
+        #TitleText {
+            font-size: 2.5vw;
+            font-weight: 600;
+            margin-bottom: 2vw;
+            width: 100%;
+            text-align: center;
+        }
+
+        #Parchment {
+            #ParchmentMain {
+                line-height: 7vh;
+                font-weight: bold;
+            }
+
+            #Alumni {
+                margin-top: 5vh;
+                margin-bottom: 5vh;
+                #AlumniTitle {
+                    font-size: 5vh;
+                    font-weight: 700;
+                }
+
+                #AlumniLink {
+                    font-size: 5vh;
+                    font-weight: 600;
+                    margin-bottom: 2vh;
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+
+            #Student {
+                margin-top: 5vh;
+                margin-bottom: 5vh;
+                #StudentTitle {
+                    font-size: 5vh;
+                    font-weight: 700;
+                }
+
+                #StudentLink {
+                    font-size: 5vh;
+                    font-weight: 600;
+                    margin-bottom: 2vh;
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

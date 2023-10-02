@@ -1,0 +1,26 @@
+#Staff {
+    width: 100%;
+    font-family: 'Raleway', sans-serif;
+    #StaffMain {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        #TitleText {
+            width: 100%;
+            height: auto;
+            font-size: 6vh;
+            font-weight: 600;
+            margin-top: 4vh;
+            margin-bottom: 4vh;
+            text-align: center;
+        }
+        #StaffSecondary {
+            width: 100%;
+            margin-top: 10vh;
+            margin-bottom: 25vh;
+            text-align: center;
+            font-weight: bolder;
+        }
+    }
+}

@@ -8,6 +8,7 @@ import Navbar from "../components/ts/navbar/navbar";
 import ClassHelmet from "../components/ts/title";
 import PageTitle from "../components/ts/pagetitle/pagetitle";
 import trackPageView from "../components/ts/analytics/analytics";
+import Footer from "../components/ts/footer/Footer";
 
 const HomePage = () => {
     // Create refs for main div elements
@@ -95,27 +96,7 @@ const HomePage = () => {
                 </div>
 
                 {/* Footer */}
-                <div id="Footer" ref={footerRef}>
-                    <div id="FooterMain">
-                        <div id="FooterLeft">
-                            <h1 id="FooterLabel">Oxford Academy</h1>
-                            <h1 id="FooterAddress">5172 Orange Ave, Cypress, CA 90630</h1>
-                            <h1 id="FooterPhone">(714) 220-4101</h1>
-                        </div>
-                        <div id="Alpha">
-                            <h1 id="alphaWarning">
-                                This is an ALPHA build. Bugs beware!
-                            </h1>
-                            <br />
-                            <h1 id="alphaLabel">
-                                This website is not affiliated with Oxford Academy.
-                                <br />
-                                <br />
-                                Erick Tran, 2023
-                            </h1>
-                        </div>
-                    </div>
-                </div>
+                <Footer title="Home" />
             </div>
         </div>
     )
