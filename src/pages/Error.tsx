@@ -9,7 +9,7 @@ const ErrorPage = () => {
     const interval: number = 0.1;
 
     setTimeout(() => {
-        if (time <= 0.09) {
+        if (time <= 0.1) {
             setTime(0);
             window.location.href = "/";
         } else {

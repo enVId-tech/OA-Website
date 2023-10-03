@@ -18,7 +18,7 @@ function getNavBarElements(elements: string): NavbarElementsData[] {
                 { name: "Clubs & Organizations", link: "/clubs", "hasWorkingLink": true },
                 { name: "Counseling", link: "/counseling", "hasWorkingLink": true },
                 { name: "Cypress College Dual Enrollment", link: "/cypresscollege", "hasWorkingLink": true },
-                { name: "Dress Regulations", link: "/dressregulations", "hasWorkingLink": true },
+                { name: "Dress Regulations", link: "https://oxford.auhsd.us/Oxford/Department/14222-Oxford-Academy/6173-Dress-Regulations.html", "hasWorkingLink": true },
                 { name: "General Information", link: "/generalinformation", "hasWorkingLink": true },
                 { name: "Health Office", link: "/healthoffice", "hasWorkingLink": true },
                 { name: "News Section", link: "https://oxford.auhsd.us/Oxford/Department/14222-Oxford-Academy/News/", "hasWorkingLink": true },
@@ -49,7 +49,7 @@ function getNavBarElements(elements: string): NavbarElementsData[] {
                 { name: "College Access for All (Dream Act)", link: "https://www.auhsd.us/District/Department/14186-Curriculum-Instruction/80554-College-Access-for-All-Dream-Act.html", "hasWorkingLink": true },
                 { name: "Counseling", link: "/counseling", "hasWorkingLink": true },
                 { name: "Cypress College Dual Enrollment", link: "/cypresscollege", "hasWorkingLink": true },
-                { name: "Dress Regulations", link: "/dressregulations", "hasWorkingLink": true },
+                { name: "Dress Regulations", link: "https://oxford.auhsd.us/Oxford/Department/14222-Oxford-Academy/6173-Dress-Regulations.html", "hasWorkingLink": true },
                 { name: "Digital Citizenship", link: "https://www.auhsd.us/District/Department/14186-Curriculum-Instruction/80431-AUHSD-Digital-Citizenship-Week.html", "hasWorkingLink": true },
                 { name: "eKadence", link: "https://auhsd.ekadence.com", "hasWorkingLink": true },
                 { name: "FITNESSGRAM Information", link: "https://www.auhsd.us/District/Department/14186-Curriculum-Instruction/80455-Fitnessgram-Information.html", "hasWorkingLink": true },
@@ -83,7 +83,7 @@ function getNavBarElements(elements: string): NavbarElementsData[] {
                 { name: "College Access for All (Dream Act)", link: "https://www.auhsd.us/District/Department/14186-Curriculum-Instruction/80554-College-Access-for-All-Dream-Act.html", "hasWorkingLink": true },
                 { name: "Counseling", link: "/counseling", "hasWorkingLink": true },
                 { name: "Cypress College Dual Enrollment", link: "/cypresscollege", "hasWorkingLink": true },
-                { name: "Dress Regulations", link: "/dressregulations", "hasWorkingLink": true },
+                { name: "Dress Regulations", link: "https://oxford.auhsd.us/Oxford/Department/14222-Oxford-Academy/6173-Dress-Regulations.html", "hasWorkingLink": true },
                 { name: "eKadence", link: "https://auhsd.ekadence.com", "hasWorkingLink": true },
                 { name: "Family Engagement", link: "/familyengagement", "hasWorkingLink": false },
                 { name: "FITNESSGRAM Information", link: "https://www.auhsd.us/District/Department/14186-Curriculum-Instruction/80455-Fitnessgram-Information.html", "hasWorkingLink": true },
@@ -134,11 +134,11 @@ function getNavBarElements(elements: string): NavbarElementsData[] {
             return [
                 // An array containing strings representing top div buttons
                 { name: "Home", link: "/", "hasWorkingLink": true },
-                { name: "Our School", link: "/school-table", "hasWorkingLink": false },
-                { name: "Student", link: "/student-table", "hasWorkingLink": false },
-                { name: "Parents", link: "/parent-table", "hasWorkingLink": false },
-                { name: "Faculty", link: "/faculty-table", "hasWorkingLink": false },
-                { name: "Contact Us", link: "/contact-table", "hasWorkingLink": false },
+                { name: "Our School", link: "/school-table", "hasWorkingLink": true },
+                { name: "Student", link: "/student-table", "hasWorkingLink": true },
+                { name: "Parents", link: "/parent-table", "hasWorkingLink": true },
+                { name: "Faculty", link: "/faculty-table", "hasWorkingLink": true },
+                { name: "Contact Us", link: "/contact-table", "hasWorkingLink": true },
             ]
         default:
             return [
@@ -152,7 +152,7 @@ function getNavBarElements(elements: string): NavbarElementsData[] {
                 { name: "Clubs & Organizations", link: "/clubs", "hasWorkingLink": true },
                 { name: "Counseling", link: "/counseling", "hasWorkingLink": true },
                 { name: "Cypress College Dual Enrollment", link: "/cypresscollege", "hasWorkingLink": true },
-                { name: "Dress Regulations", link: "/dressregulations", "hasWorkingLink": true },
+                { name: "Dress Regulations", link: "https://oxford.auhsd.us/Oxford/Department/14222-Oxford-Academy/6173-Dress-Regulations.html", "hasWorkingLink": true },
                 { name: "General Information", link: "/generalinformation", "hasWorkingLink": true },
                 { name: "Health Office", link: "/healthoffice", "hasWorkingLink": true },
                 { name: "News Section", link: "https://oxford.auhsd.us/Oxford/Department/14222-Oxford-Academy/News/", "hasWorkingLink": true },
