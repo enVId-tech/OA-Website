@@ -1,6 +1,6 @@
 {
   "name": "frontpage",
-  "version": "39",
+  "version": "40",
   "private": true,
   "dependencies": {
     "@types/react-dom": "^18.2.7",
@@ -46,6 +46,5 @@
   "devDependencies": {
     "@types/react": "^18.2.22"
   },
-  "type": "module",
-  "proxy": "http://localhost:301"
+  "type": "module"
 }
