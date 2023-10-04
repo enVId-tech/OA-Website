@@ -10,6 +10,7 @@ interface NavbarProps {
 }
 
 interface NavbarElementsData {
+  [x: string]: any;
   name: string;
   link: string;
   hasWorkingLink: boolean;

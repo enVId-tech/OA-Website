@@ -26,7 +26,7 @@ function ClubsList(directory: string): Club[] {
                 { club: "OA Esports" },
                 { club: "OA Magic Club" },
                 { club: "Run and Laugh, Play Hard (RALPH)" },
-                { club: "Solar Cup Club"},
+                { club: "Solar Cup Club" },
             ]
         case "Culture":
             return [

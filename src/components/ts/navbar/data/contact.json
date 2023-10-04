@@ -1,0 +1,10 @@
+{
+  "Contact": [
+    { "name": "Email Us", "link": "/emailus", "hasWorkingLink": false },
+    {
+      "name": "Get Directions",
+      "link": "/getdirections",
+      "hasWorkingLink": false
+    }
+  ]
+}

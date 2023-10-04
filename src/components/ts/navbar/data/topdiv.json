@@ -1,0 +1,10 @@
+{
+  "TopDiv": [
+    { "name": "Home", "link": "/", "hasWorkingLink": true },
+    { "name": "Our School", "link": "/school-table", "hasWorkingLink": true },
+    { "name": "Student", "link": "/student-table", "hasWorkingLink": true },
+    { "name": "Parents", "link": "/parent-table", "hasWorkingLink": true },
+    { "name": "Faculty", "link": "/faculty-table", "hasWorkingLink": true },
+    { "name": "Contact Us", "link": "/contact-table", "hasWorkingLink": true }
+  ]
+}
