@@ -35,7 +35,7 @@ import Transportation from './pages/subpages/transportation';
 import VisionSLCS from './pages/subpages/visionslcs';
 import HealthOffice from './pages/subpages/healthoffice';
 
-const RenderPages = () => {
+const RenderPages = (): React.JSX.Element => {
   return (
     <Router>
       <Routes>

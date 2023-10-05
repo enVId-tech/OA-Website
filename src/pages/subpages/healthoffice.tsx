@@ -4,8 +4,8 @@ import PageTitle from "../../components/ts/pagetitle/pagetitle";
 import Footer from "../../components/ts/footer/Footer";
 import '../../components/scss/pages/subpages/healthoffice.scss';
 
-const HealthOffice = () => {
-    const handleClick = (type: string) => {
+const HealthOffice = (): React.JSX.Element => {
+    const handleClick = (type: string): void => {
         switch (type) {
             case "Food": {
                 window.open("https://oxford.auhsd.us/files/public_files/FoodAllergy_ActionPlan.pdf", "_blank");

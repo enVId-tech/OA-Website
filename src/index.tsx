@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import RenderPages from './RenderPages';
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById('reactRootMain') as HTMLElement
 );
 
 root.render(

@@ -5,59 +5,73 @@ import '../components/scss/pages/home.scss';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import Navbar from "../components/ts/navbar/navbar";
-import ClassHelmet from "../components/ts/title";
+import ClassHelmet from "../components/ts/pagetitle/title";
 import PageTitle from "../components/ts/pagetitle/pagetitle";
 import trackPageView from "../components/ts/analytics/analytics";
 import Footer from "../components/ts/footer/Footer";
-import applyVisibleClass from "../components/ts/animations/animations";
+import applyPageAnims from "../components/ts/animations/animations";
 
-const HomePage = () => {
+const HomePage = (): React.JSX.Element => {
     // Create refs for main div elements
     const aboutRef = useRef(null);
     const ratingsRef = useRef(null);
     const admissionsRef = useRef(null);
     const footerRef = useRef(null);
 
-    useEffect(() => {
+    useEffect((): void => {
         trackPageView();
     }, []);
 
-    const handleVisibleClass = () => {
-        applyVisibleClass([aboutRef, ratingsRef, admissionsRef, footerRef], "home", 0.25);
+    const refs: React.RefObject<HTMLDivElement>[] = [
+        aboutRef,
+        ratingsRef,
+        admissionsRef,
+        footerRef
+    ];
+
+    const anims: string[] = [
+        "c_left",
+        "c_up",
+        "c_right",
+        "c_up"
+    ];
+
+    const handleAnims = (): void => {
+        applyPageAnims(refs, anims, 0.25);
     };
 
-    window.addEventListener("scroll", handleVisibleClass);
+    window.addEventListener("scroll", handleAnims);
 
-    const scrollToTop = () => {
+    const scrollToTop = (): void => {
         window.scrollTo({
             top: 0,
             behavior: "auto" as ScrollBehavior
         });
     };
 
-    window.onload = () => {
+    window.onload = (): void => {
         scrollToTop();
     }
 
     return (
-        <div id="HomePageMAIN">
+        <div id="HomePage">
             <ClassHelmet title="Home" />
             <Navbar heightChange={790} />
-            <div id="HomePage">
+            <div id="HomePageMain">
                 {/* Title Tab */}
                 <PageTitle height={100} mainText="Oxford Academy" subText="Conceiving the next wave of innovation." oxfLogo={true} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={1200} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
 
                 {/* About Tab */}
-                <div id="About" ref={aboutRef}>
-                    {/* Add class "visible-class" when this div is in the viewport */}
-                    <img id="AboutImage" src="images/OxfordAcademyFullLogo.webp" />
-                    <h1 id="AboutLabel">Oxford Academy is a community of innovators dedicated to nurturing the holistic growth of life-long learners who will lead and serve an evolving local and global society.</h1>
+                <div id="About" ref={aboutRef} className="info-section">
+                    <div id="AboutText" className="section-property">
+                        <img id="AboutImage" className="section-title" src="images/OxfordAcademyFullLogo.webp" />
+                        <h1 id="AboutLabel" className="section-text">Oxford Academy is a community of innovators dedicated to nurturing the holistic growth of life-long learners who will lead and serve an evolving local and global society.</h1>
+                    </div>
                 </div>
 
                 {/* Ratings Tab */}
-                <div id="Ratings" ref={ratingsRef}>
-                    {/* Add class "visible-class" when this div is in the viewport */}
-                    <div id="USNewsRanking">
+                <div id="Ratings" ref={ratingsRef} className="info-section">
+                    <div id="USNewsRanking" className="section-property">
                         <div id="Ranks">
                             <h1 id="HSRankings">#1 in California High Schools</h1>
                             <h1 id="NatRankings">#9 in National Rankings</h1>
@@ -67,9 +81,8 @@ const HomePage = () => {
                 </div>
 
                 {/* Admissions */}
-                <div id="Admissions" ref={admissionsRef}>
-                    {/* Add class "visible-class" when this div is in the viewport */}
-                    <div id="AdmissionsMain">
+                <div id="Admissions" ref={admissionsRef} className="info-section">
+                    <div id="AdmissionsMain" className="section-property">
                         <h1 id="AdmissionsLabel">Admissions</h1>
                         <div id="AdmissionsText">
                             <h1 id="AdmissionsMainLabel">Oxford Academy is an admissions-only campus, evaluated by an elite admissions commitee.</h1>

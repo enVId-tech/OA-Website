@@ -4,7 +4,7 @@ import PageTitle from "../../components/ts/pagetitle/pagetitle";
 import Footer from "../../components/ts/footer/Footer";
 import '../../components/scss/pages/subpages/PforP.scss';
 
-const ProgramsForPatriots = () => {
+const ProgramsForPatriots = (): React.JSX.Element => {
     return (
         <div id="ProgramsForPatriots">
             <Navbar />

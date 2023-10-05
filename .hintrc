@@ -23,6 +23,7 @@
     "defaults",
     "not ie 11",
     "not and_ff <= 115",
-    "not chrome <= 79"
+    "not chrome <= 79",
+    "not safari <= 13"
   ]
 }

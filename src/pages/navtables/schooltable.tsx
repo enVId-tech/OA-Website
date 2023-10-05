@@ -4,7 +4,7 @@ import PageTitle from "../../components/ts/pagetitle/pagetitle";
 import Footer from "../../components/ts/footer/Footer";
 import '../../components/scss/pages/navtables/schooltable.scss';
 
-const SchoolTable = () => {
+const SchoolTable = (): React.JSX.Element => {
     return (
         <div id="SchoolTable">
             <Navbar />

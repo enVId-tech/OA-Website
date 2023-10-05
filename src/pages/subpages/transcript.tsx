@@ -5,7 +5,7 @@ import PageTitle from "../../components/ts/pagetitle/pagetitle";
 import Footer from "../../components/ts/footer/Footer";
 import '../../components/scss/pages/subpages/transcript.scss';
 
-const Transcript = () => {
+const Transcript = (): React.JSX.Element => {
     return (
         <div id="Transcript">
             <Navbar />

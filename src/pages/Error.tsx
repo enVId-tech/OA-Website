@@ -3,12 +3,12 @@ import Navbar from "../components/ts/navbar/navbar";
 import Footer from "../components/ts/footer/Footer";
 import '../components/scss/pages/error.scss';
 
-const ErrorPage = () => {
-    const [time, setTime] = useState(3);
+const ErrorPage = (): React.JSX.Element => {
+    const [time, setTime] = useState<number>(3);
 
     const interval: number = 0.1;
 
-    setTimeout(() => {
+    setTimeout((): void => {
         if (time <= 0.1) {
             setTime(0);
             window.location.href = "/";

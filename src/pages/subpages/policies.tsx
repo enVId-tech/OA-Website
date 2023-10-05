@@ -4,8 +4,8 @@ import PageTitle from "../../components/ts/pagetitle/pagetitle";
 import Footer from "../../components/ts/footer/Footer";
 import '../../components/scss/pages/subpages/policy.scss';
 
-const Policies = () => {
-    const handleClick = (type: string) => {
+const Policies = (): React.JSX.Element => {
+    const handleClick = (type: string): void => {
         switch (type) {
             case "Vision": {
                 window.open("https://oxford.auhsd.us/files/page/77583/MAIN_PAGES_Policy_Pages_2019_2020_power_school_page.pdf", "_blank");

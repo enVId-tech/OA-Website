@@ -1,7 +1,8 @@
 import '../../scss/components/animations/animationsmain.scss';
+import '../../scss/components/section.scss';
 
-function applyVisibleClass(refs: React.RefObject<HTMLDivElement>[], animType?: string, bufferNum: number = 0): void {
-    refs.forEach((ref) => {
+function applyPageAnims(refs: React.RefObject<HTMLDivElement>[], animType?: string[], bufferNum: number = 0): void {
+    refs.forEach((ref: React.RefObject<HTMLDivElement>, index: number) => {
         if (ref.current !== null) {
             const rect = ref.current.getBoundingClientRect();
             const topPosition = rect.top + window.scrollY;
@@ -9,15 +10,37 @@ function applyVisibleClass(refs: React.RefObject<HTMLDivElement>[], animType?: s
 
             const buffer = bufferNum * window.innerHeight;
 
-            if (topPosition < window.scrollY + window.innerHeight - buffer && bottomPosition > window.scrollY + buffer) {
-                switch (animType) {
-                    case "home": {
-                        ref.current.classList.add("visible-class");
-                        break;
-                    }
-                    default: {
-                        ref.current.classList.add("visible-class");
-                        break;
+            if (animType) {
+                if (topPosition < window.scrollY + window.innerHeight - buffer && bottomPosition > window.scrollY + buffer) {
+                    switch (animType[index]) {
+                        case "c_left": {
+                            ref.current.classList.add("content-anim-left");
+                            break;
+                        }
+                        case "c_right": {
+                            ref.current.classList.add("content-anim-right");
+                            break;
+                        }
+                        case "c_up": {
+                            ref.current.classList.add("content-anim-up");
+                            break;
+                        }
+                        case "s_left": {
+                            ref.current.classList.add("self-anim-left");
+                            break;
+                        }
+                        case "s_right": {
+                            ref.current.classList.add("self-anim-right");
+                            break;
+                        }
+                        case "s_up": {
+                            ref.current.classList.add("self-anim-up");
+                            break;
+                        }
+                        default: {
+                            ref.current.classList.add("visible-class");
+                            break;
+                        }
                     }
                 }
             }
@@ -25,4 +48,4 @@ function applyVisibleClass(refs: React.RefObject<HTMLDivElement>[], animType?: s
     });
 };
 
-export default applyVisibleClass;
+export default applyPageAnims;

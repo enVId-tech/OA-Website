@@ -4,7 +4,7 @@ import PageTitle from "../../components/ts/pagetitle/pagetitle";
 import Footer from "../../components/ts/footer/Footer";
 import '../../components/scss/pages/navtables/facultytable.scss';
 
-const FacultyTable = () => {
+const FacultyTable = (): React.JSX.Element => {
     return (
         <div id="FacultyTable">
             <Navbar />

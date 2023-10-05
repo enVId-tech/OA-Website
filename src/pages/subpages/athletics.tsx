@@ -4,7 +4,7 @@ import Footer from "../../components/ts/footer/Footer";
 import PageTitle from "../../components/ts/pagetitle/pagetitle";
 import '../../components/scss/pages/subpages/athletics.scss';
 
-const Athletics = () => {
+const Athletics = (): React.JSX.Element => {
     return (
         <div id="Athletics">
             <Navbar />

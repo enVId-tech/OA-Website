@@ -3,7 +3,7 @@ import '../../components/scss/pages/subpages/clubs.scss';
 import Footer from "../../components/ts/footer/Footer";
 import Navbar from "../../components/ts/navbar/navbar";
 import PageTitle from "../../components/ts/pagetitle/pagetitle";
-import ClubsList from "../../components/ts/clubs";
+import ClubsList from "../../components/ts/pages/clubs";
 
 interface ClubsProps {
     club: string;

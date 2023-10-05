@@ -4,7 +4,7 @@ import Footer from '../../components/ts/footer/Footer';
 import PageTitle from '../../components/ts/pagetitle/pagetitle';
 import '../../components/scss/pages/subpages/principalsmessage.scss';
 
-const PrincipalsMessage = () => {
+const PrincipalsMessage = (): React.JSX.Element => {
     return (
         <div id="PrincipalsMessage">
             <Navbar />

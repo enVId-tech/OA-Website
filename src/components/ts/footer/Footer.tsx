@@ -1,12 +1,12 @@
 import React, { useRef } from 'react';
-import ClassHelmet from '../title';
+import ClassHelmet from '../pagetitle/title';
 import '../../scss/components/footer.scss';
 
 interface PageTemplateProps {
     title: string;
 }
 
-const Footer = (pagetitle: PageTemplateProps) => {
+const Footer: React.FC<PageTemplateProps> = (pagetitle): React.JSX.Element => {
     const footerRef = useRef(null);
 
     const applyVisibleClass: (ref: React.RefObject<HTMLDivElement>) => void = (ref) => {
@@ -23,7 +23,7 @@ const Footer = (pagetitle: PageTemplateProps) => {
         }
     };
 
-    const handleVisibleClass = () => {
+    const handleVisibleClass = (): void => {
         applyVisibleClass(footerRef);
     };
 

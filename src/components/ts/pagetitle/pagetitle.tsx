@@ -29,11 +29,11 @@ const PageTitle: React.FC<PageTitleProps> = ({
     titleVhPreDown = 0,
     titleVhDownRate = 30,
 }) => {
-    const [backgroundPositionY, setBackgroundPositionY] = useState(-backgroundVhPreDown / backgroundVhDownRate);
-    const [titlePositionY, setTitlePositionY] = useState(-titleVhPreDown / titleVhDownRate);
+    const [backgroundPositionY, setBackgroundPositionY] = useState<number>(-backgroundVhPreDown / backgroundVhDownRate);
+    const [titlePositionY, setTitlePositionY] = useState<number>(-titleVhPreDown / titleVhDownRate);
 
     useEffect(() => {
-        const handleScroll = () => {
+        const handleScroll = (): void => {
             const scrollY = window.scrollY;
             const newBackgroundPositionY =
                 -((backgroundVhPreDown + scrollY) / backgroundVhDownRate);
@@ -49,6 +49,7 @@ const PageTitle: React.FC<PageTitleProps> = ({
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
+
 
     return (
         <div
@@ -74,7 +75,7 @@ const PageTitle: React.FC<PageTitleProps> = ({
                 <h5
                     id="OxfAcaSub"
                     style={{ transform: `translateY(${titlePositionY}vh)` }}
-                    className={`${oxfLogo ? 'oxf-aca-sub' : 'n-oxf-aca-main'}`}>
+                    className={`${oxfLogo ? 'oxf-aca-sub' : 'n-oxf-aca-sub'}`}>
                     {subText}
                 </h5>
             </div>

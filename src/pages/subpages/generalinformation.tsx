@@ -4,20 +4,24 @@ import PageTitle from "../../components/ts/pagetitle/pagetitle";
 import Footer from "../../components/ts/footer/Footer";
 import '../../components/scss/pages/subpages/generalinformation.scss';
 
-const GeneralInformation = () => {
-    const Redirect = (type: string) => {
+const GeneralInformation = (): React.JSX.Element => {
+    const Redirect = (type: string): void => {
         switch (type) {
-            case "Prof":
+            case "Prof": {
                 window.open("https://oxford.auhsd.us/files/public_files/OA-Profile_web_2020-2021.pdf");
                 break;
-            case "Info":
+            }
+            case "Info": {
                 window.open("https://oxford.auhsd.us/files/user/3598/file/OA_InfoCard.pdf");
                 break;
-            case "Pathways":
+            }
+            case "Pathways": {
                 window.open("https://oxford.auhsd.us/files/user/3598/file/CareerPathways_OxfordAcademy.pdf");
                 break;
-            default:
+            }
+            default: {
                 break;
+            }
         }
     }
     

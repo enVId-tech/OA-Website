@@ -6,7 +6,7 @@ import ReactGA from 'react-ga';
 ReactGA.initialize('G-X1VQH1NJQZ');
 
 // Function to track page view
-const trackPageView = () => {
+const trackPageView = (): void => {
   ReactGA.pageview(window.location.pathname + window.location.search);
 };
 

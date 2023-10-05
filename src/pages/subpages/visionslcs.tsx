@@ -4,7 +4,7 @@ import PageTitle from "../../components/ts/pagetitle/pagetitle";
 import Footer from "../../components/ts/footer/Footer";
 import '../../components/scss/pages/subpages/visionSLCS.scss';
 
-const VisionSLCS = () => {
+const VisionSLCS = (): React.JSX.Element => {
     return (
         <div id="VisionSLCS">
             <Navbar />

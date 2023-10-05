@@ -4,18 +4,14 @@ import Footer from "../../components/ts/footer/Footer";
 import PageTitle from "../../components/ts/pagetitle/pagetitle";
 import '../../components/scss/pages/subpages/bellschedule.scss'
 
-const BellSchedule = () => {
+const BellSchedule = (): React.JSX.Element => {
     const [inSession, setInSession] = useState<string>();
 
-    useEffect(() => {
-        // const date = new Date();
-        // const day = date.getDay();
-        // const hour = date.getHours();
-        // const minute = date.getMinutes();
-
-        const day: number = 1;
-        const hour: number = 15;
-        const minute: number = 39;
+    useEffect((): void => {
+        const date: Date = new Date();
+        const day: number = date.getDay();
+        const hour: number = date.getHours();
+        const minute: number = date.getMinutes();
 
         console.log(day, hour, minute);
 
@@ -25,7 +21,7 @@ const BellSchedule = () => {
             "Have a great weekend!",
         ];
 
-        const checkWeekday = (day: number) => {
+        const checkWeekday = (day: number): void => {
             if (day >= 1 && day <= 5) {
                 if (day === 1) {
                     if (hour >= 9 && hour <= 15) {

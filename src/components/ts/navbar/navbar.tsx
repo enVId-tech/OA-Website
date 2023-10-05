@@ -22,19 +22,19 @@ const Navbar: React.FC<NavbarProps> = ({ heightChange = -Infinity }: NavbarProps
 
   const navBar = getNavBarElements("TopDiv");
 
-  const handleButtonMouseEnter = (tableId: string) => {
+  const handleButtonMouseEnter = (tableId: string): void => {
     setActiveTable(tableId);
   };
 
-  const handleButtonMouseLeave = () => {
+  const handleButtonMouseLeave = (): void => {
     setActiveTable(null);
   };
 
-  const handleTableMouseEnter = (tableId: string) => {
+  const handleTableMouseEnter = (tableId: string): void => {
     setActiveTable(tableId);
   };
 
-  const handleTableMouseLeave = () => {
+  const handleTableMouseLeave = (): void => {
     setActiveTable(null);
   };
 
@@ -46,7 +46,7 @@ const Navbar: React.FC<NavbarProps> = ({ heightChange = -Infinity }: NavbarProps
   const ContactButtonsElements: NavbarElementsData[] = getNavBarElements("Contact");
 
   useEffect(() => {
-    const handleScroll = () => {
+    const handleScroll = (): void => {
       const scrollY = window.scrollY;
       if (scrollY > heightChange) {
         setBackgroundTransparent(false);
@@ -62,7 +62,7 @@ const Navbar: React.FC<NavbarProps> = ({ heightChange = -Infinity }: NavbarProps
     };
   }, [heightChange]); // Only re-run the effect if heightChange changes
 
-  window.onload = () => {
+  window.onload = (): void => {
     const scrollY = window.scrollY;
     if (scrollY > heightChange) {
       setBackgroundTransparent(false);
@@ -71,7 +71,7 @@ const Navbar: React.FC<NavbarProps> = ({ heightChange = -Infinity }: NavbarProps
     }
   }
 
-  const handleLogoClick = () => {
+  const handleLogoClick = (): void => {
     window.location.href = "/";
   }
 

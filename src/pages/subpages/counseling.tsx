@@ -3,7 +3,7 @@ import Navbar from "../../components/ts/navbar/navbar";
 import PageTitle from "../../components/ts/pagetitle/pagetitle";
 import Footer from "../../components/ts/footer/Footer";
 
-const Counseling = () => {
+const Counseling = (): React.JSX.Element => {
     return (
         <div id="Counseling">
             <Navbar />

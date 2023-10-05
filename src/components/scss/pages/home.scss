@@ -1,4 +1,4 @@
-#HomePage {
+#HomePageMain {
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -9,211 +9,35 @@
         width: 100%;
     }
 
-    #Title {
-        font-family: 'Raleway', sans-serif;
-        display: flex;
-        width: 100%;
-        height: 90vh;
-        background-color: #747474;
-        flex-direction: row;
-        align-items: center;
-        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../../images/OxfFrontImage.jpg);
-        background-position: -1vw -34vh;
-
-        #MainImage {
-            background-repeat: no-repeat;
-            background-size: contain;
-            background-position: center;
-            border-radius: 100px;
-            margin-left: 40vw;
-            width: 15vw;
-            height: auto;
-            animation: fadeIn 1s 0.4s ease-in-out forwards;
-
-            @keyframes fadeIn {
-                0% {
-                    margin-left: 40vw;
-                }
-
-                100% {
-                    margin-left: 16.5vw;
-                }
-
-            }
-        }
-
-        #MainText {
-            margin-left: 8vw;
-
-            #OxfAca {
-                font-size: 5vw;
-                font-weight: bold;
-                color: #ffffff;
-                letter-spacing: 0.2vw;
-                opacity: 0;
-                animation: unfadeUp 0.75s 1.25s ease-in-out forwards;
-            }
-
-            #OxfAcaSub {
-                font-size: 2vw;
-                color: #ffffff;
-                opacity: 0;
-                animation: unfadeUp 0.75s 1.25s ease-in-out forwards;
-            }
-        }
-
-        @keyframes unfadeUp {
-            0% {
-                margin-top: 8vw;
-                opacity: 0;
-            }
-
-            100% {
-                margin-top: 0vw;
-                opacity: 1;
-            }
-        }
-    }
-
     #About {
-        width: 100%;
-        height: 50vh;
         background-color: #ffffff;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        flex-direction: column;
-        align-items: center;
-        justify-items: center;
-        z-index: 10;
 
-        &.visible-class {
+        #AboutText {
+            flex-direction: row;
+            
             #AboutImage {
-                animation: fadeAndUp 1s 0.05s ease-in-out forwards;
-
-                @keyframes fadeAndUp {
-                    0% {
-                        opacity: 0;
-                        margin-bottom: -5vh;
-                    }
-
-                    100% {
-                        opacity: 1;
-                        margin-bottom: 0vh;
-                    }
-                    
-                }
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+                width: 30vw;
+                margin-left: 5vw;
+                height: auto;
             }
 
             #AboutLabel {
-                animation: fadeAndLeft 1s 0.05s ease-in-out forwards;
-
-                @keyframes fadeAndLeft {
-                    0% {
-                        opacity: 0;
-                        margin-left: 5vh;
-                    }
-
-                    100% {
-                        opacity: 1;
-                        margin-left: 0vh;
-                    }
-                    
-                }
+                font-size: 2vw;
+                padding-right: 3vw;
+                padding-left: 2vw;
+                font-weight: 200;
+                color: #000000;
             }
-        }
-
-        #AboutImage {
-            background-repeat: no-repeat;
-            background-size: contain;
-            background-position: center;
-            width: 30vw;
-            height: auto;
-            opacity: 0;
-        }
-
-        #AboutLabel {
-            font-size: 2vw;
-            padding-right: 3vw;
-            padding-left: 2vw;
-            font-weight: 200;
-            color: #000000;
-            opacity: 0;
         }
     }
 
     #Ratings {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         background-color: #0B132B;
-        height: 50vh;
-        justify-content: space-around;
-
-        &.visible-class {
-            #USNewsRanking {
-                #Ranks {
-                    #HSRankings {
-                        animation: fadeAndLeft 1s 0.05s ease-in-out forwards;
-
-                        @keyframes fadeAndLeft {
-                            0% {
-                                opacity: 0;
-                                margin-left: 5vh;
-                            }
-
-                            100% {
-                                opacity: 1;
-                                margin-left: 0vh;
-                            }
-                            
-                        }
-                    }
-
-                    #NatRankings {
-                        animation: fadeAndRight 1s 0.05s ease-in-out forwards;
-
-                        @keyframes fadeAndRight {
-                            0% {
-                                opacity: 0;
-                                margin-right: 5vh;
-                            }
-
-                            100% {
-                                opacity: 1;
-                                margin-right: 0vh;
-                            }
-                            
-                        }
-                    }
-                }
-
-                #USNewsLabel {
-                    animation: fadeAndUp 1s 0.3s ease-in-out forwards;
-
-                    @keyframes fadeAndUp {
-                        0% {
-                            opacity: 0;
-                            margin-bottom: -5vh;
-                        }
-
-                        100% {
-                            opacity: 1;
-                            margin-bottom: 0vh;
-                        }
-                        
-                    }
-                }
-            }
-        }
 
         #USNewsRanking {
-            font-family: 'Raleway', sans-serif;
-            display: flex;
-            justify-content: space-around;
-            background-color: #0B132B;
-            width: 100%;
-            flex-direction: row;
-            align-items: center;
             flex-direction: column;
 
             #Ranks {
@@ -225,13 +49,11 @@
                 #HSRankings {
                     color: white;
                     font-weight: bold;
-                    opacity: 0;
                 }
 
                 #NatRankings {
                     color: white;
                     font-weight: bold;
-                    opacity: 0;
                 }
             }
         }
@@ -241,35 +63,25 @@
             font-weight: 600;
             font-size: 1.5vw;
             z-index: 1000;
-            opacity: 0;
         }
     }
 
     #Admissions {
-        display: flex;
-        #AdmissionsMain {
-            font-family: 'Raleway', sans-serif;
-            display: grid;
-            justify-content: space-around;
-            background-color: rgb(12, 43, 83);
-            width: 100%;
-            height: 50vh;
-            flex-direction: row;
-            align-items: center;
-            align-content: center;
-            justify-items: center;
+        background-color: rgb(12, 43, 83);
 
+        #AdmissionsMain {
+            flex-direction: column;
+            
             #AdmissionsLabel {
                 color: white;
                 font-weight: bold;
-                opacity: 0;
             }
 
             #AdmissionsText {
                 color: white;
                 font-weight: bold;
-                opacity: 0;
                 width: 80%;
+
                 #Apply {
                     border-radius: 25px;
                     background-color: #ffffff;
@@ -278,44 +90,6 @@
                     font-size: 1.5vw;
                     padding: 1vw;
                     border: none;
-                }
-            }
-        }
-
-        &.visible-class {
-            #AdmissionsMain {
-                #AdmissionsLabel {
-                    animation: fadeAndLeft 1s 0.05s ease-in-out forwards;
-
-                    @keyframes fadeAndLeft {
-                        0% {
-                            opacity: 0;
-                            margin-left: 5vh;
-                        }
-
-                        100% {
-                            opacity: 1;
-                            margin-left: 0vh;
-                        }
-                        
-                    }
-                }
-
-                #AdmissionsText {
-                    animation: fadeAndRight 1s 0.05s ease-in-out forwards;
-
-                    @keyframes fadeAndRight {
-                        0% {
-                            opacity: 0;
-                            margin-right: 5vh;
-                        }
-
-                        100% {
-                            opacity: 1;
-                            margin-right: 0vh;
-                        }
-                        
-                    }
                 }
             }
         }

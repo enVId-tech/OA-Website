@@ -4,18 +4,18 @@
   "icons": [
     {
       "src": "images/OxfordMascot.png",
-      "sizes": "64x64",
+      "sizes": "136x136",
       "type": "image/x-icon"
     },
     {
       "src": "images/OxfordMascot.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "136x136"
     },
     {
       "src": "images/OxfordMascot.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "136x136"
     }
   ],
   "start_url": ".",

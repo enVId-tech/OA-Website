@@ -4,8 +4,8 @@ import PageTitle from "../../components/ts/pagetitle/pagetitle";
 import Footer from "../../components/ts/footer/Footer";
 import '../../components/scss/pages/subpages/oxfordsitemap.scss';
 
-const OxfSitemap = () => {
-    const handleClick = () => {
+const OxfSitemap = (): React.JSX.Element => {
+    const handleClick = (): void => {
         window.open("https://oxford.auhsd.us/files/user/1/file/OXFORD%20SITE%20MAP%202023%20Back%20cover%20inside.pdf", "_blank");
     }
     return (
