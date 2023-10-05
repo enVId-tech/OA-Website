@@ -9,6 +9,7 @@ import ClassHelmet from "../components/ts/title";
 import PageTitle from "../components/ts/pagetitle/pagetitle";
 import trackPageView from "../components/ts/analytics/analytics";
 import Footer from "../components/ts/footer/Footer";
+import applyVisibleClass from "../components/ts/animations/animations";
 
 const HomePage = () => {
     // Create refs for main div elements
@@ -21,25 +22,8 @@ const HomePage = () => {
         trackPageView();
     }, []);
 
-    const applyVisibleClass: (ref: React.RefObject<HTMLDivElement>) => void = (ref) => {
-        if (ref.current !== null) {
-            const rect = ref.current.getBoundingClientRect();
-            const topPosition = rect.top + window.scrollY;
-            const bottomPosition = rect.bottom + window.scrollY;
-
-            const buffer = 0.25 * window.innerHeight;
-
-            if (topPosition < window.scrollY + window.innerHeight - buffer && bottomPosition > window.scrollY + buffer) {
-                ref.current.classList.add("visible-class");
-            }
-        }
-    };
-
     const handleVisibleClass = () => {
-        applyVisibleClass(aboutRef);
-        applyVisibleClass(ratingsRef);
-        applyVisibleClass(admissionsRef);
-        applyVisibleClass(footerRef);
+        applyVisibleClass([aboutRef, ratingsRef, admissionsRef, footerRef], "home", 0.25);
     };
 
     window.addEventListener("scroll", handleVisibleClass);
