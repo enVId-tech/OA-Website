@@ -1,10 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../components/ts/navbar/navbar";
 import Footer from "../components/ts/footer/Footer";
 import '../components/scss/pages/error.scss';
+import trackPageView from "../components/ts/analytics/analytics";
 
 const ErrorPage = (): React.JSX.Element => {
     const [time, setTime] = useState<number>(3);
+
+    useEffect((): void => {
+        trackPageView();
+    }, []);
 
     const interval: number = 0.1;
 

@@ -1,15 +1,16 @@
-import React from "react";
-import '../../components/scss/pages/subpages/clubs.scss';
+import React, { useEffect } from "react";
 import Footer from "../../components/ts/footer/Footer";
 import Navbar from "../../components/ts/navbar/navbar";
 import PageTitle from "../../components/ts/pagetitle/pagetitle";
 import ClubsList from "../../components/ts/pages/clubs";
+import trackPageView from "../../components/ts/analytics/analytics";
+import '../../components/scss/pages/subpages/clubs.scss';
 
 interface ClubsProps {
     club: string;
 }
 
-const Clubs = () => {
+const Clubs = (): React.JSX.Element => {
     const Academics: ClubsProps[] = ClubsList("Academic");
     const Interest: ClubsProps[] = ClubsList("Interest");
     const Culture: ClubsProps[] = ClubsList("Culture");
@@ -17,6 +18,10 @@ const Clubs = () => {
     const Performing: ClubsProps[] = ClubsList("Performing");
     const Spiritual: ClubsProps[] = ClubsList("Spiritual");
     const Speaking: ClubsProps[] = ClubsList("Speaking");
+
+    useEffect((): void => {
+        trackPageView();
+    }, []);
 
     return (
         <div id="Clubs">

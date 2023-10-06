@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../../components/ts/navbar/navbar";
 import Footer from "../../components/ts/footer/Footer";
 import PageTitle from "../../components/ts/pagetitle/pagetitle";
 import '../../components/scss/pages/subpages/athletics.scss';
+import trackPageView from "../../components/ts/analytics/analytics";
 
 const Athletics = (): React.JSX.Element => {
+    useEffect((): void => {
+        trackPageView();
+    }, []);
+    
     return (
         <div id="Athletics">
             <Navbar />

@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../../components/ts/navbar/navbar";
 import PageTitle from "../../components/ts/pagetitle/pagetitle";
 import Footer from "../../components/ts/footer/Footer";
+import trackPageView from "../../components/ts/analytics/analytics";
 import '../../components/scss/pages/subpages/oxfordsitemap.scss';
 
 const OxfSitemap = (): React.JSX.Element => {
+    useEffect((): void => {
+        trackPageView();
+    }, []);
+
     const handleClick = (): void => {
         window.open("https://oxford.auhsd.us/files/user/1/file/OXFORD%20SITE%20MAP%202023%20Back%20cover%20inside.pdf", "_blank");
     }
+
     return (
         <div id="OxfSiteMap">
             <Navbar />

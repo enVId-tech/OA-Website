@@ -2,78 +2,23 @@ import React, { useState, useEffect } from "react";
 import Navbar from "../../components/ts/navbar/navbar";
 import Footer from "../../components/ts/footer/Footer";
 import PageTitle from "../../components/ts/pagetitle/pagetitle";
+import trackPageView from "../../components/ts/analytics/analytics";
 import '../../components/scss/pages/subpages/bellschedule.scss'
+import checkInClass from "../../components/ts/pages/bellschedule";
 
 const BellSchedule = (): React.JSX.Element => {
-    const [inSession, setInSession] = useState<string>();
+    const [sessionText, setSessionText] = useState<string>();
 
     useEffect((): void => {
-        const date: Date = new Date();
-        const day: number = date.getDay();
-        const hour: number = date.getHours();
-        const minute: number = date.getMinutes();
+        trackPageView();
 
-        console.log(day, hour, minute);
-
-        const startStrings: string[] = [
-            "School's in session!",
-            "School's out of session!",
-            "Have a great weekend!",
-        ];
-
-        const checkWeekday = (day: number): void => {
-            if (day >= 1 && day <= 5) {
-                if (day === 1) {
-                    if (hour >= 9 && hour <= 15) {
-                        if (hour === 9) {
-                            if (minute >= 15) {
-                                setInSession(startStrings[0]);
-                            } else {
-                                setInSession(startStrings[1]);
-                            }
-                        } else if (hour === 15) {
-                            if (minute <= 20) {
-                                setInSession(startStrings[0]);
-                            } else {
-                                setInSession(startStrings[1]);
-                            }
-                        } else {
-                            setInSession(startStrings[0]);
-                        }
-                    }
-                } else {
-                    if (hour >= 8 && hour <= 15) {
-                        if (hour === 8) {
-                            if (minute >= 30) {
-                                setInSession(startStrings[0]);
-                            } else {
-                                setInSession(startStrings[1]);
-                            }
-                        } else if (hour === 15) {
-                            if (minute <= 20) {
-                                setInSession(startStrings[0]);
-                            } else {
-                                setInSession(startStrings[1]);
-                            }
-                        } else {
-                            setInSession(startStrings[0]);
-                        }
-                    } else {
-                        setInSession(startStrings[1]);
-                    }
-                }
-            } else {
-                setInSession(startStrings[2]);
-            }
-        }
-
-        checkWeekday(day);
+        setSessionText(checkInClass());
     }, []);
 
     return (
         <div id="BellSchedule">
             <Navbar />
-            <PageTitle height={80} mainText="Bell Schedule" subText={inSession} oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
+            <PageTitle height={80} mainText="Bell Schedule" subText={sessionText} oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
             <div id="BellScheduleMain">
                 <h1 id="BellScheduleTitle">Bell Schedule</h1>
                 <span id="BellScheduleText">

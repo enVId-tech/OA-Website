@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navbar from '../../components/ts/navbar/navbar';
 import Footer from '../../components/ts/footer/Footer';
 import PageTitle from '../../components/ts/pagetitle/pagetitle';
+import trackPageView from '../../components/ts/analytics/analytics';
 import '../../components/scss/pages/subpages/principalsmessage.scss';
 
 const PrincipalsMessage = (): React.JSX.Element => {
+    useEffect((): void => {
+        trackPageView();
+    }, []);
+    
     return (
         <div id="PrincipalsMessage">
             <Navbar />

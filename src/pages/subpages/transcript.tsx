@@ -1,11 +1,16 @@
 /* eslint-disable react/jsx-no-target-blank */
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../../components/ts/navbar/navbar";
 import PageTitle from "../../components/ts/pagetitle/pagetitle";
 import Footer from "../../components/ts/footer/Footer";
+import trackPageView from "../../components/ts/analytics/analytics";
 import '../../components/scss/pages/subpages/transcript.scss';
 
 const Transcript = (): React.JSX.Element => {
+    useEffect((): void => {
+        trackPageView();
+    }, []);
+
     return (
         <div id="Transcript">
             <Navbar />
