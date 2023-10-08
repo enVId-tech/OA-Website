@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet, HelmetProvider } from "react-helmet-async";
+import { Helmet as Head, HelmetProvider as HTML } from "react-helmet-async";
 
 interface ClassHelmetProps {
     title?: string;
@@ -8,19 +8,19 @@ interface ClassHelmetProps {
 const ClassHelmet: React.FC<ClassHelmetProps> = (props: ClassHelmetProps) => {
     if (props.title === undefined) {
         return (
-            <HelmetProvider>
-                <Helmet>
+            <HTML>
+                <Head>
                     <title>Oxford Academy</title>
-                </Helmet>
-            </HelmetProvider>
+                </Head>
+            </HTML>
         );
     } else {
         return (
-            <HelmetProvider>
-                <Helmet>
+            <HTML>
+                <Head>
                     <title>Oxford Academy - {props.title}</title>
-                </Helmet>
-            </HelmetProvider>
+                </Head>
+            </HTML>
         );
     }
 }

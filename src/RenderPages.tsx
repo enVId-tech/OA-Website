@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as ReactRouter, Routes as Pathhub, Route as Path, Navigate as Redirect } from "react-router-dom";
 
 // TS
 
@@ -37,67 +37,67 @@ import HealthOffice from './pages/subpages/healthoffice';
 
 const RenderPages = (): React.JSX.Element => {
   return (
-    <Router>
-      <Routes>
+    <ReactRouter>
+      <Pathhub>
         {/* Redirects */}
-        <Route path="/*" element={<Navigate to="/error" />} />
-        <Route path="/administration/*" element={<Navigate to="/administration" />} />
-        <Route path="/admissions/*" element={<Navigate to="/admissions" />} />
-        <Route path="/athletics/*" element={<Navigate to="/athletics" />} />
-        <Route path="/bellschedule/*" element={<Navigate to="/bellschedule" />} />
-        <Route path="/calendar/*" element={<Navigate to="/calendar" />} />
-        <Route path="/clubs/*" element={<Navigate to="/clubs" />} />
-        <Route path="/counseling/*" element={<Navigate to="/counseling" />} />
-        <Route path="/cypresscollege/*" element={<Navigate to="/cypresscollege" />} />
-        <Route path="/generalinformation/*" element={<Navigate to="/generalinformation" />} />
-        <Route path="/healthoffice/*" element={<Navigate to="/healthoffice" />} />
-        <Route path="/oasitemap/*" element={<Navigate to="/oasitemap" />} />
-        <Route path="/policies/*" element={<Navigate to="/policies" />} />
-        <Route path="/principalsmessage/*" element={<Navigate to="/principalsmessage" />} />
-        <Route path="/programs4patriots/*" element={<Navigate to="/programs4patriots" />} />
-        <Route path="/staffdirectory/*" element={<Navigate to="/staffdirectory" />} />
-        <Route path="/transcripts/*" element={<Navigate to="/transcripts" />} />
-        <Route path="/transportation/*" element={<Navigate to="/transportation" />} />
-        <Route path="/visionandslcs/*" element={<Navigate to="/visionandslcs" />} />
-        <Route path="/error/*" element={<Navigate to="/error" />} />
+        <Path path="/*" element={<Redirect to="/error" />} />
+        <Path path="/administration/*" element={<Redirect to="/administration" />} />
+        <Path path="/admissions/*" element={<Redirect to="/admissions" />} />
+        <Path path="/athletics/*" element={<Redirect to="/athletics" />} />
+        <Path path="/bellschedule/*" element={<Redirect to="/bellschedule" />} />
+        <Path path="/calendar/*" element={<Redirect to="/calendar" />} />
+        <Path path="/clubs/*" element={<Redirect to="/clubs" />} />
+        <Path path="/counseling/*" element={<Redirect to="/counseling" />} />
+        <Path path="/cypresscollege/*" element={<Redirect to="/cypresscollege" />} />
+        <Path path="/generalinformation/*" element={<Redirect to="/generalinformation" />} />
+        <Path path="/healthoffice/*" element={<Redirect to="/healthoffice" />} />
+        <Path path="/oasitemap/*" element={<Redirect to="/oasitemap" />} />
+        <Path path="/policies/*" element={<Redirect to="/policies" />} />
+        <Path path="/principalsmessage/*" element={<Redirect to="/principalsmessage" />} />
+        <Path path="/programs4patriots/*" element={<Redirect to="/programs4patriots" />} />
+        <Path path="/staffdirectory/*" element={<Redirect to="/staffdirectory" />} />
+        <Path path="/transcripts/*" element={<Redirect to="/transcripts" />} />
+        <Path path="/transportation/*" element={<Redirect to="/transportation" />} />
+        <Path path="/visionandslcs/*" element={<Redirect to="/visionandslcs" />} />
+        <Path path="/error/*" element={<Redirect to="/error" />} />
 
         {/* Pages */}
-        <Route path="/" element={<HomePage />} />
-        <Route path="/administration" element={<Administration />} />
-        <Route path="/admissions" element={<Admissions />} />
-        <Route path="/athletics" element={<Athletics />} />
-        <Route path="/bellschedule" element={<BellSchedule />} />
-        <Route path="/calendar" element={<Calendar />} />
-        <Route path="/clubs" element={<Clubs />} />
-        <Route path="/counseling" element={<Counseling />} />
-        <Route path="/cypresscollege" element={<CCDualEnrollment />} />
-        <Route path="/generalinformation" element={<GeneralInformation />} />
-        <Route path="/healthoffice" element={<HealthOffice />} />
-        <Route path="/oasitemap" element={<OxfSitemap />} />
-        <Route path="/policies" element={<Policies />} />
-        <Route path="/principalsmessage" element={<PrincipalsMessage />} />
-        <Route path="/programs4patriots" element={<ProgramsForPatriots />} />
-        <Route path="/staffdirectory" element={<Staff />} />
-        <Route path="/transcripts" element={<Transcript />} />
-        <Route path="/transportation" element={<Transportation />} />
-        <Route path="/visionandslcs" element={<VisionSLCS />} />
-        <Route path="/error" element={<ErrorPage />} />
+        <Path path="/" element={<HomePage />} />
+        <Path path="/administration" element={<Administration />} />
+        <Path path="/admissions" element={<Admissions />} />
+        <Path path="/athletics" element={<Athletics />} />
+        <Path path="/bellschedule" element={<BellSchedule />} />
+        <Path path="/calendar" element={<Calendar />} />
+        <Path path="/clubs" element={<Clubs />} />
+        <Path path="/counseling" element={<Counseling />} />
+        <Path path="/cypresscollege" element={<CCDualEnrollment />} />
+        <Path path="/generalinformation" element={<GeneralInformation />} />
+        <Path path="/healthoffice" element={<HealthOffice />} />
+        <Path path="/oasitemap" element={<OxfSitemap />} />
+        <Path path="/policies" element={<Policies />} />
+        <Path path="/principalsmessage" element={<PrincipalsMessage />} />
+        <Path path="/programs4patriots" element={<ProgramsForPatriots />} />
+        <Path path="/staffdirectory" element={<Staff />} />
+        <Path path="/transcripts" element={<Transcript />} />
+        <Path path="/transportation" element={<Transportation />} />
+        <Path path="/visionandslcs" element={<VisionSLCS />} />
+        <Path path="/error" element={<ErrorPage />} />
 
         {/* Page Table Redirects */}
-        <Route path="/student-table/*" element={<Navigate to="/student-table" />} />
-        <Route path="/school-table/*" element={<Navigate to="/school-table" />} />
-        <Route path="/parent-table/*" element={<Navigate to="/parent-table" />} />
-        <Route path="/faculty-table/*" element={<Navigate to="/faculty-table" />} />
-        <Route path="/contact-table/*" element={<Navigate to="/contact-table" />} />
+        <Path path="/student-table/*" element={<Redirect to="/student-table" />} />
+        <Path path="/school-table/*" element={<Redirect to="/school-table" />} />
+        <Path path="/parent-table/*" element={<Redirect to="/parent-table" />} />
+        <Path path="/faculty-table/*" element={<Redirect to="/faculty-table" />} />
+        <Path path="/contact-table/*" element={<Redirect to="/contact-table" />} />
 
         {/* Page Tables */}
-        <Route path="/student-table" element={<StudentTable />} />
-        <Route path="/school-table" element={<SchoolTable />} />
-        <Route path="/parent-table" element={<ParentTable />} />
-        <Route path="/faculty-table" element={<FacultyTable />} />
-        <Route path="/contact-table" element={<ContactTable />} />
-      </Routes>
-    </Router>
+        <Path path="/student-table" element={<StudentTable />} />
+        <Path path="/school-table" element={<SchoolTable />} />
+        <Path path="/parent-table" element={<ParentTable />} />
+        <Path path="/faculty-table" element={<FacultyTable />} />
+        <Path path="/contact-table" element={<ContactTable />} />
+      </Pathhub>
+    </ReactRouter>
   )
 }
 
