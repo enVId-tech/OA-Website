@@ -1,6 +1,6 @@
 {
   "name": "oa-frontpage",
-  "version": "45",
+  "version": "46",
   "private": true,
   "dependencies": {
     "@types/react-dom": "^18.2.7",

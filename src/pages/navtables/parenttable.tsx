@@ -4,7 +4,7 @@ import PageTitle from "../../components/ts/pagetitle/pagetitle";
 import Footer from "../../components/ts/footer/Footer";
 import '../../components/scss/pages/navtables/parenttable.scss';
 
-const ParentTable = (): React.JSX.Element => {
+const ParentTable: React.FC = (): React.JSX.Element => {
     return (
         <div id="ParentTable">
             <Navbar />

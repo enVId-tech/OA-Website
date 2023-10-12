@@ -4,7 +4,7 @@ import PageTitle from "../../components/ts/pagetitle/pagetitle";
 import Footer from "../../components/ts/footer/Footer";
 import '../../components/scss/pages/navtables/studenttable.scss';
 
-const StudentTable = (): React.JSX.Element => {
+const StudentTable: React.FC = (): React.JSX.Element => {
     return (
         <div id="StudentTable">
             <Navbar />
@@ -17,7 +17,6 @@ const StudentTable = (): React.JSX.Element => {
                         <button className="list">List</button>
                     </span>
                 </span>
-
             </div>
             <Footer title="Student Table" />
         </div>

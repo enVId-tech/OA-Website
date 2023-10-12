@@ -5,7 +5,7 @@ import Footer from "../../components/ts/footer/Footer";
 import trackPageView from "../../components/ts/analytics/analytics";
 import '../../components/scss/pages/subpages/oxfordsitemap.scss';
 
-const OxfSitemap = (): React.JSX.Element => {
+const OxfSitemap: React.FC = (): React.JSX.Element => {
     useEffect((): void => {
         trackPageView();
     }, []);

@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import '../components/images/OxfordLogo.png';
 import '../components/scss/pages/home.scss';
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -11,14 +11,14 @@ import trackPageView from "../components/ts/analytics/analytics";
 import Footer from "../components/ts/footer/Footer";
 import applyPageAnims from "../components/ts/animations/animations";
 
-const HomePage = (): React.JSX.Element => {
+const HomePage: React.FC = (): React.JSX.Element => {
     // Create refs for main div elements
-    const aboutRef = useRef(null);
-    const ratingsRef = useRef(null);
-    const admissionsRef = useRef(null);
-    const footerRef = useRef(null);
+    const aboutRef = React.useRef(null);
+    const ratingsRef = React.useRef(null);
+    const admissionsRef = React.useRef(null);
+    const footerRef = React.useRef(null);
 
-    useEffect((): void => {
+    React.useEffect((): void => {
         trackPageView();
     }, []);
 

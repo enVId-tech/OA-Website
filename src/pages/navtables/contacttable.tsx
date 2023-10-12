@@ -3,7 +3,7 @@ import Navbar from "../../components/ts/navbar/navbar";
 import PageTitle from "../../components/ts/pagetitle/pagetitle";
 import Footer from "../../components/ts/footer/Footer";
 import '../../components/scss/pages/navtables/contacttable.scss';
-const ContactTable = (): React.JSX.Element => {
+const ContactTable: React.FC = (): React.JSX.Element => {
     return (
         <div id="ContactTable">
             <Navbar />

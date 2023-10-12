@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/alt-text */
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import '../../scss/components/pagetitle.scss';
 
 // Define the props interface outside the component
@@ -28,18 +28,18 @@ const PageTitle: React.FC<PageTitleProps> = ({
     backgroundVhDownRate = 128,
     titleVhPreDown = 0,
     titleVhDownRate = 30,
-}) => {
-    const [backgroundPositionY, setBackgroundPositionY] = useState<number>(-backgroundVhPreDown / backgroundVhDownRate);
-    const [titlePositionY, setTitlePositionY] = useState<number>(-titleVhPreDown / titleVhDownRate);
+}): React.JSX.Element => {
+    const [backgroundPositionY, setBackgroundPositionY] = React.useState<number>(-backgroundVhPreDown / backgroundVhDownRate);
+    const [titlePositionY, setTitlePositionY] = React.useState<number>(-titleVhPreDown / titleVhDownRate);
 
-    useEffect(() => {
+    React.useEffect(() => {
         const handleScroll = (): void => {
-            const scrollY = window.scrollY;
-            const newBackgroundPositionY =
+            const scrollY: number = window.scrollY;
+            const newBackgroundPositionY: number =
                 -((backgroundVhPreDown + scrollY) / backgroundVhDownRate);
             setBackgroundPositionY(newBackgroundPositionY);
 
-            const newTitlePositionY = scrollY / titleVhDownRate;
+            const newTitlePositionY: number = scrollY / titleVhDownRate;
             setTitlePositionY(newTitlePositionY);
         };
 

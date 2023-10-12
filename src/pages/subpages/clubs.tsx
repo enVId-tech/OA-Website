@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Footer from "../../components/ts/footer/Footer";
 import Navbar from "../../components/ts/navbar/navbar";
 import PageTitle from "../../components/ts/pagetitle/pagetitle";
@@ -10,7 +10,7 @@ interface ClubsProps {
     club: string;
 }
 
-const Clubs = (): React.JSX.Element => {
+const Clubs: React.FC = (): React.JSX.Element => {
     const Academics: ClubsProps[] = ClubsList("Academic");
     const Interest: ClubsProps[] = ClubsList("Interest");
     const Culture: ClubsProps[] = ClubsList("Culture");
@@ -19,7 +19,7 @@ const Clubs = (): React.JSX.Element => {
     const Spiritual: ClubsProps[] = ClubsList("Spiritual");
     const Speaking: ClubsProps[] = ClubsList("Speaking");
 
-    useEffect((): void => {
+    React.useEffect((): void => {
         trackPageView();
     }, []);
 

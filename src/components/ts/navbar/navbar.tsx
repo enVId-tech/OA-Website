@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 // Disabling a specific eslint rule for this file
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import '../../scss/components/navbar.scss';
 import getNavBarElements from './navbarelements';
 
@@ -16,11 +16,11 @@ interface NavbarElementsData {
   hasWorkingLink: boolean;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ heightChange = -Infinity }: NavbarProps) => {
-  const [backgroundTransparent, setBackgroundTransparent] = useState<boolean>(true);
-  const [activeTable, setActiveTable] = useState<string | null>(null);
+const Navbar: React.FC<NavbarProps> = ({ heightChange = -Infinity }: NavbarProps): React.JSX.Element => {
+  const [backgroundTransparent, setBackgroundTransparent] = React.useState<boolean>(true);
+  const [activeTable, setActiveTable] = React.useState<string | null>(null);
 
-  const navBar = getNavBarElements("TopDiv");
+  const navBar: NavbarElementsData[] = getNavBarElements("TopDiv");
 
   const handleButtonMouseEnter = (tableId: string): void => {
     setActiveTable(tableId);
@@ -45,9 +45,9 @@ const Navbar: React.FC<NavbarProps> = ({ heightChange = -Infinity }: NavbarProps
   const FacultyButtonsTable: NavbarElementsData[] = getNavBarElements("Faculty");
   const ContactButtonsElements: NavbarElementsData[] = getNavBarElements("Contact");
 
-  useEffect(() => {
+  React.useEffect(() => {
     const handleScroll = (): void => {
-      const scrollY = window.scrollY;
+      const scrollY: number = window.scrollY;
       if (scrollY > heightChange) {
         setBackgroundTransparent(false);
       } else {
@@ -63,7 +63,7 @@ const Navbar: React.FC<NavbarProps> = ({ heightChange = -Infinity }: NavbarProps
   }, [heightChange]); // Only re-run the effect if heightChange changes
 
   window.onload = (): void => {
-    const scrollY = window.scrollY;
+    const scrollY: number = window.scrollY;
     if (scrollY > heightChange) {
       setBackgroundTransparent(false);
     } else {

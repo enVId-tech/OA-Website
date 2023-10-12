@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import ClassHelmet from '../pagetitle/title';
 import '../../scss/components/footer.scss';
 
@@ -7,15 +7,15 @@ interface PageTemplateProps {
 }
 
 const Footer: React.FC<PageTemplateProps> = (pagetitle): React.JSX.Element => {
-    const footerRef = useRef(null);
+    const footerRef = React.useRef(null);
 
     const applyVisibleClass: (ref: React.RefObject<HTMLDivElement>) => void = (ref) => {
         if (ref.current !== null) {
-            const rect = ref.current.getBoundingClientRect();
-            const topPosition = rect.top + window.scrollY;
-            const bottomPosition = rect.bottom + window.scrollY;
+            const rect: DOMRect = ref.current.getBoundingClientRect();
+            const topPosition: number = rect.top + window.scrollY;
+            const bottomPosition: number = rect.bottom + window.scrollY;
 
-            const buffer = 0.25 * window.innerHeight;
+            const buffer: number = 0.25 * window.innerHeight;
 
             if (topPosition < window.scrollY + window.innerHeight - buffer && bottomPosition > window.scrollY + buffer) {
                 ref.current.classList.add("visible-class");

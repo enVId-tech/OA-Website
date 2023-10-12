@@ -5,7 +5,7 @@ interface ClassHelmetProps {
     title?: string;
 }
 
-const ClassHelmet: React.FC<ClassHelmetProps> = (props: ClassHelmetProps) => {
+const ClassHelmet: React.FC<ClassHelmetProps> = (props: ClassHelmetProps): React.JSX.Element => {
     if (props.title === undefined) {
         return (
             <HTML>

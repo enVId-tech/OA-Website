@@ -1,12 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Navbar from "../../components/ts/navbar/navbar";
 import PageTitle from "../../components/ts/pagetitle/pagetitle";
 import Footer from "../../components/ts/footer/Footer";
 import trackPageView from "../../components/ts/analytics/analytics";
 import '../../components/scss/pages/subpages/PforP.scss';
 
-const ProgramsForPatriots = (): React.JSX.Element => {
-    useEffect((): void => {
+const ProgramsForPatriots: React.FC = (): React.JSX.Element => {
+    React.useEffect((): void => {
         trackPageView();
     }, []);
 

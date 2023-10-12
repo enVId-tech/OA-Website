@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Navbar from "../components/ts/navbar/navbar";
 import Footer from "../components/ts/footer/Footer";
 import '../components/scss/pages/error.scss';
 import trackPageView from "../components/ts/analytics/analytics";
 
-const ErrorPage = (): React.JSX.Element => {
-    const [time, setTime] = useState<number>(3);
+const ErrorPage: React.FC = (): React.JSX.Element => {
+    const [time, setTime] = React.useState<number>(3);
 
-    useEffect((): void => {
+    React.useEffect((): void => {
         trackPageView();
     }, []);
 

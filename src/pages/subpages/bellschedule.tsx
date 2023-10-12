@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Navbar from "../../components/ts/navbar/navbar";
 import Footer from "../../components/ts/footer/Footer";
 import PageTitle from "../../components/ts/pagetitle/pagetitle";
@@ -6,10 +6,10 @@ import trackPageView from "../../components/ts/analytics/analytics";
 import '../../components/scss/pages/subpages/bellschedule.scss'
 import checkInClass from "../../components/ts/pages/bellschedule";
 
-const BellSchedule = (): React.JSX.Element => {
-    const [sessionText, setSessionText] = useState<string>();
+const BellSchedule: React.FC = (): React.JSX.Element => {
+    const [sessionText, setSessionText] = React.useState<string>();
 
-    useEffect((): void => {
+    React.useEffect((): void => {
         trackPageView();
 
         setSessionText(checkInClass());

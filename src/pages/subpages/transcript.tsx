@@ -1,13 +1,13 @@
 /* eslint-disable react/jsx-no-target-blank */
-import React, { useEffect } from "react";
+import React from "react";
 import Navbar from "../../components/ts/navbar/navbar";
 import PageTitle from "../../components/ts/pagetitle/pagetitle";
 import Footer from "../../components/ts/footer/Footer";
 import trackPageView from "../../components/ts/analytics/analytics";
 import '../../components/scss/pages/subpages/transcript.scss';
 
-const Transcript = (): React.JSX.Element => {
-    useEffect((): void => {
+const Transcript: React.FC = (): React.JSX.Element => {
+    React.useEffect((): void => {
         trackPageView();
     }, []);
 

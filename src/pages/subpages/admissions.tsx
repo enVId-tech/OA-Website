@@ -1,12 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Navbar from "../../components/ts/navbar/navbar";
 import Footer from "../../components/ts/footer/Footer";
 import PageTitle from "../../components/ts/pagetitle/pagetitle";
 import '../../components/scss/pages/subpages/admissions.scss';
 import trackPageView from "../../components/ts/analytics/analytics";
 
-const Admissions = (): React.JSX.Element => {
-    useEffect((): void => {
+const Admissions: React.FC = (): React.JSX.Element => {
+    React.useEffect((): void => {
         trackPageView();
     }, []);
     

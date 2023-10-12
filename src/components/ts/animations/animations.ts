@@ -4,11 +4,11 @@ import '../../scss/components/section.scss';
 function applyPageAnims(refs: React.RefObject<HTMLDivElement>[], animType?: string[], bufferNum: number = 0): void {
     refs.forEach((ref: React.RefObject<HTMLDivElement>, index: number) => {
         if (ref.current !== null) {
-            const rect = ref.current.getBoundingClientRect();
-            const topPosition = rect.top + window.scrollY;
-            const bottomPosition = rect.bottom + window.scrollY;
+            const rect: DOMRect = ref.current.getBoundingClientRect();
+            const topPosition: number = rect.top + window.scrollY;
+            const bottomPosition: number = rect.bottom + window.scrollY;
 
-            const buffer = bufferNum * window.innerHeight;
+            const buffer: number = bufferNum * window.innerHeight;
 
             if (animType) {
                 if (topPosition < window.scrollY + window.innerHeight - buffer && bottomPosition > window.scrollY + buffer) {
@@ -25,6 +25,10 @@ function applyPageAnims(refs: React.RefObject<HTMLDivElement>[], animType?: stri
                             ref.current.classList.add("content-anim-up");
                             break;
                         }
+                        case "c_down": {
+                            ref.current.classList.add("content-anim-down");
+                            break;
+                        }
                         case "s_left": {
                             ref.current.classList.add("self-anim-left");
                             break;
@@ -35,6 +39,10 @@ function applyPageAnims(refs: React.RefObject<HTMLDivElement>[], animType?: stri
                         }
                         case "s_up": {
                             ref.current.classList.add("self-anim-up");
+                            break;
+                        }
+                        case "s_down": {
+                            ref.current.classList.add("self-anim-down");
                             break;
                         }
                         default: {

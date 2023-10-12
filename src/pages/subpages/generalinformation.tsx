@@ -1,27 +1,27 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Navbar from "../../components/ts/navbar/navbar";
 import PageTitle from "../../components/ts/pagetitle/pagetitle";
 import Footer from "../../components/ts/footer/Footer";
 import trackPageView from "../../components/ts/analytics/analytics";
 import '../../components/scss/pages/subpages/generalinformation.scss';
 
-const GeneralInformation = (): React.JSX.Element => {
-    useEffect((): void => {
+const GeneralInformation: React.FC = (): React.JSX.Element => {
+    React.useEffect((): void => {
         trackPageView();
     }, []);
 
     const Redirect = (type: string): void => {
         switch (type) {
             case "Prof": {
-                window.open("https://oxford.auhsd.us/files/public_files/OA-Profile_web_2020-2021.pdf");
+                window.open("https://oxford.auhsd.us/files/public_files/OA-Profile_web_2020-2021.pdf", "_blank");
                 break;
             }
             case "Info": {
-                window.open("https://oxford.auhsd.us/files/user/3598/file/OA_InfoCard.pdf");
+                window.open("https://oxford.auhsd.us/files/user/3598/file/OA_InfoCard.pdf", "_blank");
                 break;
             }
             case "Pathways": {
-                window.open("https://oxford.auhsd.us/files/user/3598/file/CareerPathways_OxfordAcademy.pdf");
+                window.open("https://oxford.auhsd.us/files/user/3598/file/CareerPathways_OxfordAcademy.pdf", "_blank");
                 break;
             }
             default: {
