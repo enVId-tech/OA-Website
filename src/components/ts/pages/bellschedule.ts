@@ -1,16 +1,81 @@
+type CalendarEvent = {
+    name: string,
+    date: Date
+}
+
+class SchoolCalendar {
+    holidays: CalendarEvent[] = [];
+    oneDayBreaks: CalendarEvent[] = [];
+    summerTime: { start: Date; end: Date; } | null = null;
+    semesters: { start: Date; end: Date; }[] = [];
+
+    addHoliday(name: string, date: Date) {
+        this.holidays.push({ name, date });
+    }
+
+    addOneDayBreak(name: string, date: Date) {
+        this.oneDayBreaks.push({ name, date });
+    }
+
+    setSummerTime(start: Date, end: Date) {
+        this.summerTime = { start, end };
+    }
+
+    addSemester(start: Date, end: Date) {
+        this.semesters.push({ start, end });
+    }
+}
+
 function checkInClass(): string {
+    const calendar = new SchoolCalendar();
+    
     const startStringsArray: string[] = [
         "School's in session!",
         "School's out of session!",
         "Have a great weekend!",
+        "Have a a great summer!",
+        "Have a great break!",
+        "Have a great holiday!"
+    ];
+
+    const validDays: string[] = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+    ]
+
+    // The days of the school year that are not in session (holidays, breaks, etc.) excluding weekends
+    const breakDays: number[][] = [
+        // September
+        [],
+        // October
+        [],
+        // November
+        [],
+        // December
+        [],
+        // January
+        [],
+        // February
+        [],
+        // March
+        [],
+        // April
+        [],
+        // May
+        [],
+        // June
+        [],
     ];
 
     const date: Date = new Date();
     const day: number = date.getDay();
     const hour: number = date.getHours();
     const minute: number = date.getMinutes();
-
-    console.log(day, hour, minute);
 
     if (day >= 1 && day <= 5) {
         if (day === 1) {
@@ -55,6 +120,7 @@ function checkInClass(): string {
     } else {
         return startStringsArray[2];
     }
+    
     return startStringsArray[1];
 }
 

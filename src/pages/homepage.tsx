@@ -76,7 +76,7 @@ const HomePage: React.FC = (): React.JSX.Element => {
                             <h1 id="HSRankings">#1 in California High Schools</h1>
                             <h1 id="NatRankings">#9 in National Rankings</h1>
                         </div>
-                        <h1 id="USNewsLabel">- US News Rankings</h1>
+                        <h1 id="USNewsLabel">- US News Rankings (2023)</h1>
                     </div>
                 </div>
 

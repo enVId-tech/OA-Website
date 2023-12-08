@@ -44,7 +44,7 @@ const Footer: React.FC<PageTemplateProps> = (pagetitle): React.JSX.Element => {
                             This is an ALPHA build. Bugs beware!
                         </h1>
                         <br />
-                        <h1 id="Affiliation">This website is not affiliated with Oxford Academy.</h1>
+                        <h1 id="Affiliation">Update 47 - December 7, 2023</h1>
                         <br />
                         <br />
                         <a href="https://github.com/enVId-tech" id="Name">Erick Tran, 2023</a>
