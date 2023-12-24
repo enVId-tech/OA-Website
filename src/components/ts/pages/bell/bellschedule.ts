@@ -1,33 +1,33 @@
-type CalendarEvent = {
-    name: string,
-    date: Date
-}
+// type CalendarEvent = {
+//     name: string,
+//     date: Date
+// }
 
-class SchoolCalendar {
-    holidays: CalendarEvent[] = [];
-    oneDayBreaks: CalendarEvent[] = [];
-    summerTime: { start: Date; end: Date; } | null = null;
-    semesters: { start: Date; end: Date; }[] = [];
+// class SchoolCalendar {
+//     holidays: CalendarEvent[] = [];
+//     oneDayBreaks: CalendarEvent[] = [];
+//     summerTime: { start: Date; end: Date; } | null = null;
+//     semesters: { start: Date; end: Date; }[] = [];
 
-    addHoliday(name: string, date: Date) {
-        this.holidays.push({ name, date });
-    }
+//     addHoliday(name: string, date: Date) {
+//         this.holidays.push({ name, date });
+//     }
 
-    addOneDayBreak(name: string, date: Date) {
-        this.oneDayBreaks.push({ name, date });
-    }
+//     addOneDayBreak(name: string, date: Date) {
+//         this.oneDayBreaks.push({ name, date });
+//     }
 
-    setSummerTime(start: Date, end: Date) {
-        this.summerTime = { start, end };
-    }
+//     setSummerTime(start: Date, end: Date) {
+//         this.summerTime = { start, end };
+//     }
 
-    addSemester(start: Date, end: Date) {
-        this.semesters.push({ start, end });
-    }
-}
+//     addSemester(start: Date, end: Date) {
+//         this.semesters.push({ start, end });
+//     }
+// }
 
 function checkInClass(): string {
-    const calendar = new SchoolCalendar();
+    // const calendar = new SchoolCalendar();
     
     const startStringsArray: string[] = [
         "School's in session!",
