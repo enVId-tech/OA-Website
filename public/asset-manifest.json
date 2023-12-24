@@ -1,15 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.d878d4e2.css",
-    "main.js": "/static/js/main.5156f60c.js",
+    "main.css": "/static/css/main.5f54aebf.css",
+    "main.js": "/static/js/main.08555058.js",
     "static/media/OxfFrontImage.jpg": "/static/media/OxfFrontImage.33d658569d4d75260ccf.jpg",
     "static/media/OxfordLogo.png": "/static/media/OxfordLogo.723957ebcb8f37f9935f.png",
     "index.html": "/index.html",
-    "main.d878d4e2.css.map": "/static/css/main.d878d4e2.css.map",
-    "main.5156f60c.js.map": "/static/js/main.5156f60c.js.map"
+    "static/media/clubs.module.mts": "/static/media/clubs.module.a5c212410b0051cc06cc.mts",
+    "static/media/bellschedule.module.mts": "/static/media/bellschedule.module.9c529d6bd24b4a8f7607.mts",
+    "static/media/animations.global.module.mts": "/static/media/animations.global.module.d44acd556d73e46c06b8.mts",
+    "static/media/navbarelements.template.mts": "/static/media/navbarelements.template.9ce653cd56df36fd099a.mts",
+    "static/media/analytics.global.module.mts": "/static/media/analytics.global.module.0e2ac67c9d9c96e88c6f.mts",
+    "main.5f54aebf.css.map": "/static/css/main.5f54aebf.css.map",
+    "main.08555058.js.map": "/static/js/main.08555058.js.map"
   },
   "entrypoints": [
-    "static/css/main.d878d4e2.css",
-    "static/js/main.5156f60c.js"
+    "static/css/main.5f54aebf.css",
+    "static/js/main.08555058.js"
   ]
 }

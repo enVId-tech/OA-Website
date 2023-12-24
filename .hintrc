@@ -17,7 +17,15 @@
     ],
     "no-inline-styles": "off",
     "axe/structure": "off",
-    "disown-opener": "off"
+    "disown-opener": "off",
+    "compat-api/css": [
+      "default",
+      {
+        "ignore": [
+          "height: fit-content"
+        ]
+      }
+    ]
   },
   "browserslist": [
     "defaults",
