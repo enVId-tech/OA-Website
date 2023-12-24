@@ -4,7 +4,7 @@ import Footer from "../../components/ts/footer/Footer";
 import PageTitle from "../../components/ts/pagetitle/pagetitle";
 import trackPageView from "../../components/ts/analytics/analytics";
 import '../../components/scss/pages/subpages/bellschedule.scss'
-import checkInClass from "../../components/ts/pages/bellschedule";
+import checkInClass from "../../components/ts/pages/bell/bellschedule";
 
 const BellSchedule: React.FC = (): React.JSX.Element => {
     const [sessionText, setSessionText] = React.useState<string>();

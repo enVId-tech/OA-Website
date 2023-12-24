@@ -141,9 +141,9 @@ const Navbar: React.FC<NavbarProps> = ({ heightChange = -Infinity }: NavbarProps
             onMouseEnter={() => handleTableMouseEnter(activeTable || "")}
             onMouseLeave={handleTableMouseLeave}
           >
-            <label id="BETALabel"
+            {/* <label id="BETALabel"
               className={`label ${activeTable ? "transparent" : "opaque"} ${backgroundTransparent ? "top" : "ntop"}`}
-            >BETA: Labels will be optimized per section later on.</label>
+            >BETA: Labels will be optimized per section later on.</label> */}
             <div
               id="SchoolButtonsTable"
               className={`table ${backgroundTransparent ? "transparent" : "opaque"} ${activeTable === "School" ? "shown" : "hidden"}`}>

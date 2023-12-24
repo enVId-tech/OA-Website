@@ -38,40 +38,6 @@ function checkInClass(): string {
         "Have a great holiday!"
     ];
 
-    const validDays: string[] = [
-        "Sunday",
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-    ]
-
-    // The days of the school year that are not in session (holidays, breaks, etc.) excluding weekends
-    const breakDays: number[][] = [
-        // September
-        [],
-        // October
-        [],
-        // November
-        [],
-        // December
-        [],
-        // January
-        [],
-        // February
-        [],
-        // March
-        [],
-        // April
-        [],
-        // May
-        [],
-        // June
-        [],
-    ];
-
     const date: Date = new Date();
     const day: number = date.getDay();
     const hour: number = date.getHours();
