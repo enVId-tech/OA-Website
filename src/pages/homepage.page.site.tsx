@@ -2,11 +2,11 @@
 import React from "react";
 import Navbar from "../components/ts/navbar/navbar.template.tsx";
 import PageTitle from "../components/ts/pagetitle/pagetitle.global.module.tsx";
-import trackPageView from "../components/ts/analytics/analytics.global.module.mts";
+import trackPageView from "../components/ts/analytics/analytics.global.module.ts";
 import Footer from "../components/ts/footer/footer.global.module.tsx";
 
 import ClassHelmet from "../components/ts/pagetitle/title.global.module.tsx";
-import applyPageAnims from "../components/ts/animations/animations.global.module.mts";
+import applyPageAnims from "../components/ts/animations/animations.global.module.ts";
 
 import '../components/images/OxfordLogo.png';
 import '../components/scss/pages/home.page.site.scss';

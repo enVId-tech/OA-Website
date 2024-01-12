@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
 
-import '../../scss/components/pagetitle.global.module.scss';
+import '../../scss/components/pagetitle.global.scss';
 
 // Define the props interface outside the component
 interface PageTitleProps {

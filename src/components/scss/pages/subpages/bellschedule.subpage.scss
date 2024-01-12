@@ -1,51 +1,58 @@
+$main-font-size: 1.5rem;
+$main-font-weight: bolder;
+$main-margin-bottom: 1rem;
+$main-display: flex;
+$main-flex-direction: column;
+$secondary-flex-direction: row;
+$main-justify-content: center;
+$main-align-items: center;
+
+@mixin flex-center {
+    display: $main-display;
+    flex-direction: $main-flex-direction;
+    justify-content: $main-justify-content;
+    align-items: $main-align-items;
+}
+
 #BellSchedule {
     #BellScheduleMain {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-left: 5vw;
-        margin-right: 5vw;
+        @include flex-center;
+        margin: 2vh 5vw;
+
         #BellScheduleTitle {
             font-size: 5rem;
             font-weight: 200;
-            margin-bottom: 2rem;
-            margin-top: 2rem;
+            margin: 2rem 0;
         }
 
         #BellScheduleText {
-            font-size: 1.5rem;
-            font-weight: 400;
-            margin-bottom: 1rem;
-            display: flex;
+            font-size: $main-font-size;
+            font-weight: $main-font-weight;
+            margin-bottom: $main-margin-bottom;
+            @include flex-center;
+            flex-direction: $secondary-flex-direction !important;
             justify-content: space-around;
             width: 100%;
 
             .BellScheduleSection {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                font-size: 1.5rem;
-                font-weight: 400;
-                margin-bottom: 1rem;
+                font-size: $main-font-size;
+                font-weight: $main-font-weight;
+                margin-bottom: $main-margin-bottom;
+                @include flex-center;
+
                 .BellScheduleSectionTitle {
-                    display: flex;
-                    flex-direction: column;
                     text-align: center;
-                    font-size: 1.5rem;
+                    font-size: 2.5rem;
                     font-weight: 600;
-                    margin-bottom: 1rem;
+                    margin-bottom: $main-margin-bottom;
                 }
+
                 #Periods {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    font-size: 1.5rem;
-                    font-weight: 400;
-                    margin-bottom: 1rem;
+                    font-size: $main-font-size;
+                    font-weight: $main-font-weight;
+                    margin-bottom: $main-margin-bottom;
                     text-align: center;
+                    @include flex-center;
                 }
             }
         }

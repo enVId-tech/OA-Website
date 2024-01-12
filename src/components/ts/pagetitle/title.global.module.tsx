@@ -5,12 +5,14 @@ interface ClassHelmetProps {
     title?: string;
 }
 
+const templatedTitle: string = "Oxford Academy";
+
 const ClassHelmet: React.FC<ClassHelmetProps> = (props: ClassHelmetProps): React.JSX.Element => {
     if (props.title === undefined) {
         return (
             <HTML>
                 <Head>
-                    <title>Oxford Academy</title>
+                    <title>{templatedTitle}</title>
                 </Head>
             </HTML>
         );
@@ -18,7 +20,7 @@ const ClassHelmet: React.FC<ClassHelmetProps> = (props: ClassHelmetProps): React
         return (
             <HTML>
                 <Head>
-                    <title>Oxford Academy - {props.title}</title>
+                    <title>{props.title} - {templatedTitle}</title>
                 </Head>
             </HTML>
         );

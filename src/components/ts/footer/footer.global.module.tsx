@@ -1,7 +1,7 @@
 import React from 'react';
 import ClassHelmet from '../pagetitle/title.global.module.tsx';
 
-import '../../scss/components/footer.global.module.scss';
+import '../../scss/components/footer.global.scss';
 
 interface PageTemplateProps {
     title: string;
@@ -45,7 +45,7 @@ const Footer: React.FC<PageTemplateProps> = (pagetitle): React.JSX.Element => {
                             This is an ALPHA build. Bugs beware!
                         </h1>
                         <br />
-                        <h1 id="Affiliation">Update 52 - December 24, 2023</h1>
+                        <h1 id="Affiliation">Update 53 - January 11, 2024</h1>
                         <br />
                         <br />
                         <a href="https://github.com/enVId-tech" id="Name">Erick Tran, 2023</a>

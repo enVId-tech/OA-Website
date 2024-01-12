@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../../components/ts/navbar/navbar.template.tsx";
 import PageTitle from "../../components/ts/pagetitle/pagetitle.global.module.tsx";
 import Footer from "../../components/ts/footer/footer.global.module.tsx";
-import trackPageView from "../../components/ts/analytics/analytics.global.module.mts";
+import trackPageView from "../../components/ts/analytics/analytics.global.module.ts";
 
 import '../../components/scss/pages/navtables/schooltable.subpage.table.scss';
 

@@ -1,5 +1,5 @@
-import '../../scss/components/animations/animationsmain.global.module.scss';
-import '../../scss/components/section.global.module.scss';
+import '../../scss/components/animations/animationsmain.global.scss';
+import '../../scss/components/section.global.scss';
 
 function applyPageAnims(refs: React.RefObject<HTMLDivElement>[], animType?: string[], bufferNum: number = 0): void {
     refs.forEach((ref: React.RefObject<HTMLDivElement>, index: number) => {

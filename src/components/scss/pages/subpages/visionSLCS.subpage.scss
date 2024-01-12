@@ -1,11 +1,13 @@
 #VisionSLCS {
     width: 100%;
     font-family: 'Raleway', sans-serif;
+
     #VisionSLCSMain {
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
+
         #TitleText {
             font-size: 2.5vw;
             font-weight: 600;
@@ -26,6 +28,7 @@
         #SchoolLearnerOutcomes {
             padding-left: 5vw;
             padding-right: 5vw;
+
             #SchoolMainOutcomes {
                 margin-top: 5vh;
                 margin-bottom: 5vh;

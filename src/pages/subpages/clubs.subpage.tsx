@@ -2,9 +2,9 @@ import React from "react";
 import Navbar from "../../components/ts/navbar/navbar.template.tsx";
 import PageTitle from "../../components/ts/pagetitle/pagetitle.global.module.tsx";
 import Footer from "../../components/ts/footer/footer.global.module.tsx";
-import trackPageView from "../../components/ts/analytics/analytics.global.module.mts";
+import trackPageView from "../../components/ts/analytics/analytics.global.module.ts";
 
-import ClubsList from "../../components/ts/pages/clubs.module.mts";
+import ClubsList from "../../components/ts/pages/clubs.module.ts";
 
 import '../../components/scss/pages/subpages/clubs.subpage.scss';
 

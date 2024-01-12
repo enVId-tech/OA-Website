@@ -5,11 +5,10 @@
         align-items: center;
         justify-content: center;
         height: 100%;
-        width: 100%;
+        width: 80vw;
         background-color: white;
-        padding: 0 0 50px 0;
-        padding-left: 10vw;
-        padding-right: 10vw;
+        padding: 5vh 0 10vh 10vw;
+
         #AthleticsTitle {
             font-size: 5rem;
             font-weight: 500;
@@ -18,9 +17,10 @@
             margin-top: 2rem;
             margin-bottom: 2rem;
         }
+
         #AthleticsText {
             font-size: 1.5rem;
-            font-weight: 400;
+            font-weight: bold;
             color: black;
             margin: 0 0 20px 0;
         }

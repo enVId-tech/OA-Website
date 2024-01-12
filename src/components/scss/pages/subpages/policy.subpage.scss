@@ -1,8 +1,10 @@
 #Policies {
     font-family: 'Raleway', 'sans-serif';
+
     #PoliciesMain {
         padding-left: 10vw;
         padding-right: 10vw;
+
         #TitleText {
             width: 100%;
             height: auto;
@@ -37,6 +39,7 @@
                 margin-top: 1rem;
                 padding-left: 10vw;
                 padding-right: 10vw;
+
                 &.health {
                     text-underline-offset: 0.25rem;
                     text-decoration: underline;

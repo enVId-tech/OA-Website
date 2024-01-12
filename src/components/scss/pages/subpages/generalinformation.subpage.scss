@@ -1,5 +1,25 @@
+$font-family: "Raleway", sans-serif;
+$font-weight-bold: 600;
+$font-weight-extra-bold: 700;
+$transition-time: 0.3s;
+$margin-standard: 2.5vh;
+$margin-double: 5vh;
+$width-quarter: 25vw;
+$width-standard: 15vw;
+$height-auto: auto;
+$color-blue: blue;
+$color-light-gray: #F2F2F2;
+$color-gray: #E5E5E5;
+$color-dark-gray: #D9D9D9;
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #GeneralInformation {
-    font-family: "Raleway", sans-serif;
+    font-family: $font-family;
 
     #GeneralInformationMain {
         #GenInfoHMain {
@@ -7,110 +27,93 @@
             height: 5vh;
             text-align: center;
             font-size: 6vh;
-            font-weight: 600;
-            margin-top: 4vh;
-            margin-bottom: 4vh;
+            font-weight: $font-weight-bold;
+            margin-top: $margin-double;
+            margin-bottom: $margin-double;
         }
 
         #TopInfo {
-            width: 100%;
-            display: flex;
+            @include flex-center;
             flex-direction: row;
+            width: 100%;
 
             #GeneralInformationImage {
                 margin-left: 7.5vw;
-                margin-bottom: 2vh;
-                margin-top: 2vh;
+                margin-bottom: $margin-standard;
+                margin-top: $margin-standard;
                 width: 30vw;
-                height: auto;
+                height: $height-auto;
             }
 
             #MainText {
-                display: flex;
+                @include flex-center;
                 margin-right: 7.5vw;
                 font-size: 4vh;
-                font-weight: 700;
-                align-items: center;
+                font-weight: $font-weight-extra-bold;
             }
         }
 
         #HS {
-            display: flex;
+            @include flex-center;
             flex-direction: column;
-            align-items: center;
 
             #BestHSLabel {
                 font-size: 3vh;
-                font-weight: 600;
-                margin-top: 2vh;
-                margin-bottom: 2vh;
+                font-weight: $font-weight-bold;
+                margin-top: $margin-standard;
+                margin-bottom: $margin-standard;
             }
         }
 
-        #ExtraInfo {
-            display: flex;
+        #ExtraInfo, #Awards {
+            @include flex-center;
             flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            margin-top: 5vh;
-            margin-bottom: 5vh;
+            margin-top: $margin-double;
+            margin-bottom: $margin-double;
 
-            .buttonMain {
-                width: 25vw;
-                height: auto;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin-left: 2.5vw;
-                margin-right: 2.5vw;
-                margin-top: 2.5vh;
-                margin-bottom: 2.5vh;
-                border-radius: 5px;
-                font-size: 2rem;
-                font-weight: 700;
-                color: blue;
-                background-color: #F2F2F2;
-                border: 1px solid #F2F2F2;
-                transition: 0.3s;
+            .buttonMain, .AwardTypes {
+                width: $width-quarter;
+                height: $height-auto;
+                @include flex-center;
+                margin: $margin-standard;
+                font-family: $font-family;
+                font-weight: $font-weight-extra-bold;
+                transition: $transition-time;
 
                 &:hover {
-                    background-color: #E5E5E5;
-                    border: 1px solid #E5E5E5;
-                    transition: 0.3s;
+                    background-color: $color-gray;
+                    border: 1px solid $color-gray;
+                    transition: $transition-time;
                 }
 
                 &:active {
-                    background-color: #D9D9D9;
-                    border: 1px solid #D9D9D9;
-                    transition: 0.3s;
+                    background-color: $color-dark-gray;
+                    border: 1px solid $color-dark-gray;
+                    transition: $transition-time;
                 }
+            }
+
+            .buttonMain {
+                flex-direction: row;
+                border-radius: 5px;
+                font-size: 2rem;
+                color: $color-blue;
+                background-color: $color-light-gray;
+                border: 1px solid $color-light-gray;
 
                 #buttonMainText {
                     font-size: 2.5vh;
-                    font-weight: 600;
+                    font-weight: $font-weight-bold;
                 }
             }
-        }
-
-        #Awards {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            margin-top: 5vh;
-            margin-bottom: 5vh;
 
             .AwardTypes {
-                width: 25vw;
-                height: auto;
-                display: flex;
                 flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                font-weight: bold;
+                font-weight: $font-weight-bold;
+
                 .AwardImage {
-                    width: 15vw;
-                    height: auto;
+                    width: $width-standard;
+                    height: $height-auto;
                 }
             }
         }

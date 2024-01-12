@@ -14,7 +14,7 @@
 
         #AboutText {
             flex-direction: row;
-            
+
             #AboutImage {
                 background-repeat: no-repeat;
                 background-size: contain;
@@ -28,7 +28,7 @@
                 font-size: 2vw;
                 padding-right: 3vw;
                 padding-left: 2vw;
-                font-weight: 200;
+                font-weight: 500;
                 color: #000000;
             }
         }
@@ -71,16 +71,20 @@
 
         #AdmissionsMain {
             flex-direction: column;
-            
+
             #AdmissionsLabel {
                 color: white;
-                font-weight: bold;
+                font-weight: bolder;
             }
 
             #AdmissionsText {
                 color: white;
-                font-weight: bold;
+                font-weight: 300;
                 width: 80%;
+
+                #AdmissionsMainLabel, #AdmissionsOpening {
+                    font-weight: 400;
+                }
 
                 #Apply {
                     border-radius: 25px;
@@ -90,6 +94,10 @@
                     font-size: 1.5vw;
                     padding: 1vw;
                     border: none;
+                    font-family: 'Raleway', sans-serif;
+                    &:hover {
+                        cursor: pointer;
+                    }
                 }
             }
         }

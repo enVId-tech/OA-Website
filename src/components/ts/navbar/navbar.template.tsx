@@ -2,9 +2,9 @@
 // Disabling a specific eslint rule for this file
 
 import React from "react";
-import getNavBarElements from './navbarelements.template.mts';
+import getNavBarElements from './navbarelements.template.ts';
 
-import '../../scss/components/navbar.global.module.scss';
+import '../../scss/components/navbar.global.scss';
 
 interface NavbarProps {
   heightChange?: number;
@@ -127,7 +127,7 @@ const Navbar: React.FC<NavbarProps> = ({ heightChange = -Infinity }: NavbarProps
           <button
             id="Contact"
             className={`navbutton ${activeTable === "Contact" ? "active" : "hidden"}`}
-            onClick={() => window.location.href = navBar[5].link}
+            onClick={() => window.location.href = navBar[5].hasWorkingLink ? navBar[5].link : "/"}
             onMouseEnter={() => handleButtonMouseEnter("Contact")}
             onMouseLeave={handleButtonMouseLeave}
           >
@@ -219,4 +219,3 @@ const Navbar: React.FC<NavbarProps> = ({ heightChange = -Infinity }: NavbarProps
 }
 
 export default Navbar;
-// Exporting the Navbar component as the default export

@@ -2,9 +2,9 @@ import React from "react";
 import Navbar from "../../components/ts/navbar/navbar.template.tsx";
 import PageTitle from "../../components/ts/pagetitle/pagetitle.global.module.tsx";
 import Footer from "../../components/ts/footer/footer.global.module.tsx";
-import trackPageView from "../../components/ts/analytics/analytics.global.module.mts";
+import trackPageView from "../../components/ts/analytics/analytics.global.module.ts";
 
-import checkInClass from "../../components/ts/pages/bell/bellschedule.module.mts";
+import checkInClass from "../../components/ts/pages/bell/bellschedule.module.ts";
 
 import '../../components/scss/pages/subpages/bellschedule.subpage.scss'
 
