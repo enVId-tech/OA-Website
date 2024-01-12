@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import getNavBarElements from './navbarelements.template.ts';
 import '../../scss/components/navbar.global.scss';
 
@@ -13,8 +13,8 @@ interface NavbarElementsData {
 }
 
 const Navbar: React.FC<NavbarProps> = ({ heightChange = -Infinity }: NavbarProps): React.JSX.Element => {
-  const [backgroundTransparent, setBackgroundTransparent] = useState(true);
-  const [activeTable, setActiveTable] = useState<string | null>(null);
+  const [backgroundTransparent, setBackgroundTransparent] = React.useState(true);
+  const [activeTable, setActiveTable] = React.useState<string | null>(null);
 
   const navBar: NavbarElementsData[] = getNavBarElements("TopDiv");
   const sections: NavbarElementsData[] = ["Home", "Our School", "Students", "Parents", "Faculty", "Contact Us"]
@@ -23,7 +23,7 @@ const Navbar: React.FC<NavbarProps> = ({ heightChange = -Infinity }: NavbarProps
   const handleMouseEnter = (tableId: string): void => setActiveTable(tableId);
   const handleMouseLeave = (): void => setActiveTable(null);
 
-  useEffect(() => {
+  React.useEffect(() => {
     const handleScroll = (): void => {
       const scrollY: number = window.scrollY;
       setBackgroundTransparent(scrollY <= heightChange);
@@ -33,7 +33,7 @@ const Navbar: React.FC<NavbarProps> = ({ heightChange = -Infinity }: NavbarProps
     return () => window.removeEventListener('scroll', handleScroll);
   }, [heightChange]);
 
-  useEffect(() => {
+  React.useEffect(() => {
     const handleLoad = (): void => setBackgroundTransparent(window.scrollY <= heightChange);
     window.addEventListener('load', handleLoad);
     return () => window.removeEventListener('load', handleLoad);

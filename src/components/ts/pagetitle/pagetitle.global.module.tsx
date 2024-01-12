@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/alt-text */
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import '../../scss/components/pagetitle.global.scss';
 
 interface PageTitleProps {
@@ -28,12 +28,12 @@ const PageTitle: React.FC<PageTitleProps> = ({
     titleVhPreDown = 0,
     titleVhDownRate = 30,
 }): React.JSX.Element => {
-    const [positions, setPositions] = useState({
+    const [positions, setPositions] = React.useState({
         backgroundPositionY: -backgroundVhPreDown / backgroundVhDownRate,
         titlePositionY: -titleVhPreDown / titleVhDownRate,
     });
 
-    useEffect(() => {
+    React.useEffect(() => {
         const handleScroll = (): void => {
             const scrollY: number = window.scrollY;
             setPositions({

@@ -21,7 +21,7 @@ const elementsData: Record<string, any> = {
 };
 
 function getNavBarElements(elements: string): NavbarElementsData {
-    const data = elementsData[elements] || elementsData["School"];
+    const data: string[] = elementsData[elements] || elementsData["School"];
     return data.map((element: any) => ({
         name: element.name,
         link: element.link,
