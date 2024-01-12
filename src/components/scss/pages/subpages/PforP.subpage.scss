@@ -1,25 +1,33 @@
+$main-font: 'Raleway', 'sans-serif';
+$main-width: 100%;
+$main-margin-top-bottom: 4vh;
+$site-width: 50%;
+$site-margin-top-bottom: 3vh;
+$title-font-size: 6vh;
+$title-font-weight: 600;
+
 #ProgramsForPatriots {
-    width: 100%;
-    font-family: "Raleway", "sans-serif";
+    font-family: $main-font;
+    width: $main-width;
 
     #ProgramsForPatriotsMain {
         display: flex;
         flex-direction: column;
-        width: 100%;
+        width: $main-width;
         align-items: center;
 
         #TitleText {
-            width: 100%;
+            width: $main-width;
             height: auto;
-            font-size: 6vh;
-            font-weight: 600;
-            margin-top: 4vh;
-            margin-bottom: 4vh;
+            font-size: $title-font-size;
+            font-weight: $title-font-weight;
+            margin-top: $main-margin-top-bottom;
+            margin-bottom: $main-margin-top-bottom;
             text-align: center;
         }
 
         #ProgramsForPatriotsSecondary {
-            width: 100%;
+            width: $main-width;
             margin-top: 10vh;
             margin-bottom: 25vh;
             text-align: center;

@@ -1,59 +1,63 @@
+$main-font: 'Raleway', sans-serif;
+$main-width: 100%;
+$main-padding: 7vh 10vw;
+$title-font-size: 4vw;
+$title-font-weight: 600;
+$title-margin-bottom: 2vw;
+$parchment-line-height: 7vh;
+$parchment-font-weight: bold;
+$section-margin: 5vh;
+$section-title-font-size: 5vh;
+$section-title-font-weight: 700;
+$section-link-font-size: 5vh;
+$section-link-font-weight: 600;
+$section-link-margin-bottom: 2vh;
+
+@mixin section-styles {
+    margin-top: $section-margin;
+    margin-bottom: $section-margin;
+
+    #Title {
+        font-size: $section-title-font-size;
+        font-weight: $section-title-font-weight;
+    }
+
+    #Link {
+        font-size: $section-link-font-size;
+        font-weight: $section-link-font-weight;
+        margin-bottom: $section-link-margin-bottom;
+        width: $main-width;
+        text-align: center;
+    }
+}
+
 #Transcript {
-    width: 100%;
-    font-family: 'Raleway', sans-serif;
+    width: $main-width;
+    font-family: $main-font;
 
     #TranscriptMain {
-        padding-left: 5vw;
-        padding-right: 5vw;
+        padding: $main-padding;
 
         #TitleText {
-            font-size: 2.5vw;
-            font-weight: 600;
-            margin-bottom: 2vw;
-            width: 100%;
+            font-size: $title-font-size;
+            font-weight: $title-font-weight;
+            margin-bottom: $title-margin-bottom;
+            width: $main-width;
             text-align: center;
         }
 
         #Parchment {
             #ParchmentMain {
-                line-height: 7vh;
-                font-weight: bold;
+                line-height: $parchment-line-height;
+                font-weight: $parchment-font-weight;
             }
 
             #Alumni {
-                margin-top: 5vh;
-                margin-bottom: 5vh;
-
-                #AlumniTitle {
-                    font-size: 5vh;
-                    font-weight: 700;
-                }
-
-                #AlumniLink {
-                    font-size: 5vh;
-                    font-weight: 600;
-                    margin-bottom: 2vh;
-                    width: 100%;
-                    text-align: center;
-                }
+                @include section-styles;
             }
 
             #Student {
-                margin-top: 5vh;
-                margin-bottom: 5vh;
-
-                #StudentTitle {
-                    font-size: 5vh;
-                    font-weight: 700;
-                }
-
-                #StudentLink {
-                    font-size: 5vh;
-                    font-weight: 600;
-                    margin-bottom: 2vh;
-                    width: 100%;
-                    text-align: center;
-                }
+                @include section-styles;
             }
         }
     }

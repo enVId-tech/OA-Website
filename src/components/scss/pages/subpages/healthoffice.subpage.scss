@@ -1,32 +1,50 @@
+$font-family: 'Raleway', 'sans-serif';
+$font-weight-normal: 600;
+$font-weight-bold: 700;
+$font-weight-bolder: 1000;
+$padding-standard: 5vh;
+$padding-double: 10vh;
+$margin-standard: 2vh;
+$margin-double: 4vh;
+$margin-quintuple: 5vh;
+$width-full: 100%;
+$height-auto: auto;
+$text-align-center: center;
+$text-align-start: start;
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 #HealthOffice {
-    font-family: 'Raleway', 'sans-serif';
+    font-family: $font-family;
 
     #HealthOfficeMain {
-        display: flex;
+        @include flex-center;
         flex-direction: column;
+        padding: $padding-standard 0 $padding-double 0;
+
+        #TitleText, #TopTitleText {
+            width: $width-full;
+            height: $height-auto;
+            font-weight: $font-weight-normal;
+            margin-top: $margin-double;
+            margin-bottom: $margin-double;
+            text-align: $text-align-center;
+        }
 
         #TitleText {
-            width: 100%;
-            height: auto;
             font-size: 6vh;
-            font-weight: 600;
-            margin-top: 4vh;
-            margin-bottom: 4vh;
-            text-align: center;
         }
 
         #Top {
-            display: flex;
+            @include flex-center;
             flex-direction: column;
 
             #TopTitleText {
-                width: 100%;
-                height: auto;
                 font-size: 4vh;
-                font-weight: 600;
-                margin-top: 2vh;
-                margin-bottom: 2vh;
-                text-align: center;
 
                 & strong {
                     font-weight: bolder;
@@ -35,39 +53,38 @@
         }
 
         .InfoDiv {
-            width: 100%;
-            height: auto;
-            display: flex;
+            width: $width-full;
+            height: $height-auto;
+            @include flex-center;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
+
+            .InfoTitle, .InfoContent {
+                margin-top: $margin-quintuple;
+                margin-bottom: $margin-quintuple;
+            }
 
             .InfoTitle {
-                width: 100%;
+                width: $width-full;
                 display: flex;
-                text-align: start;
-                margin-top: 5vh;
-                margin-bottom: 5vh;
+                text-align: $text-align-start;
                 padding-left: 10vw;
-                font-weight: 1000;
+                font-weight: $font-weight-bolder;
             }
 
             .InfoContent {
-                margin-top: 5vh;
-                margin-bottom: 5vh;
                 margin-left: 10vw;
                 margin-right: 10vw;
                 font-size: 1.75vw;
-                font-weight: 700;
+                font-weight: $font-weight-bold;
             }
 
             .SubInfoDiv {
                 .SubInfoTitle {
-                    width: 100%;
+                    width: 80%;
                     display: flex;
-                    text-align: center;
-                    margin-top: 5vh;
-                    margin-bottom: 5vh;
+                    text-align: $text-align-center;
+                    margin-top: $margin-quintuple;
+                    margin-bottom: $margin-quintuple;
                     padding-left: 10vw;
                     padding-right: 10vw;
                     font-weight: bolder;

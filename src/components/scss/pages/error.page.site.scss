@@ -1,49 +1,67 @@
-#ErrorMain {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  width: 100vw;
-  background-color: #f5f5f5;
+$main-font: 'Raleway', sans-serif;
+$main-height: 100vh;
+$main-width: 100vw;
+$main-bg-color: #f5f5f5;
+$error-color: #e74c3c;
+$error-main-font-size: 10rem;
+$error-main-font-weight: 700;
+$error-message-font-size: 5rem;
+$error-description-font-size: 3rem;
+$error-description-font-weight: 600;
+$error-description-margin-bottom: 10vh;
+$error-links-height: 10vh;
+$error-links-transition: all 0.3s ease-in-out;
+$error-links-font-size: 3rem;
+$error-links-font-weight: bold;
 
-  #ErrorMain {
-    font-size: 10rem;
-    font-weight: 700;
-    color: #e74c3c;
-  }
-
-  #ErrorMessage {
-    font-size: 5rem;
-    font-weight: 700;
-    color: #e74c3c;
-    margin: 0;
-  }
-
-  #ErrorDescription {
-    font-size: 3rem;
-    font-weight: 400;
-    color: #e74c3c;
-    margin-bottom: 10vh;
-  }
-
-  #ErrorLinks {
+@mixin flex-center {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100vw;
-    height: 10vh;
-    transition: all 0.3s ease-in-out;
-    font-size: 3rem;
-    font-weight: 400;
-    color: #e74c3c;
-    margin: 0;
+}
 
-    a {
-      text-decoration: none;
-      color: #e74c3c;
-      margin: 0;
+#ErrorMain {
+    @include flex-center;
+    height: $main-height;
+    width: $main-width;
+    background-color: $main-bg-color;
+    font-family: $main-font;
+
+    #ErrorMain {
+        font-size: $error-main-font-size;
+        font-weight: $error-main-font-weight;
+        color: $error-color;
     }
-  }
+
+    #ErrorMessage {
+        font-size: $error-message-font-size;
+        font-weight: $error-main-font-weight;
+        color: $error-color;
+        margin: 0;
+    }
+
+    #ErrorDescription {
+        font-size: $error-description-font-size;
+        font-weight: $error-description-font-weight;
+        color: $error-color;
+        margin-bottom: $error-description-margin-bottom;
+    }
+
+    #ErrorLinks {
+        @include flex-center;
+        width: $main-width;
+        height: $error-links-height;
+        transition: $error-links-transition;
+        font-size: $error-links-font-size;
+        font-weight: $error-links-font-weight;
+        color: $error-color;
+        margin: 0;
+
+        a {
+            text-decoration: none;
+            color: $error-color;
+            margin: 0;
+        }
+    }
 }

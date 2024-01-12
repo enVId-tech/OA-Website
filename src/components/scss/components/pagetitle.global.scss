@@ -1,11 +1,34 @@
-#Title {
-    font-family: 'Raleway', sans-serif;
+$main-font: 'Raleway', sans-serif;
+$main-width: 100%;
+$main-height: 100vh;
+$main-bg-color: #747474;
+$logo-margin-left: 40vw;
+$logo-width: 15vw;
+$logo-animation-duration: 1s;
+$logo-animation-delay: 0.5s;
+$main-text-margin-left: 8vw;
+$main-font-size: 5vw;
+$main-font-weight: bold;
+$main-font-color: #ffffff;
+$main-letter-spacing: 0.2vw;
+$sub-font-size: 2vw;
+$sub-font-weight: 500;
+$animation-duration: 0.75s;
+$animation-delay: 1.25s;
+$n-animation-delay: 0.2s;
+
+@mixin flex-center-row {
     display: flex;
-    width: 100%;
-    height: 100vh;
-    background-color: #747474;
     flex-direction: row;
     align-items: center;
+}
+
+#Title {
+    font-family: $main-font;
+    @include flex-center-row;
+    width: $main-width;
+    height: $main-height;
+    background-color: $main-bg-color;
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../../images/OxfFrontImage.jpg);
     background-position: -1vw -34vh;
     overflow: hidden;
@@ -15,55 +38,54 @@
         background-size: contain;
         background-position: center;
         border-radius: 100px;
-        margin-left: 40vw;
-        width: 15vw;
+        margin-left: $logo-margin-left;
+        width: $logo-width;
         height: auto;
-        animation: fadeIn 1s 0.5s ease-in-out forwards;
+        animation: fadeIn $logo-animation-duration $logo-animation-delay ease-in-out forwards;
 
         @keyframes fadeIn {
             0% {
-                margin-left: 40vw;
+                margin-left: $logo-margin-left;
             }
 
             100% {
                 margin-left: 16.5vw;
             }
-
         }
     }
 
     #MainText {
-        margin-left: 8vw;
+        margin-left: $main-text-margin-left;
 
         #OxfAcaMain {
-            font-size: 5vw;
-            font-weight: bold;
-            color: #ffffff;
-            letter-spacing: 0.2vw;
+            font-size: $main-font-size;
+            font-weight: $main-font-weight;
+            color: $main-font-color;
+            letter-spacing: $main-letter-spacing;
             opacity: 0;
 
             &.oxf-aca-main {
-                animation: unfadeUp 0.75s 1.25s ease-in-out forwards;
+                animation: unfadeUp $animation-duration $animation-delay ease-in-out forwards;
             }
 
             &.n-oxf-aca-main {
-                animation: unfadeUp 0.75s 0.2s ease-in-out forwards;
+                animation: unfadeUp $animation-duration $n-animation-delay ease-in-out forwards;
             }
         }
 
         #OxfAcaSub {
-            font-size: 2vw;
-            color: #ffffff;
-            font-weight: 500;
-            letter-spacing: 0.2vw;
+            font-size: $sub-font-size;
+            color: $main-font-color;
+            font-weight: $sub-font-weight;
+            letter-spacing: $main-letter-spacing;
             opacity: 0;
 
             &.oxf-aca-sub {
-                animation: unfadeUp 0.75s 1.25s ease-in-out forwards;
+                animation: unfadeUp $animation-duration $animation-delay ease-in-out forwards;
             }
 
             &.n-oxf-aca-sub {
-                animation: unfadeUp 0.75s 0.2s ease-in-out forwards;
+                animation: unfadeUp $animation-duration $n-animation-delay ease-in-out forwards;
             }
         }
     }

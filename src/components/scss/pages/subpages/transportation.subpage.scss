@@ -1,29 +1,39 @@
+$main-font: 'Raleway', sans-serif;
+$main-width: 100%;
+$title-font-size: 2.5vw;
+$title-font-weight: 600;
+$title-margin: 3vw;
+$bus-image-width: 50%;
+$bus-image-margin-bottom: 7.5vh;
+
+@mixin flex-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #Transportation {
-    width: 100%;
-    font-family: 'Raleway', sans-serif;
+    width: $main-width;
+    font-family: $main-font;
 
     #TransportationMain {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        width: $main-width;
+        @include flex-center;
 
         #TitleText {
-            font-size: 2.5vw;
-            font-weight: 600;
-            margin-top: 3vw;
-            margin-bottom: 3vw;
-            width: 100%;
+            font-size: $title-font-size;
+            font-weight: $title-font-weight;
+            margin-top: $title-margin;
+            margin-bottom: $title-margin;
+            width: $main-width;
             text-align: center;
         }
 
         #BusImage {
-            width: 50%;
+            width: $bus-image-width;
             height: auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 7.5vh;
+            @include flex-center;
+            margin-bottom: $bus-image-margin-bottom;
         }
     }
 }

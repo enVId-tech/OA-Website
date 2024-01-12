@@ -1,57 +1,71 @@
-#Footers {
+$footer-bg-color: #0B132B;
+$footer-font-color: #FFFFFF;
+$footer-font-family: 'Raleway', sans-serif;
+$footer-padding: 5vw;
+$footer-margin: 5vh;
+$footer-font-weight: 400;
+$footer-font-size: 2.3rem;
+$footer-animation-duration: 0.75s;
+$footer-animation-delay: 0.2s;
+$footer-animation-timing: ease-in-out;
+
+@mixin flex-center-column {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #0B132B;
-    color: #FFFFFF;
-    font-family: 'Raleway', sans-serif;
-    padding-left: 5vw;
-    padding-right: 5vw;
+}
+
+@mixin flex-space-between {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+@mixin footer-text {
+    color: $footer-font-color;
+    font-weight: $footer-font-weight;
+    text-decoration: none;
+    margin-bottom: 1vh;
+    font-size: $footer-font-size;
+    display: flex;
+    opacity: 0;
+}
+
+#Footers {
+    @include flex-center-column;
+    background-color: $footer-bg-color;
+    color: $footer-font-color;
+    font-family: $footer-font-family;
+    padding-left: $footer-padding;
+    padding-right: $footer-padding;
+
     #FooterPagesDefault {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin-top: 5vh;
-        margin-bottom: 5vh;
-        width: 100%;
+        @include flex-space-between;
+        margin-top: $footer-margin;
+        margin-bottom: $footer-margin;
+
         #FooterMain {
-            display: flex;
-            flex-direction: row;
-            width: 100%;
-            justify-content: space-between;
+            @include flex-space-between;
+
             #FooterLeft {
-                display: flex;
-                flex-direction: column;
+                @include flex-center-column;
                 justify-content: space-around;
-                float: left;
                 align-items: flex-start;
+
                 h1, a {
-                    color: #FFFFFF;
-                    font-weight: 400;
-                    text-decoration: none;
-                    margin-bottom: 1vh;
-                    font-size: 2.3rem;
-                    display: flex;
-                    text-align: left; 
-                    opacity: 0;
+                    @include footer-text;
+                    text-align: left;
                 }
             }
 
             #FooterRight {
-                display: flex;
-                flex-direction: column;
+                @include flex-center-column;
                 justify-content: space-around;
-                float: right;
                 align-items: flex-end;
+
                 h1, a {
-                    color: #FFFFFF;
-                    font-weight: 400;
-                    text-decoration: none;
-                    margin-bottom: 1vh;
-                    font-size: 2.3rem;
-                    display: flex;
+                    @include footer-text;
                     text-align: right;
-                    opacity: 0;
                 }
             }
         }
@@ -62,11 +76,12 @@
             #FooterMain {
                 #FooterLeft {
                     h1, a {
-                        animation: fadeAndLeft 0.75s 0.2s ease-in-out forwards;
+                        animation: fadeAndLeft $footer-animation-duration $footer-animation-delay $footer-animation-timing forwards;
+
                         @keyframes fadeAndLeft {
                             0% {
                                 opacity: 0;
-                                margin-left: -5vw;
+                                margin-left: -$footer-padding;
                             }
 
                             100% {
@@ -79,11 +94,12 @@
 
                 #FooterRight {
                     h1, a {
-                        animation: fadeAndRight 0.75s 0.2s ease-in-out forwards;
+                        animation: fadeAndRight $footer-animation-duration $footer-animation-delay $footer-animation-timing forwards;
+
                         @keyframes fadeAndRight {
                             0% {
                                 opacity: 0;
-                                margin-right: -5vw;
+                                margin-right: -$footer-padding;
                             }
 
                             100% {

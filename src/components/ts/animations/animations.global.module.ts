@@ -1,6 +1,17 @@
 import '../../scss/components/animations/animationsmain.global.scss';
 import '../../scss/components/section.global.scss';
 
+const animationTypes: object = {
+    "c_left": "content-anim-left",
+    "c_right": "content-anim-right",
+    "c_up": "content-anim-up",
+    "c_down": "content-anim-down",
+    "s_left": "self-anim-left",
+    "s_right": "self-anim-right",
+    "s_up": "self-anim-up",
+    "s_down": "self-anim-down"
+};
+
 function applyPageAnims(refs: React.RefObject<HTMLDivElement>[], animType?: string[], bufferNum: number = 0): void {
     refs.forEach((ref: React.RefObject<HTMLDivElement>, index: number) => {
         if (ref.current !== null) {
@@ -12,44 +23,8 @@ function applyPageAnims(refs: React.RefObject<HTMLDivElement>[], animType?: stri
 
             if (animType) {
                 if (topPosition < window.scrollY + window.innerHeight - buffer && bottomPosition > window.scrollY + buffer) {
-                    switch (animType[index]) {
-                        case "c_left": {
-                            ref.current.classList.add("content-anim-left");
-                            break;
-                        }
-                        case "c_right": {
-                            ref.current.classList.add("content-anim-right");
-                            break;
-                        }
-                        case "c_up": {
-                            ref.current.classList.add("content-anim-up");
-                            break;
-                        }
-                        case "c_down": {
-                            ref.current.classList.add("content-anim-down");
-                            break;
-                        }
-                        case "s_left": {
-                            ref.current.classList.add("self-anim-left");
-                            break;
-                        }
-                        case "s_right": {
-                            ref.current.classList.add("self-anim-right");
-                            break;
-                        }
-                        case "s_up": {
-                            ref.current.classList.add("self-anim-up");
-                            break;
-                        }
-                        case "s_down": {
-                            ref.current.classList.add("self-anim-down");
-                            break;
-                        }
-                        default: {
-                            ref.current.classList.add("visible-class");
-                            break;
-                        }
-                    }
+                    const animationClass: string = (animationTypes as any)[animType[index]] as string || "visible-class";
+                    ref.current.classList.add(animationClass);
                 }
             }
         }

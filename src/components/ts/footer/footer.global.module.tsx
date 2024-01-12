@@ -24,11 +24,7 @@ const Footer: React.FC<PageTemplateProps> = (pagetitle): React.JSX.Element => {
         }
     };
 
-    const handleVisibleClass = (): void => {
-        applyVisibleClass(footerRef);
-    };
-
-    window.addEventListener("scroll", handleVisibleClass);
+    window.addEventListener("scroll", () => applyVisibleClass(footerRef));
 
     return (
         <div id='Footers' ref={footerRef}>
@@ -45,7 +41,7 @@ const Footer: React.FC<PageTemplateProps> = (pagetitle): React.JSX.Element => {
                             This is an ALPHA build. Bugs beware!
                         </h1>
                         <br />
-                        <h1 id="Affiliation">Update 53 - January 11, 2024</h1>
+                        <h1 id="Affiliation">Update 54 - January 12, 2024</h1>
                         <br />
                         <br />
                         <a href="https://github.com/enVId-tech" id="Name">Erick Tran, 2023</a>

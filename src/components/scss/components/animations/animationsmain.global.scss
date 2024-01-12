@@ -1,84 +1,16 @@
-.content-anim-left {
-    > * {
-        animation: anim-left 1s ease-in-out forwards;
+$animation-duration: 1s;
+$animation-timing: ease-in-out;
+$animation-margin: 5vh;
 
-        @keyframes anim-left {
-            0% {
-                opacity: 0;
-                margin-left: 5vh;
-            }
-        
-            100% {
-                opacity: 1;
-                margin-left: 0vh;
-            }
-        }
-    }
-}
-
-.content-anim-right {
-    > * {
-        animation: anim-right 1s ease-in-out forwards;
-
-        @keyframes anim-right {
-            0% {
-                opacity: 0;
-                margin-left: 5vh;
-            }
-        
-            100% {
-                opacity: 1;
-                margin-left: 0vh;
-            }
-        }
-    }
-}
-
-.content-anim-up {
-    > * {
-        animation: anim-up 1s ease-in-out forwards;
-
-        @keyframes anim-up {
-            0% {
-                opacity: 0;
-                margin-bottom: -5vh;
-            }
-        
-            100% {
-                opacity: 1;
-                margin-bottom: 0vh;
-            }
-        }
-    }
-}
-
-.content-anim-down {
-    > * {
-        animation: anim-down 1s ease-in-out forwards;
-
-        @keyframes anim-down {
-            0% {
-                opacity: 0;
-                margin-bottom: 5vh;
-            }
-        
-            100% {
-                opacity: 1;
-                margin-bottom: 0vh;
-            }
-        }
-    }
-}
-
-.self-anim-left {
-    animation: anim-left 1s ease-in-out forwards;
+@mixin animation-left {
+    animation: anim-left $animation-duration $animation-timing forwards;
 
     @keyframes anim-left {
         0% {
             opacity: 0;
-            margin-left: 5vh;
+            margin-left: $animation-margin;
         }
-    
+
         100% {
             opacity: 1;
             margin-left: 0vh;
@@ -86,15 +18,15 @@
     }
 }
 
-.self-anim-right {
-    animation: anim-right 1s ease-in-out forwards;
+@mixin animation-right {
+    animation: anim-right $animation-duration $animation-timing forwards;
 
     @keyframes anim-right {
         0% {
             opacity: 0;
-            margin-left: 5vh;
+            margin-left: -$animation-margin;
         }
-    
+
         100% {
             opacity: 1;
             margin-left: 0vh;
@@ -102,15 +34,15 @@
     }
 }
 
-.self-anim-up {
-    animation: anim-up 1s ease-in-out forwards;
+@mixin animation-up {
+    animation: anim-up $animation-duration $animation-timing forwards;
 
     @keyframes anim-up {
         0% {
             opacity: 0;
-            margin-bottom: -5vh;
+            margin-bottom: $animation-margin;
         }
-    
+
         100% {
             opacity: 1;
             margin-bottom: 0vh;
@@ -118,18 +50,42 @@
     }
 }
 
-.self-anim-down {
-    animation: anim-down 1s ease-in-out forwards;
+@mixin animation-down {
+    animation: anim-down $animation-duration $animation-timing forwards;
 
     @keyframes anim-down {
         0% {
             opacity: 0;
-            margin-bottom: 5vh;
+            margin-bottom: -$animation-margin;
         }
-    
+
         100% {
             opacity: 1;
             margin-bottom: 0vh;
         }
+    }
+}
+
+.content-anim-left, .self-anim-left {
+    > * {
+        @include animation-left;
+    }
+}
+
+.content-anim-right, .self-anim-right {
+    > * {
+        @include animation-right;
+    }
+}
+
+.content-anim-up, .self-anim-up {
+    > * {
+        @include animation-up;
+    }
+}
+
+.content-anim-down, .self-anim-down {
+    > * {
+        @include animation-down;
     }
 }

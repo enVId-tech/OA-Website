@@ -1,29 +1,42 @@
+$main-font: 'Raleway', 'sans-serif';
+$main-width: 100%;
+$main-margin-top-bottom: 4vh;
+$secondary-margin-top: 10vh;
+$secondary-margin-bottom: 25vh;
+$title-font-size: 6vh;
+$title-font-weight: 600;
+$secondary-font-weight: bolder;
+
+@mixin flex-center {
+    display: flex;
+    flex-direction: column;
+    width: $main-width;
+    align-items: center;
+}
+
 #Staff {
-    width: 100%;
-    font-family: 'Raleway', sans-serif;
+    width: $main-width;
+    font-family: $main-font;
 
     #StaffMain {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        align-items: center;
+        @include flex-center;
 
         #TitleText {
-            width: 100%;
+            width: $main-width;
             height: auto;
-            font-size: 6vh;
-            font-weight: 600;
-            margin-top: 4vh;
-            margin-bottom: 4vh;
+            font-size: $title-font-size;
+            font-weight: $title-font-weight;
+            margin-top: $main-margin-top-bottom;
+            margin-bottom: $main-margin-top-bottom;
             text-align: center;
         }
 
         #StaffSecondary {
-            width: 100%;
-            margin-top: 10vh;
-            margin-bottom: 25vh;
+            width: $main-width;
+            margin-top: $secondary-margin-top;
+            margin-bottom: $secondary-margin-bottom;
             text-align: center;
-            font-weight: bolder;
+            font-weight: $secondary-font-weight;
         }
     }
 }

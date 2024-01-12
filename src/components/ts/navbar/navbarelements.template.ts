@@ -11,51 +11,22 @@ export type NavbarElementsData = {
     hasWorkingLink: boolean;
 }[]
 
+const elementsData: Record<string, any> = {
+    "School": School.School,
+    "Student": Student.Student,
+    "Parent": Parents.Parent,
+    "Faculty": Faculty.Faculty,
+    "Contact": Contact.Contact,
+    "TopDiv": TopDiv.TopDiv,
+};
+
 function getNavBarElements(elements: string): NavbarElementsData {
-    switch (elements) {
-        case "School":
-            return School.School.map((element: any) => ({
-                name: element.name,
-                link: element.link,
-                hasWorkingLink: element.hasWorkingLink
-            }));
-        case "Student":
-            return Faculty.Faculty.map((element: any) => ({
-                name: element.name,
-                link: element.link,
-                hasWorkingLink: element.hasWorkingLink
-            }));
-        case "Parent":
-            return Parents.Parent.map((element: any) => ({
-                name: element.name,
-                link: element.link,
-                hasWorkingLink: element.hasWorkingLink
-            }));
-        case "Faculty":
-            return Student.Student.map((element: any) => ({
-                name: element.name,
-                link: element.link,
-                hasWorkingLink: element.hasWorkingLink
-            }));
-        case "Contact":
-            return Contact.Contact.map((element: any) => ({
-                name: element.name,
-                link: element.link,
-                hasWorkingLink: element.hasWorkingLink
-            }));
-        case "TopDiv": 
-            return TopDiv.TopDiv.map((element: any) => ({
-                name: element.name,
-                link: element.link,
-                hasWorkingLink: element.hasWorkingLink
-            }));
-        default:
-            return School.School.map((element: any) => ({
-                name: element.name,
-                link: element.link,
-                hasWorkingLink: element.hasWorkingLink
-            }));
-    }
+    const data = elementsData[elements] || elementsData["School"];
+    return data.map((element: any) => ({
+        name: element.name,
+        link: element.link,
+        hasWorkingLink: element.hasWorkingLink
+    }));
 }
 
 export default getNavBarElements;

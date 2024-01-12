@@ -1,48 +1,69 @@
+$font-family: 'Raleway', 'sans-serif';
+$padding-main: 7vh 10vw;
+$width-full: 100%;
+$height-auto: auto;
+$font-size-title: 6vh;
+$font-weight-bold: 600;
+$margin-standard: 4vh;
+$text-align-center: center;
+$list-style-none: none;
+$counter-reset-li: li;
+$li-before-content: counter(li) ".";
+$li-before-color: red;
+$li-before-display: inline-block;
+$li-before-width: 1em;
+$li-before-margin-left: -1em;
+$font-size-li: 2rem;
+$margin-li: 1rem;
+$padding-li: 10vw;
+$text-underline-offset: 0.25rem;
+$text-decoration-underline: underline;
+
 #Policies {
-    font-family: 'Raleway', 'sans-serif';
+    font-family: $font-family;
 
     #PoliciesMain {
-        padding-left: 10vw;
-        padding-right: 10vw;
+        padding: $padding-main;
 
         #TitleText {
-            width: 100%;
-            height: auto;
-            font-size: 6vh;
-            font-weight: 600;
-            margin-top: 4vh;
-            margin-bottom: 4vh;
-            text-align: center;
+            width: $width-full;
+            height: $height-auto;
+            font-size: $font-size-title;
+            font-weight: $font-weight-bold;
+            margin-top: $margin-standard;
+            margin-bottom: $margin-standard;
+            text-align: $text-align-center;
         }
 
         #PoliciesSecondary {
-            text-align: center;
+            text-align: $text-align-center;
         }
 
         ul {
-            list-style: none;
-            counter-reset: li;
+            list-style: $list-style-none;
+            counter-reset: $counter-reset-li;
 
             li::before {
-                content: counter(li) ".";
-                color: red;
-                display: inline-block;
-                width: 1em;
-                margin-left: -1em;
-                font-weight: bold;
+                content: $li-before-content;
+                color: $li-before-color;
+                display: $li-before-display;
+                width: $li-before-width;
+                margin-left: $li-before-margin-left;
+                font-weight: $font-weight-bold;
             }
 
             li {
-                counter-increment: li;
-                font-size: 2rem;
-                margin-bottom: 1rem;
-                margin-top: 1rem;
-                padding-left: 10vw;
-                padding-right: 10vw;
+                counter-increment: $counter-reset-li;
+                font-size: $font-size-li;
+                margin-bottom: $margin-li;
+                margin-top: $margin-li;
+                padding-left: $padding-li;
+                padding-right: $padding-li;
+                font-weight: $font-weight-bold;
 
                 &.health {
-                    text-underline-offset: 0.25rem;
-                    text-decoration: underline;
+                    text-underline-offset: $text-underline-offset;
+                    text-decoration: $text-decoration-underline;
                 }
             }
         }

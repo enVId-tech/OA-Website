@@ -1,44 +1,59 @@
+$main-font: 'Raleway', sans-serif;
+$main-width: 100%;
+$title-font-size: 2.5vw;
+$title-font-weight: 600;
+$title-margin: 3vw;
+$main-padding: 5vw;
+$outcomes-margin: 5vh;
+$outcomes-font-weight: bold;
+$c5s-margin: 7.5vh;
+$c5s-font-weight: bolder;
+
+@mixin flex-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #VisionSLCS {
-    width: 100%;
-    font-family: 'Raleway', sans-serif;
+    width: $main-width;
+    font-family: $main-font;
 
     #VisionSLCSMain {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        width: $main-width;
+        @include flex-center;
 
         #TitleText {
-            font-size: 2.5vw;
-            font-weight: 600;
-            margin-top: 3vw;
-            margin-bottom: 3vw;
-            width: 100%;
+            font-size: $title-font-size;
+            font-weight: $title-font-weight;
+            margin-top: $title-margin;
+            margin-bottom: $title-margin;
+            width: $main-width;
             text-align: center;
         }
 
         #VisionMain {
-            width: 100%;
-            display: flex;
-            padding-left: 5vw;
-            padding-right: 5vw;
+            width: $main-width;
+            @include flex-center;
+            padding-left: $main-padding;
+            padding-right: $main-padding;
             text-align: center;
         }
 
         #SchoolLearnerOutcomes {
-            padding-left: 5vw;
-            padding-right: 5vw;
+            padding-left: $main-padding;
+            padding-right: $main-padding;
 
             #SchoolMainOutcomes {
-                margin-top: 5vh;
-                margin-bottom: 5vh;
-                font-weight: bold;
+                margin-top: $outcomes-margin;
+                margin-bottom: $outcomes-margin;
+                font-weight: $outcomes-font-weight;
             }
 
             .C5S {
-                margin-top: 7.5vh;
-                margin-bottom: 7.5vh;
-                font-weight: bold;
+                margin-top: $c5s-margin;
+                margin-bottom: $c5s-margin;
+                font-weight: $c5s-font-weight;
             }
         }
     }

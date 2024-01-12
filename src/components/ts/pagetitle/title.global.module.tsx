@@ -7,24 +7,14 @@ interface ClassHelmetProps {
 
 const templatedTitle: string = "Oxford Academy";
 
-const ClassHelmet: React.FC<ClassHelmetProps> = (props: ClassHelmetProps): React.JSX.Element => {
-    if (props.title === undefined) {
-        return (
-            <HTML>
-                <Head>
-                    <title>{templatedTitle}</title>
-                </Head>
-            </HTML>
-        );
-    } else {
-        return (
-            <HTML>
-                <Head>
-                    <title>{props.title} - {templatedTitle}</title>
-                </Head>
-            </HTML>
-        );
-    }
+const ClassHelmet: React.FC<ClassHelmetProps> = ({ title }): React.JSX.Element => {
+    return (
+        <HTML>
+            <Head>
+                <title>{title ? `${title} - ${templatedTitle}` : templatedTitle}</title>
+            </Head>
+        </HTML>
+    );
 }
 
 export default ClassHelmet;

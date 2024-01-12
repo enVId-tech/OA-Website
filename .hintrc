@@ -25,6 +25,12 @@
           "height: fit-content"
         ]
       }
+    ],
+    "axe/parsing": [
+      "default",
+      {
+        "duplicate-id-active": "off"
+      }
     ]
   },
   "browserslist": [

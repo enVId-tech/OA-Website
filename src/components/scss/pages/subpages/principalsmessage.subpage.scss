@@ -1,29 +1,39 @@
+$font-family: 'Roboto', sans-serif;
+$title-font-size: 3rem;
+$title-font-weight: 700;
+$title-margin: 2rem;
+$message-margin: 2rem;
+$message-margin-horizontal: 10vw;
+$message-font-size: 1.5rem;
+$principal-font-weight: 600;
+$principal-line-height: 3rem;
+
+@mixin flex-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 #PrincipalsMessage {
     #PrincipalsMessageTitle {
-        font-size: 3rem;
-        font-weight: 700;
-        margin-bottom: 1rem;
+        font-size: $title-font-size;
+        font-weight: $title-font-weight;
+        margin: $title-margin;
         text-align: center;
-        font-family: 'Roboto', sans-serif;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
+        font-family: $font-family;
     }
 
     #PrincipalsMessageMain {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 2rem;
-        margin-left: 10vw;
-        margin-right: 10vw;
-        font-size: 1.5rem;
+        @include flex-center;
+        margin: $message-margin $message-margin-horizontal;
+        font-size: $message-font-size;
 
         #Principal {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            @include flex-center;
             text-align: center;
+            font-weight: $principal-font-weight;
+            line-height: $principal-line-height;
         }
     }
 }

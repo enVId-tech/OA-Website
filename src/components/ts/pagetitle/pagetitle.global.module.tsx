@@ -1,10 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/alt-text */
-import React from 'react';
-
+import React, { useState, useEffect } from 'react';
 import '../../scss/components/pagetitle.global.scss';
 
-// Define the props interface outside the component
 interface PageTitleProps {
     height: number;
     mainText: string;
@@ -30,18 +28,18 @@ const PageTitle: React.FC<PageTitleProps> = ({
     titleVhPreDown = 0,
     titleVhDownRate = 30,
 }): React.JSX.Element => {
-    const [backgroundPositionY, setBackgroundPositionY] = React.useState<number>(-backgroundVhPreDown / backgroundVhDownRate);
-    const [titlePositionY, setTitlePositionY] = React.useState<number>(-titleVhPreDown / titleVhDownRate);
+    const [positions, setPositions] = useState({
+        backgroundPositionY: -backgroundVhPreDown / backgroundVhDownRate,
+        titlePositionY: -titleVhPreDown / titleVhDownRate,
+    });
 
-    React.useEffect(() => {
+    useEffect(() => {
         const handleScroll = (): void => {
             const scrollY: number = window.scrollY;
-            const newBackgroundPositionY: number =
-                -((backgroundVhPreDown + scrollY) / backgroundVhDownRate);
-            setBackgroundPositionY(newBackgroundPositionY);
-
-            const newTitlePositionY: number = scrollY / titleVhDownRate;
-            setTitlePositionY(newTitlePositionY);
+            setPositions({
+                backgroundPositionY: -((backgroundVhPreDown + scrollY) / backgroundVhDownRate),
+                titlePositionY: scrollY / titleVhDownRate,
+            });
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -51,32 +49,32 @@ const PageTitle: React.FC<PageTitleProps> = ({
         };
     }, []);
 
+    const { backgroundPositionY, titlePositionY }: { backgroundPositionY: number; titlePositionY: number } = positions;
 
     return (
         <div
             id="Title"
             style={{
                 backgroundPositionY: `${backgroundPositionY}vh`,
-                backgroundImage: `background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(images/${backgroundLink})`,
-            }}>
+                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(images/${backgroundLink})`,
+            }}
+        >
             {oxfLogo && (
-                <img
-                    id="OxfLogo"
-                    src="images/OxfordLogo.png"
-                    style={{ transform: `translateY(${titlePositionY}vh)` }}
-                />
+                <img id="OxfLogo" src="images/OxfordLogo.png" style={{ transform: `translateY(${titlePositionY}vh)` }} />
             )}
             <div id="MainText">
                 <h1
                     id="OxfAcaMain"
                     style={{ transform: `translateY(${titlePositionY}vh)` }}
-                    className={`${oxfLogo ? 'oxf-aca-main' : 'n-oxf-aca-main'}`}>
+                    className={`${oxfLogo ? 'oxf-aca-main' : 'n-oxf-aca-main'}`}
+                >
                     {mainText}
                 </h1>
                 <h5
                     id="OxfAcaSub"
                     style={{ transform: `translateY(${titlePositionY}vh)` }}
-                    className={`${oxfLogo ? 'oxf-aca-sub' : 'n-oxf-aca-sub'}`}>
+                    className={`${oxfLogo ? 'oxf-aca-sub' : 'n-oxf-aca-sub'}`}
+                >
                     {subText}
                 </h5>
             </div>
