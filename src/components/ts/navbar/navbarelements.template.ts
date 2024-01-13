@@ -12,13 +12,15 @@ export type NavbarElementsData = {
 }[]
 
 const elementsData: Record<string, any> = {
-    "School": School.School,
-    "Student": Student.Student,
-    "Parent": Parents.Parent,
-    "Faculty": Faculty.Faculty,
-    "Contact": Contact.Contact,
-    "TopDiv": TopDiv.TopDiv,
+    "School": School["School"],
+    "Student": Student["Student"],
+    "Parent": Parents["Parent"],
+    "Faculty": Faculty["Faculty"],
+    "Contact": Contact["Contact Us"],
+    "TopDiv": TopDiv["TopDiv"],
 };
+
+console.log(elementsData);
 
 function getNavBarElements(elements: string): NavbarElementsData {
     const data: string[] = elementsData[elements] || elementsData["School"];

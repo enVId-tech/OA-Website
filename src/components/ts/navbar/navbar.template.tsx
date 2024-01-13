@@ -16,9 +16,12 @@ const Navbar: React.FC<NavbarProps> = ({ heightChange = -Infinity }: NavbarProps
   const [backgroundTransparent, setBackgroundTransparent] = React.useState(true);
   const [activeTable, setActiveTable] = React.useState<string | null>(null);
 
-  const navBar: NavbarElementsData[] = getNavBarElements("TopDiv");
-  const sections: NavbarElementsData[] = ["Home", "Our School", "Students", "Parents", "Faculty", "Contact Us"]
+  const navBar: NavbarElementsData[] = getNavBarElements("TopDiv")
+    .map((element) => ({ name: element.name, link: element.link, hasWorkingLink: element.hasWorkingLink }));
+  const sections: NavbarElementsData[] = ["Home", "School", "Student", "Parent", "Faculty", "Contact"]
     .map((section) => ({ name: section, link: navBar.find((el) => el.name === section)?.link || "", hasWorkingLink: true }));
+
+  console.log(navBar);
 
   const handleMouseEnter = (tableId: string): void => setActiveTable(tableId);
   const handleMouseLeave = (): void => setActiveTable(null);
@@ -67,18 +70,20 @@ const Navbar: React.FC<NavbarProps> = ({ heightChange = -Infinity }: NavbarProps
       <div id="Topbar">
         <div id="MainButtons">
           <img id="MainImage" src="images/OxfordLogo.png" alt="Oxford Logo" onClick={handleLogoClick} style={{ cursor: "pointer" }} />
-          {sections.map((section) => (
-            <button
-              key={section.name}
-              id={section.name}
-              className={`navbutton ${activeTable === section.name ? "active" : "hidden"}`}
-              onClick={() => window.location.href = section.hasWorkingLink ? section.link : "/"}
-              onMouseEnter={() => handleMouseEnter(section.name)}
-              onMouseLeave={handleMouseLeave}
-            >
-              {section.name}
-            </button>
-          ))}
+          {
+            navBar.map((section, index) => (
+              <button
+                key={section.name}
+                id={section.name}
+                className={`navbutton ${activeTable === section.name ? "active" : "hidden"}`}
+                onClick={() => window.location.href = section.hasWorkingLink ? section.link : "/"}
+                onMouseEnter={() => handleMouseEnter(sections[index].name)}
+                onMouseLeave={handleMouseLeave}
+              >
+                {navBar[index].name}
+              </button>
+            ))
+          }
         </div>
 
         <div id="Tables">

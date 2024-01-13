@@ -69,6 +69,7 @@ const clubsDirectory: Record<string, Club[]> = {
     ],
 };
 
+
 function ClubsList(directory: string): Club[] {
     return clubsDirectory[directory] || clubsDirectory["Academic"];
 }
