@@ -13,7 +13,7 @@ import ParentTable from './pages/navtables/parenttable.subpage.table.tsx';
 import FacultyTable from './pages/navtables/facultytable.subpage.table.tsx';
 import ContactTable from './pages/navtables/contacttable.subpage.tables.tsx';
 
-// Pages 
+// Pages
 import ErrorPage from "./pages/Error.page.site.tsx";
 import HomePage from "./pages/homepage.page.site.tsx";
 import Clubs from "./pages/subpages/clubs.subpage.tsx";
@@ -34,8 +34,9 @@ import Transcript from './pages/subpages/transcript.subpage.tsx';
 import Transportation from './pages/subpages/transportation.subpage.tsx';
 import VisionSLCS from './pages/subpages/visionslcs.subpage.tsx';
 import HealthOffice from './pages/subpages/healthoffice.subpage.tsx';
+import AdminLogin from './pages/admin/login.tsx';
 
-const RenderPages = (): React.JSX.Element => {
+const AppRoutes: React.FC = (): React.JSX.Element => {
   return (
     <ReactRouter>
       <Pathhub>
@@ -59,11 +60,14 @@ const RenderPages = (): React.JSX.Element => {
         <Path path="/transcripts/*" element={<Redirect to="/transcripts" />} />
         <Path path="/transportation/*" element={<Redirect to="/transportation" />} />
         <Path path="/visionandslcs/*" element={<Redirect to="/visionandslcs" />} />
+        <Path path="/admin/*" element={<Redirect to="/admin/login" />} />
+        <Path path="/admin/login/*" element={<Redirect to="/admin/login" />} />
         <Path path="/error/*" element={<Redirect to="/error" />} />
 
         {/* Pages */}
         <Path path="/" element={<HomePage />} />
         <Path path="/administration" element={<Administration />} />
+        <Path path="/admin/login" element={<AdminLogin />} />
         <Path path="/admissions" element={<Admissions />} />
         <Path path="/athletics" element={<Athletics />} />
         <Path path="/bellschedule" element={<BellSchedule />} />
@@ -101,4 +105,4 @@ const RenderPages = (): React.JSX.Element => {
   )
 }
 
-export default RenderPages;
+export default AppRoutes;

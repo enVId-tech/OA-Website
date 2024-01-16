@@ -1,4 +1,5 @@
 import React from "react";
+import ClassHelmet from "../../components/ts/pagetitle/title.global.module.tsx";
 import Navbar from "../../components/ts/navbar/navbar.template.tsx";
 import PageTitle from "../../components/ts/pagetitle/pagetitle.global.module.tsx";
 import Footer from "../../components/ts/footer/footer.global.module.tsx";
@@ -13,6 +14,7 @@ const ProgramsForPatriots: React.FC = (): React.JSX.Element => {
 
     return (
         <div id="ProgramsForPatriots">
+            <ClassHelmet title="Programs 4 Patriots" />
             <Navbar />
             <PageTitle height={80} mainText="Programs 4 Patriots" oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
             <div id="ProgramsForPatriotsMain">
@@ -24,7 +26,7 @@ const ProgramsForPatriots: React.FC = (): React.JSX.Element => {
                     - Erick Tran
                 </h1>
             </div>
-            <Footer title="Programs 4 Patriots" />
+            <Footer />
         </div>
     )
 }

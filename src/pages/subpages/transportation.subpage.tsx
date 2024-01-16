@@ -1,4 +1,5 @@
 import React from "react";
+import ClassHelmet from "../../components/ts/pagetitle/title.global.module.tsx";
 import Navbar from "../../components/ts/navbar/navbar.template.tsx";
 import PageTitle from "../../components/ts/pagetitle/pagetitle.global.module.tsx";
 import Footer from "../../components/ts/footer/footer.global.module.tsx";
@@ -13,13 +14,14 @@ const Transportation: React.FC = (): React.JSX.Element => {
 
     return (
         <div id="Transportation">
+            <ClassHelmet title="Transportation" />
             <Navbar />
             <PageTitle height={80} mainText="Transportation" oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
             <div id="TransportationMain">
                 <h1 id="TitleText">Transportation</h1>
                 <img id="BusImage" src="images/BusStops.png" alt="BusImage" />
             </div>
-            <Footer title="Transportation" />
+            <Footer />
         </div>
     )
 }

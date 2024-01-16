@@ -1,4 +1,5 @@
 import React from "react";
+import ClassHelmet from "../../components/ts/pagetitle/title.global.module.tsx";
 import Navbar from "../../components/ts/navbar/navbar.template.tsx";
 import PageTitle from "../../components/ts/pagetitle/pagetitle.global.module.tsx";
 import Footer from "../../components/ts/footer/footer.global.module.tsx";
@@ -27,6 +28,7 @@ const Clubs: React.FC = (): React.JSX.Element => {
 
     return (
         <div id="Clubs">
+            <ClassHelmet title="Clubs" />
             <Navbar />
             <PageTitle height={80} mainText="Clubs" subText="Get involved!" oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
 
@@ -120,7 +122,7 @@ const Clubs: React.FC = (): React.JSX.Element => {
                 </div>
             </div>
 
-            <Footer title="Clubs" />
+            <Footer />
         </div>
     );
 }

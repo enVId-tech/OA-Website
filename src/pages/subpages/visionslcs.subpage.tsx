@@ -1,4 +1,5 @@
 import React from "react";
+import ClassHelmet from "../../components/ts/pagetitle/title.global.module.tsx";
 import Navbar from "../../components/ts/navbar/navbar.template.tsx";
 import PageTitle from "../../components/ts/pagetitle/pagetitle.global.module.tsx";
 import Footer from "../../components/ts/footer/footer.global.module.tsx";
@@ -13,6 +14,7 @@ const VisionSLCS: React.FC = (): React.JSX.Element => {
     
     return (
         <div id="VisionSLCS">
+            <ClassHelmet title="Vision & SLCS" />
             <Navbar />
             <PageTitle height={80} mainText="Vision & SLCS" oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
             <div id="VisionSLCSMain">
@@ -53,7 +55,7 @@ const VisionSLCS: React.FC = (): React.JSX.Element => {
                     </h1>
                 </div>
             </div>
-            <Footer title="Vision & SLCS" />
+            <Footer />
         </div>
     )
 }

@@ -1,14 +1,9 @@
 import React from 'react';
-import ClassHelmet from '../pagetitle/title.global.module.tsx';
 
 import '../../scss/components/footer.global.scss';
 
-interface PageTemplateProps {
-    title: string;
-}
-
-const Footer: React.FC<PageTemplateProps> = (pagetitle): React.JSX.Element => {
-    const footerRef = React.useRef(null);
+const Footer: React.FC = (): React.JSX.Element => {
+    const footerRef = React.useRef<HTMLDivElement>(null);
 
     const applyVisibleClass: (ref: React.RefObject<HTMLDivElement>) => void = (ref) => {
         if (ref.current !== null) {
@@ -28,7 +23,6 @@ const Footer: React.FC<PageTemplateProps> = (pagetitle): React.JSX.Element => {
 
     return (
         <div id='Footers' ref={footerRef}>
-            <ClassHelmet title={pagetitle.title} />
             <div id="FooterPagesDefault">
                 <div id="FooterMain">
                     <div id="FooterLeft">
@@ -41,7 +35,7 @@ const Footer: React.FC<PageTemplateProps> = (pagetitle): React.JSX.Element => {
                             This is an ALPHA build. Bugs beware!
                         </h1>
                         <br />
-                        <h1 id="Affiliation">Update 57 - January 12, 2024</h1>
+                        <h1 id="Affiliation">Update 58 - January 15, 2024</h1>
                         <br />
                         <br />
                         <a href="https://github.com/enVId-tech" id="Name">Erick Tran, 2023</a>

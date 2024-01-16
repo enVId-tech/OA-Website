@@ -36,21 +36,15 @@ const HomePage: React.FC = (): React.JSX.Element => {
         "c_up"
     ];
 
-    const handleAnims = (): void => {
-        applyPageAnims(refs, anims, 0.25);
-    };
+    window.addEventListener("scroll", () => {
+        applyPageAnims(refs, anims, 0.25)
+    });
 
-    window.addEventListener("scroll", handleAnims);
-
-    const scrollToTop = (): void => {
+    window.onload = (): void => {
         window.scrollTo({
             top: 0,
             behavior: "auto" as ScrollBehavior
         });
-    };
-
-    window.onload = (): void => {
-        scrollToTop();
     }
 
     return (
@@ -93,7 +87,7 @@ const HomePage: React.FC = (): React.JSX.Element => {
                 </div>
 
                 {/* Footer */}
-                <Footer title="Home" />
+                <Footer />
             </div>
         </div>
     )

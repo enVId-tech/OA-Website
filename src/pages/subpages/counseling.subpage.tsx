@@ -1,4 +1,5 @@
 import React from "react";
+import ClassHelmet from "../../components/ts/pagetitle/title.global.module.tsx";
 import Navbar from "../../components/ts/navbar/navbar.template.tsx";
 import PageTitle from "../../components/ts/pagetitle/pagetitle.global.module.tsx";
 import Footer from "../../components/ts/footer/footer.global.module.tsx";
@@ -12,9 +13,10 @@ const Counseling: React.FC = (): React.JSX.Element => {
     }, []);
     return (
         <div id="Counseling">
+            <ClassHelmet title="Counseling" />
             <Navbar />
             <PageTitle height={80} mainText="Counseling" oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
-            <Footer title="Counseling" />
+            <Footer />
         </div>
     )
 }

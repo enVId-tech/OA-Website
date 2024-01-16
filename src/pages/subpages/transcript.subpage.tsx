@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-no-target-blank */
 import React from "react";
+import ClassHelmet from "../../components/ts/pagetitle/title.global.module.tsx";
 import Navbar from "../../components/ts/navbar/navbar.template.tsx";
 import PageTitle from "../../components/ts/pagetitle/pagetitle.global.module.tsx";
 import Footer from "../../components/ts/footer/footer.global.module.tsx";
@@ -14,6 +15,7 @@ const Transcript: React.FC = (): React.JSX.Element => {
 
     return (
         <div id="Transcript">
+            <ClassHelmet title="Transcript" />
             <Navbar />
             <PageTitle height={80} mainText="Transcript" oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
             <div id="TranscriptMain">
@@ -44,7 +46,7 @@ const Transcript: React.FC = (): React.JSX.Element => {
                     </div>
                 </div>
             </div>
-            <Footer title="Transcript" />
+            <Footer />
         </div>
     )
 }

@@ -1,10 +1,11 @@
 {
   "name": "oa-frontpage",
-  "version": "57",
+  "version": "58",
   "private": true,
   "dependencies": {
     "@types/react-dom": "^18.2.7",
     "bootstrap": "^5.3.2",
+    "cors": "^2.8.5",
     "cra-template-typescript": "1.2.0",
     "jquery": "^3.7.1",
     "json-loader": "^0.5.7",

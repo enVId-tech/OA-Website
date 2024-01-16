@@ -1,4 +1,5 @@
 import React from "react";
+import ClassHelmet from '../../components/ts/pagetitle/title.global.module.tsx';
 import Navbar from "../../components/ts/navbar/navbar.template.tsx";
 import PageTitle from "../../components/ts/pagetitle/pagetitle.global.module.tsx";
 import Footer from "../../components/ts/footer/footer.global.module.tsx";
@@ -13,6 +14,7 @@ const Athletics: React.FC = (): React.JSX.Element => {
     
     return (
         <div id="Athletics">
+            <ClassHelmet title="Athletics" /> 
             <Navbar />
             <PageTitle height={80} mainText="Athletics" subText="Compete with the best!" oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
             <div id="AthleticsMain">
@@ -42,7 +44,7 @@ const Athletics: React.FC = (): React.JSX.Element => {
                     - Thoroughly read the Oxford Athletic Standards and both student and parent must sign the forms included in the tab marked HS Eligibility Documents
                 </p>
             </div>
-            <Footer title="Athletics" />
+            <Footer />
         </div>
     );
 }

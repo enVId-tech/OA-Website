@@ -131,7 +131,7 @@ $navbar-table-hidden-button-transition: all $transition-duration ease-in-out 0.1
         transition: all $transition-duration ease-in-out;
 
         &.transparent {
-          @include tableStyles(rgba(0, 0, 0, 0.85), white);
+          @include tableStyles(rgba(0, 0, 0, 0.95), white);
         }
 
         &.opaque {

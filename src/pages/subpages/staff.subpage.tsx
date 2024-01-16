@@ -1,4 +1,5 @@
 import React from "react";
+import ClassHelmet from "../../components/ts/pagetitle/title.global.module.tsx";
 import Navbar from "../../components/ts/navbar/navbar.template.tsx";
 import PageTitle from "../../components/ts/pagetitle/pagetitle.global.module.tsx";
 import Footer from "../../components/ts/footer/footer.global.module.tsx";
@@ -13,6 +14,7 @@ const Staff: React.FC = (): React.JSX.Element => {
 
     return (
         <div id="Staff">
+            <ClassHelmet title="Staff" />
             <Navbar />
             <PageTitle height={80} mainText="Staff" subText="Meet the staff!" oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
             <div id="StaffMain">
@@ -26,7 +28,7 @@ const Staff: React.FC = (): React.JSX.Element => {
                     </a>
                 </h1>
             </div>
-            <Footer title="Staff" />
+            <Footer />
         </div>
     )
 }

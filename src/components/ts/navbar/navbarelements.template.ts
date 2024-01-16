@@ -20,8 +20,6 @@ const elementsData: Record<string, any> = {
     "TopDiv": TopDiv["TopDiv"],
 };
 
-console.log(elementsData);
-
 function getNavBarElements(elements: string): NavbarElementsData {
     const data: string[] = elementsData[elements] || elementsData["School"];
     return data.map((element: any) => ({

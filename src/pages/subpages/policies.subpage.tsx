@@ -1,4 +1,5 @@
 import React from "react";
+import ClassHelmet from "../../components/ts/pagetitle/title.global.module.tsx";
 import Navbar from "../../components/ts/navbar/navbar.template.tsx";
 import PageTitle from "../../components/ts/pagetitle/pagetitle.global.module.tsx";
 import Footer from "../../components/ts/footer/footer.global.module.tsx";
@@ -36,6 +37,7 @@ const Policies: React.FC = (): React.JSX.Element => {
     }
     return (
         <div id="Policies">
+            <ClassHelmet title="Policies" />
             <Navbar />
             <PageTitle height={80} mainText="Policies" oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
             <div id="PoliciesMain">
@@ -51,7 +53,7 @@ const Policies: React.FC = (): React.JSX.Element => {
                     <li className="PoliciesListItem" onClick={() => handleClick("UseOfTechnology")}>Use of Technology</li>
                 </ul>
             </div>
-            <Footer title="Policies" />
+            <Footer />
         </div>
     )
 }

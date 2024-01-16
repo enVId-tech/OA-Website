@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import RenderPages from './RenderPages.global.tsx';
+import AppRoutes from './AppRoutes.global.tsx';
 
 const root = ReactDOM.createRoot(
   document.getElementById('reactRootMain') as HTMLElement
@@ -8,6 +8,6 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <RenderPages />
+    <AppRoutes />
   </React.StrictMode>
 );

@@ -1,4 +1,5 @@
 import React from "react";
+import ClassHelmet from "../../components/ts/pagetitle/title.global.module.tsx";
 import Navbar from "../../components/ts/navbar/navbar.template.tsx";
 import PageTitle from "../../components/ts/pagetitle/pagetitle.global.module.tsx";
 import Footer from "../../components/ts/footer/footer.global.module.tsx";
@@ -17,13 +18,14 @@ const OxfSitemap: React.FC = (): React.JSX.Element => {
 
     return (
         <div id="OxfSiteMap">
+            <ClassHelmet title="OA Sitemap" />
             <Navbar />
             <PageTitle height={80} mainText="Oxford Academy Site Map" oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
             <div id="OxfSiteMapMain">
                 <h1 id="TitleText">Oxford Academy Site Map</h1>
                 <img id="OxfSite" src="images/Map.png" alt="Oxford Academy Site Map" onClick={handleClick} />
             </div>
-            <Footer title="OA Sitemap" />
+            <Footer />
         </div>
     )
 }

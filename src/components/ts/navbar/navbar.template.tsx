@@ -21,8 +21,6 @@ const Navbar: React.FC<NavbarProps> = ({ heightChange = -Infinity }: NavbarProps
   const sections: NavbarElementsData[] = ["Home", "School", "Student", "Parent", "Faculty", "Contact"]
     .map((section) => ({ name: section, link: navBar.find((el) => el.name === section)?.link || "", hasWorkingLink: true }));
 
-  console.log(navBar);
-
   const handleMouseEnter = (tableId: string): void => setActiveTable(tableId);
   const handleMouseLeave = (): void => setActiveTable(null);
 

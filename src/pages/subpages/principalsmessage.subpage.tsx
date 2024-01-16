@@ -1,4 +1,5 @@
 import React from "react";
+import ClassHelmet from "../../components/ts/pagetitle/title.global.module.tsx";
 import Navbar from "../../components/ts/navbar/navbar.template.tsx";
 import PageTitle from "../../components/ts/pagetitle/pagetitle.global.module.tsx";
 import Footer from "../../components/ts/footer/footer.global.module.tsx";
@@ -13,6 +14,7 @@ const PrincipalsMessage: React.FC = (): React.JSX.Element => {
 
     return (
         <div id="PrincipalsMessage">
+            <ClassHelmet title="Principal's Message" />
             <Navbar />
             <PageTitle height={80} mainText="Principal's Message" subText="A message from Principal Houston" oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
             <h1 id="PrincipalsMessageTitle">
@@ -37,7 +39,7 @@ const PrincipalsMessage: React.FC = (): React.JSX.Element => {
                     <br />
                     I am humbled to serve this diverse and upstanding community.  I am proud to be a patriot.  It is with great appreciation that I will be on this 6-year  journey with you and your students.  </p>
             </div>
-            <Footer title="Principal's Message" />
+            <Footer />
         </div>
     )
 }
