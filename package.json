@@ -1,6 +1,6 @@
 {
   "name": "oa-frontpage",
-  "version": "59-scalable-branch",
+  "version": "60-scalable-branch",
   "private": true,
   "dependencies": {
     "@types/react-dom": "^18.2.7",
