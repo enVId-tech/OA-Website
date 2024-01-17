@@ -7,34 +7,34 @@ import { BrowserRouter as ReactRouter, Routes as Pathhub, Route as Path, Navigat
 import './components/scss/pages/pages.global.scss';
 
 // Website Tables
-import StudentTable from './pages/navtables/studenttable.subpage.table.tsx';
-import SchoolTable from './pages/navtables/schooltable.subpage.table.tsx';
-import ParentTable from './pages/navtables/parenttable.subpage.table.tsx';
-import FacultyTable from './pages/navtables/facultytable.subpage.table.tsx';
-import ContactTable from './pages/navtables/contacttable.subpage.tables.tsx';
+import StudentTable from '../src/pages/navtables/studenttable.subpage.table.tsx';
+import SchoolTable from '../src/pages/navtables/schooltable.subpage.table.tsx';
+import ParentTable from '../src/pages/navtables/parenttable.subpage.table.tsx';
+import FacultyTable from '../src/pages/navtables/facultytable.subpage.table.tsx';
+import ContactTable from '../src/pages/navtables/contacttable.subpage.tables.tsx';
 
 // Pages
-import ErrorPage from "./pages/Error.page.site.tsx";
-import HomePage from "./pages/homepage.page.site.tsx";
-import Clubs from "./pages/subpages/clubs.subpage.tsx";
-import PrincipalsMessage from "./pages/subpages/principalsmessage.subpage.tsx";
-import Admissions from './pages/subpages/admissions.subpage.tsx';
-import Athletics from './pages/subpages/athletics.subpage.tsx';
-import BellSchedule from './pages/subpages/bellschedule.subpage.tsx';
-import Administration from './pages/subpages/administration.subpage.tsx';
-import Calendar from './pages/subpages/calendar.subpage.tsx';
-import Counseling from './pages/subpages/counseling.subpage.tsx';
-import CCDualEnrollment from './pages/subpages/ccdualenroll.subpage.tsx';
-import GeneralInformation from './pages/subpages/generalinformation.subpage.tsx';
-import OxfSitemap from './pages/subpages/oxfordsitemap.subpage.tsx';
-import Policies from './pages/subpages/policies.subpage.tsx';
-import ProgramsForPatriots from './pages/subpages/PforP.subpage.tsx';
-import Staff from './pages/subpages/staff.subpage.tsx';
-import Transcript from './pages/subpages/transcript.subpage.tsx';
-import Transportation from './pages/subpages/transportation.subpage.tsx';
-import VisionSLCS from './pages/subpages/visionslcs.subpage.tsx';
-import HealthOffice from './pages/subpages/healthoffice.subpage.tsx';
-import AdminLogin from './pages/admin/login.tsx';
+import ErrorPage from "../src/pages/Error.page.site.tsx";
+import HomePage from "../src/pages/homepage.page.site.tsx";
+import Clubs from "../src/pages/subpages/clubs.subpage.tsx";
+import PrincipalsMessage from "../src/pages/subpages/principalsmessage.subpage.tsx";
+import Admissions from '../src/pages/subpages/admissions.subpage.tsx';
+import Athletics from '../src/pages/subpages/athletics.subpage.tsx';
+import BellSchedule from '../src/pages/subpages/bellschedule.subpage.tsx';
+import Administration from '../src/pages/subpages/administration.subpage.tsx';
+import Calendar from '../src/pages/subpages/calendar.subpage.tsx';
+import Counseling from '../src/pages/subpages/counseling.subpage.tsx';
+import CCDualEnrollment from '../src/pages/subpages/ccdualenroll.subpage.tsx';
+import GeneralInformation from '../src/pages/subpages/generalinformation.subpage.tsx';
+import OxfSitemap from '../src/pages/subpages/oxfordsitemap.subpage.tsx';
+import Policies from '../src/pages/subpages/policies.subpage.tsx';
+import ProgramsForPatriots from '../src/pages/subpages/PforP.subpage.tsx';
+import Staff from '../src/pages/subpages/staff.subpage.tsx';
+import Transcript from '../src/pages/subpages/transcript.subpage.tsx';
+import Transportation from '../src/pages/subpages/transportation.subpage.tsx';
+import VisionSLCS from '../src/pages/subpages/visionslcs.subpage.tsx';
+import HealthOffice from '../src/pages/subpages/healthoffice.subpage.tsx';
+import AdminLogin from '../src/pages/admin/login.tsx';
 
 const AppRoutes: React.FC = (): React.JSX.Element => {
   return (
