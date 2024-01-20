@@ -7,34 +7,34 @@ import { BrowserRouter as ReactRouter, Routes as Pathhub, Route as Path, Navigat
 import './components/scss/pages/pages.global.scss';
 
 // Website Tables
-import StudentTable from '../src/pages/navtables/studenttable.subpage.table.tsx';
-import SchoolTable from '../src/pages/navtables/schooltable.subpage.table.tsx';
-import ParentTable from '../src/pages/navtables/parenttable.subpage.table.tsx';
-import FacultyTable from '../src/pages/navtables/facultytable.subpage.table.tsx';
-import ContactTable from '../src/pages/navtables/contacttable.subpage.tables.tsx';
+import StudentTable from '../src-old/pages/navtables/studenttable.subpage.table.tsx';
+import SchoolTable from '../src-old/pages/navtables/schooltable.subpage.table.tsx';
+import ParentTable from '../src-old/pages/navtables/parenttable.subpage.table.tsx';
+import FacultyTable from '../src-old/pages/navtables/facultytable.subpage.table.tsx';
+import ContactTable from '../src-old/pages/navtables/contacttable.subpage.tables.tsx';
 
 // Pages
-import ErrorPage from "../src/pages/Error.page.site.tsx";
-import HomePage from "../src/pages/homepage.page.site.tsx";
-import Clubs from "../src/pages/subpages/clubs.subpage.tsx";
-import PrincipalsMessage from "../src/pages/subpages/principalsmessage.subpage.tsx";
-import Admissions from '../src/pages/subpages/admissions.subpage.tsx';
-import Athletics from '../src/pages/subpages/athletics.subpage.tsx';
-import BellSchedule from '../src/pages/subpages/bellschedule.subpage.tsx';
-import Administration from '../src/pages/subpages/administration.subpage.tsx';
-import Calendar from '../src/pages/subpages/calendar.subpage.tsx';
-import Counseling from '../src/pages/subpages/counseling.subpage.tsx';
-import CCDualEnrollment from '../src/pages/subpages/ccdualenroll.subpage.tsx';
-import GeneralInformation from '../src/pages/subpages/generalinformation.subpage.tsx';
-import OxfSitemap from '../src/pages/subpages/oxfordsitemap.subpage.tsx';
-import Policies from '../src/pages/subpages/policies.subpage.tsx';
-import ProgramsForPatriots from '../src/pages/subpages/PforP.subpage.tsx';
-import Staff from '../src/pages/subpages/staff.subpage.tsx';
-import Transcript from '../src/pages/subpages/transcript.subpage.tsx';
-import Transportation from '../src/pages/subpages/transportation.subpage.tsx';
-import VisionSLCS from '../src/pages/subpages/visionslcs.subpage.tsx';
-import HealthOffice from '../src/pages/subpages/healthoffice.subpage.tsx';
-import AdminLogin from '../src/pages/admin/login.tsx';
+import ErrorPage from "../src-old/pages/Error.page.site.tsx";
+import HomePage from "../src-old/pages/homepage.page.site.tsx";
+import Clubs from "../src-old/pages/subpages/clubs.subpage.tsx";
+import PrincipalsMessage from "../src-old/pages/subpages/principalsmessage.subpage.tsx";
+import Admissions from '../src-old/pages/subpages/admissions.subpage.tsx';
+import Athletics from '../src-old/pages/subpages/athletics.subpage.tsx';
+import BellSchedule from '../src-old/pages/subpages/bellschedule.subpage.tsx';
+import Administration from '../src-old/pages/subpages/administration.subpage.tsx';
+import Calendar from '../src-old/pages/subpages/calendar.subpage.tsx';
+import Counseling from '../src-old/pages/subpages/counseling.subpage.tsx';
+import CCDualEnrollment from '../src-old/pages/subpages/ccdualenroll.subpage.tsx';
+import GeneralInformation from '../src-old/pages/subpages/generalinformation.subpage.tsx';
+import OxfSitemap from '../src-old/pages/subpages/oxfordsitemap.subpage.tsx';
+import Policies from '../src-old/pages/subpages/policies.subpage.tsx';
+import ProgramsForPatriots from '../src-old/pages/subpages/PforP.subpage.tsx';
+import Staff from '../src-old/pages/subpages/staff.subpage.tsx';
+import Transcript from '../src-old/pages/subpages/transcript.subpage.tsx';
+import Transportation from '../src-old/pages/subpages/transportation.subpage.tsx';
+import VisionSLCS from '../src-old/pages/subpages/visionslcs.subpage.tsx';
+import HealthOffice from '../src-old/pages/subpages/healthoffice.subpage.tsx';
+import AdminLogin from '../src-old/pages/admin/login.tsx';
 
 const AppRoutes: React.FC = (): React.JSX.Element => {
   return (
