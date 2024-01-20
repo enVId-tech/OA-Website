@@ -60,7 +60,6 @@ const Navbar: React.FC<NavbarProps> = ({ heightChange = -Infinity }: NavbarProps
           </button>
         ))}
       </div>
-
   );
 
   return (
