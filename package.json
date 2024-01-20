@@ -1,14 +1,23 @@
 {
   "name": "oa-frontpage",
-  "version": "60-scalable-branch",
+  "version": "61-scalable-branch",
   "private": true,
   "dependencies": {
+    "@types/passport-local": "^1.0.38",
     "@types/react-dom": "^18.2.7",
+    "bcrypt": "^5.1.1",
     "bootstrap": "^5.3.2",
+    "connect-mongodb-session": "^4.0.0",
     "cors": "^2.8.5",
     "cra-template-typescript": "1.2.0",
+    "express-session": "^1.17.3",
     "jquery": "^3.7.1",
     "json-loader": "^0.5.7",
+    "mongodb": "^6.3.0",
+    "mongoose": "^8.1.0",
+    "passport": "^0.7.0",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-local": "^1.0.0",
     "popper.js": "^1.16.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -17,7 +26,8 @@
     "react-router-dom": "^6.15.0",
     "react-scripts": "5.0.1",
     "sass": "^1.66.1",
-    "serve": "^14.2.1"
+    "serve": "^14.2.1",
+    "url": "^0.11.3"
   },
   "scripts": {
     "dev": "react-scripts start",
