@@ -1,6 +1,6 @@
 {
   "name": "oa-frontpage",
-  "version": "61-scalable-branch",
+  "version": "62-scalable-branch",
   "private": true,
   "dependencies": {
     "@types/passport-local": "^1.0.38",

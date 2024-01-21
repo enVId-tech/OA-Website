@@ -1,5 +1,5 @@
 import mongodb from 'mongodb';
-import envs from '../configs/env.ts';
+import envs from '../configs/env.mts';
 
 if (!envs.URI) throw new Error("MongoDB URI is not defined"); // Env check
 
@@ -177,7 +177,32 @@ async function getItemsFromDatabase(
   }
 }
 
-const mongoFuncs: object = {
+export type mongoFuncsType = {
+  writeToDatabase: (
+    data: mongodb.OptionalId<Document> | mongodb.OptionalId<Document>[],
+    collectionName: string,
+    log: boolean
+  ) => Promise<[any, boolean]>;
+  modifyInDatabase: (
+    filter: mongodb.Filter<unknown>,
+    update: object,
+    collectionName: string,
+    log?: boolean
+  ) => Promise<number>;
+  getItemsFromDatabase: (
+    collectionName: string,
+    log?: boolean,
+    dataId?: mongodb.Filter<unknown>
+  ) => Promise<string>;
+  deleteFromDatabase: (
+    filter: mongodb.Filter<unknown>,
+    collectionName: string,
+    type: 1 | 2 | "one" | "many",
+    log?: boolean
+  ) => Promise<number>;
+}
+
+const mongoFuncs: mongoFuncsType = {
   writeToDatabase,
   modifyInDatabase,
   getItemsFromDatabase,
