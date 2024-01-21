@@ -32,9 +32,9 @@ function generateRandomKey(numberOfDigits: number, type: GenerationType): string
 async function encryptPassword(myPlaintextPassword: string, saltRounds: number = 10): Promise<string> {
   try {
     return await bcrypt.hash(myPlaintextPassword, saltRounds);
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("\x1b[31m", error as string);
-    throw new Error(error);
+    throw new Error(error as string);
   }
 }
 
@@ -46,9 +46,9 @@ async function encryptPassword(myPlaintextPassword: string, saltRounds: number =
 function permanentEncryptPassword(myPlaintextPassword: string): string {
   try {
     return crypto.createHash('sha256').update(myPlaintextPassword, 'utf-8').digest('hex');
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("\x1b[31m", error as string);
-    throw new Error(error);
+    throw new Error(error as string);
   }
 }
 
@@ -62,9 +62,9 @@ function permanentEncryptPassword(myPlaintextPassword: string): string {
 async function comparePassword(password: string, hashedPassword: string): Promise<boolean> {
   try {
     return await permanentEncryptPassword(password) === hashedPassword;
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("\x1b[31m", error as string);
-    throw new Error(error);
+    throw new Error(error as string);
   }
 }
 
@@ -85,14 +85,14 @@ async function encryptData(
 
     const cipher: crypto.CipherGCM = crypto.createCipheriv(encryptionAlgorithm, encryptionKey, iv);
     const encryptedData: string = cipher.update(newData, 'utf8', 'hex') + cipher.final('hex');
-  
+
     // Get the authentication tag
     const authTag: Buffer = cipher.getAuthTag();
-  
+
     return { encryptedData, authTag };
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("\x1b[31m", error as string);
-    throw new Error(error);
+    throw new Error(error as string);
   }
 }
 
@@ -107,11 +107,11 @@ async function decryptData(encryptedData: string, authTag: Buffer): Promise<stri
   try {
     const decipher: crypto.DecipherGCM = crypto.createDecipheriv('aes-256-gcm', encryptionKey, iv);
     decipher.setAuthTag(authTag);
-  
+
     return decipher.update(encryptedData, 'hex', 'utf8') + decipher.final('utf8');
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("\x1b[31m", error as string);
-    throw new Error(error);
+    throw new Error(error as string);
   }
 }
 
@@ -123,14 +123,24 @@ async function decryptData(encryptedData: string, authTag: Buffer): Promise<stri
 function encryptIP(ip: string): string {
   try {
     return ip.split('.').map(part => parseInt(part, 10).toString(16)).join('');
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("\x1b[31m", error as string);
-    throw new Error(error);
+    throw new Error(error as string);
   }
 }
 
+export type encryptsType = {
+  generateRandomKey: (numberOfDigits: number, type: GenerationType) => string;
+  encryptPassword: (myPlaintextPassword: string, saltRounds?: number) => Promise<string>;
+  comparePassword: (password: string, hashedPassword: string) => Promise<boolean>;
+  encryptData: (newData: string, encryptionAlg?: ValidEncryptionAlgorithm) => Promise<{ encryptedData: string; authTag: Buffer }>;
+  decryptData: (encryptedData: string, authTag: Buffer) => Promise<string>;
+  encryptIP: (ip: string) => string;
+  permanentEncryptPassword: (myPlaintextPassword: string) => string;
+}
+
 // Export all the functions as a single object with a common name
-const encrypts: object = {
+const encrypts: encryptsType = {
   generateRandomKey,
   encryptPassword,
   comparePassword,
