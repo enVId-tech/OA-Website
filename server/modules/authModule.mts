@@ -1,5 +1,5 @@
 // authModule.ts
-import passport from 'passport';
+import passport, { DoneCallback } from 'passport';
 import GoogleStrategy from 'passport-google-oauth20';
 import passportLocal from 'passport-local'; // Add passport-local import
 import envs from '../configs/env.mts';
@@ -21,7 +21,7 @@ passport.use(new GoogleStrategy.Strategy({
   clientSecret: envs.CLIENT_SECRET,
   callbackURL: `http://${envs.APP_HOSTNAME}:${envs.SERVER_PORT}/auth/google/callback`
 },
-  async (accessToken: any, refreshToken: any, profile: any, cb: any) => {
+  async (accessToken: any, refreshToken: any, profile: any, done: any): Promise<DoneCallback> => {
     try {
       const user: any = await mongoFuncs.getItemsFromDatabase(envs.COLLECTION!, false, { googleId: profile.id });
       if (!user) {
@@ -36,30 +36,30 @@ passport.use(new GoogleStrategy.Strategy({
           createdAt: new Date().toISOString(),
         };
         await mongoFuncs.writeToDatabase(newUser, envs.COLLECTION!, false);
-        return cb(null, newUser);
+        return done(null, newUser);
       }
-      return cb(null, user);
+      return done(null, user);
     } catch (error: any) {
-      return cb(error);
+      return done(error as string, null);
     }
   }
 ));
 
-passport.serializeUser((user: any, done: any) => {
+passport.serializeUser((user: any, done: any): void => {
   done(null, user._id);
 });
 
-passport.deserializeUser(async (id: any, done: any) => {
+passport.deserializeUser(async (id: any, done: any): Promise<void> => {
   try {
     const user: any = await mongoFuncs.getItemsFromDatabase(envs.COLLECTION!, false, { _id: id });
     done(null, user);
   } catch (error: any) {
-    done(error);
+    done(error as string, null);
   }
 });
 
 // Passport Initalization - Local Strategy
-passport.use(new passportLocal.Strategy({ usernameField: 'email' }, async (email: string, password: string, done: any) => {
+passport.use(new passportLocal.Strategy({ usernameField: 'email' }, async (email: string, password: string, done: any): Promise<DoneCallback> => {
   try {
     const user: any = await mongoFuncs.getItemsFromDatabase(envs.COLLECTION!, false, { email: email });
     if (!user) {
@@ -71,7 +71,7 @@ passport.use(new passportLocal.Strategy({ usernameField: 'email' }, async (email
     }
     return done(null, user);
   } catch (error: any) {
-    return done(error);
+    return done(error as string, null);
   }
 }
 ));

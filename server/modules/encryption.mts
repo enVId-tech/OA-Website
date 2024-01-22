@@ -32,7 +32,7 @@ function generateRandomKey(numberOfDigits: number, type: GenerationType): string
 async function encryptPassword(myPlaintextPassword: string, saltRounds: number = 10): Promise<string> {
   try {
     return await bcrypt.hash(myPlaintextPassword, saltRounds);
-  } catch (error: unknown) {
+  } catch (error: any) {
     console.error("\x1b[31m", error as string);
     throw new Error(error as string);
   }
@@ -46,7 +46,7 @@ async function encryptPassword(myPlaintextPassword: string, saltRounds: number =
 function permanentEncryptPassword(myPlaintextPassword: string): string {
   try {
     return crypto.createHash('sha256').update(myPlaintextPassword, 'utf-8').digest('hex');
-  } catch (error: unknown) {
+  } catch (error: any) {
     console.error("\x1b[31m", error as string);
     throw new Error(error as string);
   }
@@ -62,7 +62,7 @@ function permanentEncryptPassword(myPlaintextPassword: string): string {
 async function comparePassword(password: string, hashedPassword: string): Promise<boolean> {
   try {
     return await permanentEncryptPassword(password) === hashedPassword;
-  } catch (error: unknown) {
+  } catch (error: any) {
     console.error("\x1b[31m", error as string);
     throw new Error(error as string);
   }
@@ -90,7 +90,7 @@ async function encryptData(
     const authTag: Buffer = cipher.getAuthTag();
 
     return { encryptedData, authTag };
-  } catch (error: unknown) {
+  } catch (error: any) {
     console.error("\x1b[31m", error as string);
     throw new Error(error as string);
   }
@@ -109,7 +109,7 @@ async function decryptData(encryptedData: string, authTag: Buffer): Promise<stri
     decipher.setAuthTag(authTag);
 
     return decipher.update(encryptedData, 'hex', 'utf8') + decipher.final('utf8');
-  } catch (error: unknown) {
+  } catch (error: any) {
     console.error("\x1b[31m", error as string);
     throw new Error(error as string);
   }
@@ -123,7 +123,7 @@ async function decryptData(encryptedData: string, authTag: Buffer): Promise<stri
 function encryptIP(ip: string): string {
   try {
     return ip.split('.').map(part => parseInt(part, 10).toString(16)).join('');
-  } catch (error: unknown) {
+  } catch (error: any) {
     console.error("\x1b[31m", error as string);
     throw new Error(error as string);
   }
