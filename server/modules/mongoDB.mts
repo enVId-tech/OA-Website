@@ -52,7 +52,7 @@ async function writeToDatabase(
     }
   } catch (error: any) {
     console.error(`Error writing to database: ${error}`);
-    throw new Error(error);
+    throw new Error(error as string);
   }
 }
 /**
@@ -88,7 +88,7 @@ async function modifyInDatabase(
     return result.modifiedCount;
   } catch (error: any) {
     console.error("\x1b[31m", `Error modifying document:, ${error}`);
-    throw new Error(error);
+    throw new Error(error as string);
   }
 }
 
@@ -138,7 +138,7 @@ async function deleteFromDatabase(
     return 0;
   } catch (error: any) {
     console.error("\x1b[31m", `Error deleting document(s):, ${error}`);
-    throw new Error(error);
+    throw new Error(error as string);
   }
 }
 
@@ -173,7 +173,7 @@ async function getItemsFromDatabase(
     return JSON.stringify(items);
   } catch (error: any) {
     console.error("\x1b[31m", `Error getting items from database:, ${error}`);
-    throw new Error(error);
+    throw new Error(error as string);
   }
 }
 

@@ -1,6 +1,6 @@
 {
   "name": "oa-frontpage",
-  "version": "62-scalable-branch",
+  "version": "63-scalable-branch",
   "private": true,
   "dependencies": {
     "@types/passport-local": "^1.0.38",
@@ -57,5 +57,6 @@
   "devDependencies": {
     "@types/react": "^18.2.22"
   },
-  "type": "module"
+  "type": "module",
+  "proxy": "http://localhost:3001"
 }

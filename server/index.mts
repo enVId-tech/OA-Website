@@ -34,7 +34,6 @@ interface NewUser {
   email: string;
   password: string | null;
   createdAt: string;
-
 }
 
 // Express Initialization
@@ -57,7 +56,9 @@ const CLIENT_DB: string | undefined = envs.CLIENT_DB;
 const CLIENT_ID: string | undefined = envs.CLIENT_ID;
 const CLIENT_SECRET: string | undefined = envs.CLIENT_SECRET;
 const COLLECTION: string | undefined = envs.COLLECTION;
+const SITE_ADMIN_ROUTE: string = envs.SITE_ADMIN_ROUTE;
 
+// Environment Error Handling
 switch (true) {
   case !URI:
     throw new Error("MongoDB URI is not defined");
@@ -93,53 +94,108 @@ app.use(session({
   }
 }));
 
-app.get('/', (req: express.Request, res: express.Response) => {
-  res.send('Hello World!');
-});
-
 // Passport Initialization
 app.use(passport.initialize());
 app.use(passport.session());
 
 // Passport Initialization - Google Auth Routes
 app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
-app.get('/auth/google/callback',
-  passport.authenticate('google', { failureRedirect: '/login' }),
-  async (req: express.Request, res: express.Response) => {
-    // If the user is of a valid domain, redirect to the dashboard. If not, redirect to the login page.
-    // If the user is of a valid domain and doesn't exist in the database, add them to the database.
-    try {
-      // Typecast req.user to the correct type
-      const userGoogle: GoogleUser = req.user as GoogleUser;
-      const validEmailDomains: string[] = ["auhsd.us", "student.auhsd.us"];
+app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/login' }), async (req: express.Request, res: express.Response): Promise<number> => {
+  // If the user is of a valid domain, redirect to the dashboard. If not, redirect to the login page.
+  // If the user is of a valid domain and doesn't exist in the database, add them to the database.
+  try {
+    // Typecast req.user to the correct type
+    const userGoogle: GoogleUser = req.user as GoogleUser;
+    const validEmailDomains: string[] = ["auhsd.us", "student.auhsd.us"];
 
-      const userInDB: string = await mongoFuncs.getItemsFromDatabase(COLLECTION!, false, { googleId: userGoogle.googleId });
+    const userInDB: string = await mongoFuncs.getItemsFromDatabase(COLLECTION!, false, { googleId: userGoogle.googleId });
 
-      if (!userInDB && validEmailDomains.includes(userGoogle.email.split("@")[1])) {
-        const newUser: NewUser = {
-          googleId: userGoogle.googleId,
-          displayName: userGoogle.displayName,
-          firstName: userGoogle.firstName,
-          lastName: userGoogle.lastName,
-          image: userGoogle.image,
-          email: userGoogle.email,
-          password: null,
-          createdAt: new Date().toISOString(),
-        };
+    if (!userInDB && validEmailDomains.includes(userGoogle.email.split("@")[1])) {
+      const newUser: NewUser = {
+        googleId: userGoogle.googleId,
+        displayName: userGoogle.displayName,
+        firstName: userGoogle.firstName,
+        lastName: userGoogle.lastName,
+        image: userGoogle.image,
+        email: userGoogle.email,
+        password: null,
+        createdAt: new Date().toISOString(),
+      };
 
-        await mongoFuncs.writeToDatabase(newUser as unknown as mongodb.OptionalId<Document>, COLLECTION!, false);
-        res.redirect('/dashboard');
-      } else {
-        res.redirect('/dashboard');
-      }
-    } catch (err: unknown) {
-      console.error(err as string);
-      throw new Error(err as string);
+      await mongoFuncs.writeToDatabase(newUser as unknown as mongodb.OptionalId<Document>, COLLECTION!, false);
+      res.redirect(`${SITE_ADMIN_ROUTE}/dashboard`);
+      return 0;
+    } else if (userInDB) {
+      res.redirect(`${SITE_ADMIN_ROUTE}/dashboard`);
+      return 0;
     }
-  });
 
-// Passport Initialization - Local Auth Routes
-app.post('/auth/login', passport.authenticate('local', { failureRedirect: '/login' }), (req: express.Request, res: express.Response) => {
-  res.redirect('/dashboard');
+    res.redirect('/admin/login');
+    return 1;
+  } catch (err: unknown) {
+    console.error(err as string);
+    throw new Error(err as string);
+  }
 });
 
+// Passport Initialization - Local Auth Routes
+app.post('/auth/login', passport.authenticate('local', { failureRedirect: '/admin/login' }), (req: express.Request, res: express.Response): void => {
+  res.redirect(`${SITE_ADMIN_ROUTE}/dashboard`);
+});
+
+// Routes - GET, POST, PUT, DELETE
+app.get(`${SITE_ADMIN_ROUTE}/`, (req: express.Request, res: express.Response) => {
+  res.send('Hello World!');
+});
+
+
+
+
+
+// React Static Serve
+app.use(express.static(path.join(__dirname, '..', 'public')));
+
+app.get('*', (req: express.Request, res: express.Response) => {
+  res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
+});
+
+// Server Initialization
+app.listen(PORT, (): void => {
+  console.log(`Server listening on port ${PORT}`);
+});
+
+// Check if server initialized
+if (!app) {
+  throw new Error("Server failed to initialize");
+}
+
+// Server Error Handling
+process.on('uncaughtException', async (err: Error): Promise<void> => {
+  try {
+    console.warn('\x1b[33m%s\x1b[0m', err as unknown as string);
+
+    await mongoFuncs.deleteFromDatabase({}, COLLECTION!, "many", false);
+
+    await mongoose.disconnect();
+  } catch (err: unknown) {
+    console.error(err as string);
+  } finally {
+    process.exit(1);
+  }
+});
+
+// Server Shutdown Handling
+process.on("SIGINT", async (): Promise<void> => {
+  try {
+    console.warn('\x1b[33m%s\x1b[0m', "Shutting down server...");
+
+    await mongoFuncs.deleteFromDatabase({}, COLLECTION!, "many", false);
+
+    await mongoose.disconnect();
+  } catch (err: unknown) {
+    console.error(err as string);
+    process.exit(1);
+  } finally {
+    process.exit(0);
+  }
+});
