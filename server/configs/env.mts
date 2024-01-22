@@ -41,6 +41,11 @@ const CLIENT_SECRET: string | undefined = process.env.CLIENT_SECRET || undefined
  */
 const COLLECTION: string | undefined = process.env.COLLECTION! || undefined;
 
+/**
+ * The site admin route.
+ */
+const SITE_ADMIN_ROUTE: string = process.env.ADMIN_ROUTE_MOUNT! || "/admin";
+
 export type envsType = {
     URI: string | undefined;
     CLIENT_DB: string | undefined;
@@ -50,6 +55,7 @@ export type envsType = {
     CLIENT_PORT: number;
     CLIENT_SECRET: string | undefined;
     COLLECTION: string | undefined;
+    SITE_ADMIN_ROUTE: string;
 }
 
 export const envs: envsType = {
@@ -60,7 +66,8 @@ export const envs: envsType = {
     SERVER_PORT,
     CLIENT_PORT,
     CLIENT_SECRET,
-    COLLECTION
+    COLLECTION,
+    SITE_ADMIN_ROUTE
 };
 
 export {
@@ -71,7 +78,8 @@ export {
     SERVER_PORT,
     CLIENT_PORT,
     CLIENT_SECRET,
-    COLLECTION
+    COLLECTION,
+    SITE_ADMIN_ROUTE
 }
 
 export default envs;
