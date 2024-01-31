@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import AppRoutes from './AppRoutes.global.tsx';
 
-const root = ReactDOM.createRoot(
+const root: any = ReactDOM.createRoot(
   document.getElementById('reactRootMain') as HTMLElement
 );
 

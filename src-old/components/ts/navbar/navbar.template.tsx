@@ -13,7 +13,7 @@ interface NavbarElementsData {
 }
 
 const Navbar: React.FC<NavbarProps> = ({ heightChange = -Infinity }: NavbarProps): React.JSX.Element => {
-  const [backgroundTransparent, setBackgroundTransparent] = React.useState(true);
+  const [backgroundTransparent, setBackgroundTransparent] = React.useState<boolean>(true);
   const [activeTable, setActiveTable] = React.useState<string | null>(null);
 
   const navBar: NavbarElementsData[] = getNavBarElements("TopDiv")
@@ -24,20 +24,20 @@ const Navbar: React.FC<NavbarProps> = ({ heightChange = -Infinity }: NavbarProps
   const handleMouseEnter = (tableId: string): void => setActiveTable(tableId);
   const handleMouseLeave = (): void => setActiveTable(null);
 
-  React.useEffect(() => {
+  React.useEffect((): void => {
     const handleScroll = (): void => {
       const scrollY: number = window.scrollY;
       setBackgroundTransparent(scrollY <= heightChange);
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    return window.removeEventListener('scroll', handleScroll);
   }, [heightChange]);
 
-  React.useEffect(() => {
+  React.useEffect((): void => {
     const handleLoad = (): void => setBackgroundTransparent(window.scrollY <= heightChange);
     window.addEventListener('load', handleLoad);
-    return () => window.removeEventListener('load', handleLoad);
+    return window.removeEventListener('load', handleLoad);
   }, [heightChange]);
 
   const handleLogoClick = (): string => window.location.href = "/";

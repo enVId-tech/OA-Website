@@ -25,4 +25,3 @@ class SchoolCalendar {
         this.semesters.push({ start, end });
     }
 }
-
