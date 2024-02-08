@@ -15,7 +15,10 @@ const Counseling: React.FC = (): React.JSX.Element => {
         <div id="Counseling">
             <ClassHelmet title="Counseling" />
             <Navbar />
-            <PageTitle height={80} mainText="Counseling" oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
+
+
+
+            <PageTitle height={80} mainText="Counseling" oxfLogo={false} backgroundLink="CounselorDep.png" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
             <Footer />
         </div>
     )

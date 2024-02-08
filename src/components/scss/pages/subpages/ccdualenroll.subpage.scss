@@ -1,0 +1,60 @@
+$main-display: flex;
+$main-flex-direction: column;
+$main-align-items: center;
+$main-justify-content: center;
+$main-transition: all 0.3s ease-in-out;
+$main-font-family: 'Raleway', sans-serif;
+$main-font-size: 1.4vw;
+$main-font-weight: bold;
+$main-background-color: #f5f5f5;
+$main-border: 0;
+$main-border-radius: 0;
+$main-overflow: hidden;
+$main-box-shadow: none;
+
+$secondary-flex-direction: row;
+$secondary-background-color: transparent;
+$secondary-justify-content: start;
+
+@mixin flex-center {
+    display: $main-display;
+    flex-direction: $main-flex-direction;
+    align-items: $main-align-items;
+    justify-content: $main-justify-content;
+}
+
+@mixin common-styles {
+    display: $main-display;
+    background-color: $main-background-color;
+    border: $main-border;
+    border-radius: $main-border-radius;
+    overflow: $main-overflow;
+    transition: $main-transition;
+}
+
+#CCDETitle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    font-family: 'Raleway', 'san-serif';
+    font-size: 5rem;
+    font-weight: 700;
+}
+
+#CCDualEnrollmentMain {
+    @include flex-center;
+    width: 100%;
+    height: fit-content;
+    padding: 0;
+    margin: 0;
+    @include common-styles;
+
+    #CCDEMainInfo {
+        padding: 0 6vw 0 6vw;
+        background-color: white;
+    }
+}

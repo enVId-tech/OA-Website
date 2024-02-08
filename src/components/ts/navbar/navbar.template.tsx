@@ -13,7 +13,7 @@ interface NavbarElementsData {
 }
 
 const Navbar: React.FC<NavbarProps> = ({ heightChange = -Infinity }: NavbarProps): React.JSX.Element => {
-  const [backgroundTransparent, setBackgroundTransparent] = React.useState(true);
+  const [backgroundTransparent, setBackgroundTransparent] = React.useState<boolean>(true);
   const [activeTable, setActiveTable] = React.useState<string | null>(null);
 
   const navBar: NavbarElementsData[] = getNavBarElements("TopDiv")
@@ -69,7 +69,7 @@ const Navbar: React.FC<NavbarProps> = ({ heightChange = -Infinity }: NavbarProps
         <div id="MainButtons">
           <img id="MainImage" src="images/OxfordLogo.png" alt="Oxford Logo" onClick={handleLogoClick} style={{ cursor: "pointer" }} />
           {
-            navBar.map((section, index) => (
+            navBar.map((section: NavbarElementsData, index: number) => (
               <button
                 key={section.name}
                 id={section.name}

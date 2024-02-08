@@ -35,7 +35,7 @@ const Footer: React.FC = (): React.JSX.Element => {
                             This is an ALPHA build. Bugs beware!
                         </h1>
                         <br />
-                        <h1 id="Affiliation">Update 58 - January 15, 2024</h1>
+                        <h1 id="Affiliation">Update 59 Main - February 5, 2024</h1>
                         <br />
                         <br />
                         <a href="https://github.com/enVId-tech" id="Name">Erick Tran, 2023</a>

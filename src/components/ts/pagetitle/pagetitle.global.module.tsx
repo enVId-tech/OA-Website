@@ -56,9 +56,11 @@ const PageTitle: React.FC<PageTitleProps> = ({
             id="Title"
             style={{
                 backgroundPositionY: `${backgroundPositionY}vh`,
-                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(images/${backgroundLink})`,
+                backgroundImage: `url(images/${backgroundLink})`,
             }}
         >
+            <div id="TitleBackground" />
+            
             {oxfLogo && (
                 <img id="OxfLogo" src="images/OxfordLogo.png" style={{ transform: `translateY(${titlePositionY}vh)` }} />
             )}
