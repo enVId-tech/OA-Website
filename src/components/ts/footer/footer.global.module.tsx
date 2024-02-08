@@ -6,20 +6,22 @@ const Footer: React.FC = (): React.JSX.Element => {
     const footerRef = React.useRef<HTMLDivElement>(null);
 
     const applyVisibleClass: (ref: React.RefObject<HTMLDivElement>) => void = (ref) => {
-        if (ref.current !== null) {
-            const rect: DOMRect = ref.current.getBoundingClientRect();
-            const topPosition: number = rect.top + window.scrollY;
-            const bottomPosition: number = rect.bottom + window.scrollY;
+        if (ref.current === null) {
+            return;
+        }
 
-            const buffer: number = 0.25 * window.innerHeight;
+        const rect: DOMRect = ref.current.getBoundingClientRect();
+        const topPosition: number = rect.top + window.scrollY;
+        const bottomPosition: number = rect.bottom + window.scrollY;
 
-            if (topPosition < window.scrollY + window.innerHeight - buffer && bottomPosition > window.scrollY + buffer) {
-                ref.current.classList.add("visible-class");
-            }
+        const buffer: number = 0.25 * window.innerHeight;
+
+        if (topPosition < window.scrollY + window.innerHeight - buffer && bottomPosition > window.scrollY + buffer) {
+            ref.current.classList.add("visible-class");
         }
     };
 
-    window.addEventListener("scroll", () => applyVisibleClass(footerRef));
+    window.addEventListener("scroll", (): void => applyVisibleClass(footerRef));
 
     return (
         <div id='Footers' ref={footerRef}>
@@ -35,7 +37,7 @@ const Footer: React.FC = (): React.JSX.Element => {
                             This is an ALPHA build. Bugs beware!
                         </h1>
                         <br />
-                        <h1 id="Affiliation">Update 59 Main - February 5, 2024</h1>
+                        <h1 id="Affiliation">Update 60 Main - February 7, 2024</h1>
                         <br />
                         <br />
                         <a href="https://github.com/enVId-tech" id="Name">Erick Tran, 2023</a>
