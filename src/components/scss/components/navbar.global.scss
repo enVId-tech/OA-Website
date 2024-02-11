@@ -16,7 +16,7 @@ $navbar-table-hidden-button-transition: all $transition-duration ease-in-out 0.1
 @mixin buttonStyles {
   font-family: $main-font;
   font-size: 1.5rem;
-  font-weight: bold;
+  font-weight: 300;
   background-color: transparent;
   border: none;
   cursor: pointer;

@@ -33,8 +33,8 @@
     },
     {
       "name": "Cafeteria Menu",
-      "link": "/cafeteriamenu",
-      "hasWorkingLink": false
+      "link": "/cafeteria",
+      "hasWorkingLink": true
     },
     { "name": "Calendar", "link": "/calendar", "hasWorkingLink": true },
     {

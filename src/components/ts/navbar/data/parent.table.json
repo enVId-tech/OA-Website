@@ -23,8 +23,8 @@
     },
     {
       "name": "Cafeteria Menu",
-      "link": "/cafeteriamenu",
-      "hasWorkingLink": false
+      "link": "/cafeteria",
+      "hasWorkingLink": true
     },
     { "name": "Calendar", "link": "/calendar", "hasWorkingLink": true },
     {
@@ -56,7 +56,7 @@
     {
       "name": "Family Engagement",
       "link": "/familyengagement",
-      "hasWorkingLink": false
+      "hasWorkingLink": true
     },
     {
       "name": "FITNESSGRAM Information",
@@ -65,8 +65,8 @@
     },
     {
       "name": "Graduation Requirements",
-      "link": "/graduationrequirements",
-      "hasWorkingLink": false
+      "link": "https://coursecatalog.auhsd.us/sr_athletics.aspx",
+      "hasWorkingLink": true
     },
     {
       "name": "Health Office",
@@ -104,7 +104,7 @@
       "link": "/programs4patriots",
       "hasWorkingLink": true
     },
-    { "name": "PTSA", "link": "/ptsa", "hasWorkingLink": false },
+    { "name": "PTSA", "link": "/ptsa", "hasWorkingLink": true },
     {
       "name": "SchoolPay",
       "link": "https://www.schoolpay.com/",

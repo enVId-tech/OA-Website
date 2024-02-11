@@ -1,6 +1,6 @@
 {
   "Faculty": [
-    { "name": "504 Plan", "link": "/504plan", "hasWorkingLink": false },
+    { "name": "504 Plan", "link": "/504plan", "hasWorkingLink": true },
     {
       "name": "Aeries Teacher Connect",
       "link": "https://aeries.auhsd.us/aeries.net",
@@ -25,8 +25,8 @@
     },
     {
       "name": "District's IIPP Plan",
-      "link": "/districtsiippplan",
-      "hasWorkingLink": false
+      "link": "/districtippplan",
+      "hasWorkingLink": true
     },
     {
       "name": "eKadence",

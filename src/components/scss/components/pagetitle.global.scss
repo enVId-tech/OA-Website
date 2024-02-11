@@ -8,14 +8,15 @@ $logo-animation-duration: 1s;
 $logo-animation-delay: 0.5s;
 $main-text-margin-left: 8vw;
 $main-font-size: 5vw;
-$main-font-weight: bold;
+$main-font-weight: 400;
 $main-font-color: #ffffff;
 $main-letter-spacing: 0.2vw;
 $sub-font-size: 2vw;
-$sub-font-weight: 500;
+$sub-font-weight: 300;
 $animation-duration: 0.75s;
 $animation-delay: 1.25s;
 $n-animation-delay: 0.2s;
+$align-left: left;
 
 @mixin flex-center-row {
     display: flex;
@@ -69,6 +70,8 @@ $n-animation-delay: 0.2s;
             font-weight: $main-font-weight;
             color: $main-font-color;
             letter-spacing: $main-letter-spacing;
+            text-align: $align-left;
+
             opacity: 0;
 
             &.oxf-aca-main {
@@ -85,6 +88,8 @@ $n-animation-delay: 0.2s;
             color: $main-font-color;
             font-weight: $sub-font-weight;
             letter-spacing: $main-letter-spacing;
+            text-align: $align-left;
+
             opacity: 0;
 
             &.oxf-aca-sub {
