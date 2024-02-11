@@ -5,7 +5,11 @@
       "link": "https://aeriesconnect.auhsd.us/auconnect/LoginParent.aspx",
       "hasWorkingLink": true
     },
-    { "name": "Athletics", "link": "/athletics", "hasWorkingLink": true },
+    {
+      "name": "Athletics",
+      "link": "/athletics",
+      "hasWorkingLink": true
+    },
     {
       "name": "AUHSD Course Catalog",
       "link": "https://coursecatalog.auhsd.us/",
@@ -26,7 +30,11 @@
       "link": "/cafeteria",
       "hasWorkingLink": true
     },
-    { "name": "Calendar", "link": "/calendar", "hasWorkingLink": true },
+    {
+      "name": "Calendar",
+      "link": "/calendar",
+      "hasWorkingLink": true
+    },
     {
       "name": "Clubs & Organizations",
       "link": "/clubs",
@@ -37,7 +45,11 @@
       "link": "https://www.auhsd.us/District/Department/14186-Curriculum-Instruction/80554-College-Access-for-All-Dream-Act.html",
       "hasWorkingLink": true
     },
-    { "name": "Counseling", "link": "/counseling", "hasWorkingLink": true },
+    {
+      "name": "Counseling",
+      "link": "/counseling",
+      "hasWorkingLink": true
+    },
     {
       "name": "Cypress College Dual Enrollment",
       "link": "/cypresscollege",
@@ -98,13 +110,21 @@
       "link": "https://www.auhsd.us/District/Department/14182-ASSESSMENT-AND-EVALUATION/Portal/parent-student-handbooks-english",
       "hasWorkingLink": true
     },
-    { "name": "Policies", "link": "/policies", "hasWorkingLink": true },
+    {
+      "name": "Policies",
+      "link": "/policies",
+      "hasWorkingLink": true
+    },
     {
       "name": "Programs 4 Patriots",
       "link": "/programs4patriots",
       "hasWorkingLink": true
     },
-    { "name": "PTSA", "link": "/ptsa", "hasWorkingLink": true },
+    {
+      "name": "PTSA",
+      "link": "/ptsa",
+      "hasWorkingLink": true
+    },
     {
       "name": "SchoolPay",
       "link": "https://www.schoolpay.com/",
@@ -113,7 +133,7 @@
     {
       "name": "School Site Council",
       "link": "/schoolsitecouncil",
-      "hasWorkingLink": false
+      "hasWorkingLink": true
     },
     {
       "name": "Staff Directory/Email",
@@ -125,6 +145,10 @@
       "link": "/transportation",
       "hasWorkingLink": true
     },
-    { "name": "Work Permits", "link": "/workpermits", "hasWorkingLink": false }
+    {
+      "name": "Work Permits",
+      "link": "/workpermits",
+      "hasWorkingLink": true
+    }
   ]
 }

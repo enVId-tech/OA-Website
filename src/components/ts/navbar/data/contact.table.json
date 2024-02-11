@@ -1,15 +1,14 @@
 {
   "Contact Us": [
-    { 
-      "name": "Email Us", 
-      "link": "https://oxford.auhsd.us/action/mail/sendMail.cfm?e=aHVybGV5X3JAYXVoc2QudXMsaG91c3Rvbl9hQGF1aHNkLnVzLG9ydGVnYV9tQGF1aHNkLnVz", 
-      "hasWorkingLink": true 
+    {
+      "name": "Email Us",
+      "link": "https://oxford.auhsd.us/action/mail/sendMail.cfm?e=aHVybGV5X3JAYXVoc2QudXMsaG91c3Rvbl9hQGF1aHNkLnVzLG9ydGVnYV9tQGF1aHNkLnVz",
+      "hasWorkingLink": true
     },
     {
       "name": "Get Directions",
       "link": "/getdirections",
       "hasWorkingLink": true
-      
     }
   ]
 }

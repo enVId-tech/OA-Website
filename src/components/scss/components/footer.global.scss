@@ -40,7 +40,7 @@ $footer-width-pcent: 100%;
     font-family: $footer-font-family;
     padding-left: $footer-padding;
     padding-right: $footer-padding;
-    width: $footer-width-pcent;
+    // width: $footer-width-pcent;
 
     #FooterPagesDefault {
         @include flex-space-between;

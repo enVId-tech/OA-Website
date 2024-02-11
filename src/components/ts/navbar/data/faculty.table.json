@@ -1,6 +1,10 @@
 {
   "Faculty": [
-    { "name": "504 Plan", "link": "/504plan", "hasWorkingLink": true },
+    {
+      "name": "504 Plan",
+      "link": "/504plan",
+      "hasWorkingLink": true
+    },
     {
       "name": "Aeries Teacher Connect",
       "link": "https://aeries.auhsd.us/aeries.net",
@@ -11,13 +15,21 @@
       "link": "https://auhsdbt.booksys.net/",
       "hasWorkingLink": true
     },
-    { "name": "Calendar", "link": "/calendar", "hasWorkingLink": true },
+    {
+      "name": "Calendar",
+      "link": "/calendar",
+      "hasWorkingLink": true
+    },
     {
       "name": "Clubs & Organizations",
       "link": "/clubs",
       "hasWorkingLink": true
     },
-    { "name": "Counseling", "link": "/counseling", "hasWorkingLink": true },
+    {
+      "name": "Counseling",
+      "link": "/counseling",
+      "hasWorkingLink": true
+    },
     {
       "name": "Digital Citizenship",
       "link": "https://www.auhsd.us/District/Department/14186-Curriculum-Instruction/80431-AUHSD-Digital-Citizenship-Week.html",
@@ -43,7 +55,11 @@
       "link": "https://www.auhsd.us/District/Department/14319-ONLINE-LEARNING-TOOLS",
       "hasWorkingLink": true
     },
-    { "name": "Policies", "link": "/policies", "hasWorkingLink": true },
+    {
+      "name": "Policies",
+      "link": "/policies",
+      "hasWorkingLink": true
+    },
     {
       "name": "Pupil Support Services",
       "link": "https://www.auhsd.us/District/Department/14394-MENTAL-HEALTH-AND-WELLBEING/85935-Pupil-Support-Services.html",

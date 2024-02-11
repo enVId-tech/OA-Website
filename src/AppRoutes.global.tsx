@@ -42,6 +42,9 @@ import PTSA from './pages/subpages/ptsa.subpage.tsx';
 import FamilyEngagement from './pages/subpages/familyengagement.subpage.tsx';
 import Plan504 from './pages/subpages/504plan.subpage.tsx';
 import DistrictIPPPlan from './pages/subpages/districtippplan.subpage.tsx';
+import WorkPermit from './pages/subpages/workpermit.subpage.tsx';
+import Library from './pages/subpages/library.subpage.tsx';
+import SchoolSiteCouncil from './pages/subpages/schoolsitecouncil.subpage.tsx';
 
 const AppRoutes: React.FC = (): React.JSX.Element => {
   return (
@@ -65,16 +68,19 @@ const AppRoutes: React.FC = (): React.JSX.Element => {
         <Path path="/getdirections/*" element={<Redirect to="/getdirections" />} />
         <Path path="/getdirections/*" element={<Redirect to="/getdirections" />} />
         <Path path="/healthoffice/*" element={<Redirect to="/healthoffice" />} />
+        <Path path="/library/*" element={<Redirect to="/library" />} />
         <Path path="/oasitemap/*" element={<Redirect to="/oasitemap" />} />
         <Path path="/policies/*" element={<Redirect to="/policies" />} />
         <Path path="/principalsmessage/*" element={<Redirect to="/principalsmessage" />} />
         <Path path="/programs4patriots/*" element={<Redirect to="/programs4patriots" />} />
         <Path path="/ptsa/*" element={<Redirect to="/ptsa" />} />
+        <Path path="/schoolsitecouncil/*" element={<Redirect to="/schoolsitecouncil" />} />
         <Path path="/staffdirectory/*" element={<Redirect to="/staffdirectory" />} />
         <Path path="/titleix/*" element={<Redirect to="/titleix" />} />
         <Path path="/transcripts/*" element={<Redirect to="/transcripts" />} />
         <Path path="/transportation/*" element={<Redirect to="/transportation" />} />
         <Path path="/visionandslcs/*" element={<Redirect to="/visionandslcs" />} />
+        <Path path="/workpermits/*" element={<Redirect to="/workpermits" />} />
         <Path path="/admin/*" element={<Redirect to="/admin/login" />} />
         <Path path="/admin/login/*" element={<Redirect to="/admin/login" />} />
         <Path path="/error/*" element={<Redirect to="/error" />} />
@@ -97,16 +103,19 @@ const AppRoutes: React.FC = (): React.JSX.Element => {
         <Path path="/generalinformation" element={<GeneralInformation />} />
         <Path path="/getdirections" element={<GetDirections />} />
         <Path path="/healthoffice" element={<HealthOffice />} />
+        <Path path="/library" element={<Library />} />
         <Path path="/oasitemap" element={<OxfSitemap />} />
         <Path path="/policies" element={<Policies />} />
         <Path path="/principalsmessage" element={<PrincipalsMessage />} />
         <Path path="/ptsa" element={<PTSA />} />
         <Path path="/programs4patriots" element={<ProgramsForPatriots />} />
         <Path path="/staffdirectory" element={<Staff />} />
+        <Path path="/schoolsitecouncil" element={<SchoolSiteCouncil />} />
         <Path path="/titleix" element={<TitleIX />} />
         <Path path="/transcripts" element={<Transcript />} />
         <Path path="/transportation" element={<Transportation />} />
         <Path path="/visionandslcs" element={<VisionSLCS />} />
+        <Path path="/workpermits" element={<WorkPermit />} />
         <Path path="/error" element={<ErrorPage />} />
 
         {/* Page Table Redirects */}

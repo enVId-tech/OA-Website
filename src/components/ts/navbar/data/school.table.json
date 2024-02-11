@@ -5,25 +5,41 @@
       "link": "/administration",
       "hasWorkingLink": true
     },
-    { "name": "Admissions", "link": "/admissions", "hasWorkingLink": true },
+    {
+      "name": "Admissions",
+      "link": "/admissions",
+      "hasWorkingLink": true
+    },
     {
       "name": "Alumni",
       "link": "http://oxfordalumninetwork.com/",
       "hasWorkingLink": true
     },
-    { "name": "Athletics", "link": "/athletics", "hasWorkingLink": true },
+    {
+      "name": "Athletics",
+      "link": "/athletics",
+      "hasWorkingLink": true
+    },
     {
       "name": "Bell Schedule",
       "link": "/bellschedule",
       "hasWorkingLink": true
     },
-    { "name": "Calendar", "link": "/calendar", "hasWorkingLink": true },
+    {
+      "name": "Calendar",
+      "link": "/calendar",
+      "hasWorkingLink": true
+    },
     {
       "name": "Clubs & Organizations",
       "link": "/clubs",
       "hasWorkingLink": true
     },
-    { "name": "Counseling", "link": "/counseling", "hasWorkingLink": true },
+    {
+      "name": "Counseling",
+      "link": "/counseling",
+      "hasWorkingLink": true
+    },
     {
       "name": "Cypress College Dual Enrollment",
       "link": "/cypresscollege",
@@ -54,8 +70,16 @@
       "link": "https://oxford.auhsd.us/Oxford/Department/14222-Oxford-Academy/78240-OA-Profile.html",
       "hasWorkingLink": true
     },
-    { "name": "OA Site Map", "link": "/oasitemap", "hasWorkingLink": true },
-    { "name": "Policies", "link": "/policies", "hasWorkingLink": true },
+    {
+      "name": "OA Site Map",
+      "link": "/oasitemap",
+      "hasWorkingLink": true
+    },
+    {
+      "name": "Policies",
+      "link": "/policies",
+      "hasWorkingLink": true
+    },
     {
       "name": "Principal's Message",
       "link": "/principalsmessage",
@@ -76,7 +100,11 @@
       "link": "/staffdirectory",
       "hasWorkingLink": true
     },
-    { "name": "Transcripts", "link": "/transcripts", "hasWorkingLink": true },
+    {
+      "name": "Transcripts",
+      "link": "/transcripts",
+      "hasWorkingLink": true
+    },
     {
       "name": "Transportation",
       "link": "/transportation",

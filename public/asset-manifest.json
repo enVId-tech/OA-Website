@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.4f5cdad4.css",
-    "main.js": "/static/js/main.174cb66b.js",
+    "main.css": "/static/css/main.44017056.css",
+    "main.js": "/static/js/main.b962a6de.js",
     "static/media/OxfordLogo.png": "/static/media/OxfordLogo.723957ebcb8f37f9935f.png",
     "index.html": "/index.html",
-    "main.4f5cdad4.css.map": "/static/css/main.4f5cdad4.css.map",
-    "main.174cb66b.js.map": "/static/js/main.174cb66b.js.map"
+    "main.44017056.css.map": "/static/css/main.44017056.css.map",
+    "main.b962a6de.js.map": "/static/js/main.b962a6de.js.map"
   },
   "entrypoints": [
-    "static/css/main.4f5cdad4.css",
-    "static/js/main.174cb66b.js"
+    "static/css/main.44017056.css",
+    "static/js/main.b962a6de.js"
   ]
 }

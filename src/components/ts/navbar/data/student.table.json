@@ -20,7 +20,11 @@
       "link": "https://coursecatalog.auhsd.us/",
       "hasWorkingLink": true
     },
-    { "name": "Athletics", "link": "/athletics", "hasWorkingLink": true },
+    {
+      "name": "Athletics",
+      "link": "/athletics",
+      "hasWorkingLink": true
+    },
     {
       "name": "Bell Schedule",
       "link": "/bellschedule",
@@ -36,7 +40,11 @@
       "link": "/cafeteria",
       "hasWorkingLink": true
     },
-    { "name": "Calendar", "link": "/calendar", "hasWorkingLink": true },
+    {
+      "name": "Calendar",
+      "link": "/calendar",
+      "hasWorkingLink": true
+    },
     {
       "name": "Clubs & Organizations",
       "link": "/clubs",
@@ -47,7 +55,11 @@
       "link": "https://www.auhsd.us/District/Department/14186-Curriculum-Instruction/80554-College-Access-for-All-Dream-Act.html",
       "hasWorkingLink": true
     },
-    { "name": "Counseling", "link": "/counseling", "hasWorkingLink": true },
+    {
+      "name": "Counseling",
+      "link": "/counseling",
+      "hasWorkingLink": true
+    },
     {
       "name": "Cypress College Dual Enrollment",
       "link": "/cypresscollege",
@@ -83,7 +95,11 @@
       "link": "/healthoffice",
       "hasWorkingLink": true
     },
-    { "name": "Library", "link": "/library", "hasWorkingLink": false },
+    {
+      "name": "Library",
+      "link": "/library",
+      "hasWorkingLink": true
+    },
     {
       "name": "News Section",
       "link": "https://oxford.auhsd.us/Oxford/Department/14222-Oxford-Academy/News/",
@@ -94,7 +110,11 @@
       "link": "https://www.auhsd.us/District/Department/14182-ASSESSMENT-AND-EVALUATION/Portal/parent-student-handbooks-english",
       "hasWorkingLink": true
     },
-    { "name": "Policies", "link": "/policies", "hasWorkingLink": true },
+    {
+      "name": "Policies",
+      "link": "/policies",
+      "hasWorkingLink": true
+    },
     {
       "name": "Programs 4 Patriots",
       "link": "/programs4patriots",
@@ -120,13 +140,25 @@
       "link": "https://www.thrively.com/login",
       "hasWorkingLink": true
     },
-    { "name": "Title IX", "link": "/titleix", "hasWorkingLink": true },
-    { "name": "Transcripts", "link": "/transcripts", "hasWorkingLink": true },
+    {
+      "name": "Title IX",
+      "link": "/titleix",
+      "hasWorkingLink": true
+    },
+    {
+      "name": "Transcripts",
+      "link": "/transcripts",
+      "hasWorkingLink": true
+    },
     {
       "name": "Transportation",
       "link": "/transportation",
       "hasWorkingLink": true
     },
-    { "name": "Work Permits", "link": "/workpermits", "hasWorkingLink": false }
+    {
+      "name": "Work Permits",
+      "link": "/workpermits",
+      "hasWorkingLink": true
+    }
   ]
 }
