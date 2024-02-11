@@ -11,7 +11,7 @@ import '../../components/scss/pages/subpages/bellschedule.subpage.scss'
 
 
 const BellSchedule: React.FC = (): React.JSX.Element => {
-    const [sessionText, setSessionText] = React.useState<string>();
+    const [sessionText, setSessionText]: [string, React.Dispatch<React.SetStateAction<string>>] = React.useState<string>("");
 
     React.useEffect((): void => {
         trackPageView();

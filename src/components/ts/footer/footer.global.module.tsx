@@ -3,7 +3,7 @@ import React from 'react';
 import '../../scss/components/footer.global.scss';
 
 const Footer: React.FC = (): React.JSX.Element => {
-    const footerRef = React.useRef<HTMLDivElement>(null);
+    const footerRef: React.RefObject<HTMLDivElement> = React.useRef<HTMLDivElement>(null);
 
     const applyVisibleClass: (ref: React.RefObject<HTMLDivElement>) => void = (ref) => {
         if (ref.current === null) {
@@ -37,10 +37,10 @@ const Footer: React.FC = (): React.JSX.Element => {
                             This is an ALPHA build. Bugs beware!
                         </h1>
                         <br />
-                        <h1 id="Affiliation">Update 60 Main - February 7, 2024</h1>
+                        <h1 id="Affiliation">Update 61 Main - February 10, 2024</h1>
                         <br />
                         <br />
-                        <a href="https://github.com/enVId-tech" id="Name">Erick Tran, 2023</a>
+                        <a href="https://github.com/enVId-tech" id="Name">Erick Tran, 2024</a>
                     </div>
                 </div>
             </div>

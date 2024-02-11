@@ -11,6 +11,7 @@ const Counseling: React.FC = (): React.JSX.Element => {
     React.useEffect((): void => {
         trackPageView();
     }, []);
+    
     return (
         <div id="Counseling">
             <ClassHelmet title="Counseling" />

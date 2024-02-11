@@ -8,6 +8,8 @@ $footer-font-size: 2.3rem;
 $footer-animation-duration: 0.75s;
 $footer-animation-delay: 0.2s;
 $footer-animation-timing: ease-in-out;
+$footer-width-vw: 90vw;
+$footer-width-pcent: 100%;
 
 @mixin flex-center-column {
     display: flex;
@@ -18,7 +20,7 @@ $footer-animation-timing: ease-in-out;
 @mixin flex-space-between {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: $footer-width-vw;
 }
 
 @mixin footer-text {
@@ -38,6 +40,7 @@ $footer-animation-timing: ease-in-out;
     font-family: $footer-font-family;
     padding-left: $footer-padding;
     padding-right: $footer-padding;
+    width: $footer-width-pcent;
 
     #FooterPagesDefault {
         @include flex-space-between;

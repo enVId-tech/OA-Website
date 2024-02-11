@@ -75,8 +75,8 @@
     },
     {
       "name": "Graduation Requirements",
-      "link": "/graduationrequirements",
-      "hasWorkingLink": false
+      "link": "https://coursecatalog.auhsd.us/sr_athletics.aspx",
+      "hasWorkingLink": true
     },
     {
       "name": "Health Office",
@@ -120,7 +120,7 @@
       "link": "https://www.thrively.com/login",
       "hasWorkingLink": true
     },
-    { "name": "Title IX", "link": "/titleix", "hasWorkingLink": false },
+    { "name": "Title IX", "link": "/titleix", "hasWorkingLink": true },
     { "name": "Transcripts", "link": "/transcripts", "hasWorkingLink": true },
     {
       "name": "Transportation",

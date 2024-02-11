@@ -13,10 +13,10 @@ import '../components/scss/pages/home.page.site.scss';
 
 const HomePage: React.FC = (): React.JSX.Element => {
     // Create refs for main div elements
-    const aboutRef = React.useRef(null);
-    const ratingsRef = React.useRef(null);
-    const admissionsRef = React.useRef(null);
-    const footerRef = React.useRef(null);
+    const aboutRef: React.MutableRefObject<null> = React.useRef(null);
+    const ratingsRef: React.MutableRefObject<null> = React.useRef(null);
+    const admissionsRef: React.MutableRefObject<null> = React.useRef(null);
+    const footerRef: React.MutableRefObject<null> = React.useRef(null);
 
     React.useEffect((): void => {
         trackPageView();
@@ -36,7 +36,7 @@ const HomePage: React.FC = (): React.JSX.Element => {
         "c_up"
     ];
 
-    window.addEventListener("scroll", () => {
+    window.addEventListener("scroll", (): void => {
         applyPageAnims(refs, anims, 0.25)
     });
 
@@ -53,7 +53,7 @@ const HomePage: React.FC = (): React.JSX.Element => {
             <Navbar heightChange={790} />
             <div id="HomePageMain">
                 {/* Title Tab */}
-                <PageTitle height={100} mainText="Oxford Academy" subText="Conceiving the next wave of innovation." oxfLogo={true} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={1200} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
+                <PageTitle height={100} mainText="Oxford Academy" subText="Conceiving the next wave of innovation." oxfLogo={true} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={100} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
 
                 {/* About Tab */}
                 <div id="About" ref={aboutRef} className="info-section">

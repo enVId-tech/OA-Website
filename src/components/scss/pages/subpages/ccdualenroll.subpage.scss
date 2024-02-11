@@ -32,29 +32,252 @@ $secondary-justify-content: start;
     transition: $main-transition;
 }
 
-#CCDETitle {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
-    font-family: 'Raleway', 'san-serif';
-    font-size: 5rem;
-    font-weight: 700;
-}
+#CCDualEnrollment {
+    transition: all 0.3s ease-in-out forwards;
 
-#CCDualEnrollmentMain {
-    @include flex-center;
-    width: 100%;
-    height: fit-content;
-    padding: 0;
-    margin: 0;
-    @include common-styles;
+    #CCDETitle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+        font-family: 'Raleway', 'san-serif';
+        font-size: 5rem;
+        font-weight: 700;
+    }
 
-    #CCDEMainInfo {
-        padding: 0 6vw 0 6vw;
+    #CCDualEnrollmentMain {
+        @include flex-center;
+        width: 100%;
+        height: fit-content;
+        padding: 0;
+        margin: 0;
+        @include common-styles;
+
+        #CCDEMainInfo {
+            padding: 0 6vw 0 6vw;
+            line-height: 3rem;
+            font-size: 1.5vh;
+            background-color: white;
+            font-weight: 100;
+        }
+    }
+
+    #CCDualEnrollmentSecondary {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: fit-content;
+
+        #CCDESecondaryInfo {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            width: 85%;
+            height: fit-content;
+
+            .CCDEText {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 40%;
+                height: fit-content;
+                padding: 0;
+                text-align: center;
+            }
+
+            #CCDE4 {
+                color: red;
+                font-size: 2.75vh;
+            }
+        }
+    }
+
+    #AdditionalResources {
+        display: flex;
+        flex-direction: row;
+
+        .resources {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 33%;
+            height: fit-content;
+            padding: 0;
+            margin: 0;
+            background-color: white;
+            line-height: 4rem;
+            font-size: 2vh;
+            text-align: center;
+
+        }
+    }
+
+    #DualEnrollmentPathways {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: fit-content;
+        padding: 0;
+        margin: 0;
         background-color: white;
+        line-height: 4rem;
+        font-size: 2vh;
+        text-align: center;
+
+        #DEPSelection {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 70%;
+            height: fit-content;
+            padding-left: 2vw;
+            margin: 0;
+            margin-bottom: 5vh;
+            background-color: white;
+            line-height: 4rem;
+            font-size: 2vh;
+            text-align: center;
+
+            .DEPButton {
+                &:first-child {
+                    margin-top: 5vh;
+                    border-top-left-radius: 10px;
+                    border-top-right-radius: 10px;
+                    border-top-color: black;
+                }
+
+                &:last-child {
+                    border-bottom-left-radius: 10px;
+                    border-bottom-right-radius: 10px;
+                    border-bottom-color: black;
+                }
+
+                background-color: #ffffff;
+                border-color: black;
+                border-style: solid;
+                border-width: 0.2vh;
+                width: 100%;
+                padding: 1vh 0 1vh 5vw;
+                border-bottom-color: transparent;
+                display: flex;
+                align-items: start;
+                font-size: 1.75vh;
+                font-family: "Raleway",
+                sans-serif;
+                font-weight: 100;
+                transition: all 0.3s ease-in-out;
+                color: white;
+                background-size: cover;
+                background-repeat: no-repeat;
+
+                &:hover {
+                    background-color: #f5f5f5;
+                    font-size: 2.2vh;
+                    font-weight: 500;
+                    transition: all 0.3s ease-in-out;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    #Application {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: fit-content;
+        padding: 0;
+        margin: 0;
+        background-color: white;
+        line-height: 4rem;
+        text-align: center;
+
+        #ApplicationTitle {
+            font-size: 4vh;
+        }
+
+        #ApplicationSteps {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            width: 85%;
+            height: fit-content;
+
+            .ApplicationStep {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 45%;
+                height: fit-content;
+                padding: 0;
+                margin: 0;
+                line-height: 3rem;
+                font-size: 2vh;
+                text-align: center;
+
+                .ApplicationStepNumber {
+                    font-size: 5vh;
+                    padding: 0;
+                    margin: 0 0 1vh 0;
+                    line-height: 3rem;
+                }
+
+                .ApplicationStepTitle {
+                    margin: 3vw 3vw 3vw 3vw;
+                    border-radius: 10px;
+                    font-size: 3vh;
+                }
+            }
+        }
+    }
+
+    #VideoResources {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        height: fit-content;
+        padding: 0;
+        margin: 0;
+        background-color: white;
+        line-height: 4rem;
+        text-align: center;
+
+        #VideoResourcesTitle {
+            font-size: 4vh;
+        }
+
+        #Videos {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            width: 100%;
+            height: fit-content;
+            padding: 0;
+            margin: 0;
+            background-color: white;
+
+            iframe {
+                width: 30vw;
+                height: 30vh;
+            }
+        }
     }
 }

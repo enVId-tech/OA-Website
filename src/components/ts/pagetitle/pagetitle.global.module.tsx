@@ -28,18 +28,18 @@ const PageTitle: React.FC<PageTitleProps> = ({
     titleVhPreDown = 0,
     titleVhDownRate = 30,
 }): React.JSX.Element => {
-    const [positions, setPositions] = React.useState({
-        backgroundPositionY: -backgroundVhPreDown / backgroundVhDownRate,
-        titlePositionY: -titleVhPreDown / titleVhDownRate,
-    });
+    const [positions, setPositions]: [number[], React.Dispatch<React.SetStateAction<number[]>>] = React.useState<number[]>([
+        -backgroundVhPreDown / backgroundVhDownRate,
+        -titleVhPreDown / titleVhDownRate,
+    ]);
 
-    React.useEffect(() => {
+    React.useEffect((): () => void => {
         const handleScroll = (): void => {
             const scrollY: number = window.scrollY;
-            setPositions({
-                backgroundPositionY: -((backgroundVhPreDown + scrollY) / backgroundVhDownRate),
-                titlePositionY: scrollY / titleVhDownRate,
-            });
+            setPositions([
+                -((backgroundVhPreDown + scrollY) / backgroundVhDownRate),
+                scrollY / titleVhDownRate,
+            ]);
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -49,7 +49,8 @@ const PageTitle: React.FC<PageTitleProps> = ({
         };
     }, []);
 
-    const { backgroundPositionY, titlePositionY }: { backgroundPositionY: number; titlePositionY: number } = positions;
+    const backgroundPositionY: number = positions[0];
+    const titlePositionY: number = positions[1];
 
     return (
         <div
@@ -57,9 +58,15 @@ const PageTitle: React.FC<PageTitleProps> = ({
             style={{
                 backgroundPositionY: `${backgroundPositionY}vh`,
                 backgroundImage: `url(images/${backgroundLink})`,
+                height: `${height}vh`,
             }}
         >
-            <div id="TitleBackground" />
+            <div 
+                id="TitleBackground" 
+                style={{
+                    height: `${height}vh`,
+                }}
+            />
             
             {oxfLogo && (
                 <img id="OxfLogo" src="images/OxfordLogo.png" style={{ transform: `translateY(${titlePositionY}vh)` }} />

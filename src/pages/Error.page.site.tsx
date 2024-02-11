@@ -7,7 +7,7 @@ import trackPageView from "../components/ts/analytics/analytics.global.module.ts
 import '../components/scss/pages/error.page.site.scss';
 
 const ErrorPage: React.FC = (): React.JSX.Element => {
-    const [time, setTime] = React.useState<number>(3);
+    const [time, setTime]: [number, React.Dispatch<React.SetStateAction<number>>] = React.useState<number>(3);
 
     React.useEffect((): void => {
         trackPageView();
@@ -19,9 +19,9 @@ const ErrorPage: React.FC = (): React.JSX.Element => {
         if (time <= 0.1) {
             setTime(0);
             window.location.href = "/";
-        } else {
-            setTime(time - interval);
+            return;
         }
+        setTime(time - interval);
     }, 100);
 
     return (

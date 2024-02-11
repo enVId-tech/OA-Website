@@ -35,6 +35,8 @@ import Transportation from './pages/subpages/transportation.subpage.tsx';
 import VisionSLCS from './pages/subpages/visionslcs.subpage.tsx';
 import HealthOffice from './pages/subpages/healthoffice.subpage.tsx';
 import AdminLogin from './pages/admin/login.tsx';
+import GetDirections from './pages/subpages/getdirections.subpage.tsx';
+import TitleIX from './pages/subpages/titleix.subpage.tsx';
 
 const AppRoutes: React.FC = (): React.JSX.Element => {
   return (
@@ -51,12 +53,15 @@ const AppRoutes: React.FC = (): React.JSX.Element => {
         <Path path="/counseling/*" element={<Redirect to="/counseling" />} />
         <Path path="/cypresscollege/*" element={<Redirect to="/cypresscollege" />} />
         <Path path="/generalinformation/*" element={<Redirect to="/generalinformation" />} />
+        <Path path="/getdirections/*" element={<Redirect to="/getdirections" />} />
+        <Path path="/getdirections/*" element={<Redirect to="/getdirections" />} />
         <Path path="/healthoffice/*" element={<Redirect to="/healthoffice" />} />
         <Path path="/oasitemap/*" element={<Redirect to="/oasitemap" />} />
         <Path path="/policies/*" element={<Redirect to="/policies" />} />
         <Path path="/principalsmessage/*" element={<Redirect to="/principalsmessage" />} />
         <Path path="/programs4patriots/*" element={<Redirect to="/programs4patriots" />} />
         <Path path="/staffdirectory/*" element={<Redirect to="/staffdirectory" />} />
+        <Path path="/titleix/*" element={<Redirect to="/titleix" />} />
         <Path path="/transcripts/*" element={<Redirect to="/transcripts" />} />
         <Path path="/transportation/*" element={<Redirect to="/transportation" />} />
         <Path path="/visionandslcs/*" element={<Redirect to="/visionandslcs" />} />
@@ -76,12 +81,14 @@ const AppRoutes: React.FC = (): React.JSX.Element => {
         <Path path="/counseling" element={<Counseling />} />
         <Path path="/cypresscollege" element={<CCDualEnrollment />} />
         <Path path="/generalinformation" element={<GeneralInformation />} />
+        <Path path="/getdirections" element={<GetDirections />} />
         <Path path="/healthoffice" element={<HealthOffice />} />
         <Path path="/oasitemap" element={<OxfSitemap />} />
         <Path path="/policies" element={<Policies />} />
         <Path path="/principalsmessage" element={<PrincipalsMessage />} />
         <Path path="/programs4patriots" element={<ProgramsForPatriots />} />
         <Path path="/staffdirectory" element={<Staff />} />
+        <Path path="/titleix" element={<TitleIX />} />
         <Path path="/transcripts" element={<Transcript />} />
         <Path path="/transportation" element={<Transportation />} />
         <Path path="/visionandslcs" element={<VisionSLCS />} />
