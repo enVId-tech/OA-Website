@@ -15,7 +15,7 @@ const Library: React.FC = (): React.JSX.Element => {
     return (
         <div id="Library">
             <ClassHelmet title="Library" />
-            <Navbar />
+            <Navbar heightChange={790} />
             <PageTitle height={80} mainText="Library" subText="" oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
 
             <div id="LibraryMain">

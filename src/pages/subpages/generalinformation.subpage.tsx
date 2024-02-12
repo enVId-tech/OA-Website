@@ -31,12 +31,13 @@ const GeneralInformation: React.FC = (): React.JSX.Element => {
             }
         }
     }
-    
+
     return (
         <div id="GeneralInformation">
             <ClassHelmet title="General Information" />
-            <Navbar />
+            <Navbar heightChange={790} />
             <PageTitle height={80} mainText="General Information" subText="Learn more about our school!" oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
+            
             <div id="GeneralInformationMain">
                 <h1 id="GenInfoHMain">General Information</h1>
                 <span id="TopInfo">
@@ -76,6 +77,7 @@ const GeneralInformation: React.FC = (): React.JSX.Element => {
                     </div>
                 </span>
             </div>
+            
             <Footer />
         </div>
     )

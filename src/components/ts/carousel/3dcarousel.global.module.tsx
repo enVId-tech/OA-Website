@@ -8,7 +8,7 @@ interface Carousel3DProps {
     // numimgshown: number;
 }
 
-const Carousel3D: React.FC<Carousel3DProps> = ({images }): React.JSX.Element => {
+const Carousel3D: React.FC<Carousel3DProps> = ({ images }): React.JSX.Element => {
     const [currentImage, setCurrentImage]: [number, React.Dispatch<React.SetStateAction<number>>] = React.useState<number>(0);
     // const [numberImgShown, setNumberImgShown]: [number, React.Dispatch<React.SetStateAction<number>>] = React.useState<number>(numimgshown);
     const [imagesList, setImagesList]: [string[], React.Dispatch<React.SetStateAction<string[]>>] = React.useState<string[]>(images);

@@ -11,6 +11,7 @@ $main-font-size: 5vw;
 $main-font-weight: 400;
 $main-font-color: #ffffff;
 $main-letter-spacing: 0.2vw;
+$margin-top: 10vh;
 $sub-font-size: 2vw;
 $sub-font-weight: 300;
 $animation-duration: 0.75s;
@@ -37,7 +38,7 @@ $align-left: left;
         width: 100%;
         height: 100%;
         position: absolute;
-        background-color: rgba(0,0,0,0.6);
+        background-color: rgba(0, 0, 0, 0.6);
     }
 
     #OxfLogo {
@@ -46,6 +47,7 @@ $align-left: left;
         background-position: center;
         border-radius: 100px;
         margin-left: $logo-margin-left;
+        margin-top: $margin-top;
         width: $logo-width;
         height: auto;
         animation: fadeIn $logo-animation-duration $logo-animation-delay ease-in-out forwards;
@@ -64,6 +66,7 @@ $align-left: left;
 
     #MainText {
         margin-left: $main-text-margin-left;
+        margin-top: $margin-top;
 
         #OxfAcaMain {
             font-size: $main-font-size;

@@ -15,8 +15,9 @@ const PrincipalsMessage: React.FC = (): React.JSX.Element => {
     return (
         <div id="PrincipalsMessage">
             <ClassHelmet title="Principal's Message" />
-            <Navbar />
+            <Navbar heightChange={790} />
             <PageTitle height={80} mainText="Principal's Message" subText="A message from Principal Houston" oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
+
             <h1 id="PrincipalsMessageTitle">
                 Principal's Message
             </h1>
@@ -39,6 +40,7 @@ const PrincipalsMessage: React.FC = (): React.JSX.Element => {
                     <br />
                     I am humbled to serve this diverse and upstanding community.  I am proud to be a patriot.  It is with great appreciation that I will be on this 6-year  journey with you and your students.  </p>
             </div>
+
             <Footer />
         </div>
     )

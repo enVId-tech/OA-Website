@@ -14,7 +14,7 @@ const trackPageView: () => void = () => {
     category: 'Page view',
     action: 'Page view',
     label: 'Page view',
-    value: new Date().getMilliseconds(),
+    value: new Date().getTime()
   });
 };
 

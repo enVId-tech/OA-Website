@@ -51,10 +51,9 @@ const HomePage: React.FC = (): React.JSX.Element => {
         <div id="HomePage">
             <ClassHelmet title="Home" />
             <Navbar heightChange={790} />
-            <div id="HomePageMain">
-                {/* Title Tab */}
-                <PageTitle height={100} mainText="Oxford Academy" subText="Conceiving the next wave of innovation." oxfLogo={true} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={100} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
+            <PageTitle height={100} mainText="Oxford Academy" subText="Conceiving the next wave of innovation." oxfLogo={true} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={100} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
 
+            <div id="HomePageMain">
                 {/* About Tab */}
                 <div id="About" ref={aboutRef} className="info-section">
                     <div id="AboutText" className="section-property">
@@ -85,10 +84,9 @@ const HomePage: React.FC = (): React.JSX.Element => {
                         </div>
                     </div>
                 </div>
-
-                {/* Footer */}
-                <Footer />
             </div>
+
+            <Footer />
         </div>
     )
 }

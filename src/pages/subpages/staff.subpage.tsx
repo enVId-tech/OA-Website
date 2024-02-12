@@ -15,8 +15,9 @@ const Staff: React.FC = (): React.JSX.Element => {
     return (
         <div id="Staff">
             <ClassHelmet title="Staff" />
-            <Navbar />
+            <Navbar heightChange={790} />
             <PageTitle height={80} mainText="Staff" subText="Meet the staff!" oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
+
             <div id="StaffMain">
                 <h1 id="TitleText">Staff</h1>
                 <h1 id="StaffSecondary">
@@ -28,6 +29,7 @@ const Staff: React.FC = (): React.JSX.Element => {
                     </a>
                 </h1>
             </div>
+
             <Footer />
         </div>
     )

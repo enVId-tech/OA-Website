@@ -48,7 +48,7 @@ $navbar-table-hidden-button-transition: all $transition-duration ease-in-out 0.1
     }
   }
 
-  @if $background-color == #ffffff {
+  @if $background-color ==#ffffff {
     .navsubbutton {
       &.green {
         color: rgb(0, 136, 0) !important;
@@ -62,10 +62,11 @@ $navbar-table-hidden-button-transition: all $transition-duration ease-in-out 0.1
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: $navbar-height;
+  height: fit-content;
   position: fixed;
   top: 0;
   left: 0;
+  padding: 1vh 0 0.5vh 0;
   width: $navbar-width;
   z-index: $navbar-z-index;
 
@@ -143,12 +144,11 @@ $navbar-table-hidden-button-transition: all $transition-duration ease-in-out 0.1
           align-items: center;
           justify-content: space-around;
           width: $navbar-width;
-          height: auto;
+          height: min-content;
           transition: $navbar-table-transition-forwards;
           padding-left: $navbar-table-padding;
           padding-right: $navbar-table-padding;
           grid-template-columns: repeat(4, 1fr);
-          grid-template-rows: repeat(6, 1fr);
           grid-gap: $navbar-table-grid-gap;
           align-content: space-between;
           color: white;

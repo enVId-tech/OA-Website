@@ -11,15 +11,15 @@ const DistrictIPPPlan: React.FC = (): React.JSX.Element => {
     React.useEffect((): void => {
         trackPageView();
     }, []);
-    
+
     return (
         <div id="DistrictIPPPlan">
             <ClassHelmet title="District IPP Plan" />
-            <Navbar />
+            <Navbar heightChange={790} />
             <PageTitle height={80} mainText="District IPP Plan" subText="" oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
-            
+
             <iframe title="districtippplan" src="https://www.auhsd.us/files/user/1/file/Districts%20IIPP%20Plan%20RESTATED%20-%2007_31_20.pdf" />
-            
+
             <Footer />
         </div>
     )

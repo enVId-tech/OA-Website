@@ -55,7 +55,8 @@ $footer-width-pcent: 100%;
                 justify-content: space-around;
                 align-items: flex-start;
 
-                h1, a {
+                h1,
+                a {
                     @include footer-text;
                     text-align: left;
                 }
@@ -66,7 +67,8 @@ $footer-width-pcent: 100%;
                 justify-content: space-around;
                 align-items: flex-end;
 
-                h1, a {
+                h1,
+                a {
                     @include footer-text;
                     text-align: right;
                 }
@@ -78,7 +80,9 @@ $footer-width-pcent: 100%;
         #FooterPagesDefault {
             #FooterMain {
                 #FooterLeft {
-                    h1, a {
+
+                    h1,
+                    a {
                         animation: fadeAndLeft $footer-animation-duration $footer-animation-delay $footer-animation-timing forwards;
 
                         @keyframes fadeAndLeft {
@@ -96,7 +100,9 @@ $footer-width-pcent: 100%;
                 }
 
                 #FooterRight {
-                    h1, a {
+
+                    h1,
+                    a {
                         animation: fadeAndRight $footer-animation-duration $footer-animation-delay $footer-animation-timing forwards;
 
                         @keyframes fadeAndRight {

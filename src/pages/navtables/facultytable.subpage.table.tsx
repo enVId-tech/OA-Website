@@ -15,7 +15,7 @@ const FacultyTable: React.FC = (): React.JSX.Element => {
     return (
         <div id="FacultyTable">
             <ClassHelmet title="Faculty Table" />
-            <Navbar />
+            <Navbar heightChange={790} />
             <PageTitle height={80} mainText="Faculty Table" subText="Select relevant topics here!" oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
             <Footer />
         </div>

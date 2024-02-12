@@ -11,11 +11,11 @@ const FamilyEngagement: React.FC = (): React.JSX.Element => {
     React.useEffect((): void => {
         trackPageView();
     }, []);
-    
+
     return (
         <div id="FamilyEngagement">
             <ClassHelmet title="Family Engagement" />
-            <Navbar />
+            <Navbar heightChange={790} />
             <PageTitle height={80} mainText="Family Engagement" subText="" oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
             <Footer />
         </div>

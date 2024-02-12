@@ -38,8 +38,9 @@ const Policies: React.FC = (): React.JSX.Element => {
     return (
         <div id="Policies">
             <ClassHelmet title="Policies" />
-            <Navbar />
+            <Navbar heightChange={790} />
             <PageTitle height={80} mainText="Policies" oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
+
             <div id="PoliciesMain">
                 <h1 id="TitleText">Policies</h1>
                 <h1 id="PoliciesSecondary">
@@ -53,6 +54,7 @@ const Policies: React.FC = (): React.JSX.Element => {
                     <li className="PoliciesListItem" onClick={() => handleClick("UseOfTechnology")}>Use of Technology</li>
                 </ul>
             </div>
+
             <Footer />
         </div>
     )

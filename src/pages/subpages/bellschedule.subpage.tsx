@@ -22,8 +22,9 @@ const BellSchedule: React.FC = (): React.JSX.Element => {
     return (
         <div id="BellSchedule">
             <ClassHelmet title="Bell Schedule" />
-            <Navbar />
+            <Navbar heightChange={790} />
             <PageTitle height={80} mainText="Bell Schedule" subText={sessionText} oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
+
             <div id="BellScheduleMain">
                 <h1 id="BellScheduleTitle">Bell Schedule</h1>
                 <span id="BellScheduleText">
@@ -69,6 +70,7 @@ const BellSchedule: React.FC = (): React.JSX.Element => {
                     </div>
                 </span>
             </div>
+
             <Footer />
         </div>
     );

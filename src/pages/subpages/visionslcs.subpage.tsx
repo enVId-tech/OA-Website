@@ -11,12 +11,13 @@ const VisionSLCS: React.FC = (): React.JSX.Element => {
     React.useEffect((): void => {
         trackPageView();
     }, []);
-    
+
     return (
         <div id="VisionSLCS">
             <ClassHelmet title="Vision & SLCS" />
-            <Navbar />
+            <Navbar heightChange={790} />
             <PageTitle height={80} mainText="Vision & SLCS" oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
+
             <div id="VisionSLCSMain">
                 <h1 id="TitleText">Vision & SLCS</h1>
                 <h1 id="VisionMain">Oxford Academy is a community of innovators dedicated to nurturing the holistic growth of life-long learners who will lead and serve an evolving local and global society.</h1>
@@ -55,6 +56,7 @@ const VisionSLCS: React.FC = (): React.JSX.Element => {
                     </h1>
                 </div>
             </div>
+
             <Footer />
         </div>
     )

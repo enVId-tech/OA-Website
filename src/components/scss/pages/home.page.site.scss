@@ -1,102 +1,110 @@
-#HomePageMain {
+#HomePage {
     display: flex;
     flex-direction: column;
     overflow: hidden;
     margin-top: -12vh;
 
-    div {
-        box-sizing: border-box;
-        width: 100%;
-    }
+    #HomePageMain {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
 
-    #About {
-        background-color: #ffffff;
-
-        #AboutText {
-            flex-direction: row;
-
-            #AboutImage {
-                background-repeat: no-repeat;
-                background-size: contain;
-                background-position: center;
-                width: 30vw;
-                margin-left: 5vw;
-                height: auto;
-            }
-
-            #AboutLabel {
-                font-size: 2vw;
-                padding-right: 3vw;
-                padding-left: 2vw;
-                font-weight: 500;
-                color: #000000;
-            }
-        }
-    }
-
-    #Ratings {
-        background-color: #0B132B;
-
-        #USNewsRanking {
-            flex-direction: column;
-
-            #Ranks {
-                display: flex;
-                justify-content: space-around;
-                margin-top: 5vh;
-                margin-bottom: 10vh;
-
-                #HSRankings {
-                    color: white;
-                    font-weight: bold;
-                }
-
-                #NatRankings {
-                    color: white;
-                    font-weight: bold;
-                }
-            }
+        div {
+            box-sizing: border-box;
+            width: 100%;
         }
 
-        #USNewsLabel {
-            color: white;
-            font-weight: 600;
-            font-size: 1.5vw;
-            z-index: 1000;
-        }
-    }
+        #About {
+            background-color: #ffffff;
 
-    #Admissions {
-        background-color: rgb(12, 43, 83);
+            #AboutText {
+                flex-direction: row;
 
-        #AdmissionsMain {
-            flex-direction: column;
-
-            #AdmissionsLabel {
-                color: white;
-                font-weight: bolder;
-            }
-
-            #AdmissionsText {
-                color: white;
-                font-weight: 300;
-                width: 80%;
-
-                #AdmissionsMainLabel, #AdmissionsOpening {
-                    font-weight: 400;
+                #AboutImage {
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: center;
+                    width: 30vw;
+                    margin-left: 5vw;
+                    height: auto;
                 }
 
-                #Apply {
-                    border-radius: 25px;
-                    background-color: #ffffff;
+                #AboutLabel {
+                    font-size: 2vw;
+                    padding-right: 3vw;
+                    padding-left: 2vw;
+                    font-weight: 500;
                     color: #000000;
-                    font-weight: bold;
-                    font-size: 1.5vw;
-                    padding: 1vw;
-                    border: none;
-                    font-family: 'Raleway', sans-serif;
-                    &:hover {
-                        cursor: pointer;
+                }
+            }
+        }
+
+        #Ratings {
+            background-color: #0B132B;
+
+            #USNewsRanking {
+                flex-direction: column;
+
+                #Ranks {
+                    display: flex;
+                    justify-content: space-around;
+                    margin-top: 5vh;
+                    margin-bottom: 10vh;
+
+                    #HSRankings {
+                        color: white;
+                        font-weight: bold;
+                    }
+
+                    #NatRankings {
+                        color: white;
+                        font-weight: bold;
+                    }
+                }
+            }
+
+            #USNewsLabel {
+                color: white;
+                font-weight: 600;
+                font-size: 1.5vw;
+                z-index: 1000;
+            }
+        }
+
+        #Admissions {
+            background-color: rgb(12, 43, 83);
+
+            #AdmissionsMain {
+                flex-direction: column;
+
+                #AdmissionsLabel {
+                    color: white;
+                    font-weight: bolder;
+                }
+
+                #AdmissionsText {
+                    color: white;
+                    font-weight: 300;
+                    width: 80%;
+
+                    #AdmissionsMainLabel,
+                    #AdmissionsOpening {
+                        font-weight: 400;
+                    }
+
+                    #Apply {
+                        border-radius: 25px;
+                        background-color: #ffffff;
+                        color: #000000;
+                        font-weight: bold;
+                        font-size: 1.5vw;
+                        padding: 1vw;
+                        border: none;
+                        font-family: 'Raleway', sans-serif;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
                     }
                 }
             }

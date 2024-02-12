@@ -11,12 +11,13 @@ const Admissions: React.FC = (): React.JSX.Element => {
     React.useEffect((): void => {
         trackPageView();
     }, []);
-    
+
     return (
         <div id="Admissions">
             <ClassHelmet title="Admissions" />
-            <Navbar />
+            <Navbar heightChange={790} />
             <PageTitle height={80} mainText="Admissions" subText="Apply to Oxford!" oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
+            
             <div id="AdmissionsMain">
                 <h1 id="AdmissionsTitle">Admissions</h1>
                 <div className="AdmissionsSection">
@@ -145,6 +146,7 @@ const Admissions: React.FC = (): React.JSX.Element => {
                     </p>
                 </div>
             </div>
+            
             <Footer />
         </div>
     )

@@ -19,12 +19,14 @@ const OxfSitemap: React.FC = (): React.JSX.Element => {
     return (
         <div id="OxfSiteMap">
             <ClassHelmet title="OA Sitemap" />
-            <Navbar />
+            <Navbar heightChange={790} />
             <PageTitle height={80} mainText="Oxford Academy Site Map" oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
+
             <div id="OxfSiteMapMain">
                 <h1 id="TitleText">Oxford Academy Site Map</h1>
                 <img id="OxfSite" src="images/Map.png" alt="Oxford Academy Site Map" onClick={handleClick} />
             </div>
+
             <Footer />
         </div>
     )

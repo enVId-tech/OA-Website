@@ -15,8 +15,9 @@ const ProgramsForPatriots: React.FC = (): React.JSX.Element => {
     return (
         <div id="ProgramsForPatriots">
             <ClassHelmet title="Programs 4 Patriots" />
-            <Navbar />
+            <Navbar heightChange={790} />
             <PageTitle height={80} mainText="Programs 4 Patriots" oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
+
             <div id="ProgramsForPatriotsMain">
                 <h1 id="TitleText">Programs 4 Patriots</h1>
                 <h1 id="ProgramsForPatriotsSecondary">
@@ -26,6 +27,7 @@ const ProgramsForPatriots: React.FC = (): React.JSX.Element => {
                     - Erick Tran
                 </h1>
             </div>
+
             <Footer />
         </div>
     )

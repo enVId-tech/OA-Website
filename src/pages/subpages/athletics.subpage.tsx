@@ -11,12 +11,13 @@ const Athletics: React.FC = (): React.JSX.Element => {
     React.useEffect((): void => {
         trackPageView();
     }, []);
-    
+
     return (
         <div id="Athletics">
-            <ClassHelmet title="Athletics" /> 
-            <Navbar />
+            <ClassHelmet title="Athletics" />
+            <Navbar heightChange={790} />
             <PageTitle height={80} mainText="Athletics" subText="Compete with the best!" oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
+
             <div id="AthleticsMain">
                 <h1 id="AthleticsTitle">Athletics</h1>
                 <p id="AthleticsText">
@@ -44,6 +45,7 @@ const Athletics: React.FC = (): React.JSX.Element => {
                     - Thoroughly read the Oxford Athletic Standards and both student and parent must sign the forms included in the tab marked HS Eligibility Documents
                 </p>
             </div>
+
             <Footer />
         </div>
     );

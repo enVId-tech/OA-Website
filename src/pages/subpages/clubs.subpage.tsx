@@ -29,7 +29,7 @@ const Clubs: React.FC = (): React.JSX.Element => {
     return (
         <div id="Clubs">
             <ClassHelmet title="Clubs" />
-            <Navbar />
+            <Navbar heightChange={790} />
             <PageTitle height={80} mainText="Clubs" subText="Get involved!" oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
 
             <div id="MainClubs">

@@ -11,11 +11,11 @@ const SchoolSiteCouncil: React.FC = (): React.JSX.Element => {
     React.useEffect((): void => {
         trackPageView();
     }, []);
-    
+
     return (
         <div id="SchoolSiteCouncil">
             <ClassHelmet title="School Site Council" />
-            <Navbar />
+            <Navbar heightChange={790} />
             <PageTitle height={80} mainText="School Site Council" subText="" oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
             <Footer />
         </div>

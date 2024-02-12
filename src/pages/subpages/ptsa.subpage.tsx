@@ -15,7 +15,7 @@ const PTSA: React.FC = (): React.JSX.Element => {
     return (
         <div id="PTSA">
             <ClassHelmet title="PTSA" />
-            <Navbar />
+            <Navbar heightChange={790} />
             <PageTitle height={80} mainText="PTSA" subText="Parent Teacher Student Association" oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
 
             <iframe title="ptsa" src="https://oxford.auhsd.us/files/user/5529/file/Website%20OA%20PTSA%202023-2024%20Board%20-%20Google%20Docs.pdf" />

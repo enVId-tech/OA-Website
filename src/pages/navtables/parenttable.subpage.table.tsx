@@ -15,7 +15,7 @@ const ParentTable: React.FC = (): React.JSX.Element => {
     return (
         <div id="ParentTable">
             <ClassHelmet title="Parent Table" />
-            <Navbar />
+            <Navbar heightChange={790} />
             <PageTitle height={80} mainText="Parent Table" subText="Select relevant topics here!" oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
             <Footer />
         </div>

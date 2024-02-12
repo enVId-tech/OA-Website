@@ -15,7 +15,7 @@ const WorkPermit: React.FC = (): React.JSX.Element => {
     return (
         <div id="WorkPermit">
             <ClassHelmet title="Work Permit" />
-            <Navbar />
+            <Navbar heightChange={790} />
             <PageTitle height={80} mainText="Work Permits" subText="" oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
 
             <div id="WorkPermitMain">

@@ -65,13 +65,15 @@ $color-dark-gray: #D9D9D9;
             }
         }
 
-        #ExtraInfo, #Awards {
+        #ExtraInfo,
+        #Awards {
             @include flex-center;
             flex-direction: row;
             margin-top: $margin-double;
             margin-bottom: $margin-double;
 
-            .buttonMain, .AwardTypes {
+            .buttonMain,
+            .AwardTypes {
                 width: $width-quarter;
                 height: $height-auto;
                 @include flex-center;

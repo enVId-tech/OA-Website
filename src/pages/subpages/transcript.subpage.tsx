@@ -16,8 +16,9 @@ const Transcript: React.FC = (): React.JSX.Element => {
     return (
         <div id="Transcript">
             <ClassHelmet title="Transcript" />
-            <Navbar />
+            <Navbar heightChange={790} />
             <PageTitle height={80} mainText="Transcript" oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
+
             <div id="TranscriptMain">
                 <h1 id="TitleText">Transcript</h1>
                 <div id="Parchment">
@@ -31,7 +32,7 @@ const Transcript: React.FC = (): React.JSX.Element => {
                     <div id="Alumni">
                         <h1 id="AlumniTitle">Alumni Transcript Request</h1>
                         <h1 id="AlumniSubTitle">
-                        Please visit the Parchment link below to request a digital copy of your official transcript.
+                            Please visit the Parchment link below to request a digital copy of your official transcript.
                         </h1>
                         <a id="AlumniLink" href="https://www.parchment.com/u/registration/5583/account" target="_blank">Parchment</a>
                     </div>
@@ -40,12 +41,13 @@ const Transcript: React.FC = (): React.JSX.Element => {
                     <div id="Student">
                         <h1 id="StudentTitle">Current Student Transcript Request Only</h1>
                         <h1 id="StudentSubTitle">
-                        If you are a current student and would like to obtain a paper copy, click on the link below 
+                            If you are a current student and would like to obtain a paper copy, click on the link below
                         </h1>
                         <a id="StudentLink" href="https://docs.google.com/forms/d/1FflDpc3lq6b4KcJmymckDULAaSiygiBFy4zE6ZySF8o/viewform?edit_requested=true#response=ACYDBNjyMQ9R6VbU3JVJMURPpaiI-3TlMTxNn8k5GRteSwsLWkmwW42RjIRwNvpW-MHl6C4" target="_blank">Transcript Request Form</a>
                     </div>
                 </div>
             </div>
+
             <Footer />
         </div>
     )

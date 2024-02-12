@@ -22,7 +22,7 @@ const CCDualEnrollment: React.FC = (): React.JSX.Element => {
     return (
         <div id="CCDualEnrollment">
             <ClassHelmet title="Cypress College Dual Enrollment" />
-            <Navbar />
+            <Navbar heightChange={710} />
             <PageTitle height={75} mainText="Cypress College Dual Enrollment" oxfLogo={false} backgroundLink="CypressCollegeBanner.png" backgroundVhPreDown={-1300} backgroundVhDownRate={500} titleVhDownRate={100} percentageDown={6} titleVhPreDown={0} />
 
             <h1 id="CCDETitle">Dual Enrollment Information</h1>
@@ -46,14 +46,14 @@ const CCDualEnrollment: React.FC = (): React.JSX.Element => {
                         <strong>
                             Notice for 1st Semester Freshmen (Incoming 9th Graders):
                         </strong>
-                        
+
                         Per AUHSD policy, incoming fresh man are not eligible for Dual Enrollment classes during the fall semester. Freshmen will become eligible to take classes during their spring semester after their transition into high school during the fall. Rising 9th graders, may however enroll during the summer, before their first high school semester.
                     </h1>
                     <h1 id="CCDE5" className="CCDEText">
                         <strong>
                             Non-Dual Enrollment Special Admit College Courses:
                         </strong>
-                        
+
                         Students interested in taking a non-dual enrollment college course as a regular (non-dual enrollment) special admit student should contact specialadmit@cypresscollege.edu for additional information.
                     </h1>
 
@@ -80,7 +80,7 @@ const CCDualEnrollment: React.FC = (): React.JSX.Element => {
                     </a>
                 </div>
             </div>
-            
+
             <div id="DualEnrollmentPathways">
                 <h1 id="DEPTitle">Dual Enrollment Pathways</h1>
 
@@ -88,7 +88,7 @@ const CCDualEnrollment: React.FC = (): React.JSX.Element => {
                     {
                         pathwayNames.map((pathwayName: string, index: number): React.JSX.Element => {
                             return (
-                                <button id={`DEP${index + 1}`} className="DEPButton" style={{backgroundImage:`url(${pathwayImages[index]})`}}>
+                                <button id={`DEP${index + 1}`} className="DEPButton" style={{ backgroundImage: `url(${pathwayImages[index]})` }}>
                                     <h1>
                                         {pathwayName}
                                     </h1>

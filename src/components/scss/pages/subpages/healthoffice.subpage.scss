@@ -26,7 +26,8 @@ $text-align-start: start;
         flex-direction: column;
         padding: $padding-standard 0 $padding-double 0;
 
-        #TitleText, #TopTitleText {
+        #TitleText,
+        #TopTitleText {
             width: $width-full;
             height: $height-auto;
             font-weight: $font-weight-normal;
@@ -58,7 +59,8 @@ $text-align-start: start;
             @include flex-center;
             flex-direction: column;
 
-            .InfoTitle, .InfoContent {
+            .InfoTitle,
+            .InfoContent {
                 margin-top: $margin-quintuple;
                 margin-bottom: $margin-quintuple;
             }

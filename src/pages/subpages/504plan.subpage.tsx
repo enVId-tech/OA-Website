@@ -15,7 +15,7 @@ const Plan504: React.FC = (): React.JSX.Element => {
     return (
         <div id="Plan504">
             <ClassHelmet title="504 Plan" />
-            <Navbar />
+            <Navbar heightChange={790} />
             <PageTitle height={80} mainText="504 Plan" subText="Staff 504 Plan" oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
 
             <div id="Plan504Content">
@@ -32,7 +32,7 @@ const Plan504: React.FC = (): React.JSX.Element => {
                     </span>
 
                     <button id="LoginButton">Login</button>
-                </div>    
+                </div>
             </div>
             <Footer />
         </div>

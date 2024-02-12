@@ -18,7 +18,7 @@ const Navbar: React.FC<NavbarProps> = ({ heightChange = -Infinity }: NavbarProps
 
   const navBar: NavbarElementsData[] = getNavBarElements("TopDiv")
     .map((element) => ({ name: element.name, link: element.link, hasWorkingLink: element.hasWorkingLink }));
-    
+
   const sections: NavbarElementsData[] = ["Home", "School", "Student", "Parent", "Faculty", "Contact"]
     .map((section) => ({ name: section, link: navBar.find((el) => el.name === section)?.link || "", hasWorkingLink: true }));
 
