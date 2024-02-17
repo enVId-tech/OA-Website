@@ -31,6 +31,10 @@ $footer-width-pcent: 100%;
     font-size: $footer-font-size;
     display: flex;
     opacity: 0;
+    @media (max-width: 719px){
+        margin-bottom: 5vh;
+        font-size: 1rem;
+    }
 }
 
 #Footers {
@@ -41,6 +45,11 @@ $footer-width-pcent: 100%;
     padding-left: $footer-padding;
     padding-right: $footer-padding;
     // width: $footer-width-pcent;
+
+    @media (max-width: 719px){
+        padding-left: 0;
+        padding-right: 0;
+    }
 
     #FooterPagesDefault {
         @include flex-space-between;

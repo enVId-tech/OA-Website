@@ -4,6 +4,10 @@
     overflow: hidden;
     margin-top: -12vh;
 
+    @media (max-width: 719px) {
+        margin-top: -10vh;
+    }
+
     #HomePageMain {
         display: flex;
         flex-direction: column;
@@ -20,6 +24,11 @@
             #AboutText {
                 flex-direction: row;
 
+                @media (max-width: 719px) {
+                    flex-direction: column;
+                    padding-bottom: 5vh;
+                }
+
                 #AboutImage {
                     background-repeat: no-repeat;
                     background-size: contain;
@@ -27,6 +36,12 @@
                     width: 30vw;
                     margin-left: 5vw;
                     height: auto;
+
+                    @media (max-width: 719px) {
+                        width: 15rem;
+                        margin-left: 0;
+                        margin-top: 5vh;
+                    }
                 }
 
                 #AboutLabel {
@@ -35,6 +50,10 @@
                     padding-left: 2vw;
                     font-weight: 500;
                     color: #000000;
+                    @media (max-width: 719px) {
+                        font-size: 1.5rem;
+                        text-align: center;
+                    }
                 }
             }
         }
@@ -50,6 +69,15 @@
                     justify-content: space-around;
                     margin-top: 5vh;
                     margin-bottom: 10vh;
+
+                    @media (max-width: 719px) {
+                        flex-direction: column;
+                        align-items: center;
+                        text-align: center;
+                        font-size: 1rem;
+                        margin-top: 2vh;
+                        margin-bottom: 2vh;
+                    }
 
                     #HSRankings {
                         color: white;
@@ -68,6 +96,11 @@
                 font-weight: 600;
                 font-size: 1.5vw;
                 z-index: 1000;
+
+                @media (max-width: 719px) {
+                    font-size: 1rem;
+                    text-align: center;
+                }
             }
         }
 
@@ -87,6 +120,11 @@
                     font-weight: 300;
                     width: 80%;
 
+                    @media (max-width: 719px) {
+                        font-size: 0.6rem;
+                        text-align: center;
+                    }
+
                     #AdmissionsMainLabel,
                     #AdmissionsOpening {
                         font-weight: 400;
@@ -101,6 +139,11 @@
                         padding: 1vw;
                         border: none;
                         font-family: 'Raleway', sans-serif;
+
+                        @media (max-width: 719px) {
+                            font-size: 1.5rem;
+                            padding: 0.5rem;
+                        }
 
                         &:hover {
                             cursor: pointer;
