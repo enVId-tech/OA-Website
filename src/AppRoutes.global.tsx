@@ -6,13 +6,6 @@ import { BrowserRouter as ReactRouter, Routes as Pathhub, Route as Path, Navigat
 // SCSS
 import './components/scss/pages/pages.global.scss';
 
-// Website Tables
-import StudentTable from './pages/navtables/studenttable.subpage.table.tsx';
-import SchoolTable from './pages/navtables/schooltable.subpage.table.tsx';
-import ParentTable from './pages/navtables/parenttable.subpage.table.tsx';
-import FacultyTable from './pages/navtables/facultytable.subpage.table.tsx';
-import ContactTable from './pages/navtables/contacttable.subpage.tables.tsx';
-
 // Pages
 import ErrorPage from "./pages/Error.page.site.tsx";
 import HomePage from "./pages/homepage.page.site.tsx";
@@ -124,13 +117,6 @@ const AppRoutes: React.FC = (): React.JSX.Element => {
         <Path path="/parent-table/*" element={<Redirect to="/parent-table" />} />
         <Path path="/faculty-table/*" element={<Redirect to="/faculty-table" />} />
         <Path path="/contact-table/*" element={<Redirect to="/contact-table" />} />
-
-        {/* Page Tables */}
-        <Path path="/student-table" element={<StudentTable />} />
-        <Path path="/school-table" element={<SchoolTable />} />
-        <Path path="/parent-table" element={<ParentTable />} />
-        <Path path="/faculty-table" element={<FacultyTable />} />
-        <Path path="/contact-table" element={<ContactTable />} />
       </Pathhub>
     </ReactRouter>
   )
