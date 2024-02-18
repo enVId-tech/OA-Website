@@ -89,7 +89,6 @@ $footer-width-pcent: 100%;
         #FooterPagesDefault {
             #FooterMain {
                 #FooterLeft {
-
                     h1,
                     a {
                         animation: fadeAndLeft $footer-animation-duration $footer-animation-delay $footer-animation-timing forwards;
@@ -104,6 +103,10 @@ $footer-width-pcent: 100%;
                                 opacity: 1;
                                 margin-left: 0vw;
                             }
+                        }
+
+                        @media (max-width: 719px){
+                            font-size: 2vh;
                         }
                     }
                 }
@@ -124,6 +127,10 @@ $footer-width-pcent: 100%;
                                 opacity: 1;
                                 margin-right: 0vw;
                             }
+                        }
+
+                        @media (max-width: 719px){
+                            font-size: 2vh;
                         }
                     }
                 }
