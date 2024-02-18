@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
 import '../../scss/components/pagetitle.global.scss';
+import globalType from '../device/device.template';
 
 interface PageTitleProps {
     height: number;
@@ -28,6 +29,7 @@ const PageTitle: React.FC<PageTitleProps> = ({
     titleVhPreDown = 0,
     titleVhDownRate = 30,
 }): React.JSX.Element => {
+    const [deviceType, setDeviceType]: [string, React.Dispatch<React.SetStateAction<string>>] = React.useState<string>("");
     const [positions, setPositions]: [number[], React.Dispatch<React.SetStateAction<number[]>>] = React.useState<number[]>([
         -backgroundVhPreDown / backgroundVhDownRate,
         -titleVhPreDown / titleVhDownRate,
@@ -42,10 +44,18 @@ const PageTitle: React.FC<PageTitleProps> = ({
             ]);
         };
 
+        const handleResize = (): void => {
+            const type: string = globalType("device");
+            setDeviceType(type);
+        };
+
         window.addEventListener('scroll', handleScroll);
+        window.addEventListener('resize', handleResize);
+        handleResize();
 
         return () => {
             window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('resize', handleResize);
         };
     }, []);
 
@@ -56,16 +66,16 @@ const PageTitle: React.FC<PageTitleProps> = ({
         <div
             id="Title"
             style={{
-                backgroundPositionY: `${backgroundPositionY}vh`,
+                backgroundPositionY: `${deviceType === "desktop" ? backgroundPositionY : backgroundPositionY / -8}vh`,
                 backgroundImage: `url(images/${backgroundLink})`,
                 marginTop: `${-12}vh`,
-                height: `${height + 12}vh`,
+                height: `${deviceType === "desktop" ? height + 12 : (height * (3/4)) + 12}vh`,
             }}
         >
             <div
                 id="TitleBackground"
                 style={{
-                    height: `${height + 12}vh`,
+                    height: `${deviceType === "desktop" ? height + 12 : (height * (3/4)) + 12}vh`,
                 }}
             />
 

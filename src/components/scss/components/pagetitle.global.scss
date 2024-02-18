@@ -34,6 +34,11 @@ $align-left: left;
     background-repeat: no-repeat;
     background-size: cover;
 
+    @media (max-width: 719px){
+        height: 80vh;
+        flex-direction: column !important;
+    }
+
     #TitleBackground {
         width: 100%;
         height: 100%;
@@ -103,8 +108,63 @@ $align-left: left;
                 animation: unfadeUp $animation-duration $n-animation-delay ease-in-out forwards;
             }
         }
+
+        @media (max-width: 719px) {
+            margin-left: 0;
+            margin-top: 0;
+
+            #OxfAcaMain {
+                font-size: 4rem;
+                text-align: center;
+            }
+
+            #OxfAcaSub {
+                font-size: 1.5rem;
+                text-align: center;
+            }
+            
+        }
     }
 
+    @media (max-width: 719px){
+        #OxfLogo {
+            margin-left: 0;
+            margin-top: 40vh;
+            width: 10rem;
+            height: auto;
+            animation: fadeIn $logo-animation-duration $logo-animation-delay ease-in-out forwards;
+        }
+
+        #MainText {
+            margin-top: 5vh;
+            animation: upfadeUp $animation-duration $animation-delay ease-in-out forwards;
+            margin-left: 0;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                margin-top: 40vh;
+            }
+
+            100% {
+                margin-top: 27.5vh;
+            }
+        }
+
+        @keyframes unfadeUp {
+            0% {
+                margin-top: 6vw;
+                opacity: 0;
+            }
+
+            100% {
+                margin-top: 0vw;
+                opacity: 1;
+            }
+            
+        }
+    }
+    
     @keyframes unfadeUp {
         0% {
             margin-top: 6vw;
@@ -115,5 +175,6 @@ $align-left: left;
             margin-top: 0vw;
             opacity: 1;
         }
+        
     }
 }

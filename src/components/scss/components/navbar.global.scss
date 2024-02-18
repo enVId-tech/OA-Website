@@ -187,4 +187,35 @@ $navbar-table-hidden-button-transition: all $transition-duration ease-in-out 0.1
       }
     }
   }
+
+  @media (max-width: 719px) {
+    padding: 0vh 0vw 0.5vh 0vw;
+
+    #Topbar {
+      height: 10vh;
+
+      #MainButtons {
+        #MainImage {
+          width: 5rem !important;
+          background-repeat: no-repeat;
+          background-size: cover;
+          height: auto;
+        }
+
+        #HamburgerButton {
+          display: block;
+          width: 50vw;
+          height: 3rem;
+          background-image: url(../../images/hamburger.png);
+          background-color: transparent;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: right;
+          border: none;
+          cursor: pointer;
+          transition: all $transition-duration ease-in-out;
+        }
+      }
+    }
+  }
 }

@@ -69,11 +69,11 @@
                     justify-content: space-around;
                     margin-top: 5vh;
                     margin-bottom: 10vh;
+                    text-align: center;
 
                     @media (max-width: 719px) {
                         flex-direction: column;
                         align-items: center;
-                        text-align: center;
                         font-size: 1rem;
                         margin-top: 2vh;
                         margin-bottom: 2vh;

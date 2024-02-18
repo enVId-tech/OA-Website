@@ -1,6 +1,7 @@
 import React from "react";
 import getNavBarElements from './navbarelements.template.ts';
 import '../../scss/components/navbar.global.scss';
+import globalType from "../device/device.template.ts";
 
 interface NavbarProps {
   heightChange?: number;
@@ -41,8 +42,8 @@ const Navbar: React.FC<NavbarProps> = ({ heightChange = -Infinity }: NavbarProps
 
   React.useEffect((): () => void => {
     const handleResize = (): void => {
-      const deviceType: string = /Android|webOS|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.userAgent) ? "mobile" : "desktop";
-      setDeviceType(deviceType);
+      const type: string = globalType("device");
+      setDeviceType(type);
     };
 
     window.addEventListener('resize', handleResize);
