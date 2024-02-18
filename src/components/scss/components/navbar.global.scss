@@ -191,6 +191,36 @@ $navbar-table-hidden-button-transition: all $transition-duration ease-in-out 0.1
   @media (max-width: 719px) {
     padding: 0vh 0vw 0.5vh 0vw;
 
+    &.transparent {
+      background-color: transparent !important;
+      color: white !important;
+      transition: all $transition-duration ease-in-out;
+  
+      .navbutton {
+        color: white;
+        background-color: rgba(0, 0, 0, 0.95) !important;
+        padding: 1.5vh 0 !important;
+  
+        &:hover {
+          color: #8b8b8b;
+        }
+      }
+    }
+
+    &.opaque {
+      background-color: rgba(255, 255, 255, 1) !important;
+      transition: all $transition-duration ease-in-out;
+  
+      .navbutton {
+        color: black !important;
+        background-color: #ffffff !important;
+  
+        &:hover {
+          color: $navbar-button-hover-color;
+        }
+      }
+    }  
+
     #Topbar {
       height: 10vh;
 
@@ -214,6 +244,40 @@ $navbar-table-hidden-button-transition: all $transition-duration ease-in-out 0.1
           border: none;
           cursor: pointer;
           transition: all $transition-duration ease-in-out;
+        }
+      }
+
+      #TableSelector {
+        width: 100vw;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+        transition: all $transition-duration ease-in-out;
+
+        &.hidden {
+          display: none;
+          opacity: 0;
+          height: 0;
+          padding: 0;
+          margin: 0;
+          transition: all $transition-duration ease-in-out;
+        }
+
+        .navbutton {
+          @include buttonStyles;
+          border-radius: 0;
+          width: 100%;
+          text-align: center;
+          border-bottom: 1px solid #666666;
+          transition: all $transition-duration ease-in-out;
+
+          &:hover {
+            color: $navbar-button-hover-color;
+          }
         }
       }
     }
