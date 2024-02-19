@@ -12,16 +12,16 @@ export type NavbarElementsData = {
 }[]
 
 const elementsData: Record<string, any> = {
-    "School": School["School"],
-    "Student": Student["Student"],
-    "Parent": Parents["Parent"],
+    "Our School": School["Our School"],
+    "Students": Student["Students"],
+    "Parents": Parents["Parents"],
     "Faculty": Faculty["Faculty"],
-    "Contact": Contact["Contact Us"],
+    "Contact Us": Contact["Contact Us"],
     "TopDiv": TopDiv["TopDiv"],
 };
 
 function getNavBarElements(elements: string): NavbarElementsData {
-    const data: string[] = elementsData[elements] || elementsData["School"];
+    const data: string[] = elementsData[elements] || elementsData["Our School"];
     return data.map((element: any) => ({
         name: element.name,
         link: element.link,

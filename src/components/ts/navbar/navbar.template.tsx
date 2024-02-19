@@ -19,12 +19,12 @@ const Navbar: React.FC<NavbarProps> = ({ heightChange = -Infinity }: NavbarProps
   const [activeTable, setActiveTable]: [string | null, React.Dispatch<React.SetStateAction<string | null>>] = React.useState<string | null>(null);
   const [deviceType, setDeviceType]: [string, React.Dispatch<React.SetStateAction<string>>] = React.useState<string>("");
   const [tablesVisible, setTablesVisible]: [boolean, React.Dispatch<React.SetStateAction<boolean>>] = React.useState<boolean>(false);
-
+  
   // Variables
   const navBar: NavbarElementsData[] = getNavBarElements("TopDiv")
     .map((element: NavbarElementsData) => ({ name: element.name, link: element.link, hasWorkingLink: element.hasWorkingLink }));
 
-  const sections: NavbarElementsData[] = ["Home", "School", "Student", "Parent", "Faculty", "Contact"]
+  const sections: NavbarElementsData[] = ["Home", "Our School", "Students", "Parents", "Faculty", "Contact Us"]
     .map((section) => ({ name: section, link: navBar.find((el) => el.name === section)?.link || "", hasWorkingLink: true }));
 
   const handleMouseEnter = (tableId: string): void => setActiveTable(tableId);
@@ -34,12 +34,12 @@ const Navbar: React.FC<NavbarProps> = ({ heightChange = -Infinity }: NavbarProps
   React.useEffect((): () => void => {
     const handleScroll = (): void => {
       const scrollY: number = window.scrollY;
-      setBackgroundTransparent(scrollY <= heightChange);
+      setBackgroundTransparent(scrollY <= heightChange * (deviceType === "mobile" ? 5 / 8 : 1));
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [heightChange]);
+  }, [heightChange, deviceType]);
 
   React.useEffect((): () => void => {
     const handleResize = (): void => {
@@ -61,6 +61,14 @@ const Navbar: React.FC<NavbarProps> = ({ heightChange = -Infinity }: NavbarProps
   // Methods
   const handleLogoClick = (): string => window.location.href = "/";
 
+  const handleMobileButtonClick = (activeTableString: string): void => {
+    if (activeTable === activeTableString) {
+      setActiveTable(null);
+    } else {
+      setActiveTable(activeTableString);
+    }
+  }
+
   const renderButtonsTable = (buttons: NavbarElementsData[], tableId: string): React.ReactElement => (
     tableId === "Home" ? <div /> :
       <div
@@ -81,24 +89,24 @@ const Navbar: React.FC<NavbarProps> = ({ heightChange = -Infinity }: NavbarProps
       </div>
   );
 
-  // const mobileNavbar = (buttons: NavbarElementsData[], tableId: string): React.ReactElement => (
-  //   <div
-  //     id={`${tableId}Table`}
-  //     className={`table ${backgroundTransparent ? "transparent" : "opaque"} ${activeTable === tableId ? "shown" : "hidden"}`}
-  //     onMouseEnter={() => handleMouseEnter(tableId)}
-  //     onMouseLeave={handleMouseLeave}
-  //   >
-  //     {buttons.map((element: NavbarElementsData, index: number) => (
-  //       <button
-  //         className={`navtable navsubbutton ${index === 0 ? "first" : index} ${index === buttons.length - 1 ? "last" : index} ${element.hasWorkingLink ? "green" : "red"}`}
-  //         key={element.name}
-  //         onClick={() => window.location.href = element.link}
-  //       >
-  //         {element.name}
-  //       </button>
-  //     ))}
-  //   </div>
-  // );
+  const mobileNavbar = (buttons: NavbarElementsData[], tableId: string): React.ReactElement => (
+    <div
+      id={`${tableId}Table`}
+      className={`table ${backgroundTransparent ? "transparent" : "opaque"} ${activeTable === tableId ? "shown" : "hidden"}`}
+      onMouseEnter={() => handleMouseEnter(tableId)}
+      onMouseLeave={handleMouseLeave}
+    >
+      {buttons.map((element: NavbarElementsData, index: number) => (
+        <button
+          className={`navtable navsubbutton ${index === 0 ? "first" : index} ${index === buttons.length - 1 ? "last" : index} ${element.hasWorkingLink ? "green" : "red"}`}
+          key={element.name}
+          onClick={() => window.location.href = element.link}
+        >
+          {element.name}
+        </button>
+      ))}
+    </div>
+  );
 
   // Render
   return (
@@ -143,17 +151,24 @@ const Navbar: React.FC<NavbarProps> = ({ heightChange = -Infinity }: NavbarProps
                   key={section.name}
                   id={section.name}
                   className={`navbutton ${activeTable === section.name ? "active" : "hidden"}`}
-                  onClick={() => window.location.href = section.hasWorkingLink ? section.link : "/"}
-                  onMouseEnter={() => handleMouseEnter(sections[index].name)}
-                  onMouseLeave={handleMouseLeave}
+                  onClick={() => {section.name === "Home" ? window.location.href = "/" : handleMobileButtonClick(section.name)}}
                 >
-                  {navBar[index].name}
+                  <div className="buttonMainDiv">
+                    <h1 className="navbarTableTitle">{navBar[index].name}</h1>
+                    {
+                      section.name !== "Home" ? (
+                        <div className={`navbarArrow ${activeTable === section.name ? "active" : "hidden"}`}>▼</div>
+                      ) : <></>
+                    }
+                  </div>
+                  {
+                    !section.name.includes("Home") ? (
+                      mobileNavbar(getNavBarElements(sections[index].name), sections[index].name)
+                    ) : <></>
+                  }
                 </button>
               ))
             }
-          </div>
-
-          <div id="Tables">
           </div>
         </div>
       </nav>

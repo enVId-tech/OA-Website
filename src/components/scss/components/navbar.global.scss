@@ -195,12 +195,12 @@ $navbar-table-hidden-button-transition: all $transition-duration ease-in-out 0.1
       background-color: transparent !important;
       color: white !important;
       transition: all $transition-duration ease-in-out;
-  
+
       .navbutton {
         color: white;
-        background-color: rgba(0, 0, 0, 0.95) !important;
+        background-color: rgba(0, 0, 0, 0.99) !important;
         padding: 1.5vh 0 !important;
-  
+
         &:hover {
           color: #8b8b8b;
         }
@@ -210,19 +210,20 @@ $navbar-table-hidden-button-transition: all $transition-duration ease-in-out 0.1
     &.opaque {
       background-color: rgba(255, 255, 255, 1) !important;
       transition: all $transition-duration ease-in-out;
-  
+
       .navbutton {
         color: black !important;
         background-color: #ffffff !important;
-  
+        padding: 1.5vh 0 !important;
+
         &:hover {
           color: $navbar-button-hover-color;
         }
       }
-    }  
+    }
 
     #Topbar {
-      height: 10vh;
+      height: fit-content;
 
       #MainButtons {
         #MainImage {
@@ -250,6 +251,7 @@ $navbar-table-hidden-button-transition: all $transition-duration ease-in-out 0.1
       #TableSelector {
         width: 100vw;
         height: fit-content;
+        overflow-y: auto;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -257,6 +259,7 @@ $navbar-table-hidden-button-transition: all $transition-duration ease-in-out 0.1
         padding: 0;
         margin: 0;
         transition: all $transition-duration ease-in-out;
+        z-index: 1000000;
 
         &.hidden {
           display: none;
@@ -274,6 +277,105 @@ $navbar-table-hidden-button-transition: all $transition-duration ease-in-out 0.1
           text-align: center;
           border-bottom: 1px solid #666666;
           transition: all $transition-duration ease-in-out;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+
+          .table {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            &.hidden {
+              display: none;
+              opacity: 0;
+              height: 0;
+              padding: 0;
+              margin: 0;
+              transition: all $transition-duration ease-in-out;
+            }
+
+            &.transparent {
+              color: white;
+              transition: all $transition-duration ease-in-out;
+
+              .navtable.navsubbutton {
+                font-size: 3vh;
+                font-family: $main-font;
+                font-weight: 300;
+                padding: 0;
+                margin: 2vh 0 2vh 0;
+                border: none;
+                background-color: transparent;
+                color: white;
+                transition: all $transition-duration ease-in-out;
+                width: 100%;
+                height: 100%;
+              }
+            }
+
+            &.opaque {
+              color: #666666;
+              transition: all $transition-duration ease-in-out;
+
+              .navtable.navsubbutton {
+                font-size: 3vh;
+                font-family: $main-font;
+                font-weight: 300;
+                padding: 0;
+                margin: 2vh 0 2vh 0;
+                border: none;
+                background-color: transparent;
+                color: black;
+                transition: all $transition-duration ease-in-out;
+                width: 100%;
+                height: 100%;
+              }
+            }
+          }
+
+          .buttonMainDiv {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+
+            .navbarTableTitle {
+              font-size: 4vh;
+              font-family: 100;
+              padding: 0;
+              margin: 2vh 0 2vh 5vw;
+            }
+
+            .navbarArrow {
+              display: flex;
+              flex-direction: column;
+              text-align: center;
+              vertical-align: middle;
+              width: 7.5vw;
+              height: auto;
+              margin-right: 7.5vw;
+              display: inline-block;
+              border: transparent;
+
+              &.active {
+                transform: rotate(180deg);
+                transition: transform 0.3s ease;
+                transform-origin: center;
+              }
+
+              &.hidden {
+                transform: rotate(0deg);
+                transition: transform 0.3s ease;
+                transform-origin: center;
+              }
+            }
+          }
 
           &:hover {
             color: $navbar-button-hover-color;

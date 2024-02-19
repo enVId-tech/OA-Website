@@ -22,7 +22,8 @@
       "default",
       {
         "ignore": [
-          "height: fit-content"
+          "height: fit-content",
+          "-webkit-tap-highlight-color"
         ]
       }
     ],

@@ -35,7 +35,7 @@ html {
         padding: 0;
         font-family: $main-font;
         overflow-x: hidden;
-        overflow-y: scroll;
+        overflow-y: auto;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         @include user-select-none;
@@ -45,4 +45,15 @@ html {
             width: $main-width;
         }
     }
+}
+
+button, input, textarea, select, a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+@media (max-width: 719px){
+    $react-root-margin-top: 5vh;
+    $scrollbar-width: 5px;
+    $scrollbar-track-bg: rgb(39, 39, 39);
+    $scrollbar-thumb-bg: rgb(66, 66, 66);
 }
