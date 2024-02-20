@@ -79,9 +79,9 @@ const PageTitle: React.FC<PageTitleProps> = ({
                 }}
             />
 
-            {oxfLogo && (
+            {oxfLogo ? (
                 <img id="OxfLogo" src="images/OxfordLogo.png" style={{ transform: `translateY(${titlePositionY}vh)` }} />
-            )}
+            ) : <img id="OxfLogo" />}
             <div id="MainText">
                 <h1
                     id="OxfAcaMain"

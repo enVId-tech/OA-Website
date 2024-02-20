@@ -51,9 +51,19 @@ button, input, textarea, select, a {
     -webkit-tap-highlight-color: transparent;
 }
 
-@media (max-width: 719px){
+@media (max-width: 768px){
     $react-root-margin-top: 5vh;
     $scrollbar-width: 5px;
     $scrollbar-track-bg: rgb(39, 39, 39);
     $scrollbar-thumb-bg: rgb(66, 66, 66);
+
+    html {
+        overflow-x: hidden;
+        body {
+            #reactRootMain {
+                margin-top: $react-root-margin-top;
+                width: $main-width;
+            }
+        }
+    }
 }

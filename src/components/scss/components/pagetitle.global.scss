@@ -34,7 +34,7 @@ $align-left: left;
     background-repeat: no-repeat;
     background-size: cover;
 
-    @media (max-width: 719px){
+    @media (max-width: 768px){
         height: 80vh;
         flex-direction: column !important;
     }
@@ -108,7 +108,7 @@ $align-left: left;
             }
         }
 
-        @media (max-width: 719px) {
+        @media (max-width: 768px) {
             margin-left: 0;
             margin-top: 0;
 
@@ -125,7 +125,7 @@ $align-left: left;
         }
     }
 
-    @media (max-width: 719px){
+    @media (max-width: 768px){
         #OxfLogo {
             margin-left: 0;
             margin-top: 38vh;
