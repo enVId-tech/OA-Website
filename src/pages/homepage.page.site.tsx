@@ -69,6 +69,7 @@ const HomePage: React.FC = (): React.JSX.Element => {
                             <h1 id="HSRankings">#1 in California High Schools</h1>
                             <h1 id="NatRankings">#9 in National Rankings</h1>
                         </div>
+                        
                         <h1 id="USNewsLabel">- US News Rankings (2023)</h1>
                     </div>
                 </div>
@@ -77,6 +78,7 @@ const HomePage: React.FC = (): React.JSX.Element => {
                 <div id="Admissions" ref={admissionsRef} className="info-section">
                     <div id="AdmissionsMain" className="section-property">
                         <h1 id="AdmissionsLabel">Admissions</h1>
+                        
                         <div id="AdmissionsText">
                             <h1 id="AdmissionsMainLabel">Oxford Academy is an admissions-only campus, evaluated by an elite admissions commitee.</h1>
                             <h1 id="AdmissionsOpening">Admissions are open every year for incoming scholars!</h1>

@@ -58,3 +58,41 @@ $main-align-items: center;
         }
     }
 }
+
+@media (max-width: 768px) {
+    #BellSchedule {
+        #BellScheduleMain {
+            #BellScheduleText {
+                font-size: 15vw;
+                font-weight: 300;
+                margin-bottom: 5vh;
+                @include flex-center;
+                flex-direction: column !important;
+                justify-content: space-around;
+                width: 100%;
+
+                .BellScheduleSection {
+                    font-size: 15vw;
+                    font-weight: 300;
+                    margin-bottom: 5vh;
+                    @include flex-center;
+
+                    .BellScheduleSectionTitle {
+                        text-align: center;
+                        font-size: 7.5vw;
+                        font-weight: 300;
+                        margin-bottom: 5vh;
+                    }
+
+                    #Periods {
+                        font-size: 7.5vw;
+                        font-weight: 300;
+                        margin-bottom: 5vh;
+                        text-align: center;
+                        @include flex-center;
+                    }
+                }
+            }
+        }
+    }
+}

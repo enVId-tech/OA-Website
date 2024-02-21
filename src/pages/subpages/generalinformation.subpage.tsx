@@ -40,36 +40,44 @@ const GeneralInformation: React.FC = (): React.JSX.Element => {
             
             <div id="GeneralInformationMain">
                 <h1 id="GenInfoHMain" className="pageSectionTitle">General Information</h1>
+                
                 <span id="TopInfo">
                     <img id="GeneralInformationImage" src="images/OxfordAcademyFullLogo.webp" alt="GeneralInformation" />
                     <h1 id="MainText">is a seventh through twelfth grade college preparatory public school that opened in September of 1998.  Recognized as a California Distinguished School, OA draws students from the entire attendance area of the Anaheim Union High School District and its surrounding areas.</h1>
                 </span>
+
                 <hr />
+
                 <div id="HS">
                     <h1 id="BestHSLabel">Oxford Academy leads with Excellence, Honor, Creativity, Caring & Fun</h1>
                     <img id="BestHSImage" src="images/HS2023.jpeg" alt="BestHS" />
                 </div>
+
                 <div id="ExtraInfo">
                     <button id="Prof" className="buttonMain" onClick={() => Redirect("Prof")}>OA Profile</button>
                     <button id="Info" className="buttonMain" onClick={() => Redirect("Info")}>OA Info Card</button>
                     <button id="Pathways" className="buttonMain" onClick={() => Redirect("Pathways")}>OA Pathways</button>
                 </div>
+
                 <span id="Awards">
                     <div id="BHS" className="AwardTypes">
                         <img id="BHSImage" className="AwardImage" src="images/USN-Gold.png" alt="BestHS" />
                         <p className="MainText">#1 in CA, #9 in the US</p>
                         <p className="SubText">(2023)</p>
                     </div>
+                    
                     <div id="CalDistS" className="AwardTypes">
                         <img id="CDSImage" className="AwardImage" src="images/DistingSchool-logo.png" alt="BestHS" />
                         <p className="MainText">CA Distinguished School</p>
                         <p className="SubText">(2011, 2019, 2021)</p>
                     </div>
+
                     <div id="BRS" className="AwardTypes">
                         <img id="BRSImage" className="AwardImage" src="images/NatlBlueRibbon_USDE.png" alt="BestHS" />
                         <p className="MainText">National Blue Ribbon</p>
                         <p className="SubText">(2013, 2019)</p>
                     </div>
+                    
                     <div id="CalDemS" className="AwardTypes">
                         <img id="CDSImage" className="AwardImage" src="images/CalDemSchool.png" alt="BestHS" />
                         <p className="MainText">CA Democracy School</p>

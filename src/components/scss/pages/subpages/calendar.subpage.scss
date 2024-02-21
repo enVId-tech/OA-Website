@@ -30,3 +30,21 @@
         }
     }
 }
+
+@media (max-width: 768px){
+    #Calendar {
+        #CalendarContent {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            #ImportantDates {
+                width: 100%;
+            }
+
+            #DistrictCalendar {
+                width: 100%;
+            }
+        }
+    }
+}

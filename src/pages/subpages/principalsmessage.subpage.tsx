@@ -21,8 +21,10 @@ const PrincipalsMessage: React.FC = (): React.JSX.Element => {
             <h1 id="PrincipalsMessageTitle" className="pageSectionTitle">
                 Principal's Message
             </h1>
+
             <div id="PrincipalsMessageMain">
                 <img id="PrincipalsMessageImage" src="images/Principal.jpg" alt="Principal Houston" />
+                
                 <p id="Principal">Oxford Academy Families,
                     <br />
                     <br />

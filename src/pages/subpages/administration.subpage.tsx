@@ -29,12 +29,14 @@ const Administration: React.FC = (): React.JSX.Element => {
                         <p className="AdminName">Dr. Ester Cho</p>
                         <p className="AdminEmail">cho_es@auhsd.us</p>
                     </div>
+
                     <div className="AdminDiv">
                         <img className="AdminImage" id="P1" alt="Oxford Academy" src="images/Admin-Houston.png" />
                         <h2 className="AdminTitle">Principal</h2>
                         <p className="AdminName">Mrs. Amber Houston</p>
                         <p className="AdminEmail">houston_a@auhsd.us</p>
                     </div>
+                    
                     <div className="AdminDiv">
                         <img className="AdminImage" id="AP2" alt="Oxford Academy" src="images/Admin-Hurley.png" />
                         <h2 className="AdminTitle">Assistant Principal</h2>

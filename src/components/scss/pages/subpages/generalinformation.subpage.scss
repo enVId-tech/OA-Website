@@ -121,3 +121,58 @@ $color-dark-gray: #D9D9D9;
         }
     }
 }
+
+@media (max-width: 768px){
+    #GeneralInformation {
+        #GeneralInformationMain {
+            #TopInfo {
+                margin-top: 10vh;
+                flex-direction: column;
+
+                #GeneralInformationImage {
+                    width: 50vw;
+                    height: $height-auto;
+                }
+
+                #MainText {
+                    font-size: 2.75vh;
+                    margin: $margin-standard 5vw $margin-standard 5vw;
+                }
+            }
+
+            #HS {
+                #BestHSLabel {
+                    font-size: 4vh;
+                    text-align: center;
+                }
+
+                #BestHSImage {
+                    width: 100vw;
+                    height: $height-auto;
+                }
+            }
+
+            #ExtraInfo,
+            #Awards {
+                flex-direction: column;
+                margin: 1vh 1vw 1vh 1vw;
+
+                .buttonMain,
+                .AwardTypes {
+                    width: 60vw;
+                    height: $height-auto;
+                    padding: 1vh 1vw 1vh 1vw;
+                    font-family: $font-family;
+                    font-weight: $font-weight-extra-bold;
+                    transition: $transition-time;
+                    border-radius: 15px;
+
+                    .AwardImage {
+                        width: 50vw;
+                        height: $height-auto;
+                    }
+                }
+            }
+        }
+    }
+}

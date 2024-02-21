@@ -16,7 +16,7 @@ const Cafeteria: React.FC = (): React.JSX.Element => {
         <div id="Cafeteria">
             <ClassHelmet title="Cafeteria" />
             <Navbar heightChange={790} />
-            <PageTitle height={80} mainText="Calendar" subText="" oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
+            <PageTitle height={80} mainText="Cafeteria" subText="" oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
 
             <iframe title="cafeteria" src="https://oxford.auhsd.us/files/user/4305/file/September%20Menu.pdf" />
 

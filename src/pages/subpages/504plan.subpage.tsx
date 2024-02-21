@@ -26,6 +26,7 @@ const Plan504: React.FC = (): React.JSX.Element => {
                         <label id="UsernameLabel" htmlFor="Username">Username: </label>
                         <input id="Username" type="text" placeholder='Username' />
                     </span>
+                    
                     <span id="PasswordElements">
                         <label id="PasswordLabel" htmlFor="Password">Password: </label>
                         <input id="Password" type="password" placeholder='Password' />

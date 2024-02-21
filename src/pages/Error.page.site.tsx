@@ -31,6 +31,7 @@ const ErrorPage: React.FC = (): React.JSX.Element => {
 
             <div id="ErrorMain">
                 <h1 id="ErrorMessage">Error 404, this page does not exist!</h1>
+                
                 <p id="ErrorDescription">You will be redirected to home in {time.toFixed(1)} seconds.</p>
                 <p id="ErrorDescription">Hint: Anything green in the top bar has a link!</p>
             </div>

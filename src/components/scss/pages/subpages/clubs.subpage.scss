@@ -148,3 +148,72 @@ $secondary-justify-content: start;
         }
     }
 }
+
+@media (max-width: 768px){
+    #MainClubs {
+        width: 100vw;
+        .Club, .Club2 {
+            flex-direction: column-reverse;
+            justify-content: center;
+            height: auto;
+            padding: 6vh 0 6vh 0;
+            
+            .ClubImageDiv {
+                padding: 0;
+                margin: 0;
+                background-position: center center;
+                background-size: cover;
+                height: auto;
+
+                .ClubImage {
+                    width: 100vw;
+                    height: auto;
+                }
+            }
+
+            .ClubTitleDiv {
+                .ClubTitle {
+                    font-size: 7.5vw;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                }
+
+                .ClubDescriptionDiv {
+                    width: 90vw;
+                    .ClubDescription {
+                        font-size: 4vw;
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                    }
+                }
+            }
+        } 
+
+        #GeneralClubs {
+            #Key {
+                font-size: 20vw;
+                margin-bottom: 10vh;
+                margin-top: 10vh;
+            }
+
+            .ClubKey {
+                flex-direction: column !important;
+                .ClubKeyTitleDiv {
+                    width: 100vw;
+                    height: auto;
+                    .ClubKeyTitle {
+                        font-size: 10vw;
+                    }
+
+                    .ClubsList {
+                        .ClubTitle {
+                            font-size: 5vw;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

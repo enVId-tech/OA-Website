@@ -68,30 +68,50 @@ const PageTitle: React.FC<PageTitleProps> = ({
                 backgroundPositionY: `${deviceType === "desktop" ? backgroundPositionY * 1.25 : backgroundPositionY * 2}vh`,
                 backgroundImage: `url(images/${backgroundLink})`,
                 marginTop: `${-12}vh`,
-                height: `${deviceType === "desktop" ? height + 12 : (height * (3/4)) + 12}vh`,
+                height: `${deviceType === "desktop" ? height + 12 : (height * (3 / 4)) + 12}vh`,
             }}
         >
             <div
                 id="TitleBackground"
-                style={{
-                    height: `${deviceType === "desktop" ? height + 12 : (height * (3/4)) + 12}vh`,
-                }}
+                style={
+                    {
+                        height: `${deviceType === "desktop" ? height + 12 : (height * (3 / 4)) + 12}vh`,
+                    }
+                }
             />
 
-            {oxfLogo ? (
-                <img id="OxfLogo" src="images/OxfordLogo.png" style={{ transform: `translateY(${titlePositionY}vh)` }} />
-            ) : <img id="OxfLogo" className={`${deviceType === "desktop" ? "isHidden" : ""}`} />}
+            {
+                oxfLogo ? (
+                    <img id="OxfLogo" src="images/OxfordLogo.png" style={
+                        {
+                            transform: `translateY(${titlePositionY}vh)`
+                        }
+                    }
+                    />
+                ) : (
+                    <img id="OxfLogo" className={`${deviceType === "desktop" ? "isHidden" : ""}`} />
+                )
+            }
+
             <div id="MainText">
                 <h1
                     id="OxfAcaMain"
-                    style={{ transform: `translateY(${titlePositionY}vh)` }}
+                    style={
+                        {
+                            transform: `translateY(${titlePositionY}vh)`
+                        }
+                    }
                     className={`${oxfLogo ? 'oxf-aca-main' : 'n-oxf-aca-main'}`}
                 >
                     {mainText}
                 </h1>
                 <h5
                     id="OxfAcaSub"
-                    style={{ transform: `translateY(${titlePositionY}vh)` }}
+                    style={
+                        {
+                            transform: `translateY(${titlePositionY}vh)`
+                        }
+                    }
                     className={`${oxfLogo ? 'oxf-aca-sub' : 'n-oxf-aca-sub'}`}
                 >
                     {subText}

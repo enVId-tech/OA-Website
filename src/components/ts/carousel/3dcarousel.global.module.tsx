@@ -49,7 +49,12 @@ const Carousel3D: React.FC<Carousel3DProps> = ({ images }): React.JSX.Element =>
 
                 <div id="Carousel3DImages">
                     {imagesList.map((image: string, index: number) => (
-                        <div key={image} className={index === currentImage ? "selected" : ""} style={{ backgroundImage: `url(${image})` }} />
+                        <div key={image} className={index === currentImage ? "selected" : ""} style={
+                            {
+                                backgroundImage: `url(${image})`
+                            }
+                        }
+                        />
                     ))}
                 </div>
             </div>

@@ -91,3 +91,20 @@
         }
     }
 }
+
+@media (max-width: 768px) {
+    #Administration {
+        #AdministrationContent {
+            #AdminDiv {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                align-content: center;
+
+                .AdminDiv {
+                    margin-bottom: 3rem;
+                }
+            }
+        }
+    }
+}

@@ -28,6 +28,7 @@ const Admissions: React.FC = (): React.JSX.Element => {
                         You may also reach Ms. Martinez by email at martinez_lo@auhsd.us.
                     </p>
                 </div>
+
                 <div className="AdmissionsSection">
                     <h1 id="AdmissionsSectionTitle">Application Information</h1>
                     <p id="AdmissionsSectionText">
@@ -46,6 +47,7 @@ const Admissions: React.FC = (): React.JSX.Element => {
                         If you would like to get a jump start on your application, please see the admissions checklist documents on our below and begin gathering your materials.
                     </p>
                 </div>
+
                 <div className="AdmissionsSection">
                     <h1 id="AdmissionsSectionTitle">Grade Level Admissions</h1>
                     <p id="AdmissionsSectionText">
@@ -53,6 +55,7 @@ const Admissions: React.FC = (): React.JSX.Element => {
                         Due to limited space we will not be holding an application process for 8th and 9th grade this year.
                     </p>
                 </div>
+
                 <div className="AdmissionsSection">
                     <h1 id="AdmissionsSectionTitle">Prospective Parent Information Night</h1>
                     <p id="AdmissionsSectionText">
@@ -62,6 +65,7 @@ const Admissions: React.FC = (): React.JSX.Element => {
                         No registration is required, but we request attendance is limited to the applicant and the applicant’s immediate family (i.e. parents or guardians; siblings only if necessary).
                     </p>
                 </div>
+
                 <div className="AdmissionsSection">
                     <h1 id="AdmissionsSectionTitle">General Timeline of Admission Events</h1>
                     <p id="AdmissionsSectionText">
@@ -98,6 +102,7 @@ const Admissions: React.FC = (): React.JSX.Element => {
                         *Dates may be adjusted throughout the school year
                     </p>
                 </div>
+
                 <div className="AdmissionsSection">
                     <h1 id="AdmissionsSectionTitle">Extra Information</h1>
                     <p id="AdmissionsSectionText">
@@ -121,6 +126,7 @@ const Admissions: React.FC = (): React.JSX.Element => {
                         </a>
                     </p>
                 </div>
+
                 <div className="AdmissionsSection">
                     <h1 id="AdmissionsSectionTitle">Admissions Checklist</h1>
                     <p id="AdmissionsSectionText">
@@ -131,6 +137,7 @@ const Admissions: React.FC = (): React.JSX.Element => {
                         *Please note, transcripts are also accepted in place of report cards as long as they include the required information from the checklists above.
                     </p>
                 </div>
+                
                 <div id="End">
                     <p id="AdmissionsSectionText">
                         Please check our website frequently for up-to-date information.

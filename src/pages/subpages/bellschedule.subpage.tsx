@@ -52,6 +52,7 @@ const BellSchedule: React.FC = (): React.JSX.Element => {
                             Period 8: 2:45 - 3:20
                         </p>
                     </div>
+                    
                     <div className="BellScheduleSection">
                         <h1 className="BellScheduleSectionTitle">Block Schedule<br /><br /> Even: Tuesday & Thursday <br /><br /> Odd: Wednesday & Friday</h1>
                         <p id="Periods">
