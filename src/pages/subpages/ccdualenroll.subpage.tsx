@@ -25,7 +25,7 @@ const CCDualEnrollment: React.FC = (): React.JSX.Element => {
             <Navbar heightChange={710} />
             <PageTitle height={75} mainText="Cypress College Dual Enrollment" oxfLogo={false} backgroundLink="CypressCollegeBanner.png" backgroundVhPreDown={-1300} backgroundVhDownRate={500} titleVhDownRate={100} percentageDown={6} titleVhPreDown={0} />
 
-            <h1 id="CCDETitle">Dual Enrollment Information</h1>
+            <h1 id="CCDETitle" className="pageSectionTitle">Dual Enrollment Information</h1>
             <div id="CCDualEnrollmentMain">
                 <div id="CCDEMainInfo">
                     <h1 id="CCDE1" className="CCDEText">

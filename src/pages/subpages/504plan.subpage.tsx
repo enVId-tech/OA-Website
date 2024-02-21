@@ -19,7 +19,7 @@ const Plan504: React.FC = (): React.JSX.Element => {
             <PageTitle height={80} mainText="504 Plan" subText="Staff 504 Plan" oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
 
             <div id="Plan504Content">
-                <h1 id="Plan504Title">504 Plan - Access Restricted</h1>
+                <h1 id="Plan504Title" className="pageSectionTitle">504 Plan - Access Restricted</h1>
 
                 <div id="PlanMain">
                     <span id="UsernameElements">

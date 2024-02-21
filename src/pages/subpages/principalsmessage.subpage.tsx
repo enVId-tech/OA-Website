@@ -18,7 +18,7 @@ const PrincipalsMessage: React.FC = (): React.JSX.Element => {
             <Navbar heightChange={790} />
             <PageTitle height={80} mainText="Principal's Message" subText="A message from Principal Houston" oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
 
-            <h1 id="PrincipalsMessageTitle">
+            <h1 id="PrincipalsMessageTitle" className="pageSectionTitle">
                 Principal's Message
             </h1>
             <div id="PrincipalsMessageMain">

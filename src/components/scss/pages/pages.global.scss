@@ -63,6 +63,11 @@ button, input, textarea, select, a {
             #reactRootMain {
                 margin-top: $react-root-margin-top;
                 width: $main-width;
+                .pageSectionTitle {
+                    font-size: 15vw !important;
+                    font-family: $main-font;
+                    font-weight: 300;
+                }
             }
         }
     }

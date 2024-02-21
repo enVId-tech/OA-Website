@@ -19,7 +19,7 @@ const Athletics: React.FC = (): React.JSX.Element => {
             <PageTitle height={80} mainText="Athletics" subText="Compete with the best!" oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
 
             <div id="AthleticsMain">
-                <h1 id="AthleticsTitle">Athletics</h1>
+                <h1 id="AthleticsTitle" className="pageSectionTitle">Athletics</h1>
                 <p id="AthleticsText">
                     Oxford Academy is a member of the 605 League and competes under CIF Southern Section rules.  Eligibility rules apply to all games including practice, inter-school scrimmage, league, tournament, and play-off games.
                     <br />

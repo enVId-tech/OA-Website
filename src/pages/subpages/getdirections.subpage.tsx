@@ -19,7 +19,7 @@ const GetDirections: React.FC = (): React.JSX.Element => {
             <PageTitle height={80} mainText="Get Directions" oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
 
             <div id="GetDirectionsMain">
-                <h1 id="GetDirectionsTitle">Directions to Oxford Academy</h1>
+                <h1 id="GetDirectionsTitle" className="pageSectionTitle">Directions to Oxford Academy</h1>
 
                 <h1 id="Address">
                     5172 Orange Ave

@@ -43,7 +43,7 @@ const HealthOffice: React.FC = (): React.JSX.Element => {
             <PageTitle height={80} mainText="Health Office" subText="Learn more about our school!" oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
 
             <div id="HealthOfficeMain">
-                <h1 id="TitleText">Health Office</h1>
+                <h1 id="TitleText" className="pageSectionTitle">Health Office</h1>
                 <div id="Top">
                     <h1 id="TopTitleText">Healthy Students Learn Better at <strong>Oxford Academy</strong></h1>
                 </div>

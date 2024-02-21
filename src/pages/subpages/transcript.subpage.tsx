@@ -20,7 +20,7 @@ const Transcript: React.FC = (): React.JSX.Element => {
             <PageTitle height={80} mainText="Transcript" oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
 
             <div id="TranscriptMain">
-                <h1 id="TitleText">Transcript</h1>
+                <h1 id="TitleText" className="pageSectionTitle">Transcript</h1>
                 <div id="Parchment">
                     <h1 id="ParchmentMain">What is Parchment?
                         <br />

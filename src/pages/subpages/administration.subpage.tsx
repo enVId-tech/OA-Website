@@ -20,7 +20,7 @@ const Administration: React.FC = (): React.JSX.Element => {
             
             <div id="AdministrationContent">
                 <div id="MainDiv">
-                    <h1 id="AdminTitle">High Level School Administration</h1>
+                    <h1 id="AdminTitle" className="pageSectionTitle">High Level School Administration</h1>
                 </div>
                 <span id="AdminDiv">
                     <div className="AdminDiv">

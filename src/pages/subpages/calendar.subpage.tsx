@@ -18,7 +18,7 @@ const Calendar: React.FC = (): React.JSX.Element => {
             <Navbar heightChange={790} />
             <PageTitle height={80} mainText="Calendar" subText="See what's happening at Oxford!" oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
             
-            <h1 id="CalendarMain">School / District Calendars</h1>
+            <h1 id="CalendarMain" className="pageSectionTitle">School / District Calendars</h1>
             <div id="CalendarContent">
                 <img id="ImportantDates" src="images/ImportantDatesCalendar.png" alt="ImportantDatesCalendar" />
                 <img id="DistrictCalendar" src="images/DistrictCalendar.png" alt="ImportantDatesCalendar" />

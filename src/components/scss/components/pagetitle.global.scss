@@ -32,7 +32,7 @@ $align-left: left;
     height: $main-height;
     overflow: hidden;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 225vh;
 
     @media (max-width: 768px){
         height: 80vh;
@@ -56,6 +56,10 @@ $align-left: left;
         height: auto;
         animation: fadeIn $logo-animation-duration $logo-animation-delay ease-in-out forwards;
         z-index: 2;
+
+        &.isHidden {
+            display: none;
+        }
 
         @keyframes fadeIn {
             0% {
@@ -138,6 +142,19 @@ $align-left: left;
             margin-top: 5vh;
             animation: upfadeUp $animation-duration $animation-delay ease-in-out forwards;
             margin-left: 0;
+            #OxfAcaMain {
+                font-size: 15vw;
+                text-align: center;
+                word-wrap: break-word;
+                text-wrap: wrap;
+            }
+
+            #OxfAcaSub {
+                font-size: 7vw;
+                text-align: center;
+                word-wrap: break-word;
+                text-wrap: wrap;
+            }
         }
 
         @keyframes fadeIn {

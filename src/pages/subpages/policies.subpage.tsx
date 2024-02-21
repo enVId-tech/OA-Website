@@ -42,7 +42,7 @@ const Policies: React.FC = (): React.JSX.Element => {
             <PageTitle height={80} mainText="Policies" oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
 
             <div id="PoliciesMain">
-                <h1 id="TitleText">Policies</h1>
+                <h1 id="TitleText" className="pageSectionTitle">Policies</h1>
                 <h1 id="PoliciesSecondary">
                     For your reference, a copy of the MAIN PAGES Policy Pages can be found on the Student Planner. You can also download the pages below.
                 </h1>

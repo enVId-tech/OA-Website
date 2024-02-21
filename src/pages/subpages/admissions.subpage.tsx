@@ -19,7 +19,7 @@ const Admissions: React.FC = (): React.JSX.Element => {
             <PageTitle height={80} mainText="Admissions" subText="Apply to Oxford!" oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
             
             <div id="AdmissionsMain">
-                <h1 id="AdmissionsTitle">Admissions</h1>
+                <h1 id="AdmissionsTitle" className="pageSectionTitle">Admissions</h1>
                 <div className="AdmissionsSection">
                     <h1 id="AdmissionsSectionTitle">Contact</h1>
                     <p id="AdmissionsSectionText">

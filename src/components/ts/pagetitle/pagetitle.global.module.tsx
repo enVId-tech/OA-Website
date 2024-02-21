@@ -43,21 +43,20 @@ const PageTitle: React.FC<PageTitleProps> = ({
                 scrollY / titleVhDownRate,
             ]);
         };
-
-        const handleResize = (): void => {
-            const type: string = globalType("device");
-            setDeviceType(type);
-        };
-
         window.addEventListener('scroll', handleScroll);
-        window.addEventListener('resize', handleResize);
-        handleResize();
+
+        setDevice();
 
         return () => {
             window.removeEventListener('scroll', handleScroll);
-            window.removeEventListener('resize', handleResize);
         };
     }, []);
+
+    const setDevice = (): void => {
+        const device: string = globalType("device");
+
+        setDeviceType(device);
+    }
 
     const backgroundPositionY: number = positions[0];
     const titlePositionY: number = positions[1];
@@ -66,7 +65,7 @@ const PageTitle: React.FC<PageTitleProps> = ({
         <div
             id="Title"
             style={{
-                backgroundPositionY: `${deviceType === "desktop" ? backgroundPositionY : backgroundPositionY / -8}vh`,
+                backgroundPositionY: `${deviceType === "desktop" ? backgroundPositionY * 1.25 : backgroundPositionY * 2}vh`,
                 backgroundImage: `url(images/${backgroundLink})`,
                 marginTop: `${-12}vh`,
                 height: `${deviceType === "desktop" ? height + 12 : (height * (3/4)) + 12}vh`,
@@ -81,7 +80,7 @@ const PageTitle: React.FC<PageTitleProps> = ({
 
             {oxfLogo ? (
                 <img id="OxfLogo" src="images/OxfordLogo.png" style={{ transform: `translateY(${titlePositionY}vh)` }} />
-            ) : <img id="OxfLogo" />}
+            ) : <img id="OxfLogo" className={`${deviceType === "desktop" ? "isHidden" : ""}`} />}
             <div id="MainText">
                 <h1
                     id="OxfAcaMain"

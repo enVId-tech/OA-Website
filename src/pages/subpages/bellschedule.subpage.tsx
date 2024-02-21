@@ -26,7 +26,7 @@ const BellSchedule: React.FC = (): React.JSX.Element => {
             <PageTitle height={80} mainText="Bell Schedule" subText={sessionText} oxfLogo={false} backgroundLink="OxfFrontImage.jpg" backgroundVhPreDown={700} backgroundVhDownRate={32} titleVhDownRate={30} percentageDown={32} titleVhPreDown={0} />
 
             <div id="BellScheduleMain">
-                <h1 id="BellScheduleTitle">Bell Schedule</h1>
+                <h1 id="BellScheduleTitle" className="pageSectionTitle">Bell Schedule</h1>
                 <span id="BellScheduleText">
                     <div className="BellScheduleSection">
                         <h1 className="BellScheduleSectionTitle">Late Start: Mondays</h1>
