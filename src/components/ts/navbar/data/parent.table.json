@@ -141,6 +141,11 @@
       "hasWorkingLink": true
     },
     {
+      "name": "Tour",
+      "link": "/tour",
+      "hasWorkingLink": true
+    },
+    {
       "name": "Transportation",
       "link": "/transportation",
       "hasWorkingLink": true

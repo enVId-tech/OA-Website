@@ -38,6 +38,7 @@ import DistrictIPPPlan from './pages/subpages/districtippplan.subpage.tsx';
 import WorkPermit from './pages/subpages/workpermit.subpage.tsx';
 import Library from './pages/subpages/library.subpage.tsx';
 import SchoolSiteCouncil from './pages/subpages/schoolsitecouncil.subpage.tsx';
+import Tour from './pages/subpages/tour.subpage.tsx';
 
 const AppRoutes: React.FC = (): React.JSX.Element => {
   return (
@@ -70,6 +71,7 @@ const AppRoutes: React.FC = (): React.JSX.Element => {
         <Path path="/schoolsitecouncil/*" element={<Redirect to="/schoolsitecouncil" />} />
         <Path path="/staffdirectory/*" element={<Redirect to="/staffdirectory" />} />
         <Path path="/titleix/*" element={<Redirect to="/titleix" />} />
+        <Path path="/tour/*" element={<Redirect to="/tour" />} />
         <Path path="/transcripts/*" element={<Redirect to="/transcripts" />} />
         <Path path="/transportation/*" element={<Redirect to="/transportation" />} />
         <Path path="/visionandslcs/*" element={<Redirect to="/visionandslcs" />} />
@@ -105,18 +107,12 @@ const AppRoutes: React.FC = (): React.JSX.Element => {
         <Path path="/staffdirectory" element={<Staff />} />
         <Path path="/schoolsitecouncil" element={<SchoolSiteCouncil />} />
         <Path path="/titleix" element={<TitleIX />} />
+        <Path path="/tour" element={<Tour />} />
         <Path path="/transcripts" element={<Transcript />} />
         <Path path="/transportation" element={<Transportation />} />
         <Path path="/visionandslcs" element={<VisionSLCS />} />
         <Path path="/workpermits" element={<WorkPermit />} />
         <Path path="/error" element={<ErrorPage />} />
-
-        {/* Page Table Redirects */}
-        <Path path="/student-table/*" element={<Redirect to="/student-table" />} />
-        <Path path="/school-table/*" element={<Redirect to="/school-table" />} />
-        <Path path="/parent-table/*" element={<Redirect to="/parent-table" />} />
-        <Path path="/faculty-table/*" element={<Redirect to="/faculty-table" />} />
-        <Path path="/contact-table/*" element={<Redirect to="/contact-table" />} />
       </Pathhub>
     </ReactRouter>
   )

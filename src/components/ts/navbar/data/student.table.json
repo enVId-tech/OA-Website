@@ -146,6 +146,11 @@
       "hasWorkingLink": true
     },
     {
+      "name": "Tour",
+      "link": "/tour",
+      "hasWorkingLink": true
+    },
+    {
       "name": "Transcripts",
       "link": "/transcripts",
       "hasWorkingLink": true
