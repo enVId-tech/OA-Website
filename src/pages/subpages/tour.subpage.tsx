@@ -22,7 +22,7 @@ const Tour: React.FC = (): React.JSX.Element => {
             <div id="TourMain">
                 <h1 id="TitleText" className="pageSectionTitle">Tour</h1>
                 
-                <Photosphere src="http://localhost:3000/static/media/Photosphere.3688c313d1cb6701ae50.webp"/>
+                <Photosphere src=""/>
             </div>
 
             <Footer />
