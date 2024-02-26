@@ -2,7 +2,6 @@ import React from "react";
 import getNavBarElements from './navbarelements.template.ts';
 import '../../scss/components/navbar.global.scss';
 import globalType from "../device/device.template.ts";
-
 interface NavbarProps {
   heightChange?: number;
 }
@@ -132,7 +131,7 @@ const Navbar: React.FC<NavbarProps> = ({ heightChange = -Infinity }: NavbarProps
           </div>
 
           <div id="Tables">
-            {sections.map((section) => renderButtonsTable(getNavBarElements(section.name), section.name))}
+            {sections.map((section) => renderButtonsTable(getNavBarElements(section.name), section.name))}      
           </div>
         </div>
       </nav>

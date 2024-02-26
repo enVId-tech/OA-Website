@@ -1,0 +1,30 @@
+$color-primary: #f8f9fa;
+$color-white: #ffffff;
+$color-black: #000000;
+
+#Tour {
+    #TourMain {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: fit-content;
+        width: 100%;
+        background-color: $color-primary;
+        color: $color-white;
+        font-size: 2rem;
+        font-weight: 700;
+        text-align: center;
+
+        #TitleText {
+            margin-bottom: 2vh;
+            color: $color-black;
+        }
+
+        #canvasTour {
+            width: 100%;
+            height: 100vh;
+            background-color: $color-primary;
+        }
+    }
+}

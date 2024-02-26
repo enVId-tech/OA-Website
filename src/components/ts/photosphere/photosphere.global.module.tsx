@@ -1,65 +1,67 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
 import * as Three from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 interface PhotosphereProps {
     src: string;
 }
 
-const Photosphere: React.FC<PhotosphereProps> = (props: PhotosphereProps): React.ReactElement => {
-    const containerRef: React.MutableRefObject<HTMLDivElement | null> = React.useRef<HTMLDivElement | null>(null);
-
-    React.useEffect((): () => void => {
-        // Create a scene
-        const scene: Three.Scene = new Three.Scene();
-
-        // Create a camera
-        const camera: Three.PerspectiveCamera = new Three.PerspectiveCamera(
-            75,
-            window.innerWidth / window.innerHeight,
-            0.1,
-            1000
-        );
-        camera.position.set(0, 0, 0);
-
-        // Create a renderer
-        const renderer: Three.WebGLRenderer = new Three.WebGLRenderer();
+const Photosphere: React.FC<PhotosphereProps> = ({ src }: PhotosphereProps): React.ReactElement => {
+    const canvasRef: React.RefObject<HTMLCanvasElement> = React.useRef<HTMLCanvasElement>(null);
+    const cameraVector: Three.Vector3 = new Three.Vector3(0, 0, 0);
+    
+    React.useEffect(() => {
+        const canvas: HTMLCanvasElement = canvasRef.current as HTMLCanvasElement;
+        const renderer: Three.WebGLRenderer = new Three.WebGLRenderer({ canvas, antialias: true });
+        renderer.setPixelRatio(window.devicePixelRatio);
         renderer.setSize(window.innerWidth, window.innerHeight);
-        containerRef.current?.appendChild(renderer.domElement);
+        const scene: Three.Scene = new Three.Scene();
+        const camera: Three.PerspectiveCamera = new Three.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        
+        const controls: OrbitControls = new OrbitControls(camera, renderer.domElement); // Create OrbitControls
+        controls.enableZoom = true; // Enable zooming
+        controls.enablePan = true; // Enable panning
+        controls.enableRotate = true; // Enable orbiting
 
-        // Create a photosphere geometry
-        const geometry: Three.SphereGeometry = new Three.SphereGeometry(5, 32, 32);
+        const geometry: Three.SphereGeometry = new Three.SphereGeometry(500, 360, 180);
+        const texture = new Three.TextureLoader().load(src);
+        texture.minFilter = Three.LinearFilter;
+        const material: Three.MeshBasicMaterial = new Three.MeshBasicMaterial({ map: texture, side: Three.DoubleSide });
+        const sphere: Three.Mesh = new Three.Mesh(geometry, material);
 
-        // Load the photosphere texture
-        const textureLoader: Three.TextureLoader = new Three.TextureLoader();
-        const texture: Three.Texture = textureLoader.load('http://localhost:3000/static/media/Photosphere.3688c313d1cb6701ae50.webp');
+        // Camera position must be offset to the Orbitals controls
+        controls.target.set(0, 0, 0);
+        camera.position.set(0, 0, 1);
 
-        // Create a material with the photosphere texture
-        const material: Three.MeshBasicMaterial = new Three.MeshBasicMaterial({ map: texture });
+        sphere.scale.x = -1;
 
-        // Create a photosphere mesh
-        const photosphere: Three.Mesh = new Three.Mesh(geometry, material);
+        scene.add(sphere);
 
-        // Add the photosphere to the scene
-        scene.add(photosphere);
 
-        // Render the scene with the camera
         const animate = (): void => {
+            camera.position.lerp(cameraVector, 0.05);
             requestAnimationFrame(animate);
             renderer.render(scene, camera);
+            controls.update();
         };
+
         animate();
 
-        // Clean up
+        // Cleanup function to dispose of controls
         return () => {
-            const container = containerRef.current;
-            if (container) {
-                container.removeChild(renderer.domElement);
-            }
+            controls.dispose();
         };
-    }, [props.src]);
+    }, [src]);
 
-    return <div ref={containerRef} />;
-};
+    window.addEventListener('mousemove', (event) => {
+        cameraVector.x -= event.movementX * 0.01;
+        cameraVector.y -= event.movementY * 0.01;
+    });
+
+    return (
+        <canvas id="canvasTour" ref={canvasRef} />
+    );
+}
 
 export default Photosphere;
