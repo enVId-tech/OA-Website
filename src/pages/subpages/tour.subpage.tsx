@@ -23,6 +23,8 @@ const Tour: React.FC = (): React.JSX.Element => {
                 <h1 id="TitleText" className="pageSectionTitle">Tour</h1>
                 
                 <Photosphere src=""/>
+
+                {/* <iframe src="https://www.google.com/maps/embed?pb=!4v1709016137056!6m8!1m7!1sCAoSLEFGMVFpcE5Fcm9GTjhCc0tubnJGaDgwX3R2VXRla3dDNFV2ZGVUVFRvTF9E!2m2!1d33.8238182!2d-118.0429382!3f356.36724021617965!4f-29.230983180823642!5f0.4000000000000002" width="600" height="450" style={{border:0}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> */}
             </div>
 
             <Footer />

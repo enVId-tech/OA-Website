@@ -3,7 +3,8 @@ import React from 'react';
 import * as Three from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
-const image = require('../../images/photosphere/Photosphere.webp');
+// const image = require('../../images/photosphere/Photosphere-Enhanced.png');
+const image = require('../../images/photosphere/StreetView.jpg');
 
 interface PhotosphereProps {
     src: string;
@@ -11,7 +12,6 @@ interface PhotosphereProps {
 
 const Photosphere: React.FC<PhotosphereProps> = ({ src }: PhotosphereProps): React.ReactElement => {
     const canvasRef: React.RefObject<HTMLCanvasElement> = React.useRef<HTMLCanvasElement>(null);
-    // const cameraVector: Three.Vector3 = new Three.Vector3(0, 0, 0);
     
     React.useEffect(() => {
         const canvas: HTMLCanvasElement = canvasRef.current as HTMLCanvasElement;
@@ -19,30 +19,23 @@ const Photosphere: React.FC<PhotosphereProps> = ({ src }: PhotosphereProps): Rea
         renderer.setPixelRatio(window.devicePixelRatio);
         renderer.setSize(window.innerWidth, window.innerHeight);
         const scene: Three.Scene = new Three.Scene();
-        const camera: Three.PerspectiveCamera = new Three.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const camera: Three.PerspectiveCamera = new Three.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 500);
         
-        const controls: OrbitControls = new OrbitControls(camera, renderer.domElement); // Create OrbitControls
-        controls.enableZoom = true; // Enable zooming
-        controls.enablePan = true; // Enable panning
-        controls.enableRotate = true; // Enable orbiting
+        const controls: OrbitControls = new OrbitControls(camera, renderer.domElement);
 
-        const geometry: Three.SphereGeometry = new Three.SphereGeometry(500, 360, 180);
-        const texture = new Three.TextureLoader().load(image);
-        texture.minFilter = Three.LinearFilter;
+        const geometry: Three.SphereGeometry = new Three.SphereGeometry(250, 180, 90);
+        const texture: Three.Texture = new Three.TextureLoader().load(image);
         const material: Three.MeshBasicMaterial = new Three.MeshBasicMaterial({ map: texture, side: Three.DoubleSide });
         const sphere: Three.Mesh = new Three.Mesh(geometry, material);
 
         // Camera position must be offset to the Orbitals controls
-        // controls.target.set(0, 0, 0);
-        camera.position.set(0, 0, 1);
+        camera.position.set(0, 0, 0.01);
 
         sphere.scale.x = -1;
 
         scene.add(sphere);
 
-
         const animate = (): void => {
-            // camera.position.lerp(cameraVector, 0.05);
             requestAnimationFrame(animate);
             renderer.render(scene, camera);
             controls.update();
