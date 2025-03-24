@@ -9,7 +9,7 @@ import ClassHelmet from "../components/ts/pagetitle/title.global.module.tsx";
 import applyPageAnims from "../components/ts/animations/animations.global.module.ts";
 
 import '../components/images/OxfordLogo.png';
-import '../components/scss/pages/home.page.site.scss';
+import '../components/scss/pages/home.module.scss';
 
 const HomePage: React.FC = (): React.JSX.Element => {
     // Create refs for main div elements

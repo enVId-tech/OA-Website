@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../../scss/components/footer.global.scss';
+import '../../scss/components/footer.module.scss';
 
 const Footer: React.FC = (): React.JSX.Element => {
     const footerRef: React.RefObject<HTMLDivElement> = React.useRef<HTMLDivElement>(null);

@@ -5,7 +5,7 @@ import PageTitle from "../../components/ts/pagetitle/pagetitle.global.module.tsx
 import Footer from "../../components/ts/footer/footer.global.module.tsx";
 import trackPageView from "../../components/ts/analytics/analytics.global.module.ts";
 
-import '../../components/scss/pages/subpages/familyengagement.subpage.scss';
+import '../../components/scss/pages/subpages/familyengagement.module.scss';
 
 const FamilyEngagement: React.FC = (): React.JSX.Element => {
     React.useEffect((): void => {

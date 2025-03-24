@@ -5,7 +5,7 @@ import PageTitle from '../../components/ts/pagetitle/pagetitle.global.module.tsx
 import Footer from '../../components/ts/footer/footer.global.module.tsx';
 import trackPageView from '../../components/ts/analytics/analytics.global.module.ts';
 
-import '../../components/scss/pages/subpages/504plan.subpage.scss';
+import '../../components/scss/pages/subpages/504plan.module.scss';
 
 const Plan504: React.FC = (): React.JSX.Element => {
     React.useEffect((): void => {

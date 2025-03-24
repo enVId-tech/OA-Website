@@ -5,7 +5,7 @@ import PageTitle from "../../components/ts/pagetitle/pagetitle.global.module.tsx
 import Footer from "../../components/ts/footer/footer.global.module.tsx";
 import trackPageView from "../../components/ts/analytics/analytics.global.module.ts";
 
-import '../../components/scss/pages/subpages/admissions.subpage.scss';
+import '../../components/scss/pages/subpages/admissions.module.scss';
 
 const Admissions: React.FC = (): React.JSX.Element => {
     React.useEffect((): void => {

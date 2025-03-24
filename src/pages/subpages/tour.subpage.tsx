@@ -6,7 +6,7 @@ import Footer from '../../components/ts/footer/footer.global.module.tsx';
 import trackPageView from '../../components/ts/analytics/analytics.global.module.ts';
 import Photosphere from '../../components/ts/photosphere/photosphere.global.module.tsx';
 
-import '../../components/scss/pages/subpages/tour.subpage.scss';
+import '../../components/scss/pages/subpages/tour.module.scss';
 
 const Tour: React.FC = (): React.JSX.Element => {
     React.useEffect((): void => {

@@ -4,7 +4,7 @@ import { BrowserRouter as ReactRouter, Routes as Pathhub, Route as Path, Navigat
 // TS
 
 // SCSS
-import './components/scss/pages/pages.global.scss';
+import './components/scss/pages/pages.module.scss';
 
 // Pages
 import ErrorPage from "./pages/Error.page.site.tsx";

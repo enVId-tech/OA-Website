@@ -1,6 +1,6 @@
 import React from "react";
 import getNavBarElements from './navbarelements.template.ts';
-import '../../scss/components/navbar.global.scss';
+import '../../scss/components/navbar.module.scss';
 import globalType from "../device/device.template.ts";
 interface NavbarProps {
   heightChange?: number;

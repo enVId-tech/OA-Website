@@ -7,7 +7,7 @@ import trackPageView from "../../components/ts/analytics/analytics.global.module
 
 import checkInClass from "../../components/ts/pages/bell/bellschedule.module.ts";
 
-import '../../components/scss/pages/subpages/bellschedule.subpage.scss'
+import '../../components/scss/pages/subpages/bellschedule.module.scss'
 
 
 const BellSchedule: React.FC = (): React.JSX.Element => {

@@ -5,7 +5,7 @@ import PageTitle from "../../components/ts/pagetitle/pagetitle.global.module.tsx
 import Footer from "../../components/ts/footer/footer.global.module.tsx";
 import trackPageView from "../../components/ts/analytics/analytics.global.module.ts";
 
-import '../../components/scss/pages/subpages/generalinformation.subpage.scss';
+import '../../components/scss/pages/subpages/generalinformation.module.scss';
 
 const GeneralInformation: React.FC = (): React.JSX.Element => {
     React.useEffect((): void => {

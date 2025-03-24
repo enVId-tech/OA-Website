@@ -7,7 +7,7 @@ import trackPageView from "../../components/ts/analytics/analytics.global.module
 
 import ClubsList from "../../components/ts/pages/clubs.module.ts";
 
-import '../../components/scss/pages/subpages/clubs.subpage.scss';
+import '../../components/scss/pages/subpages/clubs.module.scss';
 
 interface ClubsProps {
     club: string;

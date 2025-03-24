@@ -4,7 +4,7 @@ import Navbar from "../components/ts/navbar/navbar.template.tsx";
 import Footer from "../components/ts/footer/footer.global.module.tsx";
 import trackPageView from "../components/ts/analytics/analytics.global.module.ts";
 
-import '../components/scss/pages/error.page.site.scss';
+import '../components/scss/pages/error.module.scss';
 
 const ErrorPage: React.FC = (): React.JSX.Element => {
     const [time, setTime]: [number, React.Dispatch<React.SetStateAction<number>>] = React.useState<number>(3);

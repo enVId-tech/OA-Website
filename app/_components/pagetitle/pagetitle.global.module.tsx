@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
-import '../../scss/components/pagetitle.global.scss';
+import '../../scss/components/pagetitle.module.scss';
 import globalType from '../device/device.template';
 
 interface PageTitleProps {

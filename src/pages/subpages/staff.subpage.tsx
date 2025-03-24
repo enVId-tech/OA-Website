@@ -5,7 +5,7 @@ import PageTitle from "../../components/ts/pagetitle/pagetitle.global.module.tsx
 import Footer from "../../components/ts/footer/footer.global.module.tsx";
 import trackPageView from "../../components/ts/analytics/analytics.global.module.ts";
 
-import '../../components/scss/pages/subpages/staff.subpage.scss';
+import '../../components/scss/pages/subpages/staff.module.scss';
 
 const Staff: React.FC = (): React.JSX.Element => {
     React.useEffect((): void => {

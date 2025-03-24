@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../../scss/components/carousel.global.scss';
+import '../../scss/components/carousel.module.scss';
 
 interface Carousel3DProps {
     images: string[];

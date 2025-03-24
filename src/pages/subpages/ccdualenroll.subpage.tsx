@@ -7,7 +7,7 @@ import trackPageView from "../../components/ts/analytics/analytics.global.module
 
 import pageCreateInformationCCDE from "../../components/ts/pages/ccde/names.ts";
 
-import '../../components/scss/pages/subpages/ccdualenroll.subpage.scss';
+import '../../components/scss/pages/subpages/ccdualenroll.module.scss';
 
 const CCDualEnrollment: React.FC = (): React.JSX.Element => {
     const pathwayNames: string[] = pageCreateInformationCCDE("pathwayNames").flat();

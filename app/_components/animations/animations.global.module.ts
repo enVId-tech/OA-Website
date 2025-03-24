@@ -1,5 +1,5 @@
-import '../../scss/components/animations/animationsmain.global.scss';
-import '../../scss/components/section.global.scss';
+import '../../scss/components/animations/animationsmain.module.scss';
+import '../../scss/components/section.module.scss';
 
 const animationTypes: object = {
     "c_left": "content-anim-left",
