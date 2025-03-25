@@ -1,4 +1,4 @@
-interface Club {
+export type Club = {
     club: string;
 }
 
