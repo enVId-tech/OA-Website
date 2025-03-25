@@ -80,7 +80,7 @@ export default function Home(): React.ReactNode {
               <div id="AdmissionsText">
                 <h1 id="AdmissionsMainLabel">Oxford Academy is an admissions-only campus, evaluated by an elite admissions commitee.</h1>
                 <h1 id="AdmissionsOpening">Admissions are open every year for incoming scholars!</h1>
-                <button id="Apply" onClick={() => window.location.href = '/admissions'}>More information available here!</button>
+                <button id="Apply" onClick={() => window.location.href = '/[subpage]'}>More information available here!</button>
               </div>
             </div>
           </div>
