@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import SubpageLayout from "@/app/_components/layouts/SubpageLayout";
 import { notFound } from "next/navigation";
@@ -915,7 +913,7 @@ const pageConfigs = {
             </div>
         )
     },
-    visionslcs: {
+    visionandslcs: {
         title: "Vision & SLCS",
         mainText: "Vision & SLCS",
         subText: "",

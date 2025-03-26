@@ -1,9 +1,7 @@
 "use client";
 
 import React from "react";
-import trackPageView from "@/app/_components/analytics/analytics.global.module.ts";
 import applyPageAnims from "@/app/_components/animations/animations.global.module.ts";
-import ClassHelmet from "@/app/_components/pagetitle/title.global.module.tsx";
 import Navbar from "@/app/_components/navbar/navbar.template.tsx";
 import PageTitle from "@/app/_components/pagetitle/pagetitle.global.module.tsx";
 import Footer from "@/app/_components/footer/footer.global.module.tsx";
@@ -16,8 +14,6 @@ export default function Home(): React.ReactNode {
   const footerRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
-    trackPageView();
-
     const refs = [aboutRef, ratingsRef, admissionsRef, footerRef];
     const anims = ["c_left", "c_up", "c_right", "c_up"];
 
@@ -38,7 +34,6 @@ export default function Home(): React.ReactNode {
 
   return (
       <div id="HomePage">
-        <ClassHelmet title="Home" />
         <Navbar heightChange={790} />
         <PageTitle
             height={100}

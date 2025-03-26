@@ -1,5 +1,5 @@
-import '../../scss/components/animations/animationsmain.module.scss';
-import '../../scss/components/section.module.scss';
+import '@/styles/components/animations/animationsmain.module.scss';
+import "@/styles/components/section.module.scss";
 import React from "react";
 
 const animationTypes: object = {

@@ -112,7 +112,7 @@ $navbar-table-hidden-button-transition: all $transition-duration ease-in-out 0.1
       justify-content: space-around;
 
       #MainImage {
-        background-image: url(../../images/OxfordLogo.png);
+        background-image: url("/public/images/OxfordLogo.png");
         background-repeat: no-repeat;
         background-size: contain;
         width: 5vw;
@@ -238,7 +238,7 @@ $navbar-table-hidden-button-transition: all $transition-duration ease-in-out 0.1
           display: block;
           width: 50vw;
           height: 6vh;
-          background-image: url(../../images/hamburger.png);
+          background-image: url(/public/images/hamburger.png);
           background-color: transparent;
           background-size: contain;
           background-repeat: no-repeat;
@@ -347,7 +347,6 @@ $navbar-table-hidden-button-transition: all $transition-duration ease-in-out 0.1
 
             .navbarTableTitle {
               font-size: 4vh;
-              font-family: 100;
               padding: 0;
               margin: 2vh 0 2vh 5vw;
             }

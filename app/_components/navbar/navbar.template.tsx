@@ -1,7 +1,9 @@
 import React from "react";
 import getNavBarElements from './navbarelements.template.ts';
-import '../../scss/components/navbar.module.scss';
+import '@/styles/components/navbar.module.scss';
 import globalType from "../device/device.template.ts";
+import OxfLogo from "@/public/images/OxfordLogo.png";
+
 interface NavbarProps {
   heightChange?: number;
 }
@@ -113,7 +115,7 @@ const Navbar: React.FC<NavbarProps> = ({ heightChange = -Infinity }: NavbarProps
       <nav id="NavbarMain" className={`${backgroundTransparent ? "transparent" : "opaque"}`}>
         <div id="Topbar">
           <div id="MainButtons">
-            <img id="MainImage" src="images/OxfordLogo.png" alt="Oxford Logo" onClick={handleLogoClick} style={{ cursor: "pointer" }} />
+            <img id="MainImage" src={OxfLogo.src} alt="Oxford Logo" onClick={handleLogoClick} style={{ cursor: "pointer" }} />
             {
               navBar.map((section: NavbarElementsData, index: number) => (
                 <button
@@ -139,7 +141,7 @@ const Navbar: React.FC<NavbarProps> = ({ heightChange = -Infinity }: NavbarProps
       <nav id="NavbarMain" className={`${backgroundTransparent ? "transparent" : "opaque"}`}>
         <div id="Topbar">
           <div id="MainButtons">
-            <img id="MainImage" src="images/OxfordLogo.png" alt="Oxford Logo" onClick={handleLogoClick} style={{ cursor: "pointer" }} />
+            <img id="MainImage" src={OxfLogo.src} alt="Oxford Logo" onClick={handleLogoClick} style={{ cursor: "pointer" }} />
             <button id="HamburgerButton" onClick={() => setTablesVisible(!tablesVisible)} />
           </div>
 
@@ -150,7 +152,7 @@ const Navbar: React.FC<NavbarProps> = ({ heightChange = -Infinity }: NavbarProps
                   key={section.name}
                   id={section.name}
                   className={`navbutton ${activeTable === section.name ? "active" : "hidden"}`}
-                  onClick={() => {section.name === "Home" ? window.location.href = "/" : handleMobileButtonClick(section.name)}}
+                  onClick={() => {section.name == "Home" ? (window.location.href = "/") : handleMobileButtonClick(section.name)}}
                 >
                   <div className="buttonMainDiv">
                     <h1 className="navbarTableTitle">{navBar[index].name}</h1>

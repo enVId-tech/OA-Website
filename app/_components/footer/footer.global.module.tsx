@@ -1,11 +1,12 @@
+"use client";
 import React from 'react';
 
-import '../../scss/components/footer.module.scss';
+import "@/styles/components/footer.module.scss";
 
 const Footer: React.FC = (): React.JSX.Element => {
-    const footerRef: React.RefObject<HTMLDivElement> = React.useRef<HTMLDivElement>(null);
+    const footerRef: React.RefObject<HTMLDivElement | null> = React.useRef<HTMLDivElement>(null);
 
-    const applyVisibleClass: (ref: React.RefObject<HTMLDivElement>) => void = (ref) => {
+    const applyVisibleClass: (ref: React.RefObject<HTMLDivElement | null>) => void = (ref) => {
         if (ref.current === null) {
             return;
         }
@@ -21,7 +22,13 @@ const Footer: React.FC = (): React.JSX.Element => {
         }
     };
 
-    window.addEventListener("scroll", (): void => applyVisibleClass(footerRef));
+    React.useEffect(() => {
+        applyVisibleClass(footerRef);
+
+        window.addEventListener("scroll", (): void => applyVisibleClass(footerRef));
+
+        return () => window.removeEventListener("scroll", (): void => applyVisibleClass(footerRef));
+    }, []);
 
     return (
         <div id='Footers' ref={footerRef}>
