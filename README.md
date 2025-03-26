@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Oxford Academy Website
+
+A modern Next.js website for Oxford Academy, featuring responsive design and interactive elements.
+
+## Overview
+
+This project is a Next.js-based website for Oxford Academy that includes:
+- Home page with animated sections
+- Dynamic subpages using a shared layout pattern
+- Responsive design for multiple screen sizes
+- Interactive elements for improved user experience
+
+## Project Structure
+
+```
+oxford-academy-website/
+├── app/                    # Next.js app directory
+│   ├── _components/        # Shared components
+│   │   ├── analytics/      # Analytics tracking
+│   │   ├── animations/     # Animation utilities
+│   │   ├── footer/         # Footer component
+│   │   ├── layouts/        # Layout components
+│   │   ├── navbar/         # Navigation bar
+│   │   └── pagetitle/      # Page title components
+│   ├── [subpage]/          # Dynamic route for subpages
+│   ├── admissions/         # Admissions page
+│   ├── bell-schedule/      # Bell schedule page
+│   └── page.tsx            # Home page
+├── _scss/                  # SCSS styles
+│   └── pages/              # Page-specific styles
+│       └── subpages/       # Subpage styles
+├── public/                 # Static assets
+│   └── images/             # Image assets
+├── .gitignore              # Git ignore file
+├── next.config.js          # Next.js configuration
+├── package.json            # Project dependencies
+└── tsconfig.json           # TypeScript configuration
+```
+
+## Features
+
+- **Responsive Design**: Adapts to different screen sizes
+- **Dynamic Routing**: Uses Next.js file-based and dynamic routing
+- **Shared Layout Pattern**: Reusable layout components for consistent UI
+- **Animation Effects**: Scroll-based animations for enhanced user experience
+- **SEO Optimized**: Custom page titles and metadata
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js (v14 or later)
+- npm or yarn
+
+### Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Clone the repository
+git clone [repository-url]
+
+# Navigate to project directory
+cd oxford-academy-website
+
+# Install dependencies
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Development
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# Start development server
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Visit `http://localhost:3000` to view the website.
 
-## Learn More
+### Build
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+# Build for production
+npm run build
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Start production server
+npm start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Technology Stack
 
-## Deploy on Vercel
+- **Framework**: Next.js
+- **Language**: TypeScript
+- **Styling**: SCSS
+- **Deployment**: Vercel/Netlify (recommended)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Project Structure Notes
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The project uses a shared layout pattern to reduce code duplication across similar pages. The `SubpageLayout` component encapsulates common elements like the navbar, page title, and footer, while allowing individual pages to provide their unique content.
