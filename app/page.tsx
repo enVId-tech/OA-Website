@@ -5,6 +5,7 @@ import applyPageAnims from "@/app/_components/animations/animations.global.modul
 import Navbar from "@/app/_components/navbar/navbar.template.tsx";
 import PageTitle from "@/app/_components/pagetitle/pagetitle.global.module.tsx";
 import Footer from "@/app/_components/footer/footer.global.module.tsx";
+import styles from "@/styles/pages/home.module.scss";
 
 export default function Home(): React.ReactNode {
   // Create refs for main div elements
@@ -14,10 +15,13 @@ export default function Home(): React.ReactNode {
   const footerRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
-    const refs = [aboutRef, ratingsRef, admissionsRef, footerRef];
-    const anims = ["c_left", "c_up", "c_right", "c_up"];
+    // Fix the typing issue by filtering out null values
+    const refs = [aboutRef, ratingsRef, admissionsRef, footerRef].filter(
+        (ref): ref is React.RefObject<HTMLDivElement> => ref.current !== null
+    );
+    const anims: string[] = ["c_left", "c_up", "c_right", "c_up"];
 
-    const handleScroll = () => {
+    const handleScroll: () => void = (): void => {
       applyPageAnims(refs, anims, 0.25);
     };
 
@@ -33,7 +37,7 @@ export default function Home(): React.ReactNode {
   }, []);
 
   return (
-      <div id="HomePage">
+      <div className={styles.homePage}>
         <Navbar heightChange={790} />
         <PageTitle
             height={100}
@@ -48,40 +52,38 @@ export default function Home(): React.ReactNode {
             titleVhPreDown={0}
         />
 
-        <div id="HomePageMain">
+        <div className={styles.homePageMain}>
           {/* About Tab */}
-          <div id="About" ref={aboutRef} className="info-section">
-            <div id="AboutText" className="section-property">
-              <img id="AboutImage" className="section-title" src="images/OxfordAcademyFullLogo.webp" alt="Oxford Academy Logo" />
-              <h1 id="AboutLabel" className="section-text">Oxford Academy is a community of innovators dedicated to nurturing the holistic growth of life-long learners who will lead and serve an evolving local and global society.</h1>
+          <div className={styles.about} ref={aboutRef}>
+            <div className={`${styles.aboutText} section-property`}>
+              <img className={`${styles.aboutImage} section-title`} src="images/OxfordAcademyFullLogo.webp" alt="Oxford Academy Logo" />
+              <h1 className={`${styles.aboutLabel} section-text`}>Oxford Academy is a community of innovators dedicated to nurturing the holistic growth of life-long learners who will lead and serve an evolving local and global society.</h1>
             </div>
           </div>
 
           {/* Ratings Tab */}
-          <div id="Ratings" ref={ratingsRef} className="info-section">
-            <div id="USNewsRanking" className="section-property">
-              <div id="Ranks">
-                <h1 id="HSRankings">#1 in California High Schools</h1>
-                <h1 id="NatRankings">#9 in National Rankings</h1>
+          <div className={styles.ratings} ref={ratingsRef}>
+            <div className={styles.usNewsRanking}>
+              <div className={styles.ranks}>
+                <h1 className={styles.hsRankings}>#1 in California High Schools</h1>
+                <h1 className={styles.natRankings}>#9 in National Rankings</h1>
               </div>
-              <h1 id="USNewsLabel">- US News Rankings (2023)</h1>
+              <h1 className={styles.usNewsLabel}>- US News Rankings (2023)</h1>
             </div>
           </div>
 
           {/* Admissions */}
-          <div id="Admissions" ref={admissionsRef} className="info-section">
-            <div id="AdmissionsMain" className="section-property">
-              <h1 id="AdmissionsLabel">Admissions</h1>
-              <div id="AdmissionsText">
-                <h1 id="AdmissionsMainLabel">Oxford Academy is an admissions-only campus, evaluated by an elite admissions commitee.</h1>
-                <h1 id="AdmissionsOpening">Admissions are open every year for incoming scholars!</h1>
-                <button id="Apply" onClick={() => window.location.href = '/[subpage]'}>More information available here!</button>
+          <div className={styles.admissions} ref={admissionsRef}>
+            <div className={styles.admissionsMain}>
+              <h1 className={styles.admissionsLabel}>Admissions</h1>
+              <div className={styles.admissionsText}>
+                <h1 className={styles.admissionsMainLabel}>Oxford Academy is an admissions-only campus, evaluated by an elite admissions commitee.</h1>
+                <h1 className={styles.admissionsOpening}>Admissions are open every year for incoming scholars!</h1>
+                <button className={styles.apply} onClick={() => window.location.href = '/admissions'}>More information available here!</button>
               </div>
             </div>
           </div>
         </div>
-
-        <Footer />
       </div>
   );
 }

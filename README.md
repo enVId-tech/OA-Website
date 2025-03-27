@@ -89,7 +89,7 @@ npm start
 - **Framework**: Next.js
 - **Language**: TypeScript
 - **Styling**: SCSS
-- **Deployment**: Vercel/Netlify (recommended)
+- **Deployment**: Vercel/Netlify/Docker (recommended)
 
 ## Project Structure Notes
 

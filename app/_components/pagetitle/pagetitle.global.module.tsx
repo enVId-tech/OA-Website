@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
-import '@/styles/components/pagetitle.module.scss';
+import styles from '@/styles/components/pagetitle.module.scss';
 import globalType from '../device/device.template';
 
 interface PageTitleProps {
@@ -18,17 +18,17 @@ interface PageTitleProps {
 }
 
 const PageTitle: React.FC<PageTitleProps> = ({
-    height,
-    mainText,
-    subText,
-    oxfLogo,
-    backgroundLink,
-    percentageDown,
-    backgroundVhPreDown = 0,
-    backgroundVhDownRate = 128,
-    titleVhPreDown = 0,
-    titleVhDownRate = 30,
-}): React.JSX.Element => {
+                                                 height,
+                                                 mainText,
+                                                 subText,
+                                                 oxfLogo,
+                                                 backgroundLink,
+                                                 percentageDown,
+                                                 backgroundVhPreDown = 0,
+                                                 backgroundVhDownRate = 128,
+                                                 titleVhPreDown = 0,
+                                                 titleVhDownRate = 30,
+                                             }): React.JSX.Element => {
     const [deviceType, setDeviceType]: [string, React.Dispatch<React.SetStateAction<string>>] = React.useState<string>("");
     const [positions, setPositions]: [number[], React.Dispatch<React.SetStateAction<number[]>>] = React.useState<number[]>([
         -backgroundVhPreDown / backgroundVhDownRate,
@@ -54,7 +54,6 @@ const PageTitle: React.FC<PageTitleProps> = ({
 
     const setDevice = (): void => {
         const device: string = globalType("device");
-
         setDeviceType(device);
     }
 
@@ -63,7 +62,7 @@ const PageTitle: React.FC<PageTitleProps> = ({
 
     return (
         <div
-            id="Title"
+            className={styles.title}
             style={{
                 backgroundPositionY: `${deviceType === "desktop" ? backgroundPositionY * 1.25 : backgroundPositionY * 2}vh`,
                 backgroundImage: `url(images/${backgroundLink})`,
@@ -72,7 +71,7 @@ const PageTitle: React.FC<PageTitleProps> = ({
             }}
         >
             <div
-                id="TitleBackground"
+                className={styles.titleBackground}
                 style={
                     {
                         height: `${deviceType === "desktop" ? height + 12 : (height * (3 / 4)) + 12}vh`,
@@ -82,37 +81,34 @@ const PageTitle: React.FC<PageTitleProps> = ({
 
             {
                 oxfLogo ? (
-                    <img id="OxfLogo" src="images/OxfordLogo.png" style={
-                        {
+                    <img
+                        className={styles.oxfLogo}
+                        src="images/OxfordLogo.png"
+                        style={{
                             transform: `translateY(${titlePositionY}vh)`
-                        }
-                    }
+                        }}
                     />
                 ) : (
-                    <img id="OxfLogo" className={`${deviceType === "desktop" ? "isHidden" : ""}`} />
+                    <img
+                        className={`${styles.oxfLogo} ${deviceType === "desktop" ? styles.isHidden : ""}`}
+                    />
                 )
             }
 
-            <div id="MainText">
+            <div className={styles.mainText}>
                 <h1
-                    id="OxfAcaMain"
-                    style={
-                        {
-                            transform: `translateY(${titlePositionY}vh)`
-                        }
-                    }
-                    className={`${oxfLogo ? 'oxf-aca-main' : 'n-oxf-aca-main'}`}
+                    className={`${styles.oxfAcaMain} ${oxfLogo ? styles.oxfAcaMain : styles.nOxfAcaMain}`}
+                    style={{
+                        transform: `translateY(${titlePositionY}vh)`
+                    }}
                 >
                     {mainText}
                 </h1>
                 <h5
-                    id="OxfAcaSub"
-                    style={
-                        {
-                            transform: `translateY(${titlePositionY}vh)`
-                        }
-                    }
-                    className={`${oxfLogo ? 'oxf-aca-sub' : 'n-oxf-aca-sub'}`}
+                    className={`${styles.oxfAcaSub} ${oxfLogo ? styles.oxfAcaSub : styles.nOxfAcaSub}`}
+                    style={{
+                        transform: `translateY(${titlePositionY}vh)`
+                    }}
                 >
                     {subText}
                 </h5>

@@ -1,14 +1,15 @@
-#HomePage {
+.homePage {
     display: flex;
     flex-direction: column;
     overflow: hidden;
     margin-top: -12vh;
+    align-items: center;
 
     @media (max-width: 768px) {
         margin-top: -10vh;
     }
 
-    #HomePageMain {
+    .homePageMain {
         display: flex;
         flex-direction: column;
         overflow: hidden;
@@ -18,18 +19,22 @@
             width: 100%;
         }
 
-        #About {
+        .about {
             background-color: #ffffff;
 
-            #AboutText {
+
+            .aboutText {
+                display: flex;
                 flex-direction: row;
+                align-items: center;
+                padding: 10vh 0;
 
                 @media (max-width: 768px) {
                     flex-direction: column;
                     padding-bottom: 5vh;
                 }
 
-                #AboutImage {
+                .aboutImage {
                     background-repeat: no-repeat;
                     background-size: contain;
                     background-position: center;
@@ -44,7 +49,7 @@
                     }
                 }
 
-                #AboutLabel {
+                .aboutLabel {
                     font-size: 2vw;
                     padding-right: 3vw;
                     padding-left: 2vw;
@@ -58,13 +63,18 @@
             }
         }
 
-        #Ratings {
+        .ratings {
             background-color: #0B132B;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 10vh 0;
+            text-align: center;
 
-            #USNewsRanking {
+            .usNewsRanking {
                 flex-direction: column;
 
-                #Ranks {
+                .ranks {
                     display: flex;
                     justify-content: space-around;
                     margin-top: 5vh;
@@ -79,19 +89,19 @@
                         margin-bottom: 2vh;
                     }
 
-                    #HSRankings {
+                    .hsRankings {
                         color: white;
                         font-weight: bold;
                     }
 
-                    #NatRankings {
+                    .natRankings {
                         color: white;
                         font-weight: bold;
                     }
                 }
             }
 
-            #USNewsLabel {
+            .usNewsLabel {
                 color: white;
                 font-weight: 600;
                 font-size: 1.5vw;
@@ -104,18 +114,21 @@
             }
         }
 
-        #Admissions {
+        .admissions {
             background-color: rgb(12, 43, 83);
 
-            #AdmissionsMain {
+            .admissionsMain {
                 flex-direction: column;
+                display: flex;
+                align-items: center;
+                padding: 10vh 0;
 
-                #AdmissionsLabel {
+                .admissionsLabel {
                     color: white;
                     font-weight: bolder;
                 }
 
-                #AdmissionsText {
+                .admissionsText {
                     color: white;
                     font-weight: 300;
                     width: 80%;
@@ -125,15 +138,15 @@
                         text-align: center;
                     }
 
-                    #AdmissionsMainLabel,
-                    #AdmissionsOpening {
+                    .admissionsMainLabel,
+                    .admissionsOpening {
                         font-weight: 400;
                         @media (max-width: 768px){
                             font-size: 2.5vh;
                         }
                     }
 
-                    #Apply {
+                    .apply {
                         border-radius: 25px;
                         background-color: #ffffff;
                         color: #000000;

@@ -1,7 +1,6 @@
 "use client";
 import React from 'react';
-
-import "@/styles/components/footer.module.scss";
+import styles from '@/styles/components/footer.module.scss';
 
 const Footer: React.FC = (): React.JSX.Element => {
     const footerRef: React.RefObject<HTMLDivElement | null> = React.useRef<HTMLDivElement>(null);
@@ -18,7 +17,7 @@ const Footer: React.FC = (): React.JSX.Element => {
         const buffer: number = 0.25 * window.innerHeight;
 
         if (topPosition < window.scrollY + window.innerHeight - buffer && bottomPosition > window.scrollY + buffer) {
-            ref.current.classList.add("visible-class");
+            ref.current.classList.add(styles["visible-class"]);
         }
     };
 
@@ -31,23 +30,21 @@ const Footer: React.FC = (): React.JSX.Element => {
     }, []);
 
     return (
-        <div id='Footers' ref={footerRef}>
-            <div id="FooterPagesDefault">
-                <div id="FooterMain">
-                    <div id="FooterLeft">
-                        <h1 id="FooterLabel">Oxford Academy</h1>
-                        <h1 id="FooterAddress">5172 Orange Ave, Cypress, CA 90630</h1>
-                        <h1 id="FooterPhone">(714) 220-4101</h1>
+        <div className={styles.footers} ref={footerRef}>
+            <div className={styles.footerPagesDefault}>
+                <div className={styles.footerMain}>
+                    <div className={styles.footerLeft}>
+                        <h1 className={styles.footerLabel}>Oxford Academy</h1>
+                        <h1 className={styles.footerAddress}>5172 Orange Ave, Cypress, CA 90630</h1>
+                        <h1 className={styles.footerPhone}>(714) 220-4101</h1>
                     </div>
-                    <div id="FooterRight">
-                        <h1 id="alphaWarning">
+                    <div className={styles.footerRight}>
+                        <h1 className={styles.alphaWarning}>
                             This is an ALPHA build. Bugs beware!
                         </h1>
                         <br />
-                        <h1 id="Affiliation">Update 78 Main - February 26, 2024</h1>
                         <br />
-                        <br />
-                        <a href="https://github.com/enVId-tech" id="Name">Erick Tran, 2024</a>
+                        <a href="https://github.com/enVId-tech" className={styles.name}>Erick Tran, 2025</a>
                     </div>
                 </div>
             </div>

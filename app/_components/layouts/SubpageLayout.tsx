@@ -54,7 +54,6 @@ export default function SubpageLayout({
         titleVhPreDown={titleVhPreDown}
       />
       {children}
-      <Footer />
     </div>
   );
 }

@@ -25,7 +25,7 @@ $align-left: left;
     align-items: center;
 }
 
-#Title {
+.title {
     font-family: $main-font;
     @include flex-center-row;
     width: $main-width;
@@ -39,14 +39,14 @@ $align-left: left;
         flex-direction: column !important;
     }
 
-    #TitleBackground {
+    .titleBackground {
         width: 100%;
         height: 100%;
         position: absolute;
         background-color: rgba(0, 0, 0, 0.6);
     }
 
-    #OxfLogo {
+    .oxfLogo {
         background-repeat: no-repeat;
         background-size: contain;
         background-position: center;
@@ -72,42 +72,40 @@ $align-left: left;
         }
     }
 
-    #MainText {
+    .mainText {
         margin-left: $main-text-margin-left;
         margin-top: $margin-top;
 
-        #OxfAcaMain {
+        .oxfAcaMain {
             font-size: $main-font-size;
             font-weight: $main-font-weight;
             color: $main-font-color;
             letter-spacing: $main-letter-spacing;
             text-align: $align-left;
-
             opacity: 0;
 
-            &.oxf-aca-main {
+            &.oxfAcaMain {
                 animation: unfadeUp $animation-duration $animation-delay ease-in-out forwards;
             }
 
-            &.n-oxf-aca-main {
+            &.nOxfAcaMain {
                 animation: unfadeUp $animation-duration $n-animation-delay ease-in-out forwards;
             }
         }
 
-        #OxfAcaSub {
+        .oxfAcaSub {
             font-size: $sub-font-size;
             color: $main-font-color;
             font-weight: $sub-font-weight;
             letter-spacing: $main-letter-spacing;
             text-align: $align-left;
-
             opacity: 0;
 
-            &.oxf-aca-sub {
+            &.oxfAcaSub {
                 animation: unfadeUp $animation-duration $animation-delay ease-in-out forwards;
             }
 
-            &.n-oxf-aca-sub {
+            &.nOxfAcaSub {
                 animation: unfadeUp $animation-duration $n-animation-delay ease-in-out forwards;
             }
         }
@@ -116,21 +114,20 @@ $align-left: left;
             margin-left: 0;
             margin-top: 0;
 
-            #OxfAcaMain {
+            .oxfAcaMain {
                 font-size: 7vh;
                 text-align: center;
             }
 
-            #OxfAcaSub {
+            .oxfAcaSub {
                 font-size: 3vh;
                 text-align: center;
             }
-            
         }
     }
 
     @media (max-width: 768px){
-        #OxfLogo {
+        .oxfLogo {
             margin-left: 0;
             margin-top: 38vh;
             width: 20vh;
@@ -138,18 +135,18 @@ $align-left: left;
             animation: fadeIn $logo-animation-duration $logo-animation-delay ease-in-out forwards;
         }
 
-        #MainText {
+        .mainText {
             margin-top: 5vh;
             animation: upfadeUp $animation-duration $animation-delay ease-in-out forwards;
             margin-left: 0;
-            #OxfAcaMain {
+            .oxfAcaMain {
                 font-size: 15vw;
                 text-align: center;
                 word-wrap: break-word;
                 text-wrap: wrap;
             }
 
-            #OxfAcaSub {
+            .oxfAcaSub {
                 font-size: 7vw;
                 text-align: center;
                 word-wrap: break-word;
@@ -177,10 +174,9 @@ $align-left: left;
                 margin-top: 0vw;
                 opacity: 1;
             }
-            
         }
     }
-    
+
     @keyframes unfadeUp {
         0% {
             margin-top: 6vw;
@@ -191,6 +187,5 @@ $align-left: left;
             margin-top: 0vw;
             opacity: 1;
         }
-        
     }
 }
