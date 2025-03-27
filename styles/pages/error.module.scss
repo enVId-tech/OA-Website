@@ -21,34 +21,39 @@ $error-links-font-weight: bold;
     justify-content: center;
 }
 
-#ErrorMain {
+.errorPage {
+    width: 100%;
+    height: 100%;
+}
+
+.errorMain {
     @include flex-center;
     height: $main-height;
     width: $main-width;
     background-color: $main-bg-color;
     font-family: $main-font;
 
-    #ErrorMain {
+    .errorMain {
         font-size: $error-main-font-size;
         font-weight: $error-main-font-weight;
         color: $error-color;
     }
 
-    #ErrorMessage {
+    .errorMessage {
         font-size: $error-message-font-size;
         font-weight: $error-main-font-weight;
         color: $error-color;
         margin: 0;
     }
 
-    #ErrorDescription {
+    .errorDescription {
         font-size: $error-description-font-size;
         font-weight: $error-description-font-weight;
         color: $error-color;
         margin-bottom: $error-description-margin-bottom;
     }
 
-    #ErrorLinks {
+    .errorLinks {
         @include flex-center;
         width: $main-width;
         height: $error-links-height;
