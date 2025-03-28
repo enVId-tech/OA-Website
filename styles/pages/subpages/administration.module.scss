@@ -1,109 +1,80 @@
-#Administration {
-    #AdministrationContent {
+.administrationContent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .mainDiv {
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
 
-        #MainDiv {
-            width: 100%;
+        .adminTitle {
+            font-size: 5rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            margin-top: 2rem;
+        }
+    }
+
+    .adminDiv {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        margin-bottom: 2rem;
+
+        .adminDivItem {
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
 
-            #AdminTitle {
-                font-size: 5rem;
-                font-weight: 300;
-                margin-bottom: 3rem;
-                margin-top: 3rem;
-                width: 100%;
-                text-align: center;
-            }
-        }
-
-        #AdminDiv {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            width: 100%;
-            margin-bottom: 3rem;
-            align-items: center;
-            align-content: center;
-
-            $background-size: cover;
-            $background-position: center;
-            $background-repeat: no-repeat;
-            $width: 30%;
-            $height: auto;
-            $border-radius: 1rem;
-
-            .AdminDiv {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                align-content: center;
-                width: 100%;
-                margin-bottom: 3rem;
-
-                .AdminTitle {
-                    font-size: 2rem;
-                    font-weight: 300;
-                    margin-bottom: 3rem;
-                    margin-top: 3rem;
-                    width: 100%;
-                    text-align: center;
-                }
-
-                .AdminName {
-                    font-size: 2rem;
-                    font-weight: 300;
-                    width: 100%;
-                    text-align: center;
-                }
+            .adminImage {
+                border-radius: 50%;
+                width: 15rem;
+                height: 15rem;
+                margin-bottom: 1rem;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
             }
 
-            #AP1 {
-                background-size: $background-size;
-                background-position: $background-position;
-                background-repeat: $background-repeat;
-                width: $width;
-                height: $height;
-                border-radius: $border-radius;
+            .adminTitleText {
+                font-size: 2rem;
+                font-weight: 600;
+                margin-bottom: 0.5rem;
             }
 
-            #AP2 {
-                background-size: $background-size;
-                background-position: $background-position;
-                background-repeat: $background-repeat;
-                width: $width;
-                height: $height;
-                border-radius: $border-radius;
+            .adminName {
+                font-size: 1.5rem;
+                font-weight: 400;
+                margin-bottom: 0.5rem;
             }
 
-            #P1 {
-                background-size: $background-size;
-                background-position: $background-position;
-                background-repeat: $background-repeat;
-                width: $width;
-                height: $height;
-                border-radius: $border-radius;
+            .adminEmail {
+                font-size: 1.2rem;
+                font-weight: 400;
+                margin-bottom: 0.5rem;
             }
         }
     }
 }
 
 @media (max-width: 768px) {
-    #Administration {
-        #AdministrationContent {
-            #AdminDiv {
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                align-content: center;
+    .administrationContent {
+        .adminDiv {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
 
-                .AdminDiv {
-                    margin-bottom: 3rem;
-                }
+            .adminDivItem {
+                margin-bottom: 3rem;
             }
         }
     }

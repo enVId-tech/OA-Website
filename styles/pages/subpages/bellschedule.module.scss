@@ -14,83 +14,79 @@ $main-align-items: center;
     align-items: $main-align-items;
 }
 
-#BellSchedule {
-    #BellScheduleMain {
+.bellScheduleMain {
+    @include flex-center;
+    margin: 2vh 5vw;
+
+    .bellScheduleTitle {
+        font-size: 5rem;
+        font-weight: 200;
+        margin: 2rem 0;
+    }
+
+    .bellScheduleText {
+        font-size: $main-font-size;
+        font-weight: $main-font-weight;
+        margin-bottom: $main-margin-bottom;
         @include flex-center;
-        margin: 2vh 5vw;
+        flex-direction: $secondary-flex-direction !important;
+        justify-content: space-around;
+        width: 100%;
 
-        #BellScheduleTitle {
-            font-size: 5rem;
-            font-weight: 200;
-            margin: 2rem 0;
-        }
-
-        #BellScheduleText {
+        .bellScheduleSection {
             font-size: $main-font-size;
             font-weight: $main-font-weight;
             margin-bottom: $main-margin-bottom;
             @include flex-center;
-            flex-direction: $secondary-flex-direction !important;
-            justify-content: space-around;
-            width: 100%;
 
-            .BellScheduleSection {
+            .bellScheduleSectionTitle {
+                text-align: center;
+                font-size: 2.5rem;
+                font-weight: 600;
+                margin-bottom: $main-margin-bottom;
+            }
+
+            .periods {
                 font-size: $main-font-size;
                 font-weight: $main-font-weight;
                 margin-bottom: $main-margin-bottom;
+                text-align: center;
                 @include flex-center;
-
-                .BellScheduleSectionTitle {
-                    text-align: center;
-                    font-size: 2.5rem;
-                    font-weight: 600;
-                    margin-bottom: $main-margin-bottom;
-                }
-
-                #Periods {
-                    font-size: $main-font-size;
-                    font-weight: $main-font-weight;
-                    margin-bottom: $main-margin-bottom;
-                    text-align: center;
-                    @include flex-center;
-                }
             }
         }
     }
 }
 
 @media (max-width: 768px) {
-    #BellSchedule {
-        #BellScheduleMain {
-            #BellScheduleText {
+    .bellScheduleMain {
+        .bellScheduleText {
+            font-size: 15vw;
+            font-weight: 300;
+            margin-bottom: 5vh;
+            @include flex-center;
+            flex-direction: column !important;
+            justify-content: space-around;
+            width: 100%;
+
+            .bellScheduleSection {
                 font-size: 15vw;
                 font-weight: 300;
                 margin-bottom: 5vh;
                 @include flex-center;
-                flex-direction: column !important;
-                justify-content: space-around;
-                width: 100%;
 
-                .BellScheduleSection {
-                    font-size: 15vw;
+                .bellScheduleSectionTitle {
+                    text-align: center;
+                    font-size: 7.5vw;
                     font-weight: 300;
                     margin-bottom: 5vh;
+                }
+
+                .periods {
+                    font-size: 7.5vw;
+                    font-weight: 300;
+                    margin-bottom: 5vh;
+                    text-align: center;
                     @include flex-center;
-
-                    .BellScheduleSectionTitle {
-                        text-align: center;
-                        font-size: 7.5vw;
-                        font-weight: 300;
-                        margin-bottom: 5vh;
-                    }
-
-                    #Periods {
-                        font-size: 7.5vw;
-                        font-weight: 300;
-                        margin-bottom: 5vh;
-                        text-align: center;
-                        @include flex-center;
-                    }
                 }
             }
         }

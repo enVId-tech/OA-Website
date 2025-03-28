@@ -1,54 +1,33 @@
-$main-display: flex;
-$main-flex-direction: column;
-$main-align-items: center;
-$main-justify-content: center;
-$main-transition: all 0.3s ease-in-out;
-$main-font-family: 'Raleway', sans-serif;
-$main-font-size: 1.4vw;
-$main-font-weight: bold;
-$main-background-color: #f5f5f5;
-$main-border: 0;
-$main-border-radius: 0;
-$main-overflow: hidden;
-$main-box-shadow: none;
-
-$secondary-flex-direction: row;
-$secondary-background-color: transparent;
-$secondary-justify-content: start;
-
 @mixin flex-center {
-    display: $main-display;
-    flex-direction: $main-flex-direction;
-    align-items: $main-align-items;
-    justify-content: $main-justify-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 @mixin common-styles {
-    display: $main-display;
-    background-color: $main-background-color;
-    border: $main-border;
-    border-radius: $main-border-radius;
-    overflow: $main-overflow;
-    transition: $main-transition;
+    padding: 0;
+    margin: 0;
+    background-color: white;
+    line-height: 4rem;
+    font-size: 2vh;
+    text-align: center;
 }
 
-#CCDualEnrollment {
-    transition: all 0.3s ease-in-out forwards;
+.ccDualEnrollment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-    #CCDETitle {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        margin-top: 5vh;
+    .ccdeTitle {
         margin-bottom: 5vh;
         font-family: 'Raleway', 'san-serif';
         font-size: 5rem;
         font-weight: 700;
     }
 
-    #CCDualEnrollmentMain {
+    .ccDualEnrollmentMain {
         @include flex-center;
         width: 100%;
         height: fit-content;
@@ -56,7 +35,7 @@ $secondary-justify-content: start;
         margin: 0;
         @include common-styles;
 
-        #CCDEMainInfo {
+        .ccdeMainInfo {
             padding: 0 6vw 0 6vw;
             line-height: 3rem;
             font-size: 1.5vh;
@@ -65,7 +44,7 @@ $secondary-justify-content: start;
         }
     }
 
-    #CCDualEnrollmentSecondary {
+    .ccDualEnrollmentSecondary {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -73,7 +52,7 @@ $secondary-justify-content: start;
         width: 100%;
         height: fit-content;
 
-        #CCDESecondaryInfo {
+        .ccdeSecondaryInfo {
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -81,7 +60,7 @@ $secondary-justify-content: start;
             width: 85%;
             height: fit-content;
 
-            .CCDEText {
+            .ccdeText {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -92,14 +71,14 @@ $secondary-justify-content: start;
                 text-align: center;
             }
 
-            #CCDE4 {
+            .ccde4 {
                 color: red;
                 font-size: 2.75vh;
             }
         }
     }
 
-    #AdditionalResources {
+    .additionalResources {
         display: flex;
         flex-direction: row;
 
@@ -116,11 +95,10 @@ $secondary-justify-content: start;
             line-height: 4rem;
             font-size: 2vh;
             text-align: center;
-
         }
     }
 
-    #DualEnrollmentPathways {
+    .dualEnrollmentPathways {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -134,7 +112,7 @@ $secondary-justify-content: start;
         font-size: 2vh;
         text-align: center;
 
-        #DEPSelection {
+        .depSelection {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -149,7 +127,7 @@ $secondary-justify-content: start;
             font-size: 2vh;
             text-align: center;
 
-            .DEPButton {
+            .depButton {
                 &:first-child {
                     margin-top: 5vh;
                     border-top-left-radius: 10px;
@@ -173,8 +151,7 @@ $secondary-justify-content: start;
                 display: flex;
                 align-items: flex-start;
                 font-size: 1.75vh;
-                font-family: "Raleway",
-                sans-serif;
+                font-family: "Raleway", sans-serif;
                 font-weight: 100;
                 transition: all 0.3s ease-in-out;
                 color: white;
@@ -192,7 +169,7 @@ $secondary-justify-content: start;
         }
     }
 
-    #Application {
+    .application {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -205,11 +182,11 @@ $secondary-justify-content: start;
         line-height: 4rem;
         text-align: center;
 
-        #ApplicationTitle {
+        .applicationTitle {
             font-size: 4vh;
         }
 
-        #ApplicationSteps {
+        .applicationSteps {
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -217,7 +194,7 @@ $secondary-justify-content: start;
             width: 85%;
             height: fit-content;
 
-            .ApplicationStep {
+            .applicationStep {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -230,14 +207,14 @@ $secondary-justify-content: start;
                 font-size: 2vh;
                 text-align: center;
 
-                .ApplicationStepNumber {
+                .applicationStepNumber {
                     font-size: 5vh;
                     padding: 0;
                     margin: 0 0 1vh 0;
                     line-height: 3rem;
                 }
 
-                .ApplicationStepTitle {
+                .applicationStepTitle {
                     margin: 3vw 3vw 3vw 3vw;
                     border-radius: 10px;
                     font-size: 3vh;
@@ -246,7 +223,7 @@ $secondary-justify-content: start;
         }
     }
 
-    #VideoResources {
+    .videoResources {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -259,11 +236,11 @@ $secondary-justify-content: start;
         line-height: 4rem;
         text-align: center;
 
-        #VideoResourcesTitle {
+        .videoResourcesTitle {
             font-size: 4vh;
         }
 
-        #Videos {
+        .videos {
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -283,9 +260,9 @@ $secondary-justify-content: start;
 }
 
 @media (max-width: 768px) {
-    #CCDualEnrollment {
-        #CCDualEnrollmentMain {
-            #CCDEMainInfo {
+    .ccDualEnrollment {
+        .ccDualEnrollmentMain {
+            .ccdeMainInfo {
                 padding: 0 10vw 0 10vw;
                 line-height: 2.25rem;
                 font-size: 1.25vh;
@@ -294,11 +271,11 @@ $secondary-justify-content: start;
             }
         }
 
-        #CCDualEnrollmentSecondary {
-            #CCDESecondaryInfo {
+        .ccDualEnrollmentSecondary {
+            .ccdeSecondaryInfo {
                 flex-direction: column;
 
-                .CCDEText {
+                .ccdeText {
                     width: 80%;
                     font-size: 2.5vh;
                     text-wrap: wrap;
@@ -306,7 +283,7 @@ $secondary-justify-content: start;
             }
         }
 
-        #AdditionalResources {
+        .additionalResources {
             flex-direction: column;
             .resources {
                 width: 100%;
@@ -314,19 +291,19 @@ $secondary-justify-content: start;
             }
         }
 
-        #Application {
-            #ApplicationSteps {
+        .application {
+            .applicationSteps {
                 flex-direction: column;
 
-                .ApplicationStep {
+                .applicationStep {
                     width: 100%;
                     font-size: 2.5vh;
                 }
             }
         }
 
-        #VideoResources {
-            #Videos {
+        .videoResources {
+            .videos {
                 flex-direction: column;
                 iframe {
                     width: 90vw;

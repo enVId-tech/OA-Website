@@ -1,55 +1,35 @@
-#Admissions {
-    #AdmissionsMain {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+.admissionsMain {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-        #AdmissionsTitle {
-            font-size: 5rem;
-            font-weight: 400;
-            margin-bottom: 2rem;
-            margin-top: 2rem;
-        }
-
-        .AdmissionsSection {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: baseline;
-            margin-bottom: 2rem;
-
-            #AdmissionsSectionTitle {
-                font-size: 3rem;
-                font-weight: 700;
-                margin-bottom: 1rem;
-                text-align: center;
-                font-family: 'Roboto', sans-serif;
-                margin-top: 2rem;
-                margin-bottom: 2rem;
-            }
-
-            #AdmissionsSectionText {
-                font-family: 'Roboto', sans-serif;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                margin-bottom: 2rem;
-                margin-left: 10vw;
-                margin-right: 10vw;
-                font-size: 1.5rem;
-            }
-        }
+    .admissionsTitle {
+        font-size: 5rem;
+        font-weight: 400;
+        margin-bottom: 2rem;
+        margin-top: 2rem;
     }
 
-    #End {
+    .admissionsSection {
         width: 100%;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: baseline;
+        margin-bottom: 2rem;
 
-        #AdmissionsSectionText {
+        .admissionsSectionTitle {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .admissionsSectionText {
+            font-family: 'Roboto', sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -59,5 +39,23 @@
             margin-right: 10vw;
             font-size: 1.5rem;
         }
+    }
+}
+
+.end {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .admissionsSectionText {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 2rem;
+        margin-left: 10vw;
+        margin-right: 10vw;
+        font-size: 1.5rem;
     }
 }
