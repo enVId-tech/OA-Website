@@ -17,12 +17,12 @@ $section-link-margin-bottom: 2vh;
     margin-top: $section-margin;
     margin-bottom: $section-margin;
 
-    #Title {
+    .title {
         font-size: $section-title-font-size;
         font-weight: $section-title-font-weight;
     }
 
-    #Link {
+    .link {
         font-size: $section-link-font-size;
         font-weight: $section-link-font-weight;
         margin-bottom: $section-link-margin-bottom;
@@ -31,14 +31,14 @@ $section-link-margin-bottom: 2vh;
     }
 }
 
-#Transcript {
+.transcript {
     width: $main-width;
     font-family: $main-font;
 
-    #TranscriptMain {
+    .transcriptMain {
         padding: $main-padding;
 
-        #TitleText {
+        .titleText {
             font-size: $title-font-size;
             font-weight: $title-font-weight;
             margin-bottom: $title-margin-bottom;
@@ -46,17 +46,17 @@ $section-link-margin-bottom: 2vh;
             text-align: center;
         }
 
-        #Parchment {
-            #ParchmentMain {
+        .parchment {
+            .parchmentMain {
                 line-height: $parchment-line-height;
                 font-weight: $parchment-font-weight;
             }
 
-            #Alumni {
+            .alumni {
                 @include section-styles;
             }
 
-            #Student {
+            .student {
                 @include section-styles;
             }
         }

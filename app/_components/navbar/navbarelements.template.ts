@@ -11,7 +11,7 @@ export type NavbarElementsData = {
     hasWorkingLink: boolean;
 }[]
 
-const elementsData: Record<string, any> = {
+const elementsData: Record<string, NavbarElementsData> = {
     "Our School": School["Our School"],
     "Students": Student["Students"],
     "Parents": Parents["Parents"],
@@ -21,12 +21,11 @@ const elementsData: Record<string, any> = {
 };
 
 function getNavBarElements(elements: string): NavbarElementsData {
-    const data: string[] = elementsData[elements] || elementsData["Our School"];
-    return data.map((element: any) => ({
+    const data: NavbarElementsData = elementsData[elements] || elementsData["Our School"];
+    return data.map((element) => ({
         name: element.name,
         link: element.link,
         hasWorkingLink: element.hasWorkingLink
     }));
 }
-
 export default getNavBarElements;

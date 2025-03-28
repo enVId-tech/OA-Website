@@ -15,15 +15,15 @@ $c5s-font-weight: bolder;
     align-items: center;
 }
 
-#VisionSLCS {
+.visionSLCS {
     width: $main-width;
     font-family: $main-font;
 
-    #VisionSLCSMain {
+    .visionSLCSMain {
         width: $main-width;
         @include flex-center;
 
-        #TitleText {
+        .titleText {
             font-size: $title-font-size;
             font-weight: $title-font-weight;
             margin-top: $title-margin;
@@ -32,7 +32,7 @@ $c5s-font-weight: bolder;
             text-align: center;
         }
 
-        #VisionMain {
+        .visionMain {
             width: $main-width;
             @include flex-center;
             padding-left: $main-padding;
@@ -40,17 +40,17 @@ $c5s-font-weight: bolder;
             text-align: center;
         }
 
-        #SchoolLearnerOutcomes {
+        .schoolLearnerOutcomes {
             padding-left: $main-padding;
             padding-right: $main-padding;
 
-            #SchoolMainOutcomes {
+            .schoolMainOutcomes {
                 margin-top: $outcomes-margin;
                 margin-bottom: $outcomes-margin;
                 font-weight: $outcomes-font-weight;
             }
 
-            .C5S {
+            .c5s {
                 margin-top: $c5s-margin;
                 margin-bottom: $c5s-margin;
                 font-weight: $c5s-font-weight;

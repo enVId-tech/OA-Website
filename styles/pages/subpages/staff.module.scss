@@ -14,14 +14,14 @@ $secondary-font-weight: bolder;
     align-items: center;
 }
 
-#Staff {
+.staff {
     width: $main-width;
     font-family: $main-font;
 
-    #StaffMain {
+    .staffMain {
         @include flex-center;
 
-        #TitleText {
+        .titleText {
             width: $main-width;
             height: auto;
             font-size: $title-font-size;
@@ -31,7 +31,7 @@ $secondary-font-weight: bolder;
             text-align: center;
         }
 
-        #StaffSecondary {
+        .staffSecondary {
             width: $main-width;
             margin-top: $secondary-margin-top;
             margin-bottom: $secondary-margin-bottom;

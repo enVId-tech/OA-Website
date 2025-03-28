@@ -1,11 +1,7 @@
 "use client";
-
-import React, { ReactNode, useEffect } from "react";
+import React, { ReactNode } from "react";
 import Navbar from "@/app/_components/navbar/navbar.template";
 import PageTitle from "@/app/_components/pagetitle/pagetitle.global.module";
-import Footer from "@/app/_components/footer/footer.global.module";
-
-import OxfFrontImage from '@/public/images/OxfFrontImage.jpg';
 
 interface SubpageLayoutProps {
   title: string;
@@ -28,7 +24,7 @@ export default function SubpageLayout({
   mainText,
   subText = "",
   oxfLogo = false,
-  backgroundLink = OxfFrontImage.src,
+  backgroundLink,
   backgroundVhPreDown = 700,
   backgroundVhDownRate = 32,
   titleVhDownRate = 30,

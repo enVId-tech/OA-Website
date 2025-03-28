@@ -1,4 +1,4 @@
-/* eslint-disable react-hooks/exhaustive-deps */
+// /* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
 // import * as Three from 'three';
 // import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
@@ -11,6 +11,7 @@ interface PhotosphereProps {
 }
 
 const Photosphere: React.FC<PhotosphereProps> = ({ src }: PhotosphereProps): React.ReactElement => {
+    console.log(src);
     // const canvasRef: React.RefObject<HTMLCanvasElement> = React.useRef<HTMLCanvasElement>(null);
     //
     // React.useEffect(() => {

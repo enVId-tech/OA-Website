@@ -1,0 +1,42 @@
+.schoolSiteCouncil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 2rem 0;
+  font-family: 'Raleway', sans-serif;
+
+  .schoolSiteCouncilTitle {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .schoolSiteCouncilContent {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .membersSection {
+    margin-top: 3rem;
+
+    .sectionTitle {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .membersList {
+      list-style: none;
+      padding: 0;
+
+      .member {
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

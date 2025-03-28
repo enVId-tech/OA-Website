@@ -12,15 +12,15 @@ $bus-image-margin-bottom: 7.5vh;
     align-items: center;
 }
 
-#Transportation {
+.transportation {
     width: $main-width;
     font-family: $main-font;
 
-    #TransportationMain {
+    .transportationMain {
         width: $main-width;
         @include flex-center;
 
-        #TitleText {
+        .titleText {
             font-size: $title-font-size;
             font-weight: $title-font-weight;
             margin-top: $title-margin;
@@ -29,7 +29,7 @@ $bus-image-margin-bottom: 7.5vh;
             text-align: center;
         }
 
-        #BusImage {
+        .busImage {
             width: $bus-image-width;
             height: auto;
             @include flex-center;

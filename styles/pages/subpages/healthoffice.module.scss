@@ -18,16 +18,16 @@ $text-align-start: start;
     justify-content: center;
 }
 
-#HealthOffice {
+.healthOffice {
     font-family: $font-family;
 
-    #HealthOfficeMain {
+    .healthOfficeMain {
         @include flex-center;
         flex-direction: column;
         padding: $padding-standard 0 $padding-double 0;
 
-        #TitleText,
-        #TopTitleText {
+        .titleText,
+        .topTitleText {
             width: $width-full;
             height: $height-auto;
             font-weight: $font-weight-normal;
@@ -36,15 +36,15 @@ $text-align-start: start;
             text-align: $text-align-center;
         }
 
-        #TitleText {
+        .titleText {
             font-size: 6vh;
         }
 
-        #Top {
+        .top {
             @include flex-center;
             flex-direction: column;
 
-            #TopTitleText {
+            .topTitleText {
                 font-size: 4vh;
 
                 & strong {
@@ -53,19 +53,19 @@ $text-align-start: start;
             }
         }
 
-        .InfoDiv {
+        .infoDiv {
             width: $width-full;
             height: $height-auto;
             @include flex-center;
             flex-direction: column;
 
-            .InfoTitle,
-            .InfoContent {
+            .infoTitle,
+            .infoContent {
                 margin-top: $margin-quintuple;
                 margin-bottom: $margin-quintuple;
             }
 
-            .InfoTitle {
+            .infoTitle {
                 width: $width-full;
                 display: flex;
                 text-align: $text-align-start;
@@ -73,15 +73,15 @@ $text-align-start: start;
                 font-weight: $font-weight-bolder;
             }
 
-            .InfoContent {
+            .infoContent {
                 margin-left: 10vw;
                 margin-right: 10vw;
                 font-size: 1.75vw;
                 font-weight: $font-weight-bold;
             }
 
-            .SubInfoDiv {
-                .SubInfoTitle {
+            .subInfoDiv {
+                .subInfoTitle {
                     width: 80%;
                     display: flex;
                     text-align: $text-align-center;

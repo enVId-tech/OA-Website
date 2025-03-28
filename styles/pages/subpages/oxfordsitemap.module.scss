@@ -6,17 +6,17 @@ $site-margin-top-bottom: 3vh;
 $title-font-size: 6vh;
 $title-font-weight: 600;
 
-#OxfSiteMap {
+.oxfSiteMap {
     font-family: $main-font;
     width: $main-width;
 
-    #OxfSiteMapMain {
+    .oxfSiteMapMain {
         display: flex;
         flex-direction: column;
         width: $main-width;
         align-items: center;
 
-        #TitleText {
+        .titleText {
             width: $main-width;
             height: auto;
             font-size: $title-font-size;
@@ -26,7 +26,7 @@ $title-font-weight: 600;
             text-align: center;
         }
 
-        #OxfSite {
+        .oxfSite {
             width: $site-width;
             margin-top: $site-margin-top-bottom;
             margin-bottom: $site-margin-top-bottom;

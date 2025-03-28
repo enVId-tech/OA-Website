@@ -4,18 +4,16 @@ import React from "react";
 import applyPageAnims from "@/app/_components/animations/animations.global.module.ts";
 import Navbar from "@/app/_components/navbar/navbar.template.tsx";
 import PageTitle from "@/app/_components/pagetitle/pagetitle.global.module.tsx";
-import Footer from "@/app/_components/footer/footer.global.module.tsx";
 import styles from "@/styles/pages/home.module.scss";
+import Image from "next/image";
 
 export default function Home(): React.ReactNode {
-  // Create refs for main div elements
   const aboutRef = React.useRef<HTMLDivElement>(null);
   const ratingsRef = React.useRef<HTMLDivElement>(null);
   const admissionsRef = React.useRef<HTMLDivElement>(null);
   const footerRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
-    // Fix the typing issue by filtering out null values
     const refs = [aboutRef, ratingsRef, admissionsRef, footerRef].filter(
         (ref): ref is React.RefObject<HTMLDivElement> => ref.current !== null
     );
@@ -56,7 +54,7 @@ export default function Home(): React.ReactNode {
           {/* About Tab */}
           <div className={styles.about} ref={aboutRef}>
             <div className={`${styles.aboutText} section-property`}>
-              <img className={`${styles.aboutImage} section-title`} src="images/OxfordAcademyFullLogo.webp" alt="Oxford Academy Logo" />
+              <Image className={`${styles.aboutImage} section-title`} src="images/OxfordAcademyFullLogo.webp" alt="Oxford Academy Logo" />
               <h1 className={`${styles.aboutLabel} section-text`}>Oxford Academy is a community of innovators dedicated to nurturing the holistic growth of life-long learners who will lead and serve an evolving local and global society.</h1>
             </div>
           </div>

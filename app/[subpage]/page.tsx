@@ -1,3 +1,4 @@
+"use server";
 // Regular imports
 import React from "react";
 import SubpageLayout from "@/app/_components/layouts/SubpageLayout";
@@ -15,6 +16,27 @@ import bellschedule from "@/styles/pages/subpages/bellschedule.module.scss";
 import calendar from "@/styles/pages/subpages/calendar.module.scss";
 import cafeteria from "@/styles/pages/subpages/cafeteria.module.scss";
 import ccdualenroll from "@/styles/pages/subpages/ccdualenroll.module.scss";
+import familyengagement from "@/styles/pages/subpages/familyengagement.module.scss";
+import clubs from "@/styles/pages/subpages/clubs.module.scss";
+import counseling from "@/styles/pages/subpages/counseling.module.scss";
+import districtippplan from "@/styles/pages/subpages/districtippplan.module.scss";
+import getdirections from "@/styles/pages/subpages/getdirections.module.scss";
+import pforp from "@/styles/pages/subpages/pforp.module.scss";
+import principalsmessage from "@/styles/pages/subpages/principalsmessage.module.scss";
+import ptsa from "@/styles/pages/subpages/ptsa.module.scss";
+import schoolsitecouncil from "@/styles/pages/subpages/schoolsitecouncil.module.scss";
+import staff from "@/styles/pages/subpages/staff.module.scss";
+import titleix from "@/styles/pages/subpages/titleix.module.scss";
+import transcript from "@/styles/pages/subpages/transcript.module.scss";
+import tour from "@/styles/pages/subpages/tour.module.scss";
+import transportation from "@/styles/pages/subpages/transportation.module.scss";
+import visionslcs from "@/styles/pages/subpages/visionslcs.module.scss";
+import workpermit from "@/styles/pages/subpages/workpermit.module.scss";
+import PoliciesPage from "@/app/_components/pages/PoliciesPage.tsx";
+import OxfordSitemapPage from "@/app/_components/pages/OxfordSitemapPage.tsx";
+import Image from "next/image";
+import HealthOfficePage from "@/app/_components/pages/HealthOfficePage.tsx";
+import GeneralInformationPage from "@/app/_components/pages/GeneralInformationPage.tsx";
 
 // Define page configurations
 const pageConfigs = {
@@ -29,21 +51,21 @@ const pageConfigs = {
                 </div>
                 <span className={administration.adminDiv}>
                 <div className={administration.adminDivItem}>
-                    <img className={administration.adminImage} id="AP1" alt="Oxford Academy" src="images/Admin-Cho.png" />
+                    <Image className={administration.adminImage} id="AP1" alt="Oxford Academy" src="images/Admin-Cho.png" />
                     <h2 className={administration.adminTitleText}>Assistant Principal</h2>
                     <p className={administration.adminName}>Dr. Ester Cho</p>
                     <p className={administration.adminEmail}>cho_es@auhsd.us</p>
                 </div>
 
                 <div className={administration.adminDivItem}>
-                    <img className={administration.adminImage} id="P1" alt="Oxford Academy" src="images/Admin-Houston.png" />
+                    <Image className={administration.adminImage} id="P1" alt="Oxford Academy" src="images/Admin-Houston.png" />
                     <h2 className={administration.adminTitleText}>Principal</h2>
                     <p className={administration.adminName}>Mrs. Amber Houston</p>
                     <p className={administration.adminEmail}>houston_a@auhsd.us</p>
                 </div>
 
                 <div className={administration.adminDivItem}>
-                    <img className={administration.adminImage} id="AP2" alt="Oxford Academy" src="images/Admin-Hurley.png" />
+                    <Image className={administration.adminImage} id="AP2" alt="Oxford Academy" src="images/Admin-Hurley.png" />
                     <h2 className={administration.adminTitleText}>Assistant Principal</h2>
                     <p className={administration.adminName}>Mr. Ryan Hurley</p>
                     <p className={administration.adminEmail}>hurley_r@auhsd.us</p>
@@ -211,8 +233,8 @@ const pageConfigs = {
             <div className={calendar.calendarMain}>
                 <h1 className={`${calendar.calendarTitle} pageSectionTitle`}>School / District Calendars</h1>
                 <div className={calendar.calendarContent}>
-                    <img className={calendar.importantDates} src="images/ImportantDatesCalendar.png" alt="ImportantDatesCalendar" />
-                    <img className={calendar.districtCalendar} src="images/DistrictCalendar.png" alt="ImportantDatesCalendar" />
+                    <Image className={calendar.importantDates} src="images/ImportantDatesCalendar.png" alt="ImportantDatesCalendar" />
+                    <Image className={calendar.districtCalendar} src="images/DistrictCalendar.png" alt="ImportantDatesCalendar" />
                 </div>
             </div>
         )
@@ -266,7 +288,7 @@ const pageConfigs = {
                         <h1 className="ResourceTitle">Dual Enrollment Registration/Virtual Front Desk</h1>
 
                         <a href="https://oxford.auhsd.us/files/user/1/file/Virtual%20Front%20Desk.pdf">
-                            <img src="https://oxford.auhsd.us/files/user/1/image/Virtual%20Front%20Desk.jpg" alt="Virtual Front Desk" style={{ width: "85%" }} />
+                            <Image src="https://oxford.auhsd.us/files/user/1/image/Virtual%20Front%20Desk.jpg" alt="Virtual Front Desk" style={{ width: "85%" }} />
                         </a>
                     </div>
 
@@ -274,7 +296,7 @@ const pageConfigs = {
                         <h1 className="ResourceTitle">Course Flyer</h1>
 
                         <a href="https://oxford.auhsd.us/files/user/1/file/CourseFlyer_AUHSD.pdf">
-                            <img src="https://oxford.auhsd.us/files/user/1/image/CourseFlyer_AUHSD.jpg" alt="Course Flyer" style={{ width: "85%" }} />
+                            <Image src="https://oxford.auhsd.us/files/user/1/image/CourseFlyer_AUHSD.jpg" alt="Course Flyer" style={{ width: "85%" }} />
                         </a>
                     </div>
 
@@ -282,7 +304,7 @@ const pageConfigs = {
                         <h1 className="ResourceTitle">Course Description</h1>
 
                         <a href="https://oxford.auhsd.us/files/user/1/file/CourseDescriptions_AUHSD.pdf">
-                            <img src="https://oxford.auhsd.us/files/user/1/image/CourseDescriptions_AUHSD.jpg" alt="Course Description" style={{ width: "85%" }} />
+                            <Image src="https://oxford.auhsd.us/files/user/1/image/CourseDescriptions_AUHSD.jpg" alt="Course Description" style={{ width: "85%" }} />
                         </a>
                     </div>
                 </div>
@@ -362,7 +384,7 @@ const pageConfigs = {
                     </div>
 
                     <div className={clubs.clubImageDiv}>
-                        <img className={clubs.clubImage} src="images/FRC.svg" alt="Robotics" />
+                        <Image className={clubs.clubImage} src="images/FRC.svg" alt="Robotics" />
                     </div>
                 </div>
 
@@ -378,7 +400,7 @@ const pageConfigs = {
                     </div>
 
                     <div className={clubs.clubImageDiv}>
-                        <img className={clubs.clubImage} src="images/Cyberpatriot.png" alt="Code" />
+                        <Image className={clubs.clubImage} src="images/Cyberpatriot.png" alt="Code" />
                     </div>
                 </div>
 
@@ -550,9 +572,56 @@ const pageConfigs = {
     familyengagement: {
         title: "Family Engagement",
         mainText: "Family Engagement",
-        subText: "",
+        subText: "Partnering with Families",
         content: () => (
-            <div></div>
+            <div className={familyengagement.familyEngagementMain}>
+                <h1 className={`${familyengagement.familyEngagementTitle} pageSectionTitle`}>Family Engagement</h1>
+
+                <div className={familyengagement.familyEngagementContent}>
+                    <div className={familyengagement.engagementSection}>
+                        <h2 className={familyengagement.sectionTitle}>Parent Partnership</h2>
+                        <p className={familyengagement.sectionText}>
+                            At Oxford Academy, we believe that family engagement is crucial to student success.
+                            We are committed to building strong partnerships with our families to support our students&#39;
+                            academic achievement and well-being. We encourage parents and guardians to actively
+                            participate in their child&#39;s education through various opportunities throughout the school year.
+                        </p>
+                    </div>
+
+                    <div className={familyengagement.engagementSection}>
+                        <h2 className={familyengagement.sectionTitle}>Get Involved</h2>
+                        <p className={familyengagement.sectionText}>
+                            There are many ways for families to get involved at Oxford Academy. Join our PTSA,
+                            volunteer for school events, attend parent-teacher conferences, or participate in
+                            school decision-making committees. Your involvement makes a difference in our school community.
+                        </p>
+                        <div className={familyengagement.resourceLinks}>
+                            <a href="#" className={familyengagement.resourceLink}>PTSA Information</a>
+                            <a href="#" className={familyengagement.resourceLink}>Volunteer Opportunities</a>
+                            <a href="#" className={familyengagement.resourceLink}>School Site Council</a>
+                        </div>
+                    </div>
+
+                    <div className={familyengagement.engagementSection}>
+                        <h2 className={familyengagement.sectionTitle}>Communication</h2>
+                        <p className={familyengagement.sectionText}>
+                            We strive to maintain open lines of communication with all families. Regular updates
+                            are provided through our newsletter, website, and social media channels. Parents can
+                            also access Aeries to monitor their student&#39;s academic progress. If you have any questions
+                            or concerns, please don&#39;t hesitate to reach out to your child&#39;s teachers or school administrators.
+                        </p>
+                    </div>
+
+                    <div className={familyengagement.engagementSection}>
+                        <h2 className={familyengagement.sectionTitle}>Parent Resources</h2>
+                        <p className={familyengagement.sectionText}>
+                            We offer various resources to help parents support their children&#39;s education at home.
+                            These include workshops, informational sessions, and access to educational materials.
+                            Check our calendar for upcoming parent events and workshops.
+                        </p>
+                    </div>
+                </div>
+            </div>
         )
     },
     getdirections: {
@@ -560,16 +629,24 @@ const pageConfigs = {
         mainText: "Get Directions",
         subText: "",
         content: () => (
-            <div id="GetDirectionsMain">
-                <h1 id="GetDirectionsTitle" className="pageSectionTitle">Directions to Oxford Academy</h1>
+            <div className={getdirections.getDirections}>
+                <div className={getdirections.getDirectionsMain}>
+                    <h1 className={`${getdirections.getDirectionsTitle} pageSectionTitle`}>Directions to Oxford Academy</h1>
 
-                <h1 id="Address">
-                    5172 Orange Ave
-                    <br />
-                    Cypress, CA 90630
-                </h1>
+                    <h1 className={getdirections.address}>
+                        5172 Orange Ave
+                        <br />
+                        Cypress, CA 90630
+                    </h1>
 
-                <iframe title="maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3314.5543081348337!2d-118.044468384791!3d33.823812980668826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dd2e989ef215cf%3A0x6bf77d12dee0340!2s5172%20Orange%20Ave%2C%20Cypress%2C%20CA%2090630!5e0!3m2!1sen!2sus!4v1640026582184!5m2!1sen!2sus" width="100%" height="450" allowFullScreen={true} />
+                    <iframe
+                        title="maps"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3314.5543081348337!2d-118.044468384791!3d33.823812980668826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dd2e989ef215cf%3A0x6bf77d12dee0340!2s5172%20Orange%20Ave%2C%20Cypress%2C%20CA%2090630!5e0!3m2!1sen!2sus!4v1640026582184!5m2!1sen!2sus"
+                        width="100%"
+                        height="450"
+                        allowFullScreen={true}
+                    />
+                </div>
             </div>
         )
     },
@@ -577,115 +654,13 @@ const pageConfigs = {
         title: "General Information",
         mainText: "General Information",
         subText: "Learn more about our school!",
-        content: () => (
-            <div id="GeneralInformationMain">
-                <h1 id="GenInfoHMain" className="pageSectionTitle">General Information</h1>
-
-                <span id="TopInfo">
-                    <img id="GeneralInformationImage" src="images/OxfordAcademyFullLogo.webp" alt="GeneralInformation" />
-                    <h1 id="MainText">is a seventh through twelfth grade college preparatory public school that opened in September of 1998.  Recognized as a California Distinguished School, OA draws students from the entire attendance area of the Anaheim Union High School District and its surrounding areas.</h1>
-                </span>
-
-                <hr />
-
-                <div id="HS">
-                    <h1 id="BestHSLabel">Oxford Academy leads with Excellence, Honor, Creativity, Caring & Fun</h1>
-                    <img id="BestHSImage" src="images/HS2023.jpeg" alt="BestHS" />
-                </div>
-
-                <div id="ExtraInfo">
-                    <button id="Prof" className="buttonMain" onClick={() => window.open("https://oxford.auhsd.us/files/public_files/OA-Profile_web_2020-2021.pdf", "_blank")}>OA Profile</button>
-                    <button id="Info" className="buttonMain" onClick={() => window.open("https://oxford.auhsd.us/files/user/3598/file/OA_InfoCard.pdf", "_blank")}>OA Info Card</button>
-                    <button id="Pathways" className="buttonMain" onClick={() => window.open("https://oxford.auhsd.us/files/user/3598/file/CareerPathways_OxfordAcademy.pdf", "_blank")}>OA Pathways</button>
-                </div>
-
-                <span id="Awards">
-                    <div id="BHS" className="AwardTypes">
-                        <img id="BHSImage" className="AwardImage" src="images/USN-Gold.png" alt="BestHS" />
-                        <p className="MainText">#1 in CA, #9 in the US</p>
-                        <p className="SubText">(2023)</p>
-                    </div>
-
-                    <div id="CalDistS" className="AwardTypes">
-                        <img id="CDSImage" className="AwardImage" src="images/DistingSchool-logo.png" alt="BestHS" />
-                        <p className="MainText">CA Distinguished School</p>
-                        <p className="SubText">(2011, 2019, 2021)</p>
-                    </div>
-
-                    <div id="BRS" className="AwardTypes">
-                        <img id="BRSImage" className="AwardImage" src="images/NatlBlueRibbon_USDE.png" alt="BestHS" />
-                        <p className="MainText">National Blue Ribbon</p>
-                        <p className="SubText">(2013, 2019)</p>
-                    </div>
-
-                    <div id="CalDemS" className="AwardTypes">
-                        <img id="CDSImage" className="AwardImage" src="images/CalDemSchool.png" alt="BestHS" />
-                        <p className="MainText">CA Democracy School</p>
-                        <p className="SubText">(2020)</p>
-                    </div>
-                </span>
-            </div>
-        )
+        content: () => <GeneralInformationPage/>
     },
     healthoffice: {
         title: "Health Office",
         mainText: "Health Office",
         subText: "Learn more about our school!",
-        content: () => (
-            <div id="HealthOfficeMain">
-                <h1 id="TitleText" className="pageSectionTitle">Health Office</h1>
-
-                <div id="Top">
-                    <h1 id="TopTitleText">Healthy Students Learn Better at <strong>Oxford Academy</strong></h1>
-                </div>
-
-                <div id="AboutUs" className="InfoDiv">
-                    <h1 id="AboutTitle" className="InfoTitle">About Us</h1>
-                    <h1 id="AboutContent" className="InfoContent">Oxford Academy is staffed with a Health Technician, trained in first aid and CPR, who on campus from 7:30 am – 4:00 pm daily. The primary role of the Health Technician is to provide basic first aid for unexpected injuries, to assist with medications when it is determined they must be given at school; and to maintain health records on all students enrolled.  The School Nurse oversees health services at several school sites in the AUHSD and is able to be reached by cell phone during school hours.</h1>
-                </div>
-
-                <div id="Visits" className="InfoDiv">
-                    <h1 id="VisitsTitle" className="InfoTitle">Health Office Visits</h1>
-                    <h1 id="VisitsContent" className="InfoContent">Except in the case of an emergency, all students must have a pass from their teacher to visit the Health Office.  Walk-in&#39;s during passing period will be returned to class for a pass. Communication with the Attendance and Health Office is important.  No student will be allowed to leave with another person (even a relative) unless that person is listed as an emergency contact if the parent/guardian cannot be reached first.  It is the responsibility of the parent/guardian to keep their emergency contact information current.</h1>
-                </div>
-
-                <div id="Medications" className="InfoDiv">
-                    <h1 id="MedicationsTitle" className="InfoTitle">Medications</h1>
-                    <h1 id="MedicationsContent" className="InfoContent">All medications and/or forms should be taken directly to the Health Office located in the Counseling Center.  If you have any questions or concerns, you can reach Rebecca Gibb the Health Technician.  By law, the school cannot administer any medication, including over the counter medication, or treatment without parent permission and a physician&#39;s order. We can assist you with this process, please ask.</h1>
-
-                    <div className="SubInfoDiv">
-                        <h1 className="SubInfoTitle">
-                            In compliance with Ed. Code Section 49423, no medication will be accepted or administered at school without all of the following conditions being met
-                        </h1>
-
-                        <ul className="SubInfoList">
-                            <li className="SubInfoListItem">A written statement signed by the licensed authorized health care provider/dentist specifying the reason for the medication, the name, dosage, time, route, side effect; and specific instructions for emergency treatment must be on file at school.  </li>
-                            <li className="SubInfoListItem">A signed request from the parent/guardian must be on file at school.</li>
-                            <li className="SubInfoListItem">Medication must be delivered to the school by the parent/guardian or other responsible adult.</li>
-                            <li className="SubInfoListItem">Medication must be in your child&#39;s original, labeled pharmacy container written in English.</li>
-                            <li className="SubInfoListItem">All liquid medication must be accompanied by an appropriate measuring device.</li>
-                            <li className="SubInfoListItem">If pill splitting is required to obtain the correct dose of medication to be administered, only pills that are scored may be split, scored pills may be split in half only, and a commercial pill splitting device should be used for correct splitting.</li>
-                            <li className="SubInfoListItem">Over the counter medication that has been prescribed by an authorized health care provider must be in its original container.</li>
-                            <li className="SubInfoListItem">A separate form is required for each medication.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div id="Forms" className="InfoDiv">
-                    <h1 id="FormsTitle" className="InfoTitle">Forms</h1>
-                    <h1 id="FormsContent" className="InfoContent">Please let the Health Office know if your child has a life threatening illness such as diabetes, seizure disorders, or severe allergies (bees/food/medication). We want to be prepared to provide safe care for your child. To enable us to provide safe care for your child at school, please submit the required, completed form(s)</h1>
-
-                    <div className="SubInfoDiv">
-                        <ul className="SubInfoList">
-                            <li className="SubInfoListItem health" onClick={() => window.open("https://oxford.auhsd.us/files/public_files/FoodAllergy_ActionPlan.pdf", "_blank")}>Food Allergy</li>
-                            <li className="SubInfoListItem health" onClick={() => window.open("https://oxford.auhsd.us/files/public_files/MedRequestForm_English10-3-2018.pdf", "_blank")}>Medication Request Form</li>
-                            <li className="SubInfoListItem health" onClick={() => window.open("https://oxford.auhsd.us/files/public_files/PhysicianMedicalReport.pdf", "_blank")}>Physician Medical Report</li>
-                            <li className="SubInfoListItem health" onClick={() => window.open("https://oxford.auhsd.us/files/public_files/SeizureHistory.pdf", "_blank")}>Seizure History</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        )
+        content: () => <HealthOfficePage/>
     },
     library: {
         title: "Library",
@@ -699,28 +674,23 @@ const pageConfigs = {
         title: "Oxford Sitemap",
         mainText: "Oxford Academy Site Map",
         subText: "",
-        content: () => (
-            <div id="OxfSiteMapMain">
-                <h1 id="TitleText" className="pageSectionTitle">Oxford Academy Site Map</h1>
-                <img id="OxfSite" src="images/Map.png" alt="Oxford Academy Site Map" onClick={() => {
-                    window.open("https://oxford.auhsd.us/files/user/1/file/OXFORD%20SITE%20MAP%202023%20Back%20cover%20inside.pdf", "_blank");
-                }} />
-            </div>
-        )
+        content: () => <OxfordSitemapPage/>
     },
     pforp: {
         title: "Programs 4 Patriots",
         mainText: "Programs 4 Patriots",
         subText: "",
         content: () => (
-            <div id="ProgramsForPatriotsMain">
-                <h1 id="TitleText" className="pageSectionTitle">Programs 4 Patriots</h1>
-                <h1 id="ProgramsForPatriotsSecondary">
-                    Can&#39;t add content on this page due to limited access to the official Oxford Site. Sorry!
-                    <br />
-                    <br />
-                    - Erick Tran
-                </h1>
+            <div className={pforp.programsForPatriots}>
+                <div className={pforp.programsForPatriotsMain}>
+                    <h1 className={`${pforp.titleText} pageSectionTitle`}>Programs 4 Patriots</h1>
+                    <h1 className={pforp.programsForPatriotsSecondary}>
+                        Can&#39;t add content on this page due to limited access to the official Oxford Site. Sorry!
+                        <br />
+                        <br />
+                        - Erick Tran
+                    </h1>
+                </div>
             </div>
         )
     },
@@ -728,53 +698,40 @@ const pageConfigs = {
         title: "Policies",
         mainText: "Policies",
         subText: "",
-        content: () => (
-            <div id="PoliciesMain">
-                <h1 id="TitleText" className="pageSectionTitle">Policies</h1>
-                <h1 id="PoliciesSecondary">
-                    For your reference, a copy of the MAIN PAGES Policy Pages can be found on the Student Planner. You can also download the pages below.
-                </h1>
-
-                <ul id="PoliciesList">
-                    <li className="PoliciesListItem" onClick={() => window.open("https://oxford.auhsd.us/files/page/77583/MAIN_PAGES_Policy_Pages_2019_2020_power_school_page.pdf", "_blank")}>Vision Statement</li>
-                    <li className="PoliciesListItem" onClick={() => window.open("https://oxford.auhsd.us/files/page/77583/Oxford_Academy_BYOD_Policy__1_.pdf", "_blank")}>Bring Your Own Device</li>
-                    <li className="PoliciesListItem" onClick={() => window.open("https://oxford.auhsd.us/files/page/77583/Student_Traffic_and_Parking_Agreement.pdf", "_blank")}>Student Traffic and Parking Agreement</li>
-                    <li className="PoliciesListItem" onClick={() => window.open("https://oxford.auhsd.us/files/page/77583/7901_03_Use_of_Technology2014_0519___Regulation.pdf", "_blank")}>Use of Technology</li>
-                </ul>
-            </div>
-        )
+        content: () => <PoliciesPage/>
     },
     principalsmessage: {
         title: "Principal's message",
         mainText: "Principal's message",
         subText: "A message from Principal Houston",
         content: () => (
-            <>
-                <h1 id="PrincipalsMessageTitle" className="pageSectionTitle">
-                    Principal&#39;s Message
+            <div className={principalsmessage.principalsMessage}>
+                <h1 className={`${principalsmessage.principalsMessageTitle} pageSectionTitle`}>
+                    Welcome to Oxford Academy
                 </h1>
 
-                <div id="PrincipalsMessageMain">
-                    <img id="PrincipalsMessageImage" src="images/Principal.jpg" alt="Principal Houston" />
-
-                    <p id="Principal">Oxford Academy Families,
+                <div className={principalsmessage.principalsMessageMain}>
+                    <p>
+                        Oxford Academy, where we are committed to providing our students with an exceptional education that prepares them for future success. As a nationally recognized school of excellence, we take pride in our comprehensive academic program, diverse extracurricular activities, and supportive community environment.
+                    </p>
+                    <p>
+                        At Oxford Academy, we believe in developing well-rounded individuals who excel academically while also cultivating critical thinking, leadership, and character. Our dedicated faculty and staff work tirelessly to create engaging learning experiences that challenge and inspire our students to reach their full potential.
+                    </p>
+                    <p>
+                        We are proud of our diverse student body and the inclusive atmosphere they help create. Our Patriots demonstrate a commitment to excellence not only in the classroom but also in athletics, arts, service, and various clubs and organizations. This holistic approach to education ensures that our students graduate with the skills, knowledge, and values necessary to thrive in an ever-changing global society.
+                    </p>
+                    <p>
+                        As we navigate another exciting school year, I encourage all students to take advantage of the numerous opportunities Oxford Academy offers. Challenge yourselves, pursue your passions, and support one another along the way. Together, we will continue to uphold the traditions of excellence that define our school.
+                    </p>
+                    <p className={principalsmessage.principal}>
+                        Sincerely,
                         <br />
+                        Mrs. Amber Houston
                         <br />
-                        My name is Amber Houston, and I am your principal at Oxford Academy.
-                        <br />
-                        <br />
-                        I am so happy to be part of the Patriot Family and continue the excellence at OA.  I have a long history with AUHSD and saw the creation of OA years ago and of course have seen the amazing things that have happened here.  I grew up in the city of Cypress, and my parents still live here.  I attended Walker Junior High School and Kennedy High School receiving a solid education and wonderful experiences that have shaped me into the person I am today.  I had amazing teachers and principals, and possibly that is why I am so passionate about serving this community that gave me so much.  And most recently, the last three years, I have traveled across Asia as an ambassador of AUHSD in learning and recruiting international students to study in AUHSD.
-                        <br />
-                        <br />
-                        I recently went through a “revisioning” with Lexington, and I am aware that collectively the Oxford staff, students, parents and community wrote a compelling vision statement for this amazing school– “Oxford Academy is a community of innovators dedicated to nurturing the holistic growth of life-long learners who will lead and serve an evolving local and global society”. I intend to truly embody this, flourish it and ensure all decisions made support what we as an educational community want our school to be!  Along with our vision, we have our AUHSD 5 C’s: critical thinking, creativity, collaboration, communication, and character that foster not only the academic side of learning, but also the soft skills that are necessary for our students to succeed in the real world.  At Oxford Academy, we will continue the tradition of excellence in all we do.
-                        <br />
-                        <br />
-                        My greatest charge is to create well rounded, experienced, and healthy students equipped with the diverse skills of an ever changing world.  I know academic excellence is a top priority at Oxford Academy, but I believe we are capable of that and more!  That is my promise to you.  I find it imperative that the school and home are connected to best support each child.  Especially our incoming 7th graders who are embarking on a totally new educational setting going from one teacher to eight, moving around in classes and parents not on campus like they used to be.  I will do my best to keep this connection alive and grow it.  I have two sons myself---one an 8th grader and the other a new freshman in a high performing school.  I truly know as a parent what you are going through and I try to reflect on my own personal experiences to make yours better!  I go to work every day and challenge myself to be the principal I want for my own kids and challenge the teachers to do the same.
-                        <br />
-                        <br />
-                        I am humbled to serve this diverse and upstanding community.  I am proud to be a patriot.  It is with great appreciation that I will be on this 6-year  journey with you and your students.  </p>
+                        Principal, Oxford Academy
+                    </p>
                 </div>
-            </>
+            </div>
         )
     },
     ptsa: {
@@ -782,7 +739,13 @@ const pageConfigs = {
         mainText: "PTSA",
         subText: "Parent Teacher Student Association",
         content: () => (
-            <iframe title="ptsa" src="https://oxford.auhsd.us/files/user/5529/file/Website%20OA%20PTSA%202023-2024%20Board%20-%20Google%20Docs.pdf" />
+            <div className={ptsa.ptsa}>
+                <iframe
+                    className={ptsa.ptsaFrame}
+                    title="ptsa"
+                    src="https://oxford.auhsd.us/files/user/5529/file/Website%20OA%20PTSA%202023-2024%20Board%20-%20Google%20Docs.pdf"
+                />
+            </div>
         )
     },
     schoolsitecouncil: {
@@ -790,7 +753,23 @@ const pageConfigs = {
         mainText: "School Site Council",
         subText: "",
         content: () => (
-            <div></div>
+            <div className={schoolsitecouncil.schoolSiteCouncil}>
+                <h1 className={`${schoolsitecouncil.schoolSiteCouncilTitle} pageSectionTitle`}>School Site Council</h1>
+                <div className={schoolsitecouncil.schoolSiteCouncilContent}>
+                    <p>The School Site Council (SSC) is a group of teachers, parents, staff, and students that works with the principal to develop, review, and evaluate school improvement programs and school budgets.</p>
+
+                    <div className={schoolsitecouncil.membersSection}>
+                        <h2 className={schoolsitecouncil.sectionTitle}>Current Members</h2>
+                        <ul className={schoolsitecouncil.membersList}>
+                            <li className={schoolsitecouncil.member}>Mrs. Amber Houston, Principal</li>
+                            <li className={schoolsitecouncil.member}>Teacher Representatives</li>
+                            <li className={schoolsitecouncil.member}>Parent Representatives</li>
+                            <li className={schoolsitecouncil.member}>Student Representatives</li>
+                            <li className={schoolsitecouncil.member}>Other Staff Representatives</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         )
     },
     staff: {
@@ -798,9 +777,9 @@ const pageConfigs = {
         mainText: "Staff",
         subText: "Meet the staff!",
         content: () => (
-            <div id="StaffMain">
-                <h1 id="TitleText" className="pageSectionTitle">Staff</h1>
-                <h1 id="StaffSecondary">
+            <div className={staff.staffMain}>
+                <h1 className={`${staff.titleText} pageSectionTitle`}>Staff</h1>
+                <h1 className={staff.staffSecondary}>
                     <a href="https://oxford.auhsd.us/Oxford/Staff/" target="_blank" rel="noopener noreferrer">
                         To be updated soon! Check out the official Oxford Academy website for now.
                         <br />
@@ -816,7 +795,13 @@ const pageConfigs = {
         mainText: "Title IX",
         subText: "",
         content: () => (
-            <iframe title="titleix" src="https://oxford.auhsd.us/files/user/1/file/AUHSD%20-%20Website%20Info%20-%20Title%20IX%20-%20Students.pdf" />
+            <div className={titleix.titleIX}>
+                <iframe
+                    className={titleix.titleIXFrame}
+                    title="titleix"
+                    src="https://oxford.auhsd.us/files/user/1/file/AUHSD%20-%20Website%20Info%20-%20Title%20IX%20-%20Students.pdf"
+                />
+            </div>
         )
     },
     tour: {
@@ -824,12 +809,9 @@ const pageConfigs = {
         mainText: "Tour",
         subText: "",
         content: () => (
-            <div id="TourMain">
-                <h1 id="TitleText" className="pageSectionTitle">Tour</h1>
-
+            <div className={tour.tourMain}>
+                <h1 className={`${tour.titleText} pageSectionTitle`}>Tour</h1>
                 <Photosphere src=""/>
-
-                {/* <iframe src="https://www.google.com/maps/embed?pb=!4v1709016137056!6m8!1m7!1sCAoSLEFGMVFpcE5Fcm9GTjhCc0tubnJGaDgwX3R2VXRla3dDNFV2ZGVUVFRvTF9E!2m2!1d33.8238182!2d-118.0429382!3f356.36724021617965!4f-29.230983180823642!5f0.4000000000000002" width="600" height="450" style={{border:0}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> */}
             </div>
         )
     },
@@ -838,11 +820,11 @@ const pageConfigs = {
         mainText: "Transcript",
         subText: "",
         content: () => (
-            <div id="TranscriptMain">
-                <h1 id="TitleText" className="pageSectionTitle">Transcript</h1>
+            <div className={transcript.transcriptMain}>
+                <h1 className={`${transcript.titleText} pageSectionTitle`}>Transcript</h1>
 
-                <div id="Parchment">
-                    <h1 id="ParchmentMain">What is Parchment?
+                <div className={transcript.parchment}>
+                    <h1 className={transcript.parchmentMain}>What is Parchment?
                         <br />
                         <br />
                         Parchment is the exclusive site where current students, alumni, and third party companies can obtain digital copies of official transcripts, immunization record, and other documents. This process is done electronically and it is sent (digitally or physically, as requested) directly to the destination the student/alumnus/company chooses. Please note that you must create an account in order to request the documents (including transcripts).
@@ -851,25 +833,25 @@ const pageConfigs = {
                     <br />
                     <br />
 
-                    <div id="Alumni">
-                        <h1 id="AlumniTitle">Alumni Transcript Request</h1>
-                        <h1 id="AlumniSubTitle">
+                    <div className={transcript.alumni}>
+                        <h1 className={transcript.title}>Alumni Transcript Request</h1>
+                        <h1 className={transcript.subTitle}>
                             Please visit the Parchment link below to request a digital copy of your official transcript.
                         </h1>
 
-                        <a id="AlumniLink" href="https://www.parchment.com/u/registration/5583/account" target="_blank">Parchment</a>
+                        <a className={transcript.link} href="https://www.parchment.com/u/registration/5583/account" target="_blank">Parchment</a>
                     </div>
 
                     <br />
                     <br />
 
-                    <div id="Student">
-                        <h1 id="StudentTitle">Current Student Transcript Request Only</h1>
-                        <h1 id="StudentSubTitle">
+                    <div className={transcript.student}>
+                        <h1 className={transcript.title}>Current Student Transcript Request Only</h1>
+                        <h1 className={transcript.subTitle}>
                             If you are a current student and would like to obtain a paper copy, click on the link below
                         </h1>
 
-                        <a id="StudentLink" href="https://docs.google.com/forms/d/1FflDpc3lq6b4KcJmymckDULAaSiygiBFy4zE6ZySF8o/viewform?edit_requested=true#response=ACYDBNjyMQ9R6VbU3JVJMURPpaiI-3TlMTxNn8k5GRteSwsLWkmwW42RjIRwNvpW-MHl6C4" target="_blank">Transcript Request Form</a>
+                        <a className={transcript.link} href="https://docs.google.com/forms/d/1FflDpc3lq6b4KcJmymckDULAaSiygiBFy4zE6ZySF8o/viewform?edit_requested=true#response=ACYDBNjyMQ9R6VbU3JVJMURPpaiI-3TlMTxNn8k5GRteSwsLWkmwW42RjIRwNvpW-MHl6C4" target="_blank">Transcript Request Form</a>
                     </div>
                 </div>
             </div>
@@ -880,9 +862,9 @@ const pageConfigs = {
         mainText: "Transportation",
         subText: "",
         content: () => (
-            <div id="TransportationMain">
-                <h1 id="TitleText" className="pageSectionTitle">Transportation</h1>
-                <img id="BusImage" src="images/BusStops.png" alt="BusImage" />
+            <div className={transportation.transportationMain}>
+                <h1 className={`${transportation.titleText} pageSectionTitle`}>Transportation</h1>
+                <Image className={transportation.busImage} src="images/BusStops.png" alt="BusImage" />
             </div>
         )
     },
@@ -891,45 +873,45 @@ const pageConfigs = {
         mainText: "Vision & SLCS",
         subText: "",
         content: () => (
-            <div id="VisionSLCSMain">
-                <h1 id="TitleText" className="pageSectionTitle">Vision & SLCS</h1>
-                <h1 id="VisionMain">Oxford Academy is a community of innovators dedicated to nurturing the holistic growth of life-long learners who will lead and serve an evolving local and global society.</h1>
+            <div className={visionslcs.visionSLCSMain}>
+                <h1 className={`${visionslcs.titleText} pageSectionTitle`}>Vision & SLCS</h1>
+                <h1 className={visionslcs.visionMain}>Oxford Academy is a community of innovators dedicated to nurturing the holistic growth of life-long learners who will lead and serve an evolving local and global society.</h1>
 
                 <hr />
 
-                <div id="SchoolLearnerOutcomes">
-                    <h1 id="SchoolMainOutcomes">Schoolwide Learner Outcomes</h1>
-                    <h1 id="CriticalThinking" className="C5S">
+                <div className={visionslcs.schoolLearnerOutcomes}>
+                    <h1 className={visionslcs.schoolMainOutcomes}>Schoolwide Learner Outcomes</h1>
+                    <h1 className={`${visionslcs.c5s} ${visionslcs.criticalThinking}`}>
                         Critical Thinking
                         <br />
                         OA students are critical thinkers whose curiosity inspires them to be innovative and find new ways to problem solve.
                     </h1>
 
-                    <h1 id="Communication" className="C5S">
+                    <h1 className={`${visionslcs.c5s} ${visionslcs.communication}`}>
                         Communication
                         <br />
                         OA students are confident and eloquent individuals who advocate for their needs and express themselves effectively.
                     </h1>
 
-                    <h1 id="Collaboration" className="C5S">
+                    <h1 className={`${visionslcs.c5s} ${visionslcs.collaboration}`}>
                         Collaboration
                         <br />
                         OA students help one another in diverse teams that demonstrate respect, flexibility, and recognize that they can accomplish more together than on their own.
                     </h1>
 
-                    <h1 id="Creativity" className="C5S">
+                    <h1 className={`${visionslcs.c5s} ${visionslcs.creativity}`}>
                         Creativity
                         <br />
                         OA students are imaginative and produce authentic products, projects and programs.
                     </h1>
 
-                    <h1 id="Character" className="C5S">
+                    <h1 className={`${visionslcs.c5s} ${visionslcs.character}`}>
                         Character
                         <br />
                         OA students are engaged, ethical, empathetic and respectful individuals who embrace diversity and provide a sense of belonging for everyone in the OA family.
                     </h1>
 
-                    <h1 id="Community" className="C5S">
+                    <h1 className={`${visionslcs.c5s} ${visionslcs.communityEngagement}`}>
                         Community Engagement
                         <br />
                         OA students are active, connected, give back, and think beyond themselves to serve their school, home, local and global community.
@@ -943,13 +925,18 @@ const pageConfigs = {
         mainText: "Work Permit",
         subText: "",
         content: () => (
-            <div id="WorkPermitMain"></div>
+            <div className={workpermit.workPermitMain}>
+                <h1 className={`${workpermit.titleText} pageSectionTitle`}>Work Permit</h1>
+                <div className={workpermit.content}>
+                    <p>Content for work permit will be added soon.</p>
+                </div>
+            </div>
         )
-    }
+    },
 };
 
-export default function SubpageDynamic({ params }: { params: { subpage: string } }) {
-    const { subpage } = params;
+export default async function SubpageDynamic({ params }: { params: Promise<{ subpage: string }> }) {
+    const { subpage } = await params;
     const config = pageConfigs[subpage as keyof typeof pageConfigs];
 
     if (!config) {
@@ -970,7 +957,7 @@ export default function SubpageDynamic({ params }: { params: { subpage: string }
 }
 
 // Generate static paths
-export function generateStaticParams() {
+export async function generateStaticParams() {
     return Object.keys(pageConfigs).map((subpage) => ({
         subpage,
     }));

@@ -5,15 +5,16 @@ FROM node:latest
 WORKDIR /app
 
 COPY public/ /app/public
-COPY src/ /app/src
+COPY app/ /app/app
 COPY package.json /app
+COPY . /app
 
 RUN npm install
 
 # RUN npm run build
 
 # Make port 3000 available to the world outside this container
-EXPOSE 3030
+EXPOSE 3000
 
 # Run app.js when the container launches
 CMD ["npm", "start"]

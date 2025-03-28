@@ -2,7 +2,7 @@ import '@/styles/components/animations/animationsmain.module.scss';
 import "@/styles/components/section.module.scss";
 import React from "react";
 
-const animationTypes: object = {
+const animationTypes: { [key: string]: string } = {
     "c_left": "content-anim-left",
     "c_right": "content-anim-right",
     "c_up": "content-anim-up",
@@ -24,7 +24,7 @@ function applyPageAnims(refs: React.RefObject<HTMLDivElement>[], animType?: stri
 
             if (animType) {
                 if (topPosition < window.scrollY + window.innerHeight - buffer && bottomPosition > window.scrollY + buffer) {
-                    const animationClass: string = (animationTypes as any)[animType[index]] as string || "visible-class";
+                    const animationClass: string = (animationTypes as { [key: string]: string })[animType[index]] || "visible-class";
                     ref.current.classList.add(animationClass);
                 }
             }

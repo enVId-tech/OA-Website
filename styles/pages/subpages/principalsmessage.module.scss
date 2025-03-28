@@ -15,8 +15,8 @@ $principal-line-height: 3rem;
     justify-content: center;
 }
 
-#PrincipalsMessage {
-    #PrincipalsMessageTitle {
+.principalsMessage {
+    .principalsMessageTitle {
         font-size: $title-font-size;
         font-weight: $title-font-weight;
         margin: $title-margin;
@@ -24,12 +24,12 @@ $principal-line-height: 3rem;
         font-family: $font-family;
     }
 
-    #PrincipalsMessageMain {
+    .principalsMessageMain {
         @include flex-center;
         margin: $message-margin $message-margin-horizontal;
         font-size: $message-font-size;
 
-        #Principal {
+        .principal {
             @include flex-center;
             text-align: center;
             font-weight: $principal-font-weight;

@@ -2,8 +2,8 @@ $color-primary: #f8f9fa;
 $color-white: #ffffff;
 $color-black: #000000;
 
-#Tour {
-    #TourMain {
+.tour {
+    .tourMain {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -16,12 +16,12 @@ $color-black: #000000;
         font-weight: 700;
         text-align: center;
 
-        #TitleText {
+        .titleText {
             margin-bottom: 2vh;
             color: $color-black;
         }
 
-        #canvasTour {
+        .canvasTour {
             width: 100%;
             height: 100vh;
         }

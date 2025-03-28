@@ -1,15 +1,16 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
 import styles from '@/styles/components/pagetitle.module.scss';
 import globalType from '../device/device.template';
+import OxfFrontImage from '@/public/images/OxfFrontImage.jpg';
+import Image from "next/image";
 
 interface PageTitleProps {
     height: number;
     mainText: string;
     subText?: string;
     oxfLogo: boolean;
-    backgroundLink: string;
+    backgroundLink?: string;
     percentageDown: number;
     backgroundVhPreDown?: number;
     backgroundVhDownRate?: number;
@@ -22,8 +23,7 @@ const PageTitle: React.FC<PageTitleProps> = ({
                                                  mainText,
                                                  subText,
                                                  oxfLogo,
-                                                 backgroundLink,
-                                                 percentageDown,
+                                                 backgroundLink = OxfFrontImage.src,
                                                  backgroundVhPreDown = 0,
                                                  backgroundVhDownRate = 128,
                                                  titleVhPreDown = 0,
@@ -81,7 +81,8 @@ const PageTitle: React.FC<PageTitleProps> = ({
 
             {
                 oxfLogo ? (
-                    <img
+                    <Image
+                        alt={"Oxford Academy Logo"}
                         className={styles.oxfLogo}
                         src="images/OxfordLogo.png"
                         style={{
@@ -89,7 +90,9 @@ const PageTitle: React.FC<PageTitleProps> = ({
                         }}
                     />
                 ) : (
-                    <img
+                    <Image
+                        alt={"Oxford Academy Logo"}
+                        src="images/OxfordLogo.png"
                         className={`${styles.oxfLogo} ${deviceType === "desktop" ? styles.isHidden : ""}`}
                     />
                 )

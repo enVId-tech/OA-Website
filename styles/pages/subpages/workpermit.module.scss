@@ -1,0 +1,23 @@
+.workPermit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 2rem 0;
+
+  .workPermitMain {
+    width: 80%;
+    max-width: 1200px;
+
+    .titleText {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .content {
+      line-height: 1.6;
+    }
+  }
+}

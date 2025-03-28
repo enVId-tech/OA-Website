@@ -1,0 +1,105 @@
+@mixin flex-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.familyEngagementMain {
+  @include flex-center;
+  width: 100%;
+  height: fit-content;
+  padding: 0;
+  margin: 0;
+  background-color: #f5f5f5;
+  line-height: 1.6;
+  font-family: 'Raleway', sans-serif;
+
+  .familyEngagementTitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .familyEngagementContent {
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .engagementSection {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+      .sectionTitle {
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: #333;
+      }
+
+      .sectionText {
+        font-size: 1.1rem;
+        line-height: 1.6;
+      }
+    }
+
+    .resourceLinks {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+
+      .resourceLink {
+        padding: 0.75rem 1.5rem;
+        background-color: #0d6efd;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: 500;
+        transition: background-color 0.2s;
+
+        &:hover {
+          background-color: #0b5ed7;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .familyEngagementMain {
+    .familyEngagementTitle {
+      font-size: 2rem;
+    }
+
+    .familyEngagementContent {
+      width: 95%;
+
+      .engagementSection {
+        padding: 1.5rem;
+
+        .sectionTitle {
+          font-size: 1.5rem;
+        }
+
+        .sectionText {
+          font-size: 1rem;
+        }
+      }
+
+      .resourceLinks {
+        flex-direction: column;
+
+        .resourceLink {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

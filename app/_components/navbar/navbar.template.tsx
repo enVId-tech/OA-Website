@@ -3,6 +3,7 @@ import getNavBarElements from './navbarelements.template.ts';
 import styles from '@/styles/components/navbar.module.scss';
 import globalType from "../device/device.template.ts";
 import OxfLogo from "@/public/images/OxfordLogo.png";
+import Image from "next/image";
 
 interface NavbarProps {
   heightChange?: number;
@@ -71,20 +72,26 @@ const Navbar: React.FC<NavbarProps> = ({ heightChange = -Infinity }: NavbarProps
   }
 
   const renderButtonsTable = (buttons: NavbarElementsData[], tableId: string): React.ReactElement => (
-      tableId === "Home" ? <div /> :
+      tableId === "Home" ? <div key={"Home"} /> :
           <div
               className={`${styles.table} ${backgroundTransparent ? styles.transparent : styles.opaque} ${activeTable === tableId ? styles.shown : styles.hidden}`}
               onMouseEnter={() => handleMouseEnter(tableId)}
               onMouseLeave={handleMouseLeave}
+              key={tableId}
           >
             {buttons.map((element: NavbarElementsData, index: number) => (
-                <button
+                <div
                     className={`${styles.navtable} ${styles.navsubbutton} ${index === 0 ? styles.first : ''} ${index === buttons.length - 1 ? styles.last : ''} ${element.hasWorkingLink ? styles.green : styles.red}`}
-                    key={element.name}
+                    key={`${element.name}${index}`}
                     onClick={() => window.location.href = element.link}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter') window.location.href = element.link
+                    }}
                 >
                   {element.name}
-                </button>
+                </div>
             ))}
           </div>
   );
@@ -96,13 +103,18 @@ const Navbar: React.FC<NavbarProps> = ({ heightChange = -Infinity }: NavbarProps
           onMouseLeave={handleMouseLeave}
       >
         {buttons.map((element: NavbarElementsData, index: number) => (
-            <button
+            <div
                 className={`${styles.navtable} ${styles.navsubbutton} ${index === 0 ? styles.first : ''} ${index === buttons.length - 1 ? styles.last : ''} ${element.hasWorkingLink ? styles.green : styles.red}`}
                 key={element.name}
                 onClick={() => window.location.href = element.link}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') window.location.href = element.link
+                }}
             >
               {element.name}
-            </button>
+            </div>
         ))}
       </div>
   );
@@ -113,18 +125,23 @@ const Navbar: React.FC<NavbarProps> = ({ heightChange = -Infinity }: NavbarProps
           <nav className={`${styles.navbarMain} ${backgroundTransparent ? styles.transparent : styles.opaque}`}>
             <div className={styles.topbar}>
               <div className={styles.mainButtons}>
-                <img className={styles.mainImage} src={OxfLogo.src} alt="Oxford Logo" onClick={handleLogoClick} style={{ cursor: "pointer" }} />
+                <Image className={styles.mainImage} src={OxfLogo.src} alt="Oxford Logo" onClick={handleLogoClick} style={{ cursor: "pointer" }} />
                 {
                   navBar.map((section: NavbarElementsData, index: number) => (
-                      <button
+                      <div
                           key={section.name}
                           className={`${styles.navbutton} ${activeTable === section.name ? styles.active : styles.hidden}`}
                           onClick={() => window.location.href = section.hasWorkingLink ? section.link : "/"}
                           onMouseEnter={() => handleMouseEnter(sections[index].name)}
                           onMouseLeave={handleMouseLeave}
+                          role="button"
+                          tabIndex={0}
+                          onKeyDown={(e) => {
+                            if (e.key === 'Enter') window.location.href = section.hasWorkingLink ? section.link : "/"
+                          }}
                       >
                         {navBar[index].name}
-                      </button>
+                      </div>
                   ))
                 }
               </div>
@@ -138,17 +155,42 @@ const Navbar: React.FC<NavbarProps> = ({ heightChange = -Infinity }: NavbarProps
           <nav className={`${styles.navbarMain} ${backgroundTransparent ? styles.transparent : styles.opaque}`}>
             <div className={styles.topbar}>
               <div className={styles.mainButtons}>
-                <img className={styles.mainImage} src={OxfLogo.src} alt="Oxford Logo" onClick={handleLogoClick} style={{ cursor: "pointer" }} />
-                <button className={styles.hamburgerButton} onClick={() => setTablesVisible(!tablesVisible)} />
+                <Image className={styles.mainImage} src={OxfLogo.src} alt="Oxford Logo" onClick={handleLogoClick} style={{ cursor: "pointer" }} />
+                <div
+                    className={styles.hamburgerButton}
+                    onClick={() => setTablesVisible(!tablesVisible)}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter') setTablesVisible(!tablesVisible)
+                    }}
+                />
               </div>
 
               <div className={`${styles.tableSelector} ${tablesVisible ? styles.visible : styles.hidden}`}>
                 {
                   navBar.map((section: NavbarElementsData, index: number) => (
-                      <button
+                      <div
                           key={section.name}
                           className={`${styles.navbutton} ${activeTable === section.name ? styles.active : styles.hidden}`}
-                          onClick={() => {section.name == "Home" ? (window.location.href = "/") : handleMobileButtonClick(section.name)}}
+                          onClick={() => {
+                            if (section.name == "Home") {
+                              window.location.href = "/";
+                            } else {
+                              handleMobileButtonClick(section.name);
+                            }
+                          }}
+                          role="button"
+                          tabIndex={0}
+                          onKeyDown={(e) => {
+                            if (e.key === 'Enter') {
+                              if (section.name == "Home") {
+                                window.location.href = "/";
+                              } else {
+                                handleMobileButtonClick(section.name);
+                              }
+                            }
+                          }}
                       >
                         <div className={styles.buttonMainDiv}>
                           <h1 className={styles.navbarTableTitle}>{navBar[index].name}</h1>
@@ -163,11 +205,10 @@ const Navbar: React.FC<NavbarProps> = ({ heightChange = -Infinity }: NavbarProps
                               mobileNavbar(getNavBarElements(sections[index].name), sections[index].name)
                           ) : <></>
                         }
-                      </button>
+                      </div>
                   ))
                 }
-              </div>
-            </div>
+              </div>            </div>
           </nav>
       )
   );

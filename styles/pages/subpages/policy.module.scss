@@ -19,13 +19,13 @@ $padding-li: 10vw;
 $text-underline-offset: 0.25rem;
 $text-decoration-underline: underline;
 
-#Policies {
+.policies {
     font-family: $font-family;
 
-    #PoliciesMain {
+    .policiesMain {
         padding: $padding-main;
 
-        #TitleText {
+        .titleText {
             width: $width-full;
             height: $height-auto;
             font-size: $font-size-title;
@@ -35,11 +35,11 @@ $text-decoration-underline: underline;
             text-align: $text-align-center;
         }
 
-        #PoliciesSecondary {
+        .policiesSecondary {
             text-align: $text-align-center;
         }
 
-        ul {
+        .policiesList {
             list-style: $list-style-none;
             counter-reset: $counter-reset-li;
 
